@@ -1,0 +1,158 @@
+\documentclass[11pt,letterpaper]{article}
+\input{../../preamble}
+\usepackage{fullpage}
+\usepackage{multicol}
+\everymath{\displaystyle}
+
+\begin{document}
+\flushleft
+\begin{multicols}{2}
+
+\begin{large}\textbf{Math 2603 Exam 1 \\
+Wed 24 Sep 2014}\end{large}
+
+\hfill\textbf{Name:  }\underline{\hspace{40ex}} %KEY\hspace{17ex}} 
+\\
+\vspace{.5in}
+
+\end{multicols}
+
+\pagestyle{empty}
+
+\vspace{4pc}
+
+\begin{center}\LARGE Discrete Math
+
+Exam 1 (Ch. 1-2: Set theory, logic, proofs) \end{center}
+
+\vspace{2pc}
+Please provide the following data:
+
+\vspace{2pc}
+Drill Time: \underline{\hspace{40ex}}
+
+\vspace{2pc}
+Student ID: \underline{\hspace{40ex}}
+
+\vspace{3pc}
+{\bf Exam Instructions:} You have 50 minutes to complete this exam.  One $3\times 5$ inch notecard is allowed.  No graphing calculators.  No programmable calculators.  No phones, iDevices, computers, etc.  If you finish early then you may leave, UNLESS there are less than 5 minutes of class left.  To prevent disruption, if you finish with less than 5 minutes of class remaining then please stay seated and quiet.
+
+\vspace{5pc}
+Your signature below indicates that you have read this page and agree to follow the Academic Honesty Policies of the University of Arkansas.  
+
+\vspace{3pc}
+Signature: \underline{\hspace{80ex}}
+
+\vfill
+\begin{flushright}\Large Good luck!\end{flushright}
+
+\begin{enumerate}
+\newpage
+
+\item Truth tables and valid arguments.
+
+\begin{enumerate}
+
+% % % % %
+\vspace{1pc}
+\item Fill in the truth table:
+
+\vspace{1pc}
+$\begin{array}{c | c | c| c | c|}
+P & Q & R & P\wedge Q & (P\wedge Q)\to (\neg R) \\
+\hline
+T & T & T & & \\
+\hline
+T & T & F & & \\
+\hline
+T & F & T & & \\
+\hline
+T & F & F & & \\
+\hline
+F & T & T & & \\
+\hline
+F & T & F & & \\
+\hline
+F & F & T & & \\
+\hline
+F & F & F & & \\
+\hline
+\end{array}$
+
+\vspace{2pc}
+\item Using table (a) explain if the argument below is valid. 
+\[\begin{array}{l}
+\quad P\wedge Q \\
+\quad Q \\
+\hline
+\therefore (P\wedge Q)\to (\neg R)
+\end{array}\]
+
+\vspace{5pc}
+\item Determine if the following argument is valid. You may extend the table in (a) if necessary, but either way, you must justify your answer.
+
+\[\begin{array}{l}
+\quad P\wedge Q\to\neg R \\
+\quad P\vee\neg Q \\
+\quad \neg Q\to P \\
+\hline
+\therefore R
+\end{array}\]
+\end{enumerate}
+
+% % % % %
+\newpage
+\item Let $P=$  ``If $\frac{6}{d}\in\mathbb Z$, where $d\in\mathbb Z$, then $d=3$."
+\begin{enumerate}
+
+\vspace{1pc}
+\item Is $P$ a proposition?
+
+\vspace{4pc}
+\item What is $\neg P$?
+
+\vspace{5pc}
+\item Give the contrapositive of $P$.
+
+\vspace{5pc}
+\item Give the converse of $P$.
+
+\vspace{5pc}
+\item Is $P$ true or false? (Prove or give a counterexample.)
+\end{enumerate}
+
+% % % % %
+\newpage
+\item For a set $S$ let $\mathscr P(S)$ denote its power set.
+\begin{enumerate}
+\item Prove $\mathscr P(X\cap Y)=\mathscr P(X)\cap\mathscr P(Y)$.
+
+\vspace{30pc}
+\item Disprove $\mathscr P(X\cup Y)\subseteq\mathscr P(X)\cup\mathscr P(Y)$.
+\end{enumerate}
+
+% % % % %
+\newpage
+\item Prove by contrapositive: If $x^2\in\mathbb R\setminus\mathbb Q$, then $x\in\mathbb R\setminus\mathbb Q$.
+
+% % % % %
+\newpage
+\item True/False.  If true, use induction to prove it.  If false, give a counterexample.
+\begin{enumerate}
+\item $1^2-2^2+3^2-4^2+\cdots+(-1)^{n+1}n^2=\frac{(-1)^{n+1}n(n+1)}{2}$
+
+% % % % %
+\newpage
+\item For all $n\in\mathbb Z_{>0}$, $11^n-6$ is divisible by $5$.
+\end{enumerate}
+
+% % % % %
+\newpage
+\item {\bf cHaLlEnGe PrObLeM} Prove: Given any two rational numbers $r$ and $s$ with $r<s$, there is a rational number between $r$ and $s$.
+
+% % % % %
+\newpage
+\item {\bf EXTRA CREDIT} Use the quotient-remainder theorem, with $d=3$, to prove that the product of any three consecutive integers is divisible by $3$.
+
+\end{enumerate}
+\end{document}
