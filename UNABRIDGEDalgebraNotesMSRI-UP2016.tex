@@ -1,0 +1,290 @@
+\documentclass[t,10pt,aspectratio=2516,envcountsect]{beamer}
+\usetheme{Singapore}%Warsaw}
+\usecolortheme{beaver,lily}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{
+	\vspace{0.2pc}
+	\hspace{15pt}
+	\inserttocsubsection
+	
+	} % don't get rid of the above line of space!
+\setbeamerfont{section in toc}{size=\fontsize{8}{9}\selectfont}
+\setbeamerfont{subsection in toc}{size=\fontsize{6}{7}\selectfont}
+\setbeamercolor{subsection in toc}{fg=red!50!black}
+\setbeamercolor{titlelike}{fg=red!50!black}
+
+%\beamertemplatenavigationsymbolsempty 
+
+% % % % % % % % % % 
+\usepackage{ifthen}
+\usepackage{subfiles}
+\usepackage{multicol}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage[mathscr]{euscript}
+\usepackage[misc,geometry]{ifsym}
+\usepackage{wasysym}
+\usepackage{fancyvrb}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tkz-graph} %tkz-graph loads tikz
+\usepackage{tkz-berge}
+\usepackage{chngcntr}
+\usetikzlibrary{matrix,arrows,shapes,cd,calc}
+\usepackage{comment}
+
+% % % % % % % % % %
+\AtBeginDocument{%
+ \abovedisplayskip=2pt
+ \abovedisplayshortskip=2pt
+ \belowdisplayskip=3pt
+ \belowdisplayshortskip=2pt
+}
+\AtBeginSection{
+	\begin{frame}[t]{\insertsection}
+	\begin{multicols}{2}
+	\ifthenelse{\thesection < 6}{
+		\tableofcontents[sections={1-5},currentsection]
+		}{
+		\tableofcontents[sections={6-10},currentsection]
+		}
+	\end{multicols}
+	\end{frame}
+}	
+
+\numberwithin{subsection}{section}
+\renewcommand{\thefootnote}{\tiny $\dagger$}
+\setbeamertemplate{caption}[numbered]
+\graphicspath{{algebraIndividualLectures/}}
+	
+% % % % % % % % % % 
+\setbeamertemplate{theorems}[numbered]
+\numberwithin{theorem}{subsection}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}{Proposition}
+\newtheorem{dfn}{Definition}
+\newtheorem{cor}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{ex}{Example}
+\newtheorem{exe}{\color{orange!70!black}\bf Exercise}
+\newtheorem*{UNABexe}{\color{orange!40!black}\bf Exercise$^{\text{\textbf *}}$}
+\newtheorem*{que}{Question}
+
+\newcommand{\lilRefP}[1]{{\usebeamercolor[fg]{block title}(\ref{#1})}}
+\newcommand{\lilRefPd}[1]{{\usebeamercolor[fg]{block title}\ref{#1}.}}
+
+% % % % % % % % % % 
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\image}{image}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+
+\newcommand{\1}{^{-1}}
+\newcommand{\C}{\mathbb C}
+\renewcommand{\mod}[1]{\;(\text{mod } #1)}
+\newcommand{\N}{\mathbb N}
+\newcommand{\norml}{\mathrel{\triangleleft}} % strict normal subgroup
+%\newcommand{\normleq}{\mathrel{\trianglelefteq}} % normal subgroup
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\T}{^{\text{T}}}
+\newcommand{\vect}[1]{\mathbf #1}
+\newcommand{\Z}{\mathbb Z}
+
+\newcommand{\smallGap}{\vspace{3pt}}
+\newcommand{\pf}{\textbf{Proof: }}
+\newcommand{\bigProof}{
+	\begin{block}{Proof.}
+	\end{block}
+	\vspace{-1pc}
+	}
+\newcommand{\vocab}[1]{\alert{\bf #1}}
+\newcommand{\die}[1]{\raisebox{-0.5ex}{\text{\Cube{#1}}}}
+
+% The following macros are used for writing exercises to solutions:
+\newcommand{\answerKey}{
+	\subsection[\subsecname]{Solutions to exercises}\footnotesize
+	}
+\newcommand{\exeSol}[2][]{
+	\begin{block}
+	{Exercise \ref{#2} #1}
+	\end{block}
+	\vspace{-0.75pc}
+	\textbf{Solution:}
+	}
+
+% % % % % % % % % % % % % % % % % % % %
+\title[Group Theory]{
+	Lectures on Group Theory 
+	}
+\subtitle{}
+\author[Ashley K. Wheeler]{
+	{\large Ashley K. Wheeler} \\
+	\vspace{0.5pc}
+	{\small
+	\url{comp.uark.edu/~ashleykw} \\
+	Department of Mathematical Sciences \\
+	University of Arkansas}
+	}
+\institute[UArk]{}
+\date[2016 MSRI-UP]{\small
+	2016 Mathematical Sciences Research Institute \\
+	Undergraduate Program \\
+	\smallGap
+	Berkeley, CA \\ 
+	11 June -- 24 July,  2016 \\
+	
+	}
+\logo{\tiny{\it last updated:} \today \hspace{10pt}}
+
+% % % % % % % % % % % % % % % % % % % %
+\begin{document}
+% % %
+{
+\setbeamertemplate{headline}{\pgfuseshading{beamer@headfade}}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+% % %
+\begin{frame}{Overview}
+\begin{multicols}{2}
+%Preface
+%\smallGap
+\tableofcontents[sections={1-5}]
+\end{multicols}
+\end{frame}
+
+% % %
+\begin{frame}{Overview}
+\begin{multicols}{2}
+\tableofcontents[sections={6-10}]
+%Bibliography
+\end{multicols}
+\end{frame}
+}
+
+% % % % % % % % % %
+%\section*{Preface}
+% % %
+%\begin{frame}{\secname}{}\footnotesize
+%These slides are an unabridged version of the Group Theory Lectures given at the 2016 MSRI-UP.  Included are some finer details and invokations of advanced topics beyond the scope of the material needed for the research topic.
+%{\bf INTRODUCTION, THESE ARE A COMPANION TO LUIS' NOTES...
+%%CONVENTION ABOUT EXERCISES, EXAMPLES, VOCABULARY WORDS...
+%%EARLIER LECTURES FOCUS ON RIGOROUS TECHNIQUES IN PROOFS...}
+%\end{frame}
+
+% % % % % % % % % %
+\subfile{algebraIndividualLectures/UNAB2p1basicDefinitions}
+\subfile{algebraIndividualLectures/UNAB2p2basicProperties}
+\subfile{algebraIndividualLectures/UNAB2p3subgroups}
+\subfile{algebraIndividualLectures/UNAB2p4ordersOfGroupsAndElements}
+\subfile{algebraIndividualLectures/UNAB2p5cyclicGroups}
+\subfile{algebraIndividualLectures/UNAB2p6groupHomomorphisms}
+\subfile{algebraIndividualLectures/UNAB2p7quotientGroups}
+\subfile{algebraIndividualLectures/UNAB2p8firstIsomorphismTheorem}
+\subfile{algebraIndividualLectures/UNAB2p9diagonalizationOfIntegerMatrices}
+\subfile{algebraIndividualLectures/UNAB2p10FTOFinitelyGeneratedAbelianGroups}
+
+\begin{comment}
+% % % % % % % % % %
+\section*{Bibliography}
+% % %
+
+\begin{frame}[allowframebreaks]{References}
+\def\newblock{}
+\bibliographystyle{plain}
+\bibliography{mybib}
+\end{frame}
+
+\begin{frame}{\secname}{}
+{\bf PUT ONE HERE}
+
+@book {atiyah+macdonald,
+    AUTHOR = {Atiyah, M. F. and Macdonald, I. G.},
+     TITLE = {Introduction to commutative algebra},
+ PUBLISHER = {Addison-Wesley Publishing Co., Reading, Mass.-London-Don
+              Mills, Ont.},
+      YEAR = {1969},
+     PAGES = {ix+128},
+   MRCLASS = {13.00},
+  MRNUMBER = {0242802 (39 \#4129)},
+MRREVIEWER = {J. A. Johnson},
+}
+
+@book {dummit+foote,
+    AUTHOR = {Dummit, David S. and Foote, Richard M.},
+     TITLE = {Abstract algebra},
+   EDITION = {Third},
+ PUBLISHER = {John Wiley \& Sons, Inc., Hoboken, NJ},
+      YEAR = {2004},
+     PAGES = {xii+932},
+      ISBN = {0-471-43334-9},
+   MRCLASS = {00-01 (16-01 20-01)},
+  MRNUMBER = {2286236 (2007h:00003)},
+}
+
+@Book{Eisenbud94,
+  author =	"David Eisenbud",
+  title =	"Commutative algebra with a view toward algebraic
+		 geometry",
+  booktitle =	"Commutative algebra with a view toward algebraic
+		 geometry",
+  pages =	"xvi,785",
+  year = 	"1994",
+  volume =	"150",
+  series =	"Graduate Texts in Mathematics",
+  publisher =	"Springer-Verlag",
+  address =	"New York-Berlin-Heidelberg-London-Paris-Tokyo-Hong
+		 Kong-Barcelona-Budapest",
+  cdate =	"1970-01-01",
+  mdate =	"2005-08-18"
+}
+
+@book {MR1712872,
+    AUTHOR = {Mac Lane, Saunders},
+     TITLE = {Categories for the working mathematician},
+    SERIES = {Graduate Texts in Mathematics},
+    VOLUME = {5},
+   EDITION = {Second},
+ PUBLISHER = {Springer-Verlag, New York},
+      YEAR = {1998},
+     PAGES = {xii+314},
+      ISBN = {0-387-98403-8},
+   MRCLASS = {18-02},
+  MRNUMBER = {1712872},
+}
+
+@book {miller+sturmfels,
+    AUTHOR = {Miller, Ezra and Sturmfels, Bernd},
+     TITLE = {Combinatorial commutative algebra},
+    SERIES = {Graduate Texts in Mathematics},
+    VOLUME = {227},
+ PUBLISHER = {Springer-Verlag},
+   ADDRESS = {New York},
+      YEAR = {2005},
+     PAGES = {xiv+417},
+      ISBN = {0-387-22356-8},
+   MRCLASS = {13-01 (05-01 05E99 13D02 14M15 14M25)},
+  MRNUMBER = {2110098 (2006d:13001)},
+MRREVIEWER = {Joseph Gubeladze}
+}
+
+\end{frame}
+\end{comment}
+
+% % % % % % % % % % % % % % % % % % % %
+\end{document}
