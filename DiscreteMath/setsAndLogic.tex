@@ -1,0 +1,407 @@
+\input G:/Dropbox/Math/plainpreamb.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+       %%% The document starts here (WYSIWYG). %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\NoPageNumbers
+\headline{\ifnum\pageno=1{}\else\centerline{\rm DISCRETE MATHEMATICS}\fi}
+\rightheadline{\ifnum\pageno=1{}\else\centerline{\rm DISCRETE MATHEMATICS}\fi}
+\nologo         
+\parindent = 20 pt
+\centerline{\bf DISCRETE MATHEMATICS }\hfill\break
+\centerline{(lecture notes for Math 2603 at the University of Arkansas)}\hfill
+\centerline{Fall 2014}\hfill
+\centerline{by Ashley K. Wheeler}\hfill
+\centerline{\it Last modified: \today}\hfill
+
+\bigskip
+\centerline{\bf Sets and Logic}
+\medskip
+
+\proclaim{Definition} A {\bf set} is a collection of objects called elements or members; order is not taken into account. \endproclaim
+
+\ex $$A=\{a,b,c,d\}$$
+is a set.  Its elements are $a,b,c,\text{ and }d$.\endex
+
+Although the definition for set is very generic and vague, there are many less obvious examples of sets:
+
+\ex \endex
+
+\proclaim{Definition} Suppose $A$ is a set.  The non-negative integer 
+$$|A|=\text{number of elements in $A$}$$ 
+is called the {\bf cardinality} of $A$. \endproclaim
+
+\proclaim{Definition} The set with no elements is called the {\bf empty set} (also the {\bf null set}, or the {\bf void set}) and is denoted $\emptyset$, or $\left\{\right\}$. \endproclaim
+
+\proclaim{Definition} Two sets $X$ and $Y$ are {\bf equal} means $X$ and $Y$ have the same cardinality.  We write $X=Y$. \endproclaim
+
+\proclaim{Definition} Suppose $X,Y$ are sets.  $X$ is a {\bf subset} of $Y$ means every element of $X$ is an element of $Y$.  We write $X\subseteq Y$. \endproclaim
+
+\proclaim{Definition} The set of all subsets of a set $X$ is called the {\bf power set} of $X$, denoted $\Cal P(X)$, or $2^X$. \endproclaim
+
+\proclaim{Definition} Suppose $X\subseteq Y$.  $X$ is a {\bf proper subset} of $Y$ means, in addition, that $X$ does not equal $Y$.  We write $X\subset Y$.  Note, some authors write $X\subsetneq Y$ to emphasize non-equality. \endproclaim
+
+\proclaim{Definition} Let $X,Y$ denote sets.  The set
+$$X\cup Y=\left\{x\,|\,x\in X\text{ or }x\in Y\right\}$$
+is called the {\bf union} of $X$ and $Y$. \endproclaim
+
+\proclaim{Definition} Let $X,Y$ denote sets.  The set
+$$X\cap Y=\left\{x\,|\,x\in X\text{ and }x\in Y\right\}$$
+is called the {\bf intersection} of $X$ and $Y$. \endproclaim
+
+\proclaim{Definition} Let $X,Y$ denote sets.  The set
+$$X\setminus Y=\left\{x\,|\,x\in X\text{ and }x\notin Y\right\}$$
+is called the {\bf difference} or {\bf relative complement}.  Some authors use $X-Y$. \endproclaim
+
+\proclaim{Definition} The set $\Bbb R\setminus\Bbb Q$ is called the set of {\bf irrational numbers}. \endproclaim
+
+\proclaim{Definition} Sets $X$ and $Y$ are {\bf disjoint} means $X\cap Y=\emptyset$. \endproclaim
+
+\proclaim{Definition} A collection of sets $\Cal S$ is {\bf pairwise disjoint} means any two distinct sets in $\Cal S$ are disjoint. \endproclaim
+
+\proclaim{Definition} A {\bf universal set} or {\bf universe} is a set, usually inferred via context, whose subsets are those we are considering. \endproclaim
+
+\proclaim{Definition} Given a universal set $U$ with $X\subseteq U$, the set 
+$$\bar X=U\setminus X$$ 
+is called the {\bf complement} of $X$ in $U$. \endproclaim
+
+\proclaim{Definition} A {\bf Venn diagram} is a pictorial view of sets drawn as follows: A rectangle depicts the universal set.  Subsets of the universal set are drawn as circles.  The inside of a circle represents the members of that set. \endproclaim
+
+\proclaim{Theorem} Let $U$ be a universal set and let $A,B,C\subseteq U$. 
+\settabs 2 \columns
+\+ Associative Laws: & $(A\cup B)\cup C=A\cup(B\cup C)$ \cr
+\+ & $(A\cap B)\cap C=A\cap(B\cap C)$ \cr
+\+ Commutative Laws: & $A\cup B=B\cup A$ \cr
+\+ & $A\cap B=B\cap A$ \cr
+\+ Distributive Laws: & $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$ \cr
+\+ & $A\cup(B\cup C)=(A\cup B)\cap(A\cup C)$ \cr
+\+ Identity Laws: & $A\cup\emptyset=A$ \cr
+\+ & $A\cap U=A$ \cr
+\+ Complement Laws: & $A\cup\bar A=U$ \cr
+\+ & $A\cap\bar A=\emptyset$ \cr
+\+ Idempotent Laws: & $A\cup A=A$ \cr
+\+ & $A\cap A=A$ \cr
+\+ Bound Laws: & $A\cup U=U$ \cr
+\+ & $A\cap\emptyset=\emptyset$ \cr
+\+ Absorption Laws: & $A\cup(A\cap B)=A$ \cr
+\+ & $A\cap(A\cup B)=A$ \cr
+\+ Involution Laws: & $\bar{\bar A}=A$ \cr
+\+ $0/1$ Laws: & $\bar{\emptyset}=U$ \cr
+\+  & $\bar U=\emptyset$ \cr
+\+ De Morgan's Laws: & $\bar{(A\cup B)}=\bar A\cap\bar B$ \cr
+\+ & $\bar{(A\cap B)}=\bar A\cup\bar B$ \cr
+\endproclaim
+ 
+\pf Left as an exercise. \qed 
+
+\proclaim{Definition} A collection $\Cal S$ of non-empty sets of $X$ is a {\bf partition} of the set $X$ means every element in $X$ belongs to exactly one member of $\Cal S$. \endproclaim
+
+\proclaim{Definition} An {\bf ordered pair} of elements, written $(a,b)$ is considered distinct from the ordered pair $(b,a)$, unless $a=b$. \endproclaim
+
+\proclaim{Definition} Say $X,Y$ are sets.  The set of ordered pairs
+$$X\times Y=\left\{(x,y)\st x\in X\text{ and }y\in Y\right\}$$
+is called the {\bf Cartesian product} of $X$ and $Y$. \endproclaim
+
+\proclaim{Definition} Ordered lists need not be restricted to two elements.  An {\bf $n$-tuple}, written $(a_1,\dots,a_n)$ takes order into account. \endproclaim
+
+\proclaim{Definition} A \nz integer $d$ {\bf divides} an integer $m$ means there exists an integer $q$, called the {\bf quotient}, such that $m=dq$. A positive integer is {\bf prime} means the only positive integers that divide it are 1 and itself. \endproclaim
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\proclaim{Definition} A sentence that is either true of false, but not both, is called a {\bf proposition}. \endproclaim
+
+\proclaim{Definition} Suppose $P,Q$ are propositions.  The {\bf conjunction} of $P$ and $Q$ is \endproclaim
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bigskip
+\noindent{\bf Conditional Propositions and Logical Equivalence}
+\bigskip
+
+\proclaim{Definition} Suppose $P,Q$ are propositions.  The statement ``if $P$ then $Q$" is called a {\bf conditional proposition}, denoted $P\to Q$. $P$ is called the {\bf hypothesis}, or {\bf antecedent}.  $Q$ is called the {\bf conclusion}, or {\bf consequent}. \endproclaim
+
+\medskip
+\centerline{Truth Tables}
+\settabs 3 \columns
+\+{$P$} & {$Q$} & {$P\to Q$} \cr
+\+ true & true & true \cr
+\+ false & true & true \cr
+\+ false & false & true \cr
+\+ true & false & false \cr
+
+When a conditional has a false antecedent, its truth value is always true.  For this reason we sometimes say $P\to Q$ is {\it vacuously true} or {\it true by default}.  In the order of operations, $\rightarrow$ is evaluated last.
+
+Truth values can be difficult to parse when propositions are expressed in everyday conversation.  The following statements mean the same thing:
+\numberedlist
+\li ``if $P$, then $Q$"
+\li $P\to Q$
+\li ``$Q$ only if $P$"
+\li ``When $P$, $Q$."
+\li ``If not $Q$, then not $P$." (called the {\it contrapositive} to the conditional proposition $P\to Q$)
+\li $Q$ is necessary for $P$.
+\li $P$ suffices for $Q$.
+\endnumberedlist
+
+\proclaim{Definition} Suppose $R=P\to Q$.  The {\bf converse} of $R$ is $Q\to P$. \endproclaim
+
+Warning, the converse of a conditional and the contrapositive of a conditional are NOT THE SAME THING.
+
+\proclaim{Definition} A {\bf biconditional proposition}, denoted $P\leftrightarrow Q$, is defined by the truth table
+\+ $P$ & $Q$ & $P\leftrightarrow Q$ \cr
+\+ true & true & true \cr
+\+ true & false & false \cr
+\+ false & true & false \cr
+\+ false & false & true \cr
+\endproclaim 
+
+Some equivalent statements:
+\numberedlist
+\li ``$P\leftrightarrow Q$" 
+\li ``$P$ if and only if $Q$"
+\li ``$P$ is necessary and sufficient for $Q$."
+\li ``$Q$ is necessary and sufficient for $P$."
+\li ``$Q\leftrightarrow P$"
+\li ``$P$ iff $Q$"
+\endnumberedlist
+
+Defining a proposition via truth table remedies the ambiguity that comes with trying to express a logical statement in lay-speak.  Truth tables are very effective tools in writing proofs. 
+
+\proclaim{Definition} Two propositions are {\bf logically equivalent} means their truth tables are the same.  The symbol for logical equivalence is $\equiv$. \endproclaim
+
+\ex De Morgan's Laws:
+\numberedlist
+\li $\lnot\left(P\vee Q\right)\equiv\lnot P\wedge\lnot Q$
+\li $\lnot\left(P\wedge Q\right)\equiv\lnot P\vee\lnot Q$
+\endnumberedlist
+\pf In each case, the propositions we are trying to show are logically equivalent are the proposition on the lefthand side (LHS) of $\equiv$ and the proposition on the righthand side (RHS) or $\equiv$. 
+\numberedlist
+\li \settabs 4 \columns
+\+ $P$ & $Q$ & $\lnot\left(P\vee Q\right)$ & $\lnot P\wedge\lnot Q$ \cr
+\+ true & true & false & false \cr
+\+ true & false & false & false \cr
+\+ false & true & false & false \cr
+\+ false & false & true & true \cr
+\li
+\endnumberedlist
+
+\qed  
+
+
+%\bigskip
+%%% Bibliography %%%
+%\Refs\nofrills{Bibliography}
+%\widestnumber\key{SwMn}
+
+%\ref\key AtyM
+%\manyby M.F. Atiyah and I.G. MacDonald
+%\book Introduction to Commutative Algebra
+%\bookinfo Advanced Book Program
+%\publ Westview Press, A Member of the Perseus Books Group
+%\publaddr Boulder, Colorado
+%\yr 1969
+%\endref 
+
+%\ref\key BrH
+%\manyby W. Bruns and J. Herzog
+%\book Cohen-Macaulay Rings
+%\bookinfo Cambridge Studies in Advanced Mathematics 39
+%\publ Cambridge University Press
+%\publaddr Cambridge
+%\yr 1993
+%\endref 
+
+%\ref\key CaMa
+%\manyby G. Caviglia and D. Maclagan
+%\paper Some Cases of the Eisenbud-Green-Harris Conjecture
+%\yr 2007
+%\jour arXiv?
+
+%\ref\key ClLi
+%\manyby G.F. Clements and B. Lindstr\"om 
+%\paper A Generalization of a Combinatorial Theorem of Macaualay
+%\jour Journal of Combinatorial Theory
+%\vol 7
+%\pages 230-238
+%\yr 1969
+%\endref
+
+%\ref\key Coop
+%\manyby S.M. Cooper
+%\paper The Eisenbud-Green-Harris Conjecture for Ideals of Points
+%\jour ???
+%\yr 2008
+%\endref
+
+%\ref\key CoRo
+%\manyby S.M. Cooper and L.G. Roberts
+%\paper Algebraic Interpretation of a Theorem of Clements and Lindstr\"om
+%\jour Journal of Commutative Algebra ???
+%\yr 2008
+%\endref
+
+%\ref\key DuFo
+%\manyby David S. Dummit and Richard M. Foote
+%\book Abstract Algebra
+%\bookinfo Third Edition
+%\publ John Wiley and Sons, Inc.
+%\publaddr Hoboken, NJ
+%\yr 2004
+%\endref
+
+%\ref\key Eis
+%\by David Eisenbud
+%\book Commutative Algebra with a View Toward Algebraic Geometry
+%\bookinfo Graduate Texts in Mathematics {\bf 150} 
+%\publ Springer Science+Business Media, Inc.
+%\publaddr New York, NY
+%\yr 2004
+%\endref
+
+%\ref\key EGH1
+%\manyby D. Eisenbud, M. Green, J. Harris
+%\paper Higher Castelnuovo Theory
+%\jour Ast\'erisque
+%\vol 218
+%\pages 187-202
+%\yr 1993
+%\endref
+
+%\ref\key EGH2
+%\manyby D. Eisenbud, M. Green, J. Harris
+%\paper Cayley-Bacharach Theorems and Conjectures
+%\jour Bulletin of the American Mathematical Society
+%\vol 33(3)
+%\pages 295-324
+%\yr 1996
+%\endref
+
+%\ref\key EHar
+%\manyby D. Eisenbud, J. Harris
+%\book 3264 \& All That: Intersection Theory in Algebraic Geometry
+%\bookinfo
+%\publ preprint
+%\publaddr
+%\yr 2012
+%\endref
+
+%\ref\key Fult
+%\by William Fulton
+%\book Intersection Theory
+%\bookinfo 2nd Edition
+%\publ Springer-Verlaag
+%\publaddr New York, NY
+%\yr 1998
+%\endref
+
+%\ref\key Hart
+%\by Robin Hartshorne
+%\book Algebraic Geometry
+%\bookinfo Graduate Texts in Mathematics {\bf 52} 
+%\publ Springer Science+Business Media, LLC
+%\publaddr New York, NY
+%\yr 2006
+%\endref
+
+%\ref\key HD
+%\by Mel Hochster
+%\book $D$-modules and Lyubeznik's Finiteness Theorems for Local Cohomology
+%\bookinfo Notes, see \url{http://www.math.lsa.umich.edu/~hochster/615W11/dmod.pdf}
+%\publ Unpublished
+%\yr 2011
+%\endref
+
+%\ref\key Hoch
+%\by Mel Hochster
+%\book Math 614 Lecture Notes, Fall, 2010 
+%\bookinfo Course Notes, see \url{http://www.math.lsa.umich.edu/~hochster/614F10/614.html}
+%\publ Unpublished
+%\yr 2010
+%\endref
+
+%\ref\key HW11
+%\by Mel Hochster
+%\book Local Cohomology
+%\bookinfo Course Notes, see \url{http://www.math.lsa.umich.edu/~hochster/615W11/loc.pdf}
+%\publ Unpublished
+%\yr 2011
+%\endref
+
+%\ref\key Iyen
+%\manyby Srikanth B. Iyengar, Graham J. Leuschke, Anton Leykin, Claudia Miller, Ezra Miller, Anurag K. Singh, Uli Walther 
+%\book Twenty-Four Hours of Local Cohomology
+%\bookinfo Graduate Studies in Mathamatics, Volume 87
+%\publ American Mathematical Society 
+%\publaddr Providence, RI
+%\yr 2007
+%\endref
+
+%\ref\key Rich
+%\by B.P. Richert
+%\paper A Study of the Lex Plus Powers Conjecture
+%\jour Journal of Pure and Applied Algebra
+%\vol 186(2)
+%\pages 169-183
+%\yr 2004
+%\endref
+
+%\ref\key Sm
+%\by Karen Smith
+%\book Math 631: Intro to Algebraic Geometry; Fall 2008 Problem Sets
+%\bookinfo see \url{http://www.math.lsa.umich.edu/~kesmith/2008-631hmwk.html}
+%\publ Unpublished
+%\yr 2008
+%\endref
+
+%\ref\key Stan
+%\by R.P. Stanley
+%\paper Hilbert Functions of Graded Algebras
+%\jour Advances in Mathematics
+%\vol 28
+%\pages 57-83
+%\yr 1978
+%\endref
+
+%\ref\key Weib
+%\by Charles A. Weibel
+%\book An introduction to homological algebra
+%\bookinfo Cambridge studies in advanced mathematics, 38
+%\publ Cambridge University Press
+%\publaddr Cambridge, United Kingdom
+%\yr 1994
+%\endref
+
+%%% online template %%%
+%\Refs : : : \endRefs list of references
+%\refstyle#1 specify style A, B, or C
+%A = initials, B = name, C = number
+%\ref : : : \endref individual reference
+%\no or \key number or key for reference
+%\widestnumber\no#1 or \widestnumber\key#1
+%\by author
+%\bysame same as previous author
+%\paper name of paper
+%\vol volume
+%\yr year of publication
+%\jour journal
+%\page or \pages page(s)
+%\toappear to appear
+%\inbook article in a book
+%\moreref additional reference information
+%\paperinfo extra information after paper title
+%\procinfo information about proceedings
+%\issue issue number
+%\lang language
+%\transl information about translated version
+%\book book
+%\ed or \eds editor(s)
+%\publ publisher
+%\publaddr publisher address
+%\bookinfo extra information after book title
+%\finalinfo extra information for end
+%\miscnote same as \finalinfo, in parens.
+
+%\endRefs
+
+\bye
