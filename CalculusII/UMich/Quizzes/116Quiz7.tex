@@ -1,0 +1,99 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{pstricks, pst-node, pst-plot}
+
+\ifx\pdfoutput\undefined
+% we are running LaTeX, not pdflatex
+\usepackage{graphicx}
+\else
+% we are running pdflatex, so convert .eps files to .pdf
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\fi
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bv}{\mathbf}
+\newcommand{\lv}{\langle}
+\newcommand{\rv}{\rangle}
+
+\begin{document}
+\flushleft
+\begin{multicols}{2}
+
+\begin{large}\textbf{Math 116 Quiz 7: $\oint$ 9.1-9.3 \\ (Sequences and Series) \\
+Tue 20 Nov 2012}\end{large}
+
+\textbf{Name:  }\underline{\hspace{35ex}}
+
+\vspace{.5in}
+
+\end{multicols}
+
+\pagestyle{empty}
+
+\flushleft
+
+You have 35 minutes to complete this quiz.  Eyes on your own paper and good luck!
+
+\begin{enumerate}
+\item  \textbf{Definitions/Concepts.} (1 pt ea) Decide whether each of the statements below is \emph{True} or \emph{False}.  Write the entire word \emph{True} or \emph{False}.  If the statement is false, briefly explain why. 
+\begin{enumerate}
+\item A convergent sequence is bounded.
+
+\vfill
+\item A bounded sequence converges.
+
+\vfill 
+\item Changing a finite number of terms in a series does not change whether or not it converges, although it may change the value of its sum if it does converge.
+
+\vfill
+\item If $\sum_{n=1}^{\infty}a_n$ converges, then $\lim_{n\to\infty}a_n=0$.
+
+\vfill
+\end{enumerate}
+ 
+\item \textbf{Questions/Problems.} {\it (from April 2011 Final Exam)} You are trapped on an island, and decide to build a signal fire to alert passing ships.  You start the fire with 200 pounds of wood.  During the course of a day, $40\%$ of the wood pile burns away (so $60\%$ remains).  At the end of each day, you add another 200 pounds of wood to the pile.  Let $W_n$ denote the weight of the wood pile immediately after adding the $n$th load of wood (the inital 200-pound pile counts as the first load).
+
+\begin{enumerate}
+\item (3 pts) Find expressions for $W_1$, $W_2$, $W_3$.
+
+%{\it -see the solution posted on the course website -}
+\vspace{10pc}
+\item (3 pts) Find a closed form expression for $W_n$ (a {\it closed form} expression means your answer should not contain a large summation).
+
+%{\it -see the solution posted on the course website -}
+\vspace{8pc}
+\item (2 pts) Instead of starting with 200 pounds of wood and adding 200 pounds every day, you decide to start with $P$ pounds of wood and add $P$ pounds every day.  If you plan to continue the fire indefinitely, determine the largest value of $P$ for which the weight of the wood pile will never exceed 1000 pounds.
+
+\vspace{8pc}
+\end{enumerate}
+
+\vspace{1pc}
+%\hfill{\bf MORE QUIZ ON THE BACK --\textgreater}
+
+\item \textbf{Computations/Algebra.} 
+ 
+\begin{enumerate}
+\item (1 pt) Find a formula for the general term of the sequence $\frac{1}{3},\,\frac{2}{5},\,\frac{3}{7},\,\frac{4}{9},\,\frac{5}{11},\dots$.
+\[s_n=\hspace{10pc}\]
+
+%\vspace{1pc}
+\item (2 pts) Does the sequence given by $s_n=\frac{2n+(-1)^n5}{4n-(-1)^n3}$ converge or diverge?  If it converges then find its limit.
+
+\vspace{5pc}
+\item (3 pts) Find the first three terms of the sequence of partial sums for the series $\sum_{n=1}^{\infty}\frac{1}{n(n+1)}$.
+
+\vspace{8pc}
+\item (2 pts) Does the series $\sum_{n=1}^{\infty}\frac{n+1}{2n+3}$ converge or diverge?
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
+

@@ -1,0 +1,104 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{pstricks, pst-node, pst-plot}
+
+\ifx\pdfoutput\undefined
+% we are running LaTeX, not pdflatex
+\usepackage{graphicx}
+\else
+% we are running pdflatex, so convert .eps files to .pdf
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\fi
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bv}{\mathbf}
+\newcommand{\lv}{\langle}
+\newcommand{\rv}{\rangle}
+
+\begin{document}
+\flushleft
+\begin{multicols}{2}
+
+
+\begin{large}\textbf{Math 116 Quiz 2: $\oint$ 6.4, 7.1-7.2 \\
+Tue 18 Sep 2012}\end{large}
+
+\textbf{Name:  }\underline{\hspace{35ex}}
+
+\vspace{.5in}
+
+\end{multicols}
+
+\pagestyle{empty}
+
+
+\flushleft
+
+You have 15 minutes to complete this quiz.  Eyes on your own paper and good luck!
+
+\begin{enumerate}
+
+\item \textbf{Definitions/Concepts.} (1 pt)  Fill in the blank:
+
+\vspace{1pc}
+The method of substitution reverses the \mbox{\parbox[t]{27.5ex}{\hrulefill}} rule.  The method of integration by parts reverses the \mbox{\parbox[t]{27.5ex}{\hrulefill}} rule.
+
+\vspace{2pc}
+
+\item \textbf{Questions/Problems.} (4 pts)
+\noindent Suppose $g(x)$ is given by the graph to the right, below.  Find $\int_0^4\,x\,g'(x)\,dx$.
+\smallskip
+\begin{flushright}
+\includegraphics[width=2in]{0425_01.eps}
+\end{flushright}
+
+%\noindent
+%One way of solving this is to note that $g'(x) = 0$ everywhere except
+%$1<x<2$, where $g'(x) = -1$.  Therefore
+%$\int_0^4\,x\,g'(x)\,dx = \int_1^2\,x\,(-1)\,dx = -{1\over
+%2}x^2\big|_1^2 = -2 + {1\over2} = -{3\over 2}$.
+%\smallskip
+%We can also do this with integration by parts on this: with $u = x$ and $v' =
+%g'(x)$ (so that $u' = 1$ and $v = g(x)$),
+%$\int\,x\,g'(x)\,dx = x\cdot g(x) - \int\,g(x)\,dx$.  If we evaluate
+%this over $0\le x\le 4$, we get
+%$x\cdot g(x)\big|_0^4 - \int_0^4\,g(x)\,dx = 4\,g(4) - 0\,g(0) -
+%\hbox{area under }g(x)$.  We see $g(4) = 2$ and the area under $g(x)$
+%is 9.5, so that the integral gives $4(2) - 9.5 = -1.5$, which is the same as before.
+%
+
+
+\item \textbf{Computations/Algebra.} 
+
+\begin{enumerate}
+\item (3 pts) Using the 2nd FTOC and the Chain Rule, calculate $\frac{d\ }{dt}\int_{e^t}^{t^{4}}\sqrt{8+x^{2}}\,dx$.
+\vspace{5pc}
+\item (3 pts ea) Evaluate the integrals.  {\bf Then check by differentiating your answer.}
+\begin{enumerate}
+\item $\int x^2\sin xdx=$
+\vspace{4pc}
+\item $\int (\alpha^2+3)^2d\alpha=$
+
+\vspace{4pc}
+\hfill{\bf MORE QUIZ ON THE BACK --\textgreater}
+\vfill
+\item $\int\frac{e^x-e^{-x}}{e^x+e^{-x}}dx=$
+\vspace{5pc}
+\item $\int (\ln t)^2dt$
+\vspace{5pc}
+\end{enumerate}
+
+\end{enumerate}
+\end{enumerate}
+
+{\bf ChAlLeNgE pRoBlEm:} Derive the following formula:
+\[\int x^ne^xdx=x^ne^x-n\int x^{n-1}e^xdx\]  
+
+\end{document}
+
+
