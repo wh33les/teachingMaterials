@@ -1,0 +1,264 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+\usepackage{graphicx, caption}	
+\usepackage{array, multicol, tabu}
+\usepackage{amsmath}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{url}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\everymath{\displaystyle}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\addtolength{\headheight}{2.92\baselineskip}
+	\lhead{\bf MATH 2554 (Calculus I) \\
+		Spring 2016 \\
+		}
+	\rhead{{Name:} \underline{\hspace{40ex}} \\
+		\vspace{0.5pc}
+		Fri 4 Mar 2016}
+	\rfoot{Exam 2 p.\thepage\ (of \pageref{LastPage})}
+	}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\title{\vspace{-8pc}
+\vfill{\Huge
+	\bf Exam 2: Derivatives (\S 3.2-3.8)} 
+	}
+\author{}
+\date{}
+
+\rfoot{Exam 2 p.\thepage\ (of \pageref{LastPage})}
+
+\begin{document}
+\maketitle
+%\vfill
+\vspace{-3pc}
+\noindent{\bf Exam Instructions:} You have 50 minutes to complete this exam.  Justification is required for all problems.  Notation matters!  You will also be penalized for missing units and rounding errors.  No electronic devices (phones, iDevices, computers, etc) except for a \textbf{basic scientific calculator}.  %If you finish early then you may leave, UNLESS there are less than 5 minutes of class left.  To prevent disruption, if you finish with less than 5 minutes of class remaining then please stay seated and quiet.
+
+\begin{flushright}
+In addition, please provide the following data:
+
+\vspace{1.5pc}
+Drill Instructor: \underline{\hspace{40ex}}
+
+\vspace{1.5pc}
+Drill Time: \underline{\hspace{40ex}}
+\end{flushright}
+
+%\vspace{2pc}
+\vfill
+\noindent\textbf{Your signature below indicates that you have read this page and agree to follow the Academic Honesty Policies of the University of Arkansas.}  
+
+\vspace{2pc}
+\noindent Signature: {\bf (1 pt)} \underline{\hspace{73ex}}
+
+%\vfill
+\begin{flushright}\Large Good luck!\end{flushright}
+
+\begin{enumerate}[1.]
+% % % % % % % % % %	
+%\newpage
+% % %
+%\item {\bf (3.8 M 1 min)} 
+%Find $\frac{dw}{dz}$, given $w^2-3zw=2$.
+%\vspace{17pc}
+
+
+
+
+% % % % %
+\newpage 
+%\item {\bf (3.7 M 3 min)} 
+%Recall that a function $f$ is \textbf{even} means for all $x$, $f(-x)=f(x)$, i.e, the graph is symmetric about the $y$-axis.  A function $f$ is \textbf{odd} means for all $x$, $f(-x)=-f(x)$, or, equivalently, $-f(-x)=f(x)$.  In that case the graph is symmetric about the origin.   
+%\begin{enumerate}
+%	\item If $f$ is even and differentiable, then is $f'$ even, odd, or neither?
+%	\vspace{5pc}
+%	
+%	\item If $f$ is odd and differentiable, then is $f'$ even, odd, or neither? 
+%	\vspace{5pc}
+%\end{enumerate}	
+
+% % %
+%\item %{\bf (3.7 H 1 min)} 
+%Find $\frac{d^2}{dx^2}(f(g(x))$.
+%\vspace{5pc}
+
+% % %
+\item {\bf (2 pts ea)} %(3.7 H 2 min)} 
+Assume $f$ is a differentiable function whose graph passes through the point $(1,4)$.  Suppose $g(x)=f(x^2)$ and the line tangent to the graph of $f$ at $(1,4)$ is $y=3x+1$.  Determine each of the following:
+\begin{enumerate}
+	\item $g(1)$
+	\vspace{2pc}
+	
+	\item $g'(x)$
+	\vspace{2pc}
+	
+	\item $g'(1)$
+	\vspace{1pc}
+\end{enumerate}
+
+% % %
+\item {\bf (4 pts)} %3.7} 
+Find $y'$, given 
+%\begin{enumerate}
+%{\bf (H 1 min)} 
+	$y=\sin{(\tan^3{(xe^{5x+2})})}$.  You do not need to simplify.
+	\vspace{18pc}
+%		
+%	\item %{\bf (M 1 min)} 
+%	$y=\left(\frac{e^x}{4x+2}\right)^5$
+%	\vspace{15pc}
+%	
+%	\item %{\bf (M 1 min)} 
+%	$y=\sin^2{(e^{3x+1})}$
+%	\vspace{15pc}
+%\end{enumerate}
+
+%\item {\bf (3.5 M 3 min)} 
+%Verify the following derivative formula using the Quotient Rule:
+%\[
+%\frac{d}{dx}\csc x=-\csc x\cot x
+%\]
+%\vspace{15pc}
+\item {\bf (6 pts)} %(3.3 M 2 min)} 
+Find the equation of the line tangent to the curve $y=x+\sqrt x$ that has slope 2.
+\vspace{20pc}
+
+% % % % %
+\newpage
+
+% % %
+\item %{\bf (3.6 CALCULATOR 11 min)} 
+Two stones are thrown vertically upward with matching initial velocities of 48 ft/s at time $t=0$.  One stone is thrown from the edge of a bridge that is 32 ft above the ground and the other stone is thrown from ground level.  The height of the stone thrown from the bridge after $t$ seconds is
+\[
+f(t)=-16t^2+48t+32
+\]
+and the height of the stone thrown from the ground after $t$ seconds is 
+\[
+g(t)=-16t^2+48t.
+\]
+\begin{enumerate}
+	\item {\bf (6 pts)} Show that the stones reach their high points at the same time.
+	\vspace{15pc}
+	
+	\item {\bf (6 pts)} How much higher does the stone thrown from the bridge go than the stone thrown from the ground?
+	\vspace{15pc}
+	\newpage
+	
+	\item {\bf (12 pts)} When do the stones strike the ground and with what velocities?  Include the exact numerical answers in your work, then round your final answer to three decimal places.  
+	\vspace{22pc}
+\end{enumerate}
+
+% % %
+\item {\bf (5 pts)} %(3.5 E 1 min)} 
+Evaluate $\lim_{\theta\to 0}\frac{\cos^2{\theta}-1}{\theta}$.
+\vspace{13pc}
+
+\item[\Huge$\star$] {\bf ~*EXTRA CREDIT*~ (2 pts)} %3.4} 
+One of several \textbf{Leibniz Rules} in calculus deals with higher-order derivatives of products.  Let $(fg)^{(n)}$ denote the $n$th derivative of the product $fg$, for $n\geq 1$.
+%{\bf (M 1 min)} 
+Prove that $(fg)^{(2)}=f''g+2f'g'+fg''$.
+\vspace{12pc}
+
+% % %
+%\item %{\bf (3.6 M 1 min)} 
+%On the moon, a feather will fall to the ground at the same rate as a heavy stone.  Suppose a feather is dropped from a height of 40 m above the surface of the moon.  Then its height $s$ (in meters) above the ground after $t$ seconds is $s=40-0.8t^2$.  Determine the velocity and acceleration of the feather the moment it strikes the surface of the moon.
+%\vspace{25pc}
+
+% % % % %
+%\newpage
+\newpage
+
+% % %
+\item {\bf (12 pts)} %(3.8 H 5 min)} 
+Find $\frac{d^2w}{dz^2}$, given $\sin z+z^2w=10$.  You do not have to simplify but your answer should only contain the quantities $z$ and $w$ -- i.e., no derivatives.
+\vspace{27pc}
+
+% % %
+\item {\bf (3 pts ea)} %(3.4 M 2 min)} 
+Use the following table to find the given derivatives.
+\[
+\begin{tabu}{c | c | c | c | c}
+\vect x & \vect{f(x)} & \vect{f'(x)} & \vect{g(x)} & \vect{g'(x)} \\
+\hline
+1 & 5 & 4 & 3 & 2 \\
+\hline
+2 & 2 & 4 & 3 & 1
+\end{tabu}
+\]
+\begin{enumerate}
+	%\item $\left.\frac{d}{dx}\left(\frac{f(x)g(x)}{2}\right)\right|_{x=1}$
+	%\vspace{6pc}
+	%
+	\item $\left.\frac{d}{dx}\left(x^2+f(x)\right)\right|_{x=2}$
+	\vspace{6pc}
+	
+	\item $\left.\frac{d}{dx}\left(xg(x)\right)\right|_{x=1}$
+	\vspace{6pc}
+\end{enumerate}	
+
+
+%\newpage
+% % %
+%\item {\bf 3.4} 
+%Suppose $f(2)=2$ and $f'(2)=3$.  Let %$g(x)=x^2\cdot f(x)$ and 
+%$h(x)=\frac{f(x)}{x-3}$.
+%\begin{enumerate}
+%	\item %{\bf M 1 min)} 
+%	Find an equation of the line tangent to $y=g(x)$ at $x=2$.
+%	\vspace{18pc}
+%	
+	%\item 
+%{\bf (M 1 min)} 
+%	Find an equation of the line tangent to $y=h(x)$ at $x=2$.
+%	\vspace{18pc}
+%\end{enumerate}
+
+% % % % %
+%\newpage
+% % %
+
+
+% % % % %
+\newpage
+\item %{\bf (3.2 E 3 min)} 
+A common model for population growth uses the logistic (or \textbf{sigmoid}) curve.  Consider the logistic curve in the figure, where $P(t)$ is the population at time $t\geq 0$.
+
+\begin{figure*}[h]
+\centering{\includegraphics*[scale=0.6]{exam2Logistic}}
+\caption*{\textbf{Logistic growth} (p. 143 \emph{Calculus: Early Transcendentals}, Briggs, et al., 2nd Edition).}
+\end{figure*}
+
+\begin{enumerate}
+	\item {\bf (2 pts)} At approximately what time is the rate of growth $P'$ the greatest?
+	\vspace{3pc}
+	
+	\item {\bf (2 pts)} Is $P'$ positive or negative for $t\geq 0$?
+	\vspace{3pc}
+	
+	\item {\bf (2 pts)} Is $P'$ an increasing or decreasing function of time (or neither)?
+	\vspace{3pc}
+	
+	\item {\bf (5 pts)} Sketch the graph of $P'$ on the same axes.  You do not need to worry about a vertical scale.  
+	\vspace{2pc}	
+\end{enumerate}
+
+% % % 
+\item[\Huge$\star$] {\bf ~*EXTRA CREDIT* (3 pts)} %EC (3.7 H 1 min)} 
+Suppose $f$ and $g$ are differentiable for all real numbers, and $m$ and $n$ are integers.  Find $y'$, given $y=f(g(x^m))^n$.
+\vspace{5pc}
+
+% % % % % % % % % %
+\end{enumerate}
+\end{document}
+
+

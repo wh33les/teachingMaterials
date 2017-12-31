@@ -1,0 +1,731 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+\usepackage{graphicx}	
+\usepackage{array, multicol, tabu}
+\usepackage{amsmath}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{url}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+%\everymath{\displaystyle}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\addtolength{\headheight}{2.92\baselineskip}
+	\lhead{\bf MATH 2554 (Calculus I) \\
+		Spring 2016 \\
+		}
+	\rhead{{Name:} {\LARGE PROBLEM BANK} \\
+		\vspace{0.5pc}
+		Fri 4 Mar 2016}
+	\rfoot{Exam 2 p.\thepage\ (of \pageref{LastPage})}
+	}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\title{\vspace{-8pc}
+\vfill{\Huge
+	\bf Exam 2: Derivatives (\S 3.2-3.8)} 
+	}
+\author{}
+\date{}
+
+\rfoot{Exam 2 p.\thepage\ (of \pageref{LastPage})}
+
+\begin{document}
+\maketitle
+%\vfill
+\vspace{-3pc}
+\noindent{\bf Exam Instructions:} You have 50 minutes to complete this exam.  Justification is required for all problems.  No electronic devices (calculators, phones, iDevices, computers, etc).  If you finish early then you may leave, UNLESS there are less than 5 minutes of class left.  To prevent disruption, if you finish with less than 5 minutes of class remaining then please stay seated and quiet.
+
+\begin{flushright}
+In addition, please provide the following data:
+
+\vspace{1.5pc}
+Drill Instructor: \underline{\hspace{40ex}}
+
+\vspace{1.5pc}
+Drill Time: \underline{\hspace{40ex}}
+\end{flushright}
+
+%\vspace{2pc}
+\vfill
+\noindent\textbf{Your signature below indicates that you have read this page and agree to follow the Academic Honesty Policies of the University of Arkansas.}  
+
+\vspace{2pc}
+\noindent Signature: {\bf (1 pt)} \underline{\hspace{73ex}}
+
+%\vfill
+\begin{flushright}\Large Good luck!\end{flushright}
+
+\begin{enumerate}[1.]
+% % % % % % % % % %	
+\newpage
+\item {\bf (3.8 M 2 min)} Find $\frac{dy}{dx}$, given $x^2(y-2)-e^y=0$.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item implicit
+\item $e^x$
+\item prod rule
+\end{itemize}}
+
+% % %
+\item {\bf (3.8 M 1 min)} Find $\frac{dw}{dx}$, given $w^2-3zw=2$.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item other vars
+\item implicit
+\item prod rule
+\end{itemize}}
+
+% % %
+\item {\bf (3.8 M 4 min)} Find the slope of the curve $5\sqrt x-10\sqrt y=\sin x$ at the point $(4\pi,\pi)$.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item implicit
+\item plug-in
+\item trig
+\item alg fct
+\end{itemize}}
+	
+% % %
+\item {\bf (3.8 M 3 min)} Find $\frac{dv}{du}$, given $\sqrt{3u^7+v^2}=\sin^2v+100uv$.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item other vars
+\item alg fct
+\item implicit
+\item trig
+\item prod rule
+\end{itemize}}
+
+% % %
+\item {\bf (3.8 M 1 min)} The volume of a torus with an inner radius of $a$ and an outer radius of $b$ is 
+\[
+V=\textstyle\frac{1}{4}\pi^2(b+a)(b-a).
+\]
+Find $\frac{db}{da}$ for a torus with a volume of $64\pi^2$.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item implicit
+\item context/other vars
+\item prod rule
+\end{itemize}}
+
+% % %
+\item {\bf (3.8 H 3 min)} The lateral surface area of a cone of radius $r$ and height $h$ (the surface area excluding the base) is 
+\[
+A=\pi r\sqrt{r^2+h^2}.
+\]
+Find $\frac{dr}{dh}$ for a cone with a lateral surface area of $1500\pi$.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item implicit
+\item alg fct
+\item prod rule
+\item context/other vars
+\end{itemize}}
+
+% % %
+\item {\bf (3.8 M 4 min)} Find $y''$, given $x^4+y^4=64$.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item higher order
+\item implicit
+\end{itemize}}
+
+% % %
+\item {\bf (3.8 H 5 min)} Find $y''$, given $\sin x+x^2y=10$.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item higher order
+\item implicit
+\item trig
+\item prod rule
+\end{itemize}}
+
+% % % % %
+%\newpage 
+\item {\bf (3.7 M 3 min)} Recall that a function $f$ is \textbf{even} means for all $x$, $f(-x)=f(x)$, i.e, the graph is symmetric about the $y$-axis.  A function $f$ is \textbf{odd} means for all $x$, $f(-x)=-f(x)$, or, equivalently, $-f(-x)=f(x)$.  In that case the graph is symmetric about the origin.   
+\begin{enumerate}
+	\item If $f$ is even and differentiable, then is $f'$ even, odd, or neither?
+	%\vspace{5pc}
+	
+	\item If $f$ is odd and differentiable, then is $f'$ even, odd, or neither? 
+	%\vspace{5pc}
+\end{enumerate}	
+{\bf\begin{itemize}
+\item chain
+\item abst fct
+\item context
+\end{itemize}}
+
+% % %
+\item {\bf (3.7 H 1 min)} Find $\frac{d^2}{dx^2}(f(g(x))$.
+%\vspace{5pc}
+{\bf\begin{itemize}
+\item higher order
+\item chain
+\item abst fct
+\end{itemize}}
+
+% % %
+\item {\bf (3.7 H 10 min)} A mechanical oscillator (such as a mass on a spring or a pendulum) subject to frictional forces satisfies the equation (called a \textbf{differential equation})
+\[
+y''(t)+2y'(t)+5y(t)=0,
+\]
+where $y$ is the displacement of the oscillator from its equilibrium position.  Verify by substitution that the function 
+\[
+y(t)=e^{-t}(\sin{2t}-2\cos{2t})
+\]
+satisfies this equation.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item trig
+\item higher order
+\item prod rule
+\item context/other vars
+\item chain
+\end{itemize}}
+
+% % %
+\item {\bf (3.7 M 2 min)} Suppose $f$ is differentiable on $[-2,2]$ with $f'(0)=3$ and $f'(1)=5$.  Let $g(x)=f(\sin x)$.  Evaluate the following expressions.
+\begin{enumerate}
+	\item $g'(0)$
+	%\vspace{3pc}
+	
+	\item $g'\left(\frac{\pi}{2}\right)$
+	%\vspace{3pc}
+	
+	\item $g'(\pi)$
+	%\vspace{3pc}
+\end{enumerate}
+{\bf\begin{itemize}
+\item chain
+\item plug in
+\item trig
+\item abst fct
+\end{itemize}}
+
+% % %
+\item {\bf (3.7 H 2 min)} Assume $f$ is a differentiable function whose graph passes through the point $(1,4)$.  Suppose $g(x)=f(x^2)$ and the line tangent to the graph of $f$ at $(1,4)$ is $y=3x+1$.  Determine each of the following.
+\begin{enumerate}
+	\item $g(1)$
+	%\vspace{3pc}
+	
+	\item $g'(x)$
+	%\vspace{3pc}
+	
+	\item $g'(1)$
+	%\vspace{3pc}
+\end{enumerate}
+{\bf\begin{itemize}
+\item chain
+\item tan line given
+\item abst fct
+\item plug in
+\end{itemize}}
+
+% % %
+\item {\bf (3.7 M 1 min)} Suppose $f$ and $g$ are differentiable and non-negative at $x$.  Find the derivative of $y=\sqrt{f(x)g(x)}$.
+%\vspace{5pc}
+{\bf\begin{itemize}
+\item chain
+\item abst fct
+\item alg fct
+\item prod rule
+\end{itemize}}
+
+% % % 
+\item {\bf (3.7 H 1 min)} Suppose $f$ and $g$ are differentiable for all real numbers, and $m$ and $n$ are integers.  Find $y'$, given $y=f(g(x^m))^n$.
+%\vspace{5pc}
+{\bf\begin{itemize}
+\item chain
+\item proof
+\end{itemize}}
+
+% % %
+\item {\bf 3.7} For each of the following, find $y'$.
+\begin{enumerate}
+	\item {\bf (M 2 min)} $y=\left(\displaystyle\frac{e^x}{x+1}\right)^8$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item qrule
+\item chain
+\item $e^x$
+\end{itemize}}
+
+	\item {\bf (H 1 min)} $y=\tan{(xe^x)}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item other trig
+\item prod rule
+\item $e^x$
+\item chain
+\end{itemize}}
+	
+	\item {\bf (M 1 min)} $y=\left(\displaystyle\frac{e^x}{4x+2}\right)^5$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item chain
+\item qrule
+\item $e^x$
+\end{itemize}}
+	\item {\bf (M 2 min)} $y=e^{2x}(2x-7)^5$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item prod rule
+\item chain
+\item $e^x$
+\end{itemize}}
+	\item {\bf (M 1 min)} $y=\displaystyle\frac{te^t}{t+1}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item prod rule
+\item other vars
+\item $e^x$
+\item qrule
+\end{itemize}}
+	\item {\bf (M 1 min)} $y=(z+4)^3\tan z$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item prod rule
+\item other vars
+\item chain
+\item other trig
+\end{itemize}}
+	\item {\bf (M 2 min)} $y=\sqrt{(3x-4)^2+3x}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item chain x2
+\item alg fct
+\end{itemize}}
+	\item {\bf (M 1 min)} $y=\sin^2{(3^{3x+1})}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item trig
+\item chain x3
+\item $b^x$
+\end{itemize}}
+	\item {\bf (M 1 min)} $y=\cos^4{(7x^3)}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item trig
+\item chain x2
+\end{itemize}}
+	\item {\bf (E 1 min)} $y=(1-e^{-0.05x})^{-1}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item neg exp
+\item $e^x$
+\item chain x2
+\end{itemize}}
+	\item {\bf (H 2 min)} $y=\sqrt{x+\sqrt{x+\sqrt x}}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item chain x2
+\item alg fct
+\end{itemize}}
+\end{enumerate}
+
+% % %
+\item {\bf (3.7 M 5 min)} Let $h(x)=f(g(x))$ and $k(x)=g(g(x))$.  Use the table
+\[
+\begin{tabu}{c | c | c | c | c | c}
+\vect x & 1 & 2 & 3 & 4 & 5 \\
+\hline 
+\vect{f'(x)} & -6 & -3 & 8 & 7 & 2 \\
+\hline
+\vect{g(x)} & 4 & 1 & 5 & 2 & 3 \\
+\hline
+\vect{g'(x)} & 9 & 7 & 3 & -1 & -5
+\end{tabu}
+\]
+to compute the following derivatives.
+\begin{enumerate}
+	\item $h'(1)$
+	%\vspace{2pc}
+	
+	\item $h'(2)$
+	%\vspace{2pc}
+	
+	\item $h'(3)$
+	%\vspace{2pc}
+	
+	\item $k'(3)$
+	%\vspace{2pc}
+	
+	\item $k'(1)$
+	%\vspace{2pc}
+	
+	\item $k'(5)$
+	%\vspace{2pc}	
+\end{enumerate}
+{\bf\begin{itemize}
+\item chain
+\item table derivs
+\item abst fct
+\end{itemize}}
+
+% % % % %
+%\newpage
+\item {\bf (3.6 M 7 min)} A cost function of the form $C(x)=\frac{1}{2}x^2$ reflects \textbf{diminishing returns to scale}.  Find and graph the cost, average cost, and marginal cost functions.  Interpret the graphs and explain the idea of diminishing returns.
+%\vspace{20pc}
+{\bf\begin{itemize}
+\item graph
+\item interpret
+\item $C(s)$
+\end{itemize}}
+
+% % %
+\item {\bf (3.6 CALCULATOR 11 min)} Two stones are thrown vertically upward with matching initial velocities of 48 ft/s at time $t=0$.  One stone is thrown from the edge of a bridge that is 32 ft above the ground and the other stone is thrown from gorund level.  The height of the stone thrown from the bridge after $t$ secconds is
+\[
+f(t)=-16t^2+48t+32
+\]
+and the height of the stone thrown from the ground after $t$ seconds is 
+\[
+g(t)=-16t^2+48t.
+\]
+
+\begin{enumerate}
+	\item Show that the stones reach their heigh points at the same time.
+	%\vspace{12pc}
+	
+	\item How much higher does the stone thrown from the bridge go than the stone thrown from the ground?
+	%\vspace{12pc}
+	
+	\item When do the stones strike the ground and with what velocities?
+	%\vspace{12pc}
+\end{enumerate}
+
+% % %
+\item {\bf (3.6 M 1 min)} On the moon, a feather will fall to the ground at the same rate as a heavy stone.  Suppose a feather is dropped from a height of 40 m above the surface of the moon.  Then its height $s$ (in meters) above the ground after $t$ seconds is $s=40-0.8t^2$.  Determine the velocity and acceleration of the feather the moment it strikes the surface of the moon.
+%\vspace{20pc}
+{\bf\begin{itemize}
+\item story
+\end{itemize}}
+
+% % %
+\item {\bf (3.6 CALCULATOR 7 min)} Suppose a stone is thrown vertically upward from the edge of a cliff on Mars (where the acceleration due to gravity is only about 12 ft/s$^\text{2}$) with an initial velocity of 64 ft/s from a height of 192 ft above the ground.  The height $s$ of the stone above the ground after $t$ seconds is given by 
+\[
+s=-6t^2+64t+192.
+\] 
+\begin{enumerate}
+	\item Determine the velocity $v$ of the stone after $t$ seconds.
+	%\vspace{5pc}
+	
+	\item When does the stone reach its highest point?
+	%\vspace{5pc}
+	
+	\item What is the height of the stone at the highest point?
+	%\vspace{5pc}
+	
+	\item When does the stone strike the ground?
+	%\vspace{5pc}
+	
+	\item With what velocity does the stone strike the ground?
+	%\vspace{5pc}
+\end{enumerate}
+
+% % % % %
+%\newpage
+\item {\bf (3.5 M 3 min)} Verify the following derivative formula using the Quotient Rule:
+\[
+\frac{d}{dx}\csc x=-\csc x\cot x
+\]
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item qrule
+\item other trig
+\item proof
+\end{itemize}}
+
+% % %
+\item {\bf 3.5} Evaluate the following limits:
+\begin{enumerate}
+	\item {\bf (E 1 min)} $\displaystyle\lim_{x\to 0}\frac{\sin{5x}}{3x}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item sin lim
+\end{itemize}}
+	\item {\bf (M 4 min)} $\displaystyle\lim_{x\to 0}\frac{\sin{3x}}{\tan{4x}}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item sin lim
+\item other trig fcts
+\end{itemize}}
+	\item {\bf (M 2 min)} $\displaystyle\lim_{\theta\to 0}\frac{\cos^2{\theta}-1}{\theta}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item cos lim
+\item factoring
+\item other vars
+\end{itemize}}
+	\item {(\bf M 2 min)} $\displaystyle\lim_{\theta\to 0}\frac{\sec{\theta}-1}{\theta}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item cos lim
+\item other trig fcts
+\item other vars
+\end{itemize}}
+	\item {\bf (M 2 min)} $\displaystyle\lim_{x\to -3}\frac{\sin{(x+3)}}{x^2+8x+15}$
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item sin lim
+\item factoring
+\item change of vars
+\end{itemize}}
+\end{enumerate}
+
+% % % % % 
+\newpage
+\item {\bf 3.4} One of several \textbf{Leibniz Rules} in calculus deals with higher-order derivatives of products.  Let $(fg)^{(n)}$ denote the $n$th derivative of the product $fg$, for $n\geq 1$.
+\begin{enumerate}
+	\item {\bf (M 1 min)} Prove that $(fg)^{(2)}=f''g+2f'g'+fg''$.
+	%\vspace{12pc}
+	{\bf\begin{itemize}
+\item prod rule
+\item proof
+\end{itemize}}
+	\item {\bf (NO)} Prove that, in general, 
+	\[
+	(fg)^{(n)}=\sum_{k=0}^n\binom{n}{k}f^{(k)}g^{(n-k)},
+	\]
+	where $\binom{n}{k}=\frac{n!}{k!(n-k)!}$ are \textbf{binomial coefficients}.
+	%\vspace{12pc}
+	
+	%\item Compare the result of (b) to the expansion of $(a+b)^n$.
+	%\vspace{12pc}
+\end{enumerate}
+
+% % %
+\item {\bf (3.4 CALCULATOR 6 min)} The magnitude of the gravitaional force between two objects of mass $M$ and $m$ is given by $F(x)=-\frac{GMm}{x^2}$, where $x$ is the distance between the centers of mass of the objects and $G=6.7\times 10^{11}$ N-m$^\text{2}$/kg$^\text{2}$ is the gravitational constant (N stands for newton, the unit of force; the negative sign indicates an attractive force).
+\begin{enumerate}
+	\item Find the instantaneous rate of change of the force with respect to the distance between the objects.
+	%\vspace{12pc}
+	
+	\item For two identical objects of mass $M=m=0.1$ kg, what is the instantaneous rate of change of the force at a separation of $x=0.01$ m?
+	%\vspace{12pc}
+	
+	\item Does the instantaneous rate of change of the force increase or decrease with the separation?  Explain.
+	%\vspace{12pc}
+\end{enumerate}
+
+% % %
+\item {\bf (3.4 H 5 min)} Suppose the line tangent to the graph of $f$ at $x=2$ is $y=4x+1$ and suppose $y=3x-2$ is the line tangent to the graph of $g$ at $x=2$.  Find an equation of the line tangent to the following curves at $x=2$.
+\begin{enumerate}
+	\item $y=f(x)g(x)$
+	%\vspace{5pc}
+	
+	\item $y=\displaystyle\frac{f(x)}{g(x)}$
+	%\vspace{5pc}
+\end{enumerate}
+{\bf\begin{itemize}
+\item only tan line is given
+\item eqn of tan line
+\item prod rule
+\item qrule
+\item abst fcts
+\end{itemize}}
+
+% % %
+\item {\bf (3.4 M 2 min)} Use the following table to find the given derivatives.
+\[
+\begin{tabu}{c | c | c | c | c}
+\vect x & 1 & 2 & 3 & 4 \\
+\hline
+\vect{f(x)} & 5 & 4 & 3 & 2 \\
+\hline
+\vect{f'(x)} & 3 & 5 & 2 & 1 \\
+\hline
+\vect{g(x)} & 4 & 2 & 5 & 3 \\
+\hline
+\vect{g'(x)} & 2 & 4 & 3 & 1
+\end{tabu}
+\]
+\begin{enumerate}
+	\item $\displaystyle\left.\frac{d}{dx}\left(f(x)g(x)\right)\right|_{x=4}$
+	%\vspace{5pc}
+	
+	\item $\displaystyle\left.\frac{d}{dx}\left(xf(x)\right)\right|_{x=3}$
+	%\vspace{5pc}
+	
+	\item $\displaystyle\left.\frac{d}{dx}\left(\frac{xf(x)}{g(x)}\right)\right|_{x=4}$
+	%\vspace{5pc}
+\end{enumerate}
+{\bf\begin{itemize}
+\item abst fct w/ $x$
+\item prod rule
+\item qrule
+\item table derivs
+\end{itemize}}
+
+% % %
+\item {\bf 3.4} Find the derivative of each of the following functions.
+\begin{enumerate}
+	\item {\bf ( H 6 min)} $\displaystyle f(x)=\frac{4-x^2}{x-2}$
+	%\vspace{15pc}
+	{\bf\begin{itemize}
+\item qrule
+\item factoring
+\item undef pt
+\end{itemize}}
+	\item {\bf (M 1 min)} $\displaystyle f(z)=z^2(e^3z+4)-\frac{2z}{z^2+1}$
+	%\vspace{15pc}
+	{\bf\begin{itemize}
+\item gnarly
+\item prod rule
+\item qrule
+\item constant $e$
+\end{itemize}}
+	\item {\bf (NO)} $\displaystyle y=\frac{x-a}{\sqrt x-\sqrt a}$, where $a$ is a positive constant
+	%\vspace{15pc}
+\end{enumerate}
+
+% % %
+\item {\bf 3.4} Suppose $f(2)=2$ and $f'(2)=3$.  Let $g(x)=x^2\cdot f(x)$ and $h(x)=\displaystyle\frac{f(x)}{x-3}$.
+\begin{enumerate}
+	\item {\bf M 1 min)} Find an equation of the line tangent to $y=g(x)$ at $x=2$.
+	%\vspace{15pc}
+	{\bf\begin{itemize}
+\item prod rule
+\item abst fct w/ $x$
+\item eqn of tan line
+\item plug in
+\end{itemize}}	
+	\item {\bf (M 1 min)} Find an equation of the line tangent to $y=h(x)$ at $x=2$.
+	%\vspace{15pc}
+	{\bf\begin{itemize}
+\item qrule
+\item eqn of tan line
+\item abst fct w/ $x$
+\end{itemize}}
+\end{enumerate}
+
+% % %
+\item {\bf (3.4 E 1 min)} Given $f(x)=\frac{1}{x}$, find $f'(x),f''(x),$ and $f'''(x)$.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item higher order
+\item neg exp
+\end{itemize}}
+
+% % % % %
+%\newpage
+\item {\bf (3.3 E 2 min)} Use the table to find the following derivatives.
+\[
+\begin{tabu}{c | c | c | c | c | c}
+\vect x & 1 & 2 & 3 & 4 & 5 \\
+\hline 
+\vect{f'(x)} & 3 & 5 & 2 & 1 & 4 \\
+\hline
+\vect{g'(x)} & 2 & 4 & 3 & 1 & 5
+\end{tabu}
+\]
+\begin{enumerate}
+	\item $\displaystyle\left.\frac{d}{dx}\left(f(x)+g(x)\right)\right|_{x=1}$
+	%\vspace{5pc}
+	
+	\item $\displaystyle\left.\frac{d}{dx}\left(2x-3g(x)\right)\right|_{x=4}$
+	%\vspace{5pc}
+\end{enumerate}
+{\bf\begin{itemize}
+\item table derivs
+\item abst fct w/ $x$
+\end{itemize}}
+
+% % %
+\item {\bf (3.3 M 2 min)} Find the equation of the line tangent to the curve $y=x+\sqrt x$ that has slope 2.
+%\vspace{15pc}
+{\bf\begin{itemize}
+\item eqn of tan line but solve
+\item alg fct
+\end{itemize}}
+
+% % %
+\item {\bf 3.3} Suppose $f(3)=1$ and $f'(3)=4$.  Let $g(x)=x^2+f(x)$ and $h(x)=3f(x)$.
+\begin{enumerate}
+	\item {\bf (E 1 min)} Find an equation of the line tangent to $y=g(x)$ at $x=3$.
+	%\vspace{15pc}
+	{\bf\begin{itemize}
+\item eqn of tan line
+\item abst fct w/ $x$
+\end{itemize}}
+	\item {\bf (E 1 min)} Find an equation of the line tangent to $y=h(x)$ at $x=3$.
+	%\vspace{15pc}
+	{\bf\begin{itemize}
+\item eqn of tan line
+\item abst fct
+\end{itemize}}
+\end{enumerate}
+
+% % %
+\item {\bf 3.3} Find $f'(x),f''(x),$ and $f'''(x)$ for the following functions.
+\begin{enumerate}
+	\item {\bf (E 1 min)} $f(x)=3x^3+5x^2+6x$
+	%\vspace{20pc}
+	{\bf\begin{itemize}
+\item polynomial
+\item higher order
+\end{itemize}}
+	\item {\bf (E 1 min)} $f(x)=3x^2+5e^x$
+	%\vspace{20pc}
+	{\bf\begin{itemize}
+\item $e^x$
+\item polynomial
+\item higher order
+\end{itemize}}
+	\item {\bf (E 1 min)} $f(x)=10e^x$
+	%\vspace{20pc}
+	{\bf\begin{itemize}
+\item $e^x$
+\item higher order
+\end{itemize}}
+\end{enumerate}
+
+% % % % %
+%\newpage
+\item {\bf (3.2 E 3 min)} A common model for population growth uses the logistic (or \textbf{sigmoid}) curve.  Consider the logistic curve in the figure, where $P(t)$ is the population at time $t\geq 0$.
+\begin{enumerate}
+	\item At approximately what time is the rate of growth $P'$ the greatest?
+	%\vspace{5pc}
+	
+	\item Is $P'$ positive or negative for $t\geq 0$?
+	%\vspace{5pc}
+	
+	\item Is $P'$ an increasing or decreasing function of time (or neither)?
+	%\vspace{5pc}
+	
+	\item Sketch the graph of $P'$ on the same axes.  
+	%\vspace{5pc}	
+\end{enumerate}
+{\bf\begin{itemize}
+\item context
+\end{itemize}}
+
+% % %
+\item {\bf (3.2 M 2 min)} Create the graph of a continuous function $f$ such that 
+\[
+f'(x)=\begin{cases}
+	1 & x<0 \\
+	0 & 0<x<1 \\ 
+	-1 & x>1.
+	\end{cases}
+\]
+Is more than one graph possible?
+%\vspace{20pc}
+{\bf\begin{itemize}
+\item graph
+\end{itemize}}
+
+% % % % % % % % % %
+\end{enumerate}
+\end{document}
+
+
