@@ -1,0 +1,95 @@
+\documentclass[%margin%,line,pifont,palatino,courier
+]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage[top=1in,bottom=1in,margin=1in]{geometry}
+\usepackage{supertabular}
+\usepackage{graphicx,tikz}	
+%\usepackage{tkz-euclide}
+%\usetkzobj{all}
+%\usetikzlibrary{calc}
+\usepackage{array,multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{url}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\DeclareMathOperator{\proj}{proj}
+
+\fancypagestyle{plain}{
+	\addtolength{\headheight}{0.485in}
+	\rhead{\bf MATH 236 (Calculus II) \\
+		%\vspace{0.5pc}
+		due Thurs 12 Oct 2017 \\}
+	\rfoot{\footnotesize THQuiz 4, p. \thepage\ (of \pageref{LastPage})
+	}
+\renewcommand{\headrulewidth}{0pt}
+}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\footnotesize THQuiz 4, p. \thepage\ (of \pageref{LastPage})$\;$}
+
+\title{\vspace{-3.5pc} 
+	\flushleft \bf \Large Take-Home Quiz 4: Sequences %\\ 
+	 (\S7.1-7.2)}
+\date{}
+
+% % % % %
+\begin{document}
+\maketitle
+
+\vspace{-3pc}
+\noindent{\bf Directions:} This quiz is due on October 12, 2017 at the beginning of lecture.  You may use whatever resources you like -- e.g., other textbooks, websites, collaboration with classmates -- to complete it \textbf{but YOU MUST DOCUMENT YOUR SOURCES}.  Acceptable documentation is enough information for me to find the source myself.  Rote copying another's work is unacceptable, regardless of whether you document it.  
+
+\noindent\hrulefill
+
+\begin{enumerate}
+% % %
+\item {\bf \S7.1 \#8} Give the first five terms of the following recursively defined sequence:
+\[
+a_1=1,\quad a_k=a_{k-1}+2\text{ for } k\geq 2.
+\]
+Also, give a closed formula for the sequence.
+ 
+% % %
+\item {\bf \S7.1 \#24} Let $\{a_k\}$ be the sequence $a_1=3$, $a_2=3.1$, $a_3=3.14$, $a_4=3.141$, etc.  That is, each term $a_k$ contains the first $k$ digits of $\pi$.
+	\begin{enumerate}
+	\item Explain why $a_k$ is a rational number for each positive integer $k$.
+	\item Explain why the sequence $a_k$ is increasing.
+	\item Provide an upper bound for $\{a_k\}$.  What is the least upper bound?
+	\item Use this sequence to explain why the Least Upper Bound Axiom does not work for the set of rational numbers.
+	\end{enumerate}
+
+% % %
+\item \begin{enumerate}
+	\item \begin{enumerate}
+		\item {\bf \S7.1 \#79} Use Newton's method to derive the recursion formula
+		\[
+		x_{k+1}=\frac{1}{2}\left(x_k+\frac{a}{x_k} \right)
+		\]
+		for approximating $\sqrt a$.  \textit{Hint: Let $f(x)=x^2-a$.}
+		\item {\bf \S7.1 \#80} Starting with $x_0=1$, use this formula to approximate $\sqrt 2$ to within ten decimal places.  How many terms did you use?
+		\item Plot the points $(0,x_0)$, $(1,x_1)$, $(2,x_2)$, $(3,x_3)$, $(4,x_4)$.  \textit{Tip: In \url{desmos.com/calculator}, use the window $-0.1\leq x\leq 4.1$, $1.4\leq y\leq 1.55$.}
+		\end{enumerate}
+	\item {\bf \S7.1 \#84} Explain why Newton's method will fail if you choose a value of $x_0$ for which $f'(x_0)$.	
+	\end{enumerate}
+	
+% % %
+\item {\bf \S7.2 \#62} We may use a recursively defined sequence to approximate the current amount of a radioactive element.  For example, radioactive radium changes into lead over time.  The rate of decay is proportional to the amount of radium present.  Experimental data suggests that a gram of radium decays into lead at a rate of $\frac{1}{2337}$ grams per year.  Let $a_k$ be the amount of radium at the end of year $k$.  Since the decay rate is constant, if we use a linear model to approximate the amount that remains after one year has passed, we have
+\[
+a_1=a_0-\frac{1}{2337}a_0=\frac{2336}{2337}a_0.
+\] 
+More generally, we obtain the recursion formula 
+\[
+a_{k+1}=\frac{2336}{2337}a_k.
+\]
+Use this formula to estimate how much radium remains after 100 years if we start off with $a_0=10$ grams of radium.
+	
+% % % % %
+\end{enumerate}
+\end{document}

@@ -1,0 +1,356 @@
+\documentclass[12pt, addpoints]{exam/exam}
+
+\usepackage{hyperref}
+%\usepackage{mdframed}
+\usepackage{graphicx, caption}	
+%\usepackage{array, multicol, tabu}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{comment}
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{textcomp}
+\usepackage{wrapfig}
+\usepackage{multicol}
+
+\newcommand{\1}{^{-1}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\vstr}{\vspace{\stretch{1}}}
+
+\DeclareMathOperator{\arcsec}{arcsec}
+
+\everymath{\displaystyle}
+\setlength{\parindent}{0pt}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm*}{Theorem}
+
+%\printanswers
+\pointformat{\bf(\thepoints)}
+\pointpoints{pt}{pts}
+\bonuspointformat{\bf(\thepoints)}
+\bonuspointpoints{pt}{pts}
+
+\coverfirstpageheader{\bf MATH 236 (Calculus II) \\
+		Fall 2017 \\
+		}
+		{}
+		{{Name:} \underline{\hspace{40ex}} \\
+		\vspace{0.5pc}
+		Wed 13 Dec 2017}
+\coverextraheadheight[2pc]{0in}
+\coverfirstpagefooter{}{}{\Large Good luck!}
+\coverrunningheader{}
+	{Final Exam}
+	{}
+\coverrunningheadrule	
+\coverrunningfootrule
+\coverrunningfooter{Calc II Fall 2017}{}{p. \thepage\ (of \numpages)}
+
+\firstpageheader{}
+	{Final Exam}
+	{}
+\firstpageheadrule
+\firstpagefootrule
+\firstpagefooter{Calc II Fall 2017}{}{p. \thepage\ (of \numpages)}
+
+\runningheadrule
+\runningheader{}
+	{Final Exam}
+	{}
+\runningfootrule
+\runningfooter{Calc II Fall 2017}{}{p. \thepage\ (of \numpages)}
+
+\title{\vspace{-8pc}
+\vfill{\Huge
+	\bf Final Exam %\\ 
+	%(\S3.10, 4.1-4.6)
+	} 
+	}
+%\author{}
+\date{}
+
+% % % % % % % % % % % % % % % % % % % %
+\begin{document}
+
+\begin{coverpages}
+\maketitle
+\thispagestyle{headandfoot}
+\vspace{-4pc}
+{\bf Exam Instructions:} You have 120 minutes to complete this exam.  \textbf{Justification} is required for all problems.  \textbf{Notation} matters!  You will also be penalized for \textbf{missing/incorrect units} and \textbf{rounding errors}. 
+
+\vspace{1pc} 
+No electronic devices (phones, iDevices, computers, etc) except for a basic scientific calculator.  On story problems, round to one decimal place.  If you do not have a calculator, then write down the exact formula you would plug in to a calculator to get the answer. 
+
+\vspace{1pc}
+If you finish early then you may leave, UNLESS there are less than 10 minutes left.  To prevent disruption, if you finish with less than 10 minutes remaining then please stay seated and quiet.
+
+\begin{flushright}
+%In addition, please provide the following data:
+
+\vspace{0.3in}
+%Drill Instructor: \underline{\hspace{40ex}}
+
+\vspace{0.3in}
+%Drill Time: \underline{\hspace{40ex}}
+\end{flushright}
+
+\vfill
+\textbf{Your signature below indicates that you have read this page and agree to follow the Academic Honesty Policies of James Madison University.}  
+
+\vspace{0.3in}
+Signature: {\bf (1 pt)} \underline{\hspace{73ex}}
+
+% % % % % % % % % %
+\newpage
+
+\textbf{\large Formulas you may need:}
+
+\vspace{1.5pc}
+\textbf{Inverse trig derivatives}
+\vspace{0.5pc}
+
+$\frac{d}{dx}\arcsin x=\frac{1}{\sqrt{1-x^2}}$; domain of $\arcsin x$: $[-1,1]$; range of $\arcsin x$: $[-\frac{\pi}{2},\frac{\pi}{2}]$
+
+$\frac{d}{dx}\arctan x=\frac{1}{x^2+1}$; domain of $\arctan x$: $(-\infty, \infty)$; range of $\arctan x$: $(-\frac{\pi}{2},\frac{\pi}{2})$
+
+$\frac{d}{dx}\arcsec x=\frac{1}{|x|\sqrt{x^2-1}}$; domain of $\arcsec x$: $(-\infty,-1]\cup [1,\infty)$; range of $\arcsec x$: $[0,\frac{\pi}{2}]\cup [\frac{\pi}{2},\pi]$
+
+\vspace{2pc}
+\textbf{Miscellaneous trig integrals}
+\vspace{0.5pc}
+
+$\int \tan x\ dx=-\ln|\cos x|+C$
+
+$\int \cot x\ dx=\ln|\sin x|+C$
+
+$\int \sec x\ dx=\ln|\sec x\tan x|+C$
+
+$\int \csc x\ dx=-\ln|\csc x\cot x|+C$
+
+$\int \arcsin x\ dx=x\arcsin x+\sqrt{1-x^2}+C$
+
+$\int \arctan x\ dx=x\arctan x-\frac{1}{2}\ln(x^2+1)+C$
+
+\vfill
+\gradetable 
+
+\newpage
+\textbf{\large Formulas, cont.}
+
+\vspace{1pc}
+\textbf{Obscure trig identities}
+\vspace{0.5pc}
+
+$\sin^2x=\frac{1}{2}(1-\cos{2x})$
+
+\vspace{0.25pc}
+$\cos^2x=\frac{1}{2}(1+\cos{2x})$
+
+\vspace{0.7pc}
+$\sin{2x}=2\sin x\cos x$
+
+\vspace{2pc}
+\textbf{Physics formulas}
+\vspace{0.5pc}
+
+mass = (density)(volume)
+
+work = (force)(displacement)
+
+hydrostatic force = (weight-density)(surface area)(depth of liquid)
+
+weight-density of water = 62.4 lb/ft$^3$
+
+\vspace{2pc}
+\textbf{Trig substitutions}
+\vspace{0.5pc}
+
+(for $a=$a positive real number)
+
+\vspace{0.5pc}
+If $x=a\sin u$, then $\sqrt{a^2-x^2}=a\cos u$; valid for $x\in[-a,a]$ and $\textstyle u\in\left[\frac{\pi}{2},\frac{\pi}{2}\right]$.
+
+\vspace{0.5pc}
+If $x=a\tan u$, then $x^2+a^2=a^2\sec^2u$; valid for $x\in\R$ and $\textstyle u\in\left(\frac{\pi}{2},\frac{\pi}{2}\right)$.
+
+\vspace{0.5pc}
+If $x=a\sec u$, then $\sqrt{x^2-a^2}=\begin{cases}a\tan u & \text{ if }x>a \\
+	-a\tan u & \text{ if }x<-a
+	\end{cases}$; valid for $x\in(-\infty, -a]\cup[a,\infty)$ and $\textstyle u\in [0,\frac{\pi}{2})\cup(\frac{\pi}{2},\pi]$.
+	
+\vspace{2pc}
+\textbf{Trig integral strategies}
+\vspace{0.5pc}
+
+\begin{tabular}{c | c | c}
+Integral & Rewrite & Choose \\
+\hline
+$\int \sin^nx\ dx$, $n$ odd & $\int\text{(expression in $\cos x$)}\sin x\ dx$ & $u=\cos x$ \\
+\hline
+$\int \sin^mx\cos^nx\ dx$, $n$ odd & $\int\text{(expression in $\sin x$)}\cos x\ dx$ & $u=\sin x$ \\
+\hline
+$\int \sin^mx\cos^nx\ dx$, $m$ odd & $\int\text{(expression in $\cos x$)}\sin x\ dx$ & $u=\cos x$ \\
+\hline
+$\int \sec^mx\tan^nx\ dx$, $m$ even & $\int\text{(expression in $\tan x$)}\sec^2 x\ dx$ & $u=\tan x$ \\
+\hline
+$\int \sec^mx\tan^nx\ dx$, $n$ odd & $\int\text{(expression in $\sec x$)}\sec x\tan x\ dx$ & $u=\sec x$
+\end{tabular}
+
+\newpage
+\textbf{\large Formulas, cont.}
+
+\vspace{1pc}
+\textbf{Binomial theorem}
+\vspace{0.5pc}
+
+$(A+B)^n=\sum_{k=0}^n \frac{n!}{k!(n-k)!}A^kB^{n-k}$
+
+\vspace{2pc}
+\textbf{Maclaurin series}
+\vspace{0.5pc}
+
+$
+\begin{array}{r c l c}
+%\begin{tabular}{c | c | c}
+%\text{\bf Function} & \text{\bf Series} & \text{\bf Int. of Conv.} \\
+\sin x &=& \sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)!}x^{2k+1} & \text{ for }x\in\R \\
+\cos x &=& \sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k} & \text{ for }x\in\R \\
+e^x &=& \sum_{k=0}^{\infty}\frac{1}{k!}x^k & \text{ for }x\in\R \\
+\frac{1}{1-x} &=& \sum_{k=0}^{\infty}x^k & \text{ for }x\in(-1,1) \\
+\ln(1+x) &=& \sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k}x^k & \text{ for }x\in\left(-1,1\right] \\
+\arctan x &=& \sum_{k=0}^{\infty}\frac{(-1)^k}{2k+1}x^{2k+1} & \text{ for }x\in[-1,1] \\
+\sinh x &=& \sum_{k=0}^{\infty}\frac{1}{(2k+1)!}x^{2k+1} & \text{ for }x\in\R \\
+\cosh x &=& \sum_{k=0}^{\infty}\frac{1}{(2k)!}x^{2k} & \text{ for }x\in\R \\
+(1+x)^p &=& 1+\sum_{k=1}^{\infty}\frac{p(p-1)\cdots(p-k+1)}{k!}x^k & \\
+ &=& \sum_{k=0}^{\infty}\binom{p}{k}x^k & \text{ for }x\in(-1,1)^*
+\end{array}
+$
+
+$^*$The endpoints may or may not be included, depending on $p$.  You will have to check in each case.
+
+\end{coverpages}
+
+% % % % % % % % % % % % % % % % % % % %
+\begin{questions}
+\thispagestyle{headandfoot}
+
+% % % % %
+\question Determine whether each statement is TRUE or FALSE.  You will not receive full credit without justification of your answer. 
+	\begin{parts}
+	\part[2]%{\bf 7R \#4} 
+	The partial fractions decomposition of $\textstyle\frac{x^2-4}{x(x^2+4)}$ has the form $\textstyle\frac{A}{x}+\frac{B}{x^2+4}$, where $A$ and $B$ are constants.
+	\vspace{3.5pc}
+	
+	\part[2]%{\bf 7R \#6}
+	The improper integral $\textstyle\int_1^{\infty}\frac{1}{x^{\sqrt 2}}\ dx$ is convergent.
+	\vspace{3.5pc}
+	
+	\part[2]%{\bf 710}
+	If $f$ is continuous on $[0,\infty)$ and $\textstyle\int_1^{\infty}f(x)\ dx$ is convergent, then $\textstyle\int_0^{\infty}f(x)\ dx$ is convergent.
+	\vspace{3.5pc}
+	
+	\part[2]%{\bf 9R \#2} 
+	The function $\textstyle f(x)=\frac{\ln x}{x}$ is a solution of the differential equation
+	\[
+	x^2y'+xy=1.
+	\]
+	\vspace{3.5pc}
+	
+	\part[2]%{\bf 11R \#1} 
+	If $\lim_{n\to \infty}a_n=0$, then $\textstyle\sum a_n$ is convergent.
+	\vspace{3.5pc}
+	
+	\part[2]%{\bf 11R \#6} 
+	If $\textstyle\sum c_nx^n$ diverges when $x=6$, then it diverges when $x=10$.
+	\vspace{3.5pc}
+	
+	\part[2]%{\bf 11R \#9} 
+	If $0\leq a_n\leq b_n$ and $\textstyle\sum b_n$ diverges, then $\textstyle\sum a_n$ diverges.
+	\vspace{3.5pc}
+	
+	%\part[2]%{\bf 11R \#21} 
+	%If a finite number of terms are added to a convergent series, then the new series is still convergent.
+	%\vspace{2.75pc}
+	
+	\part[2]%{\bf 11R \#22} 
+	If $\textstyle\sum_{n=1}^{\infty}a_n=A$ and $\textstyle\sum_{n=1}^{\infty}b_n=B$, then $\textstyle\sum_{n=1}^{\infty}a_nb_n=AB$.
+	\vspace{3.5pc}
+	\end{parts}
+
+\newpage
+% % % % %
+\question%{\bf 6R \#16}
+Let $R$ denote the region in the first quadrant bounded by the curves $y=x^3$ and $y=2x-x^2$.  Calculate the following quantities, using the method you find most appropriate:
+	\begin{parts}
+	\part[8] The volume obtained by rotating $R$ about the $x$-axis.
+	\vspace{24pc}
+	
+	\part[8] The volume obtained by rotating $R$ about the $y$-axis.	
+	\vspace{24pc}
+	\end{parts}
+
+\newpage
+% % % % %	
+\question Evaluate each of the integrals using the method of your choice.  If an integral is improper, then you must express your work using limits.  If an answer involves composition of trig and inverse trig functions, you must simplifiy it.
+	\begin{parts}
+	\part[8]%{\bf 7R \#7}
+	$\int_0^{\frac{\pi}{2}}\sin^3{\theta}\cos^2{\theta}\ d\theta$
+	\vspace{23pc}
+	
+	\part[8]%{7R \#24}
+	$\int e^x\cos x\ dx$
+	\vspace{23pc}
+	
+	\part[8]%{\bf 7R \#33}
+	$\int \frac{x^2}{(4-x^2)^{\frac{3}{2}}}\ dx$
+	\vspace{23pc}
+	
+	\part[8]%{\bf 7R \#48}
+	$\int_{-1}^1\frac{dx}{x^2-2x}$
+	\vspace{23pc}
+	\end{parts}
+
+%\question[]{\bf 11R \#9} The sequence ${a_n}_{n=1}^{\infty}$ is defined recursively as $a_1=1$ and $a_{n+1}=\frac{1}{3}(a_n+4)$.
+%	\begin{parts}
+%	\part[] Write the first five terms of the sequence.
+%	\part[] Use the ratio test to argue why $a_n$ is increasing.
+%	\end{parts}
+
+% % %	
+\question[7]%{\bf 10R \#21} 
+Find the slope of the tangent line to the parametric curve
+\[
+x(t)=\ln(t) \quad y(t)=1+t^2\quad \text{for }t\in\R
+\]	
+at the point where $t=1$.
+\vspace{20pc}
+
+% % %
+\question[10]%{\bf 11R \#27} 
+Find the sum of the series $\sum_{n=1}^{\infty}\frac{(-3)^{n-1}}{2^{3n}}$.
+
+%\newpage
+% % % % %
+%\question[10]%{\bf 11R \#42} 
+%Find the radius of convergence and the interal of convergence of the series $\sum_{n=1}^{\infty}\frac{2^n(x-2)^n}{(n+2)!}$.
+
+\newpage
+% % % % %
+\question Find the Maclaurin series for $f$ and its radius of convergence.  You may use either the direct method (definition of a Maclaurin series) or known series given in the formula sheet.
+	\begin{parts}
+	\part[9]%{\bf 11R \#47} 
+	$f(x)=\frac{x^2}{1+x}$
+	\vspace{23pc}
+	
+	\part[9]%{\bf 11R \#48} 
+	$f(x)=\arctan(x^2)$
+	\vspace{23pc}
+	\end{parts}
+
+
+% % % % %
+\end{questions}
+
+\end{document}

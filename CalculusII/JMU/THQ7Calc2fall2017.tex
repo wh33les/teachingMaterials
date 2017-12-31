@@ -1,0 +1,139 @@
+\documentclass[%margin%,line,pifont,palatino,courier
+]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage[top=1in,bottom=1in,margin=1in]{geometry}
+\usepackage{supertabular}
+\usepackage{graphicx,tikz}	
+%\usepackage{tkz-euclide}
+%\usetkzobj{all}
+%\usetikzlibrary{calc}
+\usepackage{array,multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{url}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\DeclareMathOperator{\proj}{proj}
+
+\fancypagestyle{plain}{
+	\addtolength{\headheight}{0.485in}
+	\rhead{\bf MATH 236 (Calculus II) \\
+		%\vspace{0.5pc}
+		due Wed 15 Nov 2017 \\}
+	\rfoot{\footnotesize THQuiz 7, p. \thepage\ (of \pageref{LastPage})
+	}
+\renewcommand{\headrulewidth}{0pt}
+}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\footnotesize THQuiz 7, p. \thepage\ (of \pageref{LastPage})$\;$}
+
+\title{\vspace{-3.5pc} 
+	\flushleft \bf \Large Take-Home Quiz 7: Manipulating Taylor series %\\ 
+	 (\S8.2-8.4)}
+\date{}
+
+% % % % %
+\begin{document}
+\maketitle
+
+\vspace{-3pc}
+\noindent{\bf Directions:} This quiz is due on November 15, 2017 at the beginning of lecture.  You may use whatever resources you like -- e.g., other textbooks, websites, collaboration with classmates -- to complete it \textbf{but YOU MUST DOCUMENT YOUR SOURCES}.  Acceptable documentation is enough information for me to find the source myself.  Rote copying another's work is unacceptable, regardless of whether you document it.  
+
+\noindent\hrulefill
+
+\begin{enumerate}
+% % %
+%\item {\bf \S8.2 \#58}
+
+% % %
+\item The \textbf{second-order differential equation} (differential equation involving $y''$)
+\[
+x^2y''+xy'+(x^2-p^2)=0,
+\]
+where $p$ is a nonnegative integer, arises in many applications in physics and engineering, including one model for the vibration of a beaten drum.
+%
+%\vspace{0.25pc}
+The solution to this differential equation is called the \textbf{Bessel function of order $p$} and is denoted $J_p(x)$.  The Bessel function has the power series expansion
+\[
+J_p(x)=\sum_{k=0}^{\infty}\frac{(-1)^k}{k!(k+p)!2^{2k+p}}x^{2k+p}.
+\]
+	\begin{enumerate}
+	\item Use the fact that  
+	\begin{align*}
+	J_p'(x) &= \sum_{k=0}^{\infty}\frac{(-1)^k(2k+p)}{k!(k+p)!2^{2k+p}}x^{2k+p-1} \quad \text{ and }\\
+	J_p''(x) &= \sum_{k=0}^{\infty}\frac{(-1)^k(2k+p)(2k+p-1)}{k!(k+p)!2^{2k+p}}x^{2k+p-2}.
+	\end{align*}
+	to verify that $y=J_p(x)$ satisfies the differential equation given above.
+	\item {\bf \S8.2 \#68} Recall, from \S7.7, the \textbf{Ratio Test for Absolute Convergence} says a series $\sum_{k=0}^{\infty}b_k$ converges absolutely if $\lim_{k\to\infty}\left|\frac{b_{k+1}}{b_k}\right|<1$.  Use the Ratio Test for Absolute Convergence to find the interval of convergence for $J_p(x)$.
+	\item To get an idea of what the Bessel function looks like, you can use \url{desmos.com/calculator}.  Type in ``$p=0$" to get a slider.  Then add the equations
+	\begin{align*}
+	S_0 &= \frac{(-1)^0}{0!(0+p)!\cdot 2^{2\cdot 0+p}}x^{2\cdot 0+p} \\
+	S_1 &= S_0+\frac{(-1)^1}{1!(1+p)!\cdot 2^{2\cdot 1+p}}x^{2\cdot 1+p} \\
+	S_2 &= S_1+\frac{(-1)^2}{2!(2+p)!\cdot 2^{2\cdot 2+p}}x^{2\cdot 2+p} \\
+	 &\vdots
+	\end{align*}
+	up to the partial sum $S_9$.  Sketch or print the graph of $S_9$ for $p=0,1,2,3$.
+	\end{enumerate}
+	
+% % %
+\item {\bf \S8.3 \#48} Let $f(x)=\sqrt x$.
+	\begin{enumerate}
+	\item Find the 4th order Taylor polynomial, $P_4(x)$, for $f$ centered at $x=1$.
+	\item Using part (a) as a guide, write the Taylor series, $T(x)$, for $f$ centered at $x=1$, in summation form.
+	\item \textbf{Taylor's Theorem} (Theorem 8.9) says the $n$th remainder for $f$ at $x=1$ is
+	\[
+	f(x)-P_n(x)=R_n(x)=\frac{\left(\frac{1}{2}\right)\left(-\frac{1}{2}\right)\cdots \left(\frac{1}{2}-n+1\right)}{n!} \int_1^x(x-t)^nt^{\frac{1}{2}-n}\ dt.
+	\]
+	However, \textbf{Lagrange's Form for the Remainder} (Theorem 8.10) states that there is at least one number $c$ between 1 and $x$ where 
+	\[
+	R_n(x)=\frac{\left(\frac{1}{2}\right)\left(-\frac{1}{2}\right)\cdots \left(\frac{1}{2}-n\right)}{(n+1)!}c^{\frac{1}{2}-n-1}(x-1)^{n+1}.
+	\]
+	Using that fact, compute $\displaystyle\lim_{n\to\infty}R_n(x)$, assuming $x\in\left(\frac{1}{2},\frac{3}{2}\right)$.
+	
+	\vspace{0.25pc}
+	Your answer should confirm that $f(x)$ equals its Taylor series centered at $x=1$ on the interval $\left(\frac{1}{2},\frac{3}{2} \right)$.
+	\end{enumerate}
+
+% % %
+\item {\bf \S8.3 \#56} Recall, the \textbf{geometric series}
+\[
+\frac{1}{1-x}=\sum_{k=0}^{\infty}x^k\quad \text{ when $x\in(-1,1)$}.
+\]
+Use this fact to compute
+	\begin{enumerate}
+	\item the Maclaurin series for 
+	$
+	f(x)=\frac{x}{9-x^2}=x\left(\frac{1}{\frac{1}{9}\left(1-\frac{x^2}{9}\right)}\right)=9x\left(\frac{1}{1-\frac{x^2}{9}}\right)
+	$
+	\vspace{-0.7pc}
+	\item and the interval of convergence.
+	\end{enumerate}
+	
+% % %
+\item {\bf \S8.4 \#56} The Maclaurin series for $\ln(1+x)$ is given by
+\[
+\ln(1+x)=\sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k}x^k\quad \text{ when $x\in(-1,1]$}.
+\]
+	\begin{enumerate}
+	\item Use this fact to compute
+		\begin{itemize}
+		\item the Maclaurin series for 
+		$
+		\ln(4+x^2)=\ln\left(\frac{1}{4}\left(1+\frac{x^2}{4}\right)\right) = \ln\left(\frac{1}{4}\right)+\ln\left(1+\frac{x^2}{4}\right)
+		$
+		%\vspace{-0.25pc}
+		\item and the interval of convergence.
+		\end{itemize}
+	\item Compute $\displaystyle \int_{0.5}^1\ln(4+x^2)\ dx$ by substituting your answer from part (a) into the integrand.  	
+	\end{enumerate}
+	
+% % % % %
+\end{enumerate}
+\end{document}

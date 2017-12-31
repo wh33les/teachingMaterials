@@ -1,0 +1,109 @@
+\documentclass[%margin%,line,pifont,palatino,courier
+]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage[top=1in,bottom=1in,margin=1in]{geometry}
+\usepackage{supertabular}
+\usepackage{graphicx,tikz}	
+%\usepackage{tkz-euclide}
+%\usetkzobj{all}
+%\usetikzlibrary{calc}
+\usepackage{array,multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{url}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\DeclareMathOperator{\proj}{proj}
+
+\fancypagestyle{plain}{
+	\addtolength{\headheight}{0.485in}
+	\rhead{\bf MATH 236 (Calculus II) \\
+		%\vspace{0.5pc}
+		due Mon 30 Oct 2017 \\}
+	\rfoot{\footnotesize THQuiz 6, p. \thepage\ (of \pageref{LastPage})
+	}
+\renewcommand{\headrulewidth}{0pt}
+}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\footnotesize THQuiz 6, p. \thepage\ (of \pageref{LastPage})$\;$}
+
+\title{\vspace{-3.5pc} 
+	\flushleft \bf \Large Take-Home Quiz 6: Series convergence tests %\\ 
+	 (\S7.4-7.7)}
+\date{}
+
+% % % % %
+\begin{document}
+\maketitle
+
+\vspace{-3pc}
+\noindent{\bf Directions:} This quiz is due on October 30, 2017 at the beginning of lecture.  You may use whatever resources you like -- e.g., other textbooks, websites, collaboration with classmates -- to complete it \textbf{but YOU MUST DOCUMENT YOUR SOURCES}.  Acceptable documentation is enough information for me to find the source myself.  Rote copying another's work is unacceptable, regardless of whether you document it.  
+
+\noindent\hrulefill
+
+\begin{enumerate}
+% % %
+\item {\bf \S7.4 \#46} For the series $S=\sum_{k=2}^{\infty}\frac{1}{k(\ln k)^2}$, do the following:
+	\begin{enumerate}
+	\item Use the integral test to show $S$ converges.
+	\item Use the 10th term in the sequence of partial sums to approximate the sum of the series.
+	\item Use Theorem 7.31 \textit{(see text)} to find a bound on the tenth remainder, $R_{10}$.
+	\item Use your answers from parts (b) and (c) to find an interval containing the sum of the series.
+	\item Find the smallest value of $n$ so that $R_n\leq 10^{-6}$.
+	\end{enumerate}
+
+% % %
+\item \begin{enumerate}
+	\item {\bf \S7.6 \#5} Let $q(x)=\frac{a_0+a_1x+\cdots+a_nx^n}{b_0+b_1x+\cdots+b_mx^m}$ be a non-zero rational function.  Evaluate
+	\[
+	\lim_{x\to\infty}\frac{q(x+1)}{q(x)}^.
+	\]
+	\item {\bf \S7.6 \#6} Use your answer from part (a) to explain why the ratio test will always be inconclusive for series $\sum_{k=1}^{\infty}c_k$ where $c_k=q(k)$ is a rational function of $k$.
+	\end{enumerate}
+	
+% % % 
+\item For each of the following series, determine the values of $p$ that guarantee absolute convergence, conditional converence, and divergence.
+	\begin{enumerate}
+	\item {\bf \S7.4 \#48} $\displaystyle \sum_{k=1}^{\infty}\frac{\ln k}{k^p}$
+	\item {\bf \S7.4 \#50} $\displaystyle \sum_{k=1}^{\infty}\frac{1}{(c+k)^p}$, where $c$ is a positive constant
+	\item {\bf \S7.5 \#50} $\displaystyle \sum_{k=1}^{\infty}\frac{(\ln k)^p}{k^2}$
+	\item {\bf \S7.7 \#58} $\displaystyle \sum_{k=2}^{\infty}\frac{(-1)^{k+1}}{k^p\ln k}$
+	\item {\bf \S7.7 \#60} $\displaystyle \sum_{k=0}^{\infty}(-1)^kk^pe^{-k^2}$
+	\end{enumerate}
+
+% % % 
+\item {\bf \S7.4 \#52} Leila, in her capacity as a population biologist in Idaho, is trying to figure out how many salmon a local hatchery should release annually in order to revitalize the fishery.  She knows that if $p_k$ salmon spawn in Redfish Lake in a given year, then only $0.2p_k$ fish will return to the lake from the offspring of that run, becasue of all the dams on the rivers between the sea and the lake.  Thus, if she adds the spawn from $h$ fish, from a hatchery, then the number of fish that return from that run $k$ will be $p_{k+1}=0.2(p_k+h)$.   	
+	\begin{enumerate}
+	\item Show that the sustained number of fish returning approaches 
+	\[
+	p_{\infty}=h\sum_{k=1}^{\infty}0.2^k,\quad \text{as $k\to\infty$.}
+	\]
+	\item Evaluate $p_{\infty}$.
+	\item How should Leila choose $h$, the number of hatchery fish to raise in order to hold the number of fish returning in each run at some constant $P$?
+	\end{enumerate}
+
+% % %
+\item {\bf \S7.6 \#64} Leila needs to determine the number of trout to stock a lake with annually.  She has evidence that between 65\% and 95\% of the trout persist in the lake from year to year.  The actual percentage varies with the amount of fishing, as well as the weather, the number of insects available, and the fraction of trout that are of a reproductive age.  Denote the fraction of fish that persist from one year to the next by $r_k\in[0.65,0.95]$.  For simplicity, the number of fish she stocks annually is denoted $s$, with the steady number of fish in the lake given by
+\[
+f_{\infty}=s\left(1+\sum_{l=0}^{\infty}\left(\prod_{j=0}^{i}r_j\right)\right)
+\]
+\textit{Note, the symbol $\prod$ denotes a product.  In this case $\prod_{j=0}^{i}=r_0\cdot r_1\cdot \cdots r_i$.}
+	\begin{enumerate}
+	\item Use the ratio test to show that this series converges.
+	\item Can Leila use the given assumptions to find $f_{\infty}$?  Explain.
+	\end{enumerate}
+
+
+	
+
+	
+% % % % %
+\end{enumerate}
+\end{document}

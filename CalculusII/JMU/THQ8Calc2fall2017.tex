@@ -1,0 +1,124 @@
+\documentclass[%margin%,line,pifont,palatino,courier
+]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage[top=1in,bottom=1in,margin=1in]{geometry}
+\usepackage{supertabular}
+\usepackage{graphicx,tikz}	
+%\usepackage{tkz-euclide}
+%\usetkzobj{all}
+%\usetikzlibrary{calc}
+\usepackage{array,multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{url}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\DeclareMathOperator{\proj}{proj}
+
+\fancypagestyle{plain}{
+	\addtolength{\headheight}{0.485in}
+	\rhead{\bf MATH 236 (Calculus II) \\
+		%\vspace{0.5pc}
+		due Mon 4 Dec 2017 \\}
+	\rfoot{\footnotesize THQuiz 8, p. \thepage\ (of \pageref{LastPage})
+	}
+\renewcommand{\headrulewidth}{0pt}
+}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\footnotesize THQuiz 8, p. \thepage\ (of \pageref{LastPage})$\;$}
+
+\title{\vspace{-3.5pc} 
+	\flushleft \bf \Large Take-Home Quiz 8: Differential and parametric equations %\\ 
+	 (\S6.5, 9.1)}
+\date{}
+
+% % % % %
+\begin{document}
+\maketitle
+
+\vspace{-3pc}
+\noindent{\bf Directions:} This quiz is due on December 4, 2017 at the beginning of lecture.  You may use whatever resources you like -- e.g., other textbooks, websites, collaboration with classmates -- to complete it \textbf{but YOU MUST DOCUMENT YOUR SOURCES}.  Acceptable documentation is enough information for me to find the source myself.  Rote copying another's work is unacceptable, regardless of whether you document it.  
+
+\noindent\hrulefill
+
+\begin{enumerate}
+
+% % %
+\item {\bf \S6.5 \#58}  \textbf{Euler's method and slope fields.}  The differential equation 
+\[
+\frac{dy}{dx}=x^2-y
+\]
+cannot be solved by hand.  Go to \url{https://www.desmos.com/calculator/p7vd3cdmei} (or Google search for ``desmos slope fields" to find the applet).  In the second line type $g(x,y)=x^2-y$.  Change the window size to $-1\leq x\leq 5$ and $-2\leq y\leq 10$.
+	\begin{enumerate}
+	\item Use Euler's method with $\Delta x=0.25$ and $y(1)=0$ to fill in the following table:
+	\begin{center}
+	\begin{tabular}{c | c | c}
+	$k$ & $x_k$ & $y_k$ \\[0.25pc]
+	\hline
+	 & & \\[-0.75pc]
+	0 & 1 & 0 \\
+	1 & & \\
+	2 & & \\
+	3 & & \\
+	4 & & 		
+	\end{tabular}	
+	\end{center}	
+	\item To plot the points from part (a) in \url{desmos}, click on the plus sign in the upper left corner to add a table.  Change the $x_1$ and $y_1$ to $x$ and $y$.  Then list the five points in the table.  Use the black moveable point in \url{desmos} to visually trace out the rest of the curve.  This is the approximate solution to the differential equation, given the initial value $y(1)=0$.  
+	
+	\vspace{0.5pc}
+	%\hspace{15pt} 
+	Sketch or print your slope field with the points you plotted.  On your sketched or printed graph \textit{(if at all possible, you probably want to print one so you don't have to draw all the slope field lines yourself)}, connect the dots and try to extend the curve based on what you found when playing with the moveable point.
+	
+	\item Euler's method is the explicit algebra used that corresponds to plotting and connecting points in a slope field.  When you draw the tiny line in the slope field at the point $(x_0,y_0)$, the Euler's method formula gives you a nearby point on that line.  Then you repeat the process at the new point.
+
+	\vspace{0.5pc}
+	Keep in mind differential equations have infinitely many solutions.  You can't specify a particular curve satisfying the equation without an initial value.  We will now trace another solution, satisfying $y(0)=4$.  In your same \url{desmos} plot, move the moveable point to $(0,4)$.  Make a mental note of the coordinates of the bottom end of the tiny slope field line.  Then move the moveable point to those coordinates.  Repeat this process to trace out another solution.  Draw it on your graph from part (b).
+	\item The two curves you've drawn should never touch eachother.  Why not?  
+	\end{enumerate}
+	
+\newpage	
+% % % 
+\item \textbf{Newton's Law of Cooling and Heating.}  If an object with temperature $T_0$ is placed in a location with a constant ambient temperature $A$ at time $t=0$, then the object's change in temperature can be modeled by the differential equation
+\begin{equation}
+\label{eqn:diff}
+\frac{dT}{dt}=k(A-T),
+\end{equation}
+where $k$ is some constant of proportionality.  The object's temperature at time $t$ is the solution to this differential equation, given the initial value $T(0)=T_0$:
+\begin{equation}
+\label{eqn:sol}
+T(t)=A-(A-T_0)e^{-kt}.
+\end{equation}
+	\begin{enumerate}
+	\item Differentiate Equation \eqref{eqn:sol} to verify it satisfies Equation \eqref{eqn:diff}.
+	\item {\bf \S6.5 \#78} Solve the initial value problem by hand to prove \eqref{eqn:sol} is the correct solution. 
+	\end{enumerate}
+
+% % %
+\item {\bf \S9.1 \#38}  Recall, the equation of a circle of radius $r$ centered at the point $(a,b)$ is
+\[
+(x-a)^2+(y-b)^2=r^2.
+\]
+Meanwhile, the parametric equations for a circle of radius $r$ centered at the origin are
+\[
+x(t)=r\cos t\quad\text{ and }\quad y(t)=r\sin t,\qquad\text{ for } t\in[0,2\pi].
+\]
+Using that information, find a parametrization of a circle centered at the point $(a,b)$ that is traced once, counterclockwise, starting at the point $(a+r,b)$, and with $t\in[0,2\pi]$.
+
+% % %
+\item {\bf \S9.1 \#66} Annie needs to make a crossing in her kayak from an island to a north-south coastline 3 miles due east.  It is foggy, so she cannot see any landmarks to steer by.  Instead, she takes a compass heading due east and sticks to it all the way across.  Tidal currents in the channel push her boat southward at a speed proportional to the distance from either shoreline.  She paddles at 2 miles per hour from west to east.  That is, her east-west position changes with time as $x'(t)=2$.  Her north-south position changes as $y'(t)=1.778t^2-2.667t$.  Her starting position was $(0,0)$, at time $t=0$ \textit{(see the text for a diagram illustrating this problem)}.
+	\begin{enumerate}
+	\item Solve the two given differential equations by integrating with respect to $t$ to find a parametric description of Annie's path across the channel.
+	\item How far south of her starting point does Annie make landfall?
+	\item Use an arc length formula to determine the actual distance Annie paddles.
+	\end{enumerate}
+
+% % % % %
+\end{enumerate}
+\end{document}
