@@ -1,0 +1,161 @@
+\documentclass[12pt,letterpaper]{article}
+\input{../preamble}
+\usepackage{fullpage}
+\usepackage{multicol}
+\everymath{\displaystyle}
+
+\begin{document}
+\flushleft
+\begin{multicols}{2}
+
+\begin{large}\textbf{Math 2603 Exam 3 \\(Take-Home Version) \\
+\hspace{0.36pc}Tues 2 Dec 2014}\end{large}
+
+\hfill\textbf{Name:  }\underline{\hspace{35ex}} %KEY\hspace{17ex}} 
+\\
+\vspace{.5in}
+
+\end{multicols}
+
+\pagestyle{empty}
+
+\vspace{4pc}
+
+\begin{center}\LARGE Discrete Math
+
+Exam 3 Take-Home Version (Ch. 6-8 as we have covered) \end{center}
+
+\vspace{2pc}
+Please provide the following data:
+
+\vspace{2pc}
+Drill Time: \underline{\hspace{40ex}}
+
+\vspace{2pc}
+Student ID: \underline{\hspace{40ex}}
+
+\vspace{3pc}
+{\bf Exam Instructions:} THIS EXAM IS OPTIONAL.  If you do not submit on time, then your score from the original Exam 3 will be recorded.  You have until 12a Monday 8 December, 2014 (i.e., midnight Sunday night) to submit this exam.  Rules: 
+\begin{enumerate}
+\item You are welcome to use whatever resources you wish.  You \emph{must} cite your source if it's not your brain.  The more specific you are, the more lenience you get on partial credit/showing work, BUT your written answer must be coherent on its own (e.g., you can't just say ``page blah blah of blerg blip textbook").
+\item Your answers must be in your own hand-writing.
+\end{enumerate}  
+
+%\vspace{5pc}
+Your signature below indicates that you have read this page and agree to follow the Academic Honesty Policies of the University of Arkansas.  
+
+\vspace{3pc}
+Signature: \underline{\hspace{79ex}}
+
+\begin{enumerate}
+
+% % % % %
+\newpage
+\item 
+\begin{enumerate}
+\item How many strings can be formed using all of the letters 
+\[\hspace{-3pc}\text{A S S I S T A N T S H I P}\]
+
+\vspace{15pc}
+\item How many such strings have all the S's consecutive?
+
+\vspace{15pc}
+\item How many such strings from (a) have no consecutive S's?
+\end{enumerate}
+
+% % % % %
+\newpage
+\item \begin{enumerate}
+\item The Binomial Theorem (BT) states $(x+y)^n=$  
+
+\vspace{2pc}
+\item Using the BT, write down the coefficient for $x^2yz$ in the expansion of $(2x+y-z)^4$.
+
+\vspace{15pc}
+\item 
+Prove that 
+\[\left(\frac{m}{m+n}\right)^m\left(\frac{n}{m+n}\right)^n\cdot\binom{m+n}{m}<1\]
+for all $m,n\in\Z_{>0}$.  {\it Hint:} Consider the term for $k=m$ in the BT expansion of $(x+y)^{m+n}$ for appropriate $x$ and $y$.
+
+\end{enumerate}
+
+% % % % %
+\newpage
+\item Professor Euclid is paid every other Friday.  Using the Pigeonhole Principle, prove that in one year's time, there will be some month where she got paid three times.  To get credit, you MUST state which version of the Principle Pigeonhole you used and how you applied it in solving the problem.
+
+\vspace{25pc}
+\item How many positive integer solutions are there of
+\[x_1+x_2+x_3=20?\]
+
+% % % % %
+\newpage
+\item \begin{enumerate}
+\item Draw the complete bipartite graph $K_{2,4}$, with vertices and edges legibly labeled.
+
+\vspace{12pc}
+\item Write the adjacency matrix for $K_{2,4}$.
+
+\vspace{12pc}
+\item Write the incidence matrix for $K_{2,4}$.
+
+\vspace{12pc}
+\item Does $K_{2,4}$ have an Euler cycle?  If yes, then list the ordering of edges that give one.  If no, then prove why not.
+
+\end{enumerate}
+
+% % % % %
+%\newpage
+%\item Does the following graph, $G$, have a Hamiltonian cycle?  If yes, then draw it.  If no, then prove why not.
+%\vspace{-1pc}  
+%\begin{figure}[h]
+%\begin{center}
+%\includegraphics*[scale=0.8]{Exam3Ham.png}
+%\caption{Example 8.3.3 in the text}\label{fig:Ham}
+%\end{center}
+%\end{figure}
+
+% % % % %
+\newpage
+\item Are the following\footnote{Image Credit: Epp, Susanna. {\it Discrete Mathematics with Applications}.  Cengage Learning, 2010.  p. 677.} graphs $G$, $G'$ isomorphic?  If so then, exhibit an isomorphism.  If not, then state an invariant not shared by the two graphs.  If the invariant you cite was not mentioned in class then you must prove it is actually an invariant.  
+\vspace{-1pc}  
+\begin{figure}[h]
+\begin{center}
+\includegraphics*[scale=0.9]{Exam3EppIso.png}
+%\caption{Epp p. 677}%\label{fig:Ham}
+\end{center}
+\end{figure}
+
+% % % % %
+\newpage
+\item DO BOTH\footnote{Image Credit: Aldous, Joan M. and Wilson, Robin J. {\it Graphs and Applications: An Introductory Approach}.  Springer-Verlag London, 2000. p. 262.}:   
+\vspace{-1.1pc}  
+\begin{figure}[h]
+\begin{center}
+\includegraphics*[scale=0.6]{Exam3AldousPlanar.png}
+%\caption{Aldous, Joan M. and Wilson, Robin J., {\it Graphs and Applications: An Introductory Approach}, p. 262}
+\end{center}
+\end{figure}
+
+\vspace{-3.25pc}
+Is the graph planar?  Prove your answer: If it is planar then redraw it without any edges overlapping; if it is not planar then exhibit, by series reduction if necessary, a subgraph homeomorphic to $K_{3,3}$ or $K_5$.
+
+% % % % %
+\newpage
+\item The Fibonacci sequence is defined by the recurrence relation
+\[\hspace{-2pc}f_n=f_{n-1}+f_{n-2},\qquad\qquad\text{for $n\geq 3$.}\]
+\begin{enumerate}
+\item How many initial conditions should there be and what are they?
+
+\vspace{5pc}
+\item Solve the relation to get an explicit formula for $f_n$.
+\end{enumerate}
+
+% % % % %
+\newpage
+\item Find a formula for the probability that out of $n$ millennials, at least two will have the same birthday, where ``same birthday" means same month, date, AND year.  Millennials are those born in the years 1980-1995.  Assume no leap years in that time period.
+
+\vspace{20pc}
+\item Find such a formula, only this time, taking leap years into account.
+
+\end{enumerate}
+\end{document}
