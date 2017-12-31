@@ -1,0 +1,213 @@
+\documentclass[margin,line,pifont,palatino,courier]{res}
+
+\usepackage{pifont}
+\usepackage[latin1] { inputenc}
+%\usepackage{dtklogos}
+\usepackage{supertabular}
+\usepackage{comment}
+
+\textheight=9.0in
+%\itemsep=0in
+%\parsep=0in
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\cfoot{}
+\lfoot{}
+\rfoot{{\footnotesize Calc II Fall 2017 Wheeler Syllabus, p. \thepage}}
+
+\newenvironment{list1}{
+  \begin{list}{\ding{113}}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
+      \setlength{\leftmargin}{0.17in}}}{\end{list}}
+\newenvironment{list2}{
+  \begin{list}{$\bullet$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
+      \setlength{\leftmargin}{0.2in}}}{\end{list}}
+
+\begin{document}
+
+\name{Math 236-0004 -- Calculus II 
+\newline
+{\small Last updated: \today} \hspace{0.1\textwidth} {\Large SYLLABUS} \hspace{0.26\textwidth} Fall 2017 \vspace{0.05in}}
+
+\begin{resume}
+%\begin{comment}
+
+
+%\vspace{-.1in}
+%%%
+\section{\sc Course Location \\ and Time} 
+%\begin{tabular}{@{}p{2.6in}p{4in}}
+Moody Hall 201, MW 125-215p, TU 1230-145p
+%\end{tabular}
+
+\vspace{0.25pc}
+\section{\sc Instructor}
+%\vspace{.05in}
+\begin{tabular}{@{}p{2.6in}p{4in}}
+Prof. Ashley K. Wheeler & Office: Roop Hall 322 \\
+Visiting Assistant Professor & Email: \verb+wheeleak@jmu.edu+ \\
+Department of Mathematics \& Statistics & 
+\end{tabular}
+
+%\vspace{1pc}
+%%%
+\section{\sc Office Hours}
+TWU 330-430p or by appointment.  Best times: late mornings or late afternoons MTWU, late morning or early afternoon on Fridays.
+
+%%%
+%\section{\sc Webpages}
+%\begin{tabular}{@{}l l}
+%MyLabsPlus: & \verb+uark.bb.mylabsplus.com+ \\
+%Course Materials: & \verb+comp.uark.edu/~ashleykw/Cal3Fall2015/cal3f15.html+ 
+%\end{tabular}
+%\end{comment}
+
+\vspace{0.25pc}
+%%%
+\section{\sc Textbook}  \emph{Calculus}, Taalman \& Kohn.
+
+%\vspace{1pc}
+%%%
+\section{\sc Calculators} Sliderules are permitted, but not required.  %If you prefer to use a calculator, then a non-programmable scientific calculator is allowed.  
+
+%The following are {\bf not allowed} during any exams:
+%\begin{list2} 
+%\item programmable graphing calculators of any kind
+%\item HP300s 
+%\item Casio fx115m 
+%\item any calculator with a differentiation/integration button 
+%\end{list2} 
+
+%\vspace{-.1in}
+%%%
+\section{\sc Attendance and \\ Class Participation} YOU ARE RESPONSIBLE for attending class.  If you cannot make it make sure to get notes from a classmate or meet me during office hours. 
+
+Participation is expected.  Ask questions when you have them.  When time permits, I will call students to present solutions to problems to the class.  Be supportive of each other!    
+
+%\vspace{-.1in}
+%%%
+\section{\sc Decorum} Cell phones, palm pilots, Blackberries, iPods, etc. -- please be courteous about their use during class.  Do not plan to use any such device, even as a clock, on an exam. No earplugs/headsets allowed.
+
+Class activities should fit as precisely into the scheduled time as possible.   I will do my best to start on time and not lecture past the end of classtime.  In return, if for whatever reason you end up late to class or if you need to leave during lecture, for example, to use the restroom, please do so as discreetly as possible.  Rolling in late and/or packing up early are \underline{not} \underline{cool}, as the noise distracts and sabotages your classmates' investment in the course. 
+
+%\vspace{-.1in}
+%%%
+\section{\sc Academic Honesty} %"As a core part of its mission, the University of Arkansas provides students with the opportunity to further their educational goals through programs of study and research in an environment that promotes freedom of inquiry and academic responsibility. Accomplishing this mission is only possible when intellectual honesty and individual integrity prevail." 
+
+JMU students are fully responsible for knowing and abiding by the University's Academic Integrity Policy.  See \verb+www.jmu.edu/honorcode/code.shtml+ for JMU's honor code. Students with questions about how these policies apply to a particular course or assignment should immediately contact their instructor.
+
+On take-home written assignments, you are welcome to use any resources you like \textbf{but you must document them.}  There is no format I require for documenting sources (e.g., MLA).  I am interested in where you get your mathematical information -- from peers, tutors, websites, other textbooks, etc.  You don't need to document material from this course's text or notes. 
+
+\newpage
+%\vspace{-.1in}
+%%%
+\section{\sc Accommodations} JMU abides by Section 504 of the Rehabilitation Act of 1973 and the Americans with Disabilities Act, which mandate reasonable accommodations be provided for students with documented disabilities. If you have a disability and may require some type of instructional and/or examination accommodations, please contact me early in the semester so that I can provide or facilitate provision of accommodations you may need. If you have not already done so, you will need to register with the Office of Disability Services, the designated office on campus to provide services for students with disabilities. The office is located in Wilson Hall, Room 107 and you may call 540-568-6705 for more information.
+
+%Under University policy and federal and state law, students with documented disabilities are entitled to reasonable accommodations to ensure they receive an equal opportunity to perform in class.  If any member of the class has such a disability and needs special academic accommodations, please report to the Center for Educational Access (CEA).  Reasonable accommodations may be arranged after CEA has verified your disability.  Do not hesitate to contact me if any assistance is needed in the process.
+
+%\vspace{-.1in}
+%%%
+\section{\sc Inclement Weather Policy} See \verb+http://www.jmu.edu/JMUpolicy/policies/1309.shtml+. %Class meets unless the University is closed.  Otherwise, on-campus students are expected to be present.  Off-campus students will only be excused on days the Fayetteville Public Schools are closed due to weather.  If attendance is severely affected by weather, deadlines and exam dates may be adjusted.  Please do not call the Department of Mathematical Sciences with weather-related inquiries.  You may email me for information.
+
+\vspace{0.5pc}
+%%%
+\section{\sc Religious Observation \\ Accomodations} All faculty are required to give reasonable and appropriate accommodations to students requesting them on grounds of religious observation. The faculty member determines what accommodations are appropriate for his/her course. Students should notify the faculty by no later than the end of the Drop-Add period the first week of the semester of potential scheduled absences and determine with the instructor if mutually acceptable alternative methods exist for completing the missed classroom time, lab or activity.
+
+
+%\vspace{-.1in}
+%%%
+\section{\sc Grading} 
+%\begin{center}
+%\vspace{-.2in}
+\begin{supertabular}{@{}p{0.6\textwidth} l}
+	{\bf Exercises (online)} & 15\% \\
+		Webwork. & \\
+		 & \\
+{\bf Take-home quizzes} & 20\% \\
+	Average of your top 8 quizzes (out of $\sim$10). & \\
+ & \\
+ {\bf Three In-Class Exams} & 15\% each \\
+ Dates TBA. & \\
+& \\
+{\bf Final (comprehensive)} & 20\% \\
+\end{supertabular}
+%\end{center}
+
+%\vspace{-.2in}
+Letter grades will typically follow a 90-80-70-60 scale, although your instructor reserves the right to revise downward if necessary.  For example, a 90\% or higher will always guarantee an A.
+
+%\vspace{-.1in}
+%%%
+%\section{\sc Exercises} This is the online homework for the course.  {\bf Pay attention to the deadlines.}  
+
+
+%\vspace{-.1in}
+%%%
+%\section{\sc Take-Home Quizzes}  Assigned approximately weekly.
+
+%\vspace{-.1in}
+%%%
+%\section{\sc Exams} You will have three exams throughout this semester, plus a comprehensive final.  
+
+%\vspace{-.1in}
+%{\bf
+%\begin{tabular}{llll}
+%FRIDAY, 18 SEP & EXAM 1 \\
+%WEDNESDAY, 14 OCT & EXAM 2 \\
+%FRIDAY, 6 NOV & EXAM 3  \\
+%FRIDAY, 18 DEC 10:15a-12:15p & FINAL (for the 12:55p section) \\
+%MONDAY, 14 DEC 1-3p & FINAL (for the 2p section) 
+%\end{tabular} 
+%}
+
+%\vspace{-.1in}
+%These exams are scheduled before the semester begins, so {\bf ELIMINATE ANY CONFLICTS NOW.} Students who are entitled to accommodation by ADA must notify their instructor, who must then notify the coordinator at least one full week in advance. Students who have a legitimate University-related conflict ($=$ same time as another University exam) with the final exam must also identify themselves at least a week in advance. Last minute requests for make-up exams may not be granted. 
+
+
+%\vspace{-.1in}
+%%%
+%\newpage
+%\vspace{-.1in}
+%%%
+%\section{\sc Tutoring} %There are free student tutors in the Enhanced Learning Center (Gregson Hall), Mullins Library, ENGR, Reid, Futrall, Maple Hill, and MRTC. Visit their websites for the latest hours.
+
+
+
+%\vspace{-.1in}
+%%%
+%\section{\sc Emergency Procedures} %Severe Weather (Tornado Warning):
+%\begin{list2}
+%\item Follow the directions of the instructor or emergency personnel.
+%\item Seek shelter in the basement or interior room or hallway on the lowest floor, putting as many walls as possible between you and the outside.
+%\item If you are in a multi-story building, and you cannot get to the lowest floor, pick a hallway in the center of the building.
+%\item Stay in the center of the room, away from exterior walls, windows, and doors.
+%\end{list2}
+
+%Violence / Active Shooter (CADD):
+
+%\vspace{-.25in}
+%\begin{center}
+%\begin{tabular}{@{}lp{0.8\textwidth}}
+%{\bf \underline CALL} & 9-1-1 \\
+%{\bf \underline AVOID} & If possible, self-evacuate to a safe area outside the building.  Follow directions of police officers. \\
+%{\bf \underline DENY} & Barricade the door with desk, chairs, bookcases or any items.  Move to a place inside the room where you are not visible.  Turn off the lights and remain quiet.  Remain there until told by police it's safe. \\
+%{\bf \underline DEFEND} & Use chairs, desks, cell phones or whatever is immediately available to distract and/or defend yourself and others from attack. \\
+%\end{tabular}
+%\end{center}
+
+%\vspace{-.1in}
+%More instructions for emergencies such as severe weather, active shooter, or fire can be found at \verb+emergency.uark.edu+.   
+
+%\vspace{-.1in}
+%%%
+\section{\sc Disclaimer} {\bf THIS SYLLABUS IS SUBJECT TO CHANGE.} You will be notified in email and/or in class of changes. %Failure to check your email and/or failure to read the announcements in MLP and/or failure to attend class will not constitute a reason to be allowed to make up any assignments, tests, or changes to the course.
+
+\end{resume}
+\end{document}
