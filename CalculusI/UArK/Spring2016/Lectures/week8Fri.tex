@@ -1,0 +1,256 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+
+\begin{document}
+
+%\section[Week 8]{Week 8: 7-11 Mar}
+
+% % % 
+\subsubsection{\bf Friday 11 March}
+% % %
+
+\begin{frame}[allowframebreaks]{Fri 11 Mar}
+\begin{itemize}\footnotesize
+\item Exam 2: Curve, etc. is posted. 
+
+\begin{center}
+\includegraphics[scale=0.6]{..//Exam2Spread}
+\end{center}
+\framebreak
+\item Midterm: expect it back next week in drill.  Don't expect a curve. :(
+\item ``Fast Track Calculus": Dr. Kathleen Morris will be teaching a second 8 weeks Calculus One class.  ``If you have a student who is maybe doing poorly because of illness or a tragic event in their life during the beginning of the semester, this might be an opportunity for a new start for them."  The class requires departmental consent so the student will need to contact Kathleen to get permission to enroll.
+\end{itemize}
+\end{frame}
+
+% % %
+\subsection[3.10 Derivatives of Inverse Trigonometric Functions]{\S 3.10 Derivatives of Inverse Trigonometric Functions}
+% % %
+
+% % %
+\begin{frame}{\S 3.10 Derivatives of Inverse Trigonometric Functions}{}\small
+{\bf Recall:} If $y=f(x)$, then $f^{-1}(x)$ is the value of $y$ such that $x=f(y)$.
+\begin{ex} If $f(x)=3x+2$, then what is $f^{-1}(x)$? \end{ex}
+{\bf NOTE:}  $f^{-1}(x)\alert{\neq} f(x)^{-1}\textstyle\left(=\frac{1}{f(x)}\right)$
+
+\vspace{0.5pc}
+To avoid this confusion, we use $\arcsin{x},\,\arccos{x}\,\arctan{x},\dots$ to denote inverse trig functions.
+\end{frame}
+
+% % %
+\subsubsection{Derivative of Inverse Sine}
+% % %
+
+% % %
+\begin{frame}{\small Derivative of Inverse Sine}
+Trig functions are functions, too.  Just like with ``$f\,$", there has to be something to ``plug in".  It makes no sense to just say $\sin$, without having $\sin(\text{\alert{\it something}})$.
+\[y=\sin^{-1}x \Longleftrightarrow x=\sin y\]  
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+The derivative of $y=\sin^{-1}x$ can be found using implicit differentiation: 
+\begin{alignat*}{2}
+x &= \sin y \\
+\frac{d}{dx}(x) &= \frac{d}{dx}(\sin y) \\
+1 &= (\cos y) \frac{dy}{dx} \\
+\frac{dy}{dx} &= \frac{1}{\cos y}
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+We still need to replace $\cos y$ with an expression in terms of $x$.  We use the trig identity $\sin^2 y + \cos^2 y = 1$ (careful with notation: in this case we mean $\left(\sin y\right)^2+\left(\cos y\right)^2=1$).  Then 
+\[\cos y= \pm \sqrt{1-\sin^2 y}=\pm\sqrt{1-x^2}.\]
+The range of $y=\sin^{-1}x$ is $-\textstyle\frac{\pi}{2} \leq y \leq \frac{\pi}{2}$.  In this range, cosine is never negative, so we can just take the positive portion of the square root.
+Therefore,
+\[\frac{dy}{dx}=\frac{1}{\cos y}=\frac{1}{\sqrt{1-x^2}} \implies \alert{\frac{d}{dx}(\sin^{-1}x)=\frac{1}{\sqrt{1-x^2}}}.\]
+\end{frame}
+
+% % %
+\begin{frame}{}
+\begin{exe} Compute the following:
+\begin{itemize}
+\item[1.] $\frac{d}{dx} \left( \sin^{-1}(4x^2-3) \right)$
+\item[2.] $\frac{d}{dx} \left( \cos(\sin^{-1}x) \right)$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Derivative of Inverse Tangent}
+% % %
+
+% % %
+\begin{frame}{\small Derivative of Inverse Tangent}\footnotesize
+Similarly to inverse sine, we can let $y=\tan^{-1}x$ and use implicit differentiation:
+\vspace{-0.5pc}
+\begin{alignat*}{2}
+x &= \tan y \\
+\frac{d}{dx}(x) &= \frac{d}{dx} (\tan y) \\
+1 &= (\sec^2 y) \frac{dy}{dx} \\
+\frac{dy}{dx} &= \frac{1}{\sec^2 y}
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+Use the trig identity $\sec^2 y-\alert{\tan^2 y}=1$ to replace $\sec^2 y$ with $1+\alert{x^2}$:
+\[\alert{\frac{d}{dx}(\tan^{-1} x)=\frac{1}{1+x^2}}\]
+\end{frame}
+
+% % %
+\subsubsection{Derivative of Inverse Secant}
+% % %
+
+% % %
+\begin{frame}{\small Derivative of Inverse Secant}\footnotesize
+Again, use the same method as with inverse sine:
+\begin{alignat*}{2}
+y &= \sec^{-1}x \\
+x &= \sec y \\
+\frac{d}{dx}(x) &= \frac{d}{dx} (\sec y) \\
+1 &= \sec y \tan y \frac{dy}{dx} \\
+\frac{dy}{dx} &= \frac{1}{\sec y \tan y}
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+Use the trig identity $\sec^2 y-\tan^2 y=1$ again to get 
+\[\tan y=\pm\sqrt{\sec^2 y-1}=\pm\sqrt{x^2-1}.\]
+This time, the $\pm$ matters:
+\vspace{-1.1pc}
+\begin{columns}
+\begin{column}{0.3\textwidth}
+	\begin{center}\includegraphics[scale=0.49]{pictures/invSecpic}\end{center}
+\end{column}
+\begin{column}{0.6\textwidth}
+	\begin{itemize}
+	\item If $x \ge 1$, then $0\leq y<\textstyle\frac{\pi}{2}$ and so $\tan y >0.$  
+	\item If $x \le -1$, then $\textstyle\frac{\pi}{2} < y \leq \pi$ and so  $\tan y <0$.  
+	\end{itemize}
+\end{column}
+\end{columns}	
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+Therefore,
+\[\alert{\frac{d}{dx}(\sec^{-1} x)=\frac{1}{|x|\sqrt{x^2-1}}}.\]
+\hrulefill
+
+Using other trig identities (which you do not need to prove)
+\[\cos^{-1}x+\sin^{-1}x=\frac{\pi}{2}\quad \cot^{-1}x+\tan^{-1}x=\frac{\pi}{2}\quad \csc^{-1}x+\sec^{-1}x=\frac{\pi}{2}\] 
+we can get the rest of the inverse trig derivatives. 
+\end{frame}
+
+% % %
+\subsubsection{All Other Inverse Trig Derivatives}
+% % %
+
+% % %
+\begin{frame}{\small All Other Inverse Trig Derivatives}
+To summarize:
+\begin{columns}
+\begin{column}{0.45\textwidth}
+	\begin{itemize}
+	\item[]$\textstyle\frac{d}{dx}(\sin^{-1}x)=\frac{1}{\sqrt{1-x^2}}$
+	\item[]$\textstyle\frac{d}{dx}(\tan^{-1}x)=\frac{1}{1+x^2}$ 
+	\item[]$\textstyle\frac{d}{dx}(\sec^{-1}x)=\frac{1}{|x|\sqrt{x^2-1}}$ 
+	\end{itemize}
+\end{column}
+\begin{column}{0.6\textwidth}
+	\begin{itemize}
+	\item[] \alert{$\textstyle\frac{d}{dx}(\cos^{-1}x)=-\frac{1}{\sqrt{1-x^2}}$} \\
+	$\quad (-1<x<1)$ 
+	\item[] \alert{$\textstyle\frac{d}{dx}(\cot^{-1}x)=-\frac{1}{1+x^2}$} \\
+	$\quad (-\infty<x<\infty) $ 
+	\item[] \alert{$\textstyle\frac{d}{dx}(\csc^{-1}x)=-\frac{1}{|x|\sqrt{x^2-1}}$} \\
+	$\quad (|x|>1)$ 
+	\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{ex} Compute the derivatives of $f(x)=\tan^{-1}\left(\textstyle\frac{1}{x}\right)$ and $g(x)=\sin \left(\sec^{-1}(2x) \right)$. \end{ex}
+\end{frame}
+
+% % %
+\subsubsection{Derivatives of Inverse Functions in General}
+% % %
+
+% % %
+\begin{frame}{\small Derivatives of Inverse Functions in General}\footnotesize
+Let $f$ be differentiable and have an inverse on an interval $I$.  Let $x_0$ be a point in $I$ at which $f^{\prime}(x_0)\ne0$.  Then $f^{-1}$ is differentiable at $y_0=f(x_0)$ and 
+\[\left(f^{-1}\right)^{\prime}(y_0)=\frac{1}{f^{\prime}(x_0)}\]
+where $y_0=f(x_0)$.
+\begin{ex} Let $f(x)=3x+4$.  Find $f^{-1}(x)$ and $\left(f^{-1}\right)^{\prime}\left(\textstyle\frac{1}{3}\right)$. \end{ex}
+\end{frame}
+
+% % %
+\subsubsection{Book Problems}
+% % %
+
+% % %
+\begin{frame}
+\begin{block}{3.10 Book Problems} 7-33 (odds), 37-41 (odds) \end{block}
+\end{frame}
+
+% % %
+\subsection[3.11 Related Rates]{\S 3.11 Related Rates}
+% % %
+
+% % %
+\begin{frame}{\S 3.11 Related Rates}
+\small 
+In this section, we use our knowledge of derivatives to examine how variables change with respect to time.
+
+\vspace{1pc}
+The prime feature of these problems is that two or more variables, which are related in a known way, are themselves changing in time.
+
+\vspace{1pc}
+The goal of these types of problems is to determine the rate of change (i.e., the derivative) of one or more variables at a specific moment in time.
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\begin{block}{Problem}
+The edges of a cube increase at a rate of 2 cm/sec.  How fast is the volume changing when the length of each edge is 50 cm?
+\end{block}
+\small
+\begin{itemize}
+\item {\bf Variables:}  $V$ (Volume of the cube) and $x$ (length of edge)
+\item {\bf How Variables are related:}  $V=x^3$
+\item {\bf Rates Known:}  $\dfrac{dx}{dt}=2\ \text{cm/sec}$
+\item {\bf Rate We Seek:}  $\dfrac{dV}{dt}$ when $x=50\ \text{cm}$
+\end{itemize}
+\end{frame}
+
+% % % 
+\begin{frame}
+\small
+Note that both $V$ and $x$ are functions of $t$ (their respective sizes are dependent upon how much time has passed).
+
+\vspace{1pc}
+So we can write $V(t)=x(t)^3$ and then differentiate this with respect to $t$:
+$$V^{\prime}(t) = 3 x(t)^2 \cdot x^{\prime}(t).$$
+
+\vspace{1pc}
+{\bf Note that $x(t)$ is the length of the cube's edges at time $t$, and $x^{\prime}(t)$ is the rate at which the edges are changing at time $t$.}
+\end{frame}
+
+% % %
+\begin{frame}
+
+We can rewrite the previous equation as
+
+\[\frac{dV}{dt}=3x^2 \cdot \frac{dx}{dt}.\]
+
+\vspace{1pc}
+So the rate of change of the volume when $x=50\ \text{cm}$ is 
+\[\left.\frac{dV}{dt}\right|_{x=50}=3\cdot 50^2 \cdot 2 = 15000\ \text{cm}^3/\text{sec}.\]
+\end{frame}
+
+\end{document}

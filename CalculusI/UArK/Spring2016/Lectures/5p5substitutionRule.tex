@@ -1,0 +1,259 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+
+\begin{document}
+
+%\section[]{}
+
+% % %
+\subsection[5.5 Substitution Rule]{\S 5.5 Substitution Rule}
+
+% % %
+\begin{frame}{\S 5.5 Substitution Rule}{}
+We have seen a few methods to find antiderivatives (e.g., power rule, knowledge of derivatives, etc.).  However, for many functions, it is more challenging to find the antiderivative.
+
+\vspace{1pc}
+Today we examine the substitution rule as a method to integrate.
+\end{frame}
+
+% % % 
+\subsubsection{Integration by Trial and Error}
+% % % 
+
+% % %
+\begin{frame}{\small Integration by Trial and Error}\small
+One somewhat inefficient method to find an antiderivative is by trial and error (with a natural check -- find the derivative).
+
+\begin{ex}
+$\int \cos{(2x+5)}\ dx$
+\end{ex}
+{\bf Guess:} Is it $\sin{(2x+5)} +C$?
+
+\vspace{0.5pc}
+{\bf Check:} $\frac{d}{dx}\sin{(2x+5)}=2\cdot\cos{(2x+5)}$
+
+\begin{que}
+How can you use your first attempt to refine your guess?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}
+So we try $\frac{1}{2}\sin{(2x+5)}+C$.
+
+\vspace{0.5pc}
+{\bf Check:} $\frac{d}{dx}\left(\frac{1}{2}\sin{(2x+5)}+C\right)=\frac{1}{2}(2\cdot \cos{(2x+5)})=\cos{(2x+5)}$
+
+\vspace{1pc}
+So $\int\cos{(2x+5)}=\frac{1}{2}\sin{(2x+5)} +C$.
+\end{frame}
+
+% % %
+\subsubsection{Substitution Rule}
+% % %
+
+% % %
+\begin{frame}{\small Substitution Rule}
+Trial and error can work in particular settings, but it is not an effiient strategy and doesn't work with some functions.
+
+\vspace{0.5pc}
+However, just as the Chain Rule helped us differentiate complex functions, the substitution rule (based on the Chain Rule) allows us to integrate complex functions.
+\end{frame}
+
+% % %
+\begin{frame}\small
+{\bf Idea:}  Suppose we have $F(g(x))$, where $F$ is an antiderivative of $f$.  Then
+
+\vspace{-2.5pc}
+\begin{align*}
+\frac{d}{dx} \bigg[F(g(x)) \bigg] &= F^{\prime}(g(x)) \cdot g^{\prime}(x) = f(g(x)) \cdot g^{\prime}(x) \\
+\text{ and }\int f(g(x)) \cdot g^{\prime}(x)\ dx &= F(g(x))+C.
+\end{align*}
+
+\vspace{1pc}
+If we let $u=g(x)$, then $du=g^{\prime}(x)\ dx$.  The integral becomes
+\[\int f(g(x)) \cdot g^{\prime}(x)\ dx = \int f(u)\ du.\]
+\end{frame}
+
+% % %
+\subsubsection{Substitution Rule for Indefinite Integrals}
+% % %
+
+% % %
+\begin{frame}{\small Substitution Rule for Indefinite Integrals}
+\small
+Let $u=g(x)$, where $g^{\prime}$ is continuous on an interval, and let $f$ be continuous on the corresponding range of $g$.  On that interval,
+\[\int f(g(x)) g^{\prime}(x)\ dx = \int f(u)\ du.\]
+
+\vspace{1pc}
+\alert{$u$-Substitution is the Chain Rule, backwards.}
+\end{frame}
+
+% % %
+\begin{frame}{}\small
+\begin{ex} 
+Evaluate $\int 8x \cos(4x^2 + 3)\ dx.$ 
+\end{ex}
+
+\vspace{1pc}
+{\bf Solution:} Look for a function whose derivative also appears.
+\begin{align*}
+u(x) &=4x^2+3 \\
+\text{ and }u'(x) &= \frac{du}{dx} = 8x \\[0.5pc]
+\implies du &= 8x\ dx.
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}{}\footnotesize
+Now rewrite the integral and evaluate.  Replace $u$ at the end with its expression in terms of $x$. 
+\begin{alignat*}{2}
+\int 8x \cos(4x^2 + 3)\ dx &= \int \cos(\underbrace{4x^2 + 3}_{u})\underbrace{8x\ dx}_{du} \\
+&= \int \cos u\ du \\[0.25pc]
+&= \sin u + C \\[0.5pc]
+&= \sin(4x^2 + 3) + C
+\end{alignat*}
+
+We can check the answer -- by the Chain Rule,
+\[\frac{d}{dx}\left(\sin{(4x^2+3)}+C\right)=8x\cos{(4x^2+3)}.\]
+\end{frame}
+
+% % %
+\subsubsection{Procedure for Substitution Rule (Change of Variables)}
+% % %
+
+% % %
+\begin{frame}{\small Procedure for Substitution Rule (Change of Variables)}
+\small
+\begin{itemize}
+\item[1.] Given an indefinite integral involving a composite function $f(g(x))$, identify an inner function $u=g(x)$ such that a constant multiple of $g^{\prime}(x)$ appears in the integrand.
+\item[2.] Substitute $u=g(x)$ and $du=g^{\prime}(x)\ dx$ in the integral.
+\item[3.] Evaluate the new indefinite integral with respect to $u$.
+\item[4.] Write the result in terms of $x$ using $u=g(x)$.
+\end{itemize}
+
+\vspace{1pc}
+\alert{Warning:  Not all integrals yield to the Substitution Rule.}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{ex}
+Evaluating the integral $\int\frac{x}{x^2+1}\ dx$ yields the result
+\begin{itemize}
+\item[A.] $x\arctan x+C$
+\item[B.] $\frac{\frac{x^2}{2}}{\frac{x^3}{3+x}}+C$
+\item[C.] $\frac{1}{2}\ln{(x^2+1)}+C$
+\item[D.] $\ln{|x|}+C$
+\end{itemize}
+\end{ex}
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+\begin{exe} Evaluate the following integrals.  Check your work by differentiating each of your answers.
+\begin{itemize}
+\item[1. ] $\int \sin^{10} x \cos x \ dx$
+\item[2. ] $-\int \frac{\csc x \cot x}{1+\csc x}\ dx$
+\item[3. ] $\int \frac{1}{(10x-3)^2}\ dx$
+\item[4. ] $\int (3x^2 + 8x + 5)^8 (3x+4)\ dx$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Variations on Substitution Rule}
+% % %
+
+% % %
+\begin{frame}{\small Variations on Substitution Rule}\footnotesize
+There are times when the $u$-substitution is not obvious or that more work must be done.
+\begin{ex} 
+Evaluate $\int \frac{x^2}{(x+1)^4}\ dx.$ 
+\end{ex}
+
+{\bf Solution:}  Let $u=x+1$.  Then $\alert{x=u-1}$ and $du=dx$.  Hence,
+\begin{alignat*}{2}
+\int \frac{\alert{x}^2}{(x+1)^4}\ dx &= \int \frac{(\alert{u-1})^2}{u^4}\ du \\
+&= \int \frac{u^2-2u+1}{u^4}\ du 
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+\begin{alignat*}{2}
+&= \int \left(u^{-2}-2u^{-3}+u^{-4} \right) \ du \\
+&= \frac{-1}{u} + \frac{1}{u^2} + \frac{-1}{3u^3} + C \\
+&= \frac{-1}{x+1} + \frac{1}{(x+1)^2} - \frac{1}{3(x+1)^3} + C
+\end{alignat*}
+%
+\begin{exe}Check it. \end{exe}
+%
+This type of strategy works, usually, on problems where $u$ can be written as a linear function of $x$.
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{exe}
+$\int\frac{x}{\sqrt{x+1}}\ dx$
+\end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Substitution Rule for Definite Integrals}
+% % %
+
+% % %
+\begin{frame}{\small Substitution Rule for Definite Integrals}\footnotesize
+We can use the Substitution Rule for Definite Integrals in two different ways:
+\begin{itemize}
+\item[1.] Use the Substitution Rule to find an antiderivative $F$, and then use the Fundamental Theorem of Calculus to evaluate $F(b)-F(a)$.
+\item[2.] Alternatively, once you have changed variables from $x$ to $u$, you may also change the limits of integration and complete the integration with respect to $u$.  Specifically, if $u=g(x)$, the lower limit $x=a$ is replaced by $u=g(a)$ and the upper limit $x=b$ is replaced by $u=g(b)$.
+\end{itemize}
+
+\vspace{1pc}
+\alert{The second option is typically more efficient and should be used whenever possible.}
+\end{frame}
+
+% % %
+\begin{frame}{}\footnotesize
+\begin{ex} 
+Evaluate $\int_0^4 \frac{x}{\sqrt{9+x^2}}\ dx.$ 
+\end{ex}
+
+{\bf Solution:} Let $u=9+x^2$.  Then $du=2x\ dx$.  Because we have changed the variable of integration from $x$ to $u$, the limits of integration must also be expressed in terms of $u$.  Recall, $u$ is a function of $x$ (the $g(x)$ in the Chain Rule). For this example,
+\begin{alignat*}{2}
+x=0\ &\implies\ u(0) = 9+0^2 = 9 \\
+x=4\ &\implies\ u(4) = 9+4^2 = 25 
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+\small
+We had $u=9+x^2$ and $du=2x\ dx \implies \frac{1}{2}du=x\ dx$. So:
+
+\begin{align*}
+\int_0^4 \frac{x}{\sqrt{9+x^2}}\ dx &= \frac{1}{2}\int_{9}^{25} \frac{du}{\sqrt{u}} \\[0.5pc]
+ &= \frac{1}{2} \left. \left(\frac{u^{\frac{1}{2}}}{\frac{1}{2}} \right) \right\vert_{9}^{25} \\[0.5pc]
+ &= \sqrt{25}-\sqrt{9} \\[0.5pc]
+ &= 5-3=2.
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{exe} Evaluate $\int_0^2 \frac{2x}{(x^2+1)^2}\ dx.$ \end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Book Problems}
+% % %
+
+% % %
+\begin{frame}
+\begin{block}{5.5 Book Problems} 
+13-51 (odds), 63-77 (odds)
+\end{block}
+\end{frame}
+
+\end{document}

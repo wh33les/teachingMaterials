@@ -1,0 +1,183 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+
+\begin{document}
+
+%\section[Week 12]{Week 12: 11-15 Apr}
+
+% % % 
+\subsubsection{\bf Monday 11 April}
+% % %
+
+\begin{frame}[allowframebreaks]{Mon 11 Apr}
+\begin{itemize}%\footnotesize
+\item Exam 3: expect Thursday in drill.  Stay tuned for the solutions.  Protocol for appeals.
+\item No (scheduled) office hours Friday.
+\end{itemize}
+\end{frame}
+
+% % %
+\subsection[4.7 L'H\^opital's Rule]{\S 4.7 L'H\^{o}pital's Rule}
+% % % 
+
+% % %
+\begin{frame}{\S 4.7 L'H\^{o}pital's Rule}
+\small
+In Ch.\ 2, we examined limits that were computed using analytical techniques.  Some of these limits, in particular those that were indeterminate, could not be computed with simple analytical methods% (e.g., substitution)
+.
+
+\vspace{1pc}
+For example, 
+\vspace{-0.5pc}
+\[\lim_{x \to 0} \frac{\sin x}{x}\quad\text{ and }\quad \lim_{x \to 0} \frac{1-\cos x}{x}\] 
+are both limits that can't be computed by substitution, because plugging in 0 for $x$ gives $\frac{0}{0}$.
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\small
+\begin{thm}[L'H\^{o}pital's Rule $(\frac{0}{0})$]
+Suppose $f$ and $g$ are differentiable on an open interval $I$ containing $a$ with $g^{\prime}(x) \ne 0$ on $I$ when $x \ne a$.  If 
+$$\lim_{x \to a} f(x)=\lim_{x \to a} g(x)=0$$
+then
+$$\lim_{x \to a} \frac{f(x)}{g(x)}=\lim_{x \to a} \frac{f^{\prime}(x)}{g^{\prime}(x)},$$
+provided the limit on the right side exists (or is $\pm \infty$).
+\end{thm}
+
+\vspace{1pc}
+(The rule also applies if $x \to a$ is replaced by $x \to \pm \infty$, $x \to a^+$ or $x \to a^-$.)
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\small
+\begin{ex} Evaluate the following limit:  
+\vspace{-0.5pc}
+\[\lim_{x \to -1} \frac{x^4+x^3+2x+2}{x+1}.\]
+\end{ex}
+
+\footnotesize
+{\bf Solution:}  By direct substitution, we obtain 0/0.  So we must apply l'H\^{o}pital's Rule (LR) to evaluate the limit:
+\begin{alignat*}{2}
+\lim_{x \to -1} \frac{x^4+x^3+2x+2}{x+1} &\overset{\text{LR}}{=} \lim_{x \to -1} \frac{ \dfrac{d}{dx} \left(x^4+x^3+2x+2 \right)}{\dfrac{d}{dx} (x+1)} \\
+&= \lim_{x \to -1} \frac{4x^3+3x^2+2}{1} \\
+&= -4+3+2 = 1
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\small
+\begin{thm}[L'H\^{o}pital's Rule $(\frac{\infty}{\infty})$]
+Suppose $f$ and $g$ are differentiable on an open interval $I$ containing $a$ with $g^{\prime}(x) \ne 0$ on $I$ when $x \ne a$.  If 
+$$\lim_{x \to a} f(x)=\lim_{x \to a} g(x)=\pm\infty$$
+then
+$$\lim_{x \to a} \frac{f(x)}{g(x)}=\lim_{x \to a} \frac{f^{\prime}(x)}{g^{\prime}(x)},$$
+provided the limit on the right side exists (or is $\pm \infty$).
+\end{thm}
+
+\vspace{1pc}
+(The rule also applies if $x \to a$ is replaced by $x \to \pm \infty$, $x \to a^+$ or $x \to a^-$.)
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{exe} Evaluate the following limits using l'H\^{o}pital's Rule:
+
+\begin{itemize}
+\item $\displaystyle\lim_{x \to \infty} \frac{4x^3-2x^2+6}{\pi x^3+4}$
+
+\vspace{1pc}
+\item $\displaystyle\lim_{x \to 0} \frac{\tan 4x}{\tan 7x}$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\subsubsection{L'H\^opital's Rule in disguise}
+% % %
+
+% % %
+\begin{frame}{\small L'H\^opital's Rule in disguise}
+\small
+Other indeterminate limits in the form $0 \cdot \infty$ or $\infty - \infty$ cannot be evaluated directly using l'H\^{o}pital's Rule.
+
+\vspace{1pc}
+For $0 \cdot \infty$ cases, we must rewrite the limit in the form $\frac{0}{0}$ or $\frac{\infty}{\infty}$.  A common technique is to divide by the reciprocal:
+\[\lim_{x \to \infty} \alert{x^2} \sin \left( \frac{1}{5x^2} \right) = \lim_{x \to \infty} \frac{\sin \left( \dfrac{1}{5x^2} \right)}{\alert{\dfrac{1}{x^2}}}\]
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\small
+\begin{exe} Compute $\displaystyle\lim_{x \to \infty} x \sin \left( \dfrac{1}{x} \right).$ \end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\footnotesize
+For $\infty - \infty$, we can divide by the reciprocal as well as use a change of variables:
+\begin{ex} Find $\displaystyle\lim_{x \to \infty} x-\sqrt{x^2+2x}$. \end{ex}
+{\bf Solution:}
+\vspace{-1.5pc}
+\begin{alignat*}{2}
+\lim_{x \to \infty} x-\sqrt{x^2+2x} &= \lim_{x \to \infty} x-\sqrt{\alert{x^2}(1+\frac{2}{x})} \\%[0.5pc]
+&=\lim_{x \to \infty} x-\alert{x}\sqrt{1+\frac{2}{x}} \\
+&= \lim_{x \to \infty} \alert{x} \left( 1-\sqrt{1+\frac{2}{x}} \right) \\
+&= \lim_{x \to \infty} \frac{ 1-\sqrt{1+\frac{2}{x}} }{\alert{\frac{1}{x}} }
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+\small
+This is now in the form $\frac{0}{0}$, so we can apply l'H\^{o}pital's Rule and evaluate the limit.  
+
+\vspace{1pc} 
+In this case, it may even help to change variables.  Let $t=\frac{1}{x}$:
+\[\lim_{x \to \infty} \frac{ 1-\sqrt{1+\frac{2}{x}} }{\dfrac{1}{x} } = \lim_{t \to 0^+} \frac{1-\sqrt{1+2t}}{t}.\]
+\end{frame}
+
+% % %
+\subsubsection{Other Indeterminate Forms}
+% % %
+
+% % %
+\begin{frame}{\small Other Indeterminate Forms}
+\footnotesize
+Limits in the form $1^{\infty}$, $0^0$, and $\infty^0$ are also considered indeterminate forms, and to use l'H\^{o}pital's Rule, we must rewrite them in the form $\frac{0}{0}$ or $\frac{\infty}{\infty}$.  Here's how:
+
+\vspace{1pc}
+Assume $\displaystyle\lim_{x \to a} f(x)^{g(x)}$ has the indeterminate form $1^{\infty}$, $0^0$, or $\infty^0$.
+\begin{itemize}
+\item[1.] Evaluate $L=\displaystyle\lim_{x \to a} g(x) \ln f(x)$.  This limit can often be put in the form $\frac{0}{0}$ or $\frac{\infty}{\infty}$, which can be handled by l'H\^{o}pital's Rule.
+\item[2.] Then $\displaystyle\lim_{x \to a} f(x)^{g(x)}=e^L$. \alert{Don't forget this step!}
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\small
+\begin{ex} Evaluate $\displaystyle\lim_{x \to \infty} \left( 1+\dfrac{1}{x} \right)^x$. \end{ex}
+\footnotesize
+{\bf Solution:}  This is in the form $1^{\infty}$, so we need to examine
+\begin{alignat*}{2}
+L &= \lim_{x \to \infty} x \ln \left( 1 + \frac{1}{x} \right) \\
+ &= \lim_{x \to \infty} \frac{\ln \left( 1 + \frac{1}{x} \right)}{ \frac{1}{x}} \\
+ &\overset{\text{LR}}{=} \lim_{x \to \infty} \frac{ \dfrac{1}{1+ \frac{1}{x}}\left(-\frac{1}{x^2}\right) }{- \frac{1}{x^2}} \\ 
+&= \lim_{x \to \infty} \dfrac{1}{1+ \frac{1}{x}} = 1.
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+NOT DONE!  Write
+\[\lim_{x \to \infty} \left( 1+\dfrac{1}{x} \right)^x = e^L = e^1 = e.\]
+\end{frame}
+
+\end{document}

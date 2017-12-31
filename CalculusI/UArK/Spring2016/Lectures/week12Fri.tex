@@ -1,0 +1,177 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+
+\begin{document}
+
+%\section[Week 12]{Week 12: 11-15 Apr}
+
+% % % 
+\subsubsection{\bf Friday 15 April}
+% % %
+
+\begin{frame}[allowframebreaks]{Fri 15 Apr}
+\begin{itemize}\footnotesize
+\item Exam 3
+
+\includegraphics[scale=0.5]{../Exam3Medians}
+
+Spread:
+
+\begin{center}
+\includegraphics[scale=0.5]{../Exam3Spread}
+\end{center}
+\item No (scheduled) office hours today.  I will be in \~1220p.
+\item ALL MLPs are open now.
+\item April 22: Last day to drop with a "W".
+\end{itemize}
+\end{frame}
+
+% % %
+\subsubsection{Initial Value Problems}
+% % %
+
+% % %
+\begin{frame}{\small Initial Value Problems}\footnotesize
+In some instances, you have enough information to determine the value of $C$ in the antiderivative.  These are often called {\bf initial value problems}.  Finding $f(x)$ is often called {\bf finding the solution}.
+
+\begin{ex} 
+If $f^{\prime}(x)=7x^6-4x^3+12$ and $f(1)=24$, find $f(x)$. 
+\end{ex} 
+{\bf Solution:}  $f(x)=\int (7x^6-4x^3+12)\ dx = x^7 - x^4 + 12x + C$.  Now find out which $C$ gives $f(1)=24$:
+
+\vspace{-0.5pc}
+\[24=f(1)=1-1+12+C,\] 
+so $C=12$.  Hence, \alert{$f(x)=x^7 - x^4 + 12x + 12$}.
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{exe} Find the function $f$ that satisfies $f^{\prime\prime}(t)=6t$ with $f^{\prime}(0)=1$ and $f(0)=2$. \end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Book Problems}
+% % %
+
+% % %
+\begin{frame}
+\begin{block}{4.9 Book Problems}
+11-45 (odds), 59-73 (odds), 83-93 (odds) 
+\end{block}
+{\bf Advice:} To solve 83-93 (odds), read pages 325-326, focusing on Example 8. 
+\end{frame}
+
+% % %
+\subsection[5.1 Approximating Area Under Curves]{\S 5.1 Approximating Area Under Curves}
+% % %
+
+% % %
+\begin{frame}{\S 5.1 Approximating Area Under Curves}\small
+In the previous two chapters, we have come to see the derivative of a function associated with the rate of change of a function as well as the slope of the tangent line to the curve.
+\vspace{1pc}
+
+In the first section of Chapter 5, we now examine the meaning of the integral.
+\begin{que}
+If we know the velocity function of a particular object, what does that tell us about its position function?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}\small
+\begin{ex} 
+Suppose you ride your bike at a constant velocity of 8 miles per hour for 1.5 hours.
+\begin{itemize}
+\item[(a)] What is the velocity function that models this scenario?
+\item[(b)] What does the graph of the velocity function look like?
+\item[(c)] What is the position function for this scenario?
+\item[(d)] Where is the displacement (i.e., the distance you've traveled) represented when looking at the graph of the velocity function?
+\end{itemize}
+\end{ex}
+\end{frame}
+
+% % %
+\begin{frame}\small
+In the previous example, the velocity was constant.  In most cases, this is not accurate (or possible).  How could we find displacement when the velocity is changing over an interval?
+\vspace{1pc}
+
+One strategy is to divide the time interval into a particular number of subintervals and approximate the velocity on each subinterval with a constant velocity.  Then for each subinterval, the displacement can be evaluate and summed.
+\vspace{1pc}
+
+{\bf Note:}  This provides us with only an approximation, but with a larger number of subintervals, the approximation becomes more accurate.
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+\begin{ex} 
+Suppose the velocity of an object moving along a line is given by $v(t)=\sqrt{10t}$ on the interval $1 \le t \le 7$.  Divide the time interval into $n=3$ subintervals, assuming the object moves at a constant velocity equal to the value of $v$ evaluated at the midpoint of the subinterval.  Estimate the displacement of the object on $[1,7]$.  Repeat for $n=6$ subintervals. 
+\vspace{-0.5pc}
+\begin{center}
+\includegraphics[scale=0.75]{pictures/Ch5Sect1_Exer10}
+\end{center}
+\end{ex}
+\end{frame}
+
+% % %
+\subsubsection{Riemann Sums}
+% % %
+
+% % %
+\begin{frame}{\small Riemann Sums}\footnotesize
+The more subintervals you divide your time interval into, the more accurate your approximation of displacement will be.% (see Example 1 on pp.\ 307--308).
+We now examine a method for approximating areas under curves.
+
+\vspace{1pc}
+Consider a function $f$ over the interval $[a,b]$.  Divide $[a,b]$ into $n$ subintervals of equal length:
+\[[x_0,x_1], [x_1,x_2], \dots, [x_{n-1},x_n]\]
+with $x_0=a$ and $x_n=b$.  The length of each subinterval is denoted
+\[\Delta x = \frac{b-a}{n}.\]
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+In each subinterval $[x_{k-1}, x_k]$ (where $k$ is any number from $1$ to $n$), we can choose any point $\overline{x}_k$ (note $\overline{x}_k$ might be different, depending on which $k$), and create a rectangle with a height of $f(\overline{x}_k)$.
+
+\vspace{1pc}
+The area of the rectangle is ``base times height", written $f(\overline{x}_k)\Delta x$, since the base is the length of the subinterval.
+
+\vspace{1pc}
+Doing this for each subinterval, and then summing each rectangle's area, produces an approximation of the overall area.  This approximation is called a {\bf Riemann sum}
+\[R=f(\overline{x}_1)\Delta x + f(\overline{x}_2)\Delta x + \cdots + f(\overline{x}_n)\Delta x.\]
+The symbol ``$k$" is what's known as an {\bf indexing variable}.  We let $k$ vary from $1$ to $n$, and we always have $x_{k-1}\leq \overline x_k\leq x_k$.  
+\end{frame}
+
+% % %
+\begin{frame}{}{}\footnotesize
+{\bf Note:} We usually choose $\overline{x}_k$ so that it is consistent across all the subintervals.  
+\begin{dfn}
+Suppose
+\[
+R=f(\overline{x}_1)\Delta x + f(\overline{x}_2)\Delta x + \cdots + f(\overline{x}_n)\Delta x
+\]
+is a Riemann sum.  Then:
+\begin{itemize}
+\item[1.] $R$ is a {\bf left Riemann sum} when we choose $\overline x_k=x_{k-1}$ for each $k$ (so $\overline x_k$ is the left endpoint of the subinterval).  
+\item[2.] $R$ is a {\bf right Riemann sum} when we choose $\overline x_k=x_k$ for each $k$ (so $\overline x_k$ is the right endpoint of the subinterval).
+\item[3.] $R$ is a {\bf midpoint Riemann sum} when we take $\overline x_k$ to be the midpoint between $x_{k-1}$ and $x_k$, for each $k$.  
+\end{itemize}
+\end{dfn}
+(See pages 337-339 for picture of these.)
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+\begin{ex}
+Calculate the left Riemann sum for the function $f(x)=x^2-1$ on the interval $[2,4]$ when $n=4$.
+\begin{itemize}
+\item[A.] 13.75
+\item[B.] 19.75
+\item[C.] 27.5
+\item[D.] 55
+\end{itemize}
+\end{ex}
+\begin{exe}
+Compute the left, right, and midpoint Riemann sums for the function $f(x)=2x^3$ on the interval $[0,8]$ with $n=4$.
+\end{exe}
+\end{frame}
+
+\end{document}

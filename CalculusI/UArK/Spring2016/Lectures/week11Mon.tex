@@ -1,0 +1,132 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+
+\begin{document}
+
+%\section[Week 11]{Week 11: 4-8 Apr}
+
+% % % 
+\subsubsection{\bf Monday 4 April}
+% % %
+
+\begin{frame}[allowframebreaks]{Mon 4 Apr}
+\begin{itemize}%\footnotesize
+\item Exam 3: Friday.  Covers \S 3.10-4.6 
+\end{itemize}
+\end{frame}
+
+% % %
+\subsection[4.6 Mean Value Theorem]{\S 4.6 Mean Value Theorem}
+% % %
+
+% % %
+\begin{frame}{\S 4.6 Mean Value Theorem}\small
+In this section, we examine the Mean Value Theorem, one of the ``big ideas" that provides the basis for much of calculus.  
+
+\vspace{0.5pc}
+Before we get to the mean Value Theorem, we examine Rolle's Theorem, where the property $f(a)=f(b)$ holds, for some function $f(x)$ defined on an interval $[a,b]$.
+
+\begin{que}
+If you have two points $(a,f(a))$ and $(b,f(b))$, with the property that $f(a)=f(b)$, what might this look like?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}\small 
+\begin{thm}[Rolle's Theorem]  
+Let $f$ be continuous on a closed interval $[a,b]$ and differentiable on $(a,b)$ with $f(a)=f(b)$.  Then there is at least one point $c$ in $(a,b)$ such that $f^{\prime}(c)=0.$ 
+\end{thm}
+Essentially what Rolle's Theorem concludes is that at some point(s) between $a$ and $b$, $f$ has a horizontal tangent.
+\begin{que}
+Note the hypotheses in this theorem: $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$.  Why are these important?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{exe}
+Determine whether Rolle's Theorem applies to the function $f(x)=x^3-2x^2-8x$ on the interval $[-2,0]$.
+\begin{itemize}
+\item If it doesn't, find an interval for which Rolle's Thm could apply to that function.
+\item If it does, what is the ``$c$" value so that $f'(c)=0$?  
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{thm}[Mean Value Theorem (MVT)]  If $f$ is continuous on a closed interval $[a,b]$ and differentiable on $(a,b)$, then there is at least one point $c$ in $(a,b)$ such that 
+\[
+\frac{f(b)-f(a)}{b-a}=f^{\prime}(c).
+\]
+\end{thm}
+See Figure 4.68 on p.\ 276 for a visual justification of MVT.
+\end{frame}
+
+% % %
+\begin{frame}\small  
+The slope of the secant line connecting the points $(a,f(a))$ and $(b,f(b))$ is 
+\[\dfrac{f(b)-f(a)}{b-a}.\]  
+MVT says that there is a point $c$ on $f$ where the tangent line at $c$ (whose slope is $f^{\prime}(c)$) is parallel to this secant line.  
+\begin{que}
+Suppose you leave Fayetteville for a location in Fort Smith that is 60 miles away.  If it takes you 1 hour to get there, what can we say about your speed?  If it takes you 45 minutes to get there, what can we say about your speed?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{ex} Let $f(x)=x^2-4x+3.$
+\begin{itemize}
+\item[1.] Determine whether the MVT applies to $f(x)$ on the interval $[-2,3]$.
+\item[2.] If so, find the point(s) that are guaranteed to exist by the MVT.
+\end{itemize}
+\end{ex}
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{ex} How many points $c$ satisfy the conclusion of the MVT for $f(x)=x^3$ on the interval $[-1,1]$?  Justify your answer. \end{ex}
+\end{frame}
+
+% % %
+\subsubsection{Consequences of MVT}
+% % %
+
+% % %
+\begin{frame}{\small Consequences of MVT}
+\small
+\begin{thm}[Zero Derivative Implies Constant Function]
+If $f$ is differentiable and $f^{\prime}(x)=0$ at all points of an interval $I$, then $f$ is a constant function on $I$.
+\end{thm}
+
+\vspace{1pc}
+\begin{thm}[Functions with Equal Derivatives Differ by a Constant]
+If two functions have the property that $f^{\prime}(x)=g^{\prime}(x)$ for all $x$ of an interval $I$, then $f(x)-g(x)=C$ on $I$, where $C$ is a constant.
+\end{thm}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\small
+\begin{thm}[Intervals of Increase and Decrease]
+Suppose $f$ is continuous on an interval $I$ and differentiable at all interior points of $I$.
+\begin{itemize}
+\item If $f^{\prime}(x)>0$ at all interior points of $I$, then $f$ is increasing on $I$.
+\item If $f^{\prime}(x)<0$ at all interior points of $I$, then $f$ is decreasing on $I$.
+\end{itemize}
+\end{thm}
+\end{frame}
+
+% % % 
+\subsubsection{Book Problems}
+
+% % %
+\begin{frame}
+\begin{block}{4.6 Book Problems}
+7-14, 17-24
+\end{block}
+\end{frame}
+
+\end{document}

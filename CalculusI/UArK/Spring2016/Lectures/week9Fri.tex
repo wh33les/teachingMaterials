@@ -1,0 +1,227 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+
+\begin{document}
+
+%\section[Week 9]{Week 9: 14-18 Mar}
+
+% % % 
+\subsubsection{\bf Friday 18 March}
+% % %
+
+\begin{frame}[allowframebreaks]{Fri 18 Mar}
+\begin{itemize}\footnotesize
+\item Midterm: Take your raw score out of 140, instead of 150, for the curve.
+
+\begin{center}
+\includegraphics[scale=0.4]{..//MidtermSpread}
+\end{center}
+
+\item Office hours 1030-1230 today.
+\end{itemize}
+\end{frame}
+
+% % %
+\subsection[4.2 What Derivatives Tell Us]{\S 4.2 What Derivatives Tell Us}
+% % %
+
+% % %
+\begin{frame}{\S 4.2 What Derivatives Tell Us}
+\begin{dfn} Suppose a function $f$ is defined on an interval $I$.
+\begin{itemize}
+\item We say that $f$ is {\bf increasing} on $I$ if $f(x_2)>f(x_1)$ whenever $x_1$ and $x_2$ are in $I$ and $x_2 > x_1$.
+\item We say that $f$ is {\bf decreasing} on $I$ if $f(x_2)<f(x_1)$ whenever $x_1$ and $x_2$ are in $I$ and $x_2 > x_1$.
+\end{itemize}
+\end{dfn}
+\end{frame}
+
+% % %
+\subsubsection{How is it related to the derivative?}
+% % %
+
+% % %
+\begin{frame}{\small How is it related to the derivative?}
+%\small
+Suppose $f$ is continuous on an interval $I$ and differentiable at every interior point of $I$.
+
+\vspace{1pc}
+\begin{itemize}
+\item If \alert{$f^{\prime}(x)>0$} for all interior points of $I$, then $f$ is \alert{increasing} on $I$.
+
+\vspace{1pc}
+\item If \alert{$f^{\prime}(x)<0$} for all interior points of $I$, then $f$ is \alert{decreasing} on $I$.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{ex} Sketch a function that is continuous on $(-\infty,\infty)$ that has the following properties:
+
+\begin{itemize}
+\item $f^{\prime}(-1)$ is undefined;
+
+\vspace{1pc}
+\item $f^{\prime}(x)>0$ on $(-\infty,-1)$;
+
+\vspace{1pc}
+\item $f^{\prime}(x)<0$ on $(-1,4)$;
+
+\vspace{1pc}
+\item $f^{\prime}(x)>0$ on $(4,\infty)$.
+\end{itemize}
+\end{ex}
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{ex} Find the intervals on which
+$$f(x)=3x^3-4x+12$$
+is increasing and decreasing.  If you graph $f$ and $f'$ on the same axes, what do you notice?
+\end{ex}
+\end{frame}
+
+% % %
+\subsubsection{First Derivative Test}
+% % %
+
+% % %
+\begin{frame}{\small First Derivative Test}
+\footnotesize
+Suppose that $f$ is continuous on an interval that contains a critical point $c$ and assume $f$ is differentiable on an interval containing $c$, except perhaps at $c$ itself.
+
+\begin{itemize}
+\item If $f^{\prime}$ \alert{changes sign} from positive to negative as $x$ increases through $c$, then $f$ has a {\bf local maximum} at $c$.
+
+\vspace{0.5pc}
+\item If $f^{\prime}$ \alert{changes sign} from negative to positive as $x$ increases through $c$, then $f$ has a {\bf local minimum} at $c$.
+
+\vspace{0.5pc}
+\item If $f^{\prime}$ does not change sign at $c$ (from positive to negative or vice versa), then $f$ has {\bf no} local extreme value at $c$.
+\end{itemize}
+
+\alert{{\bf NOTE:} The First Derivative Test does NOT test for increasing/decreasing, only local max/min.}  Use it on critical points. 
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{exe} If $f(x)=2x^3+3x^2-12x+1$, identify the critical points on the interval $[-3,4]$, and use the First Derivative Test to locate the local maximum and minimum values.  What are the absolute max and min? \end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Absolute extremes on any interval}
+% % %
+
+% % %
+\begin{frame}{\small Absolute extremes on any interval}
+\small
+The Extreme Value Theorem (cf., Section 4.1) stated that we were guaranteed extreme values \alert{only on closed intervals}.  
+
+\vspace{0.5pc}
+\alert{However:}  Suppose $f$ is continuous on an interval $I$ that contains only one local extremum at $(x=)c$.
+
+\begin{itemize}
+\item If it is a local minimum, then $f(c)$ \alert{is} the absolute minimum of $f$ on $I$.
+
+\vspace{0.5pc}
+\item If it is a local maximum, then $f(c)$ \alert{is} the absolute maximum of $f$ on $I$.
+\end{itemize}
+\end{frame}
+
+% % %
+\subsubsection{Derivative of the derivative tells us:}
+% % %
+
+% % %
+\begin{frame}{\small Derivative of the derivative tells us:}
+\small 
+Just as the first derivative $f^{\prime}$ told us whether the function $f$ was increasing or decreasing, the second derivative $f^{\prime\prime}$ also tells us whether $f^{\prime}$ is increasing or decreasing.
+
+\begin{dfn} Let $f$ be differentiable on an open interval $I$.
+\begin{itemize}
+\item If $f^{\prime}$ is increasing on $I$, then $f$ is {\bf concave up} on $I$.
+\item If $f^{\prime}$ is decreasing on $I$, then $f$ is {\bf concave down} on $I$.
+\end{itemize}
+\end{dfn}
+
+\begin{dfn} If $f$ is continuous at $c$ and $f$ changes concavity at $c$ (from up to down, or vice versa), then $f$ has an {\bf inflection point} at $c$. \end{dfn}
+\end{frame}
+
+% % %
+\subsubsection{Test for Concavity}
+% % % 
+
+% % %
+\begin{frame}{\small Test for Concavity}
+Suppose that $f^{\prime\prime}$ exists on an interval $I$.
+
+\begin{itemize}
+\item If $f^{\prime\prime}>0$ on $I$, then $f$ is \alert{concave up} on $I$.
+
+\vspace{0.5pc}
+\item If $f^{\prime\prime}<0$ on $I$, then $f$ is \alert{concave down} on $I$.
+
+\vspace{0.5pc}
+\item If $c$ is a point of $I$ at which $f^{\prime\prime}(c)=0$ and $f^{\prime\prime}$ changes signs at $c$, then $f$ has an \alert{inflection point} at $c$.
+\end{itemize}
+\end{frame}
+
+% % % 
+\begin{frame}
+\begin{ex}
+What would a function with the following properties look like?
+\begin{itemize}
+\item[1. ] $f'>0$ and $f''>0$
+\item[2. ] $f'>0$ and $f''<0$
+\item[3. ] $f'<0$ and $f''>0$
+\item[4. ] $f'<0$ and $f''<0$ 
+\end{itemize}
+\end{ex}
+\end{frame}
+
+% % %
+\subsubsection{Second Derivative Test}
+% % %
+
+% % %
+\begin{frame}{\small Second Derivative Test}
+Suppose that $f^{\prime\prime}$ is continuous on an open interval containing $c$ with $f^{\prime}(c)=0$.
+
+\begin{itemize}
+\item If $f^{\prime\prime}(c)>0$, then $f$ has a \alert{local minimum} at $c$.
+
+\vspace{0.5pc}
+\item If $f^{\prime\prime}(c)<0$, then $f$ has a \alert{local maximum} at $c$.
+
+\vspace{0.5pc}
+\item If $f^{\prime\prime}(c)=0$, then the test is inconclusive.
+\end{itemize}
+
+%\vspace{1pc}
+%{\bf See the Recap of Derivative Properties (Figure 4.36 on p.\ 242) for a summary.}
+\end{frame}
+
+% % % 
+\begin{frame}
+\begin{exe}
+Given $f(x)=2x^3-6x^2-18x$
+\begin{itemize}
+\item[(a)] Determine the intervals on which it is concave up or concave down, and identify any inflection points.
+\item[(b)] Locate the critical points, and use the 2nd Derivative Test to determine whether they correspond to local minima or maxima, or whether the test is inconclusive.
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % % 
+\subsubsection{Book Problems}
+
+
+% % %
+\begin{frame}
+\begin{block}{4.2 Book Problems}
+11--47 (odds), 53--81 (odds)
+\end{block}
+\end{frame}
+
+\end{document}

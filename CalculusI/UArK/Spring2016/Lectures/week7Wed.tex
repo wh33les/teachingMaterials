@@ -1,0 +1,496 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+
+\begin{document}
+
+%\section[Week 7]{Week 7: 29 Feb - 4 Mar}
+
+% % % 
+\subsubsection{\bf Wednesday 2 March}
+% % %
+\begin{frame}[allowframebreaks]{Wed 2 Mar}
+\begin{itemize}
+\item Exam 2:
+	\begin{itemize}%\footnotesize
+	\item Friday 4 Mar.  Covers up to \S 3.8.
+	\item Spring 2015 Practice Exam.  Also look for quizzes on the old webpages for more problems.
+	\item For more problems study the evens in each of the sections covered.
+	\item Basic scientific calculator is allowed.
+	\end{itemize}
+%
+\framebreak	
+\item Midterm:
+	\begin{itemize}%\footnotesize
+	\item Tuesday 8 March.  Covers \alert{everything} up to \alert{\S 3.9}.
+	\item Morning Section: Walker room 124
+	
+	Afternoon Section: Walker room 218
+	
+	You must take the test with your officially scheduled section.
+	\item Stay tuned for conflict resolutions.  If you haven't emailed me already regarding a conflict, do it NOW.
+	\item Stay tuned for a study guide.
+	\item Basic scientific calculator is allowed....? Stay tuned.
+	\end{itemize}
+%
+\framebreak	
+\item Quiz 6 next Thurs.  Only some of the quiz problems are graded now.  You are always welcome to my office for feeback on your work.	
+\end{itemize}
+\end{frame}
+
+% % %
+\subsection[3.7 The Chain Rule]{\S 3.7 The Chain Rule}
+% % %
+
+% % %
+\begin{frame}{\S 3.7 The Chain Rule}\footnotesize
+The rules up to now have not allowed us to differentiate composite functions 
+\[
+f\circ g(x)=f(g(x)).
+\]
+\begin{ex}
+If $f(x)=x^7$ and $g(x)=2x-3$, then $f(g(x))=(2x-3)^7$.  To differentiate we could mulitply the polynomial out... but in general we should use a much more efficient strategy to emply to composition functions. 
+\end{ex}
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+\begin{ex}
+Suppose that Yvonne ($y$) can run twice as fast as Uma ($u$). Then write $\textstyle\frac{dy}{du}=2$.
+
+\vspace{0.5pc}
+Suppose that Uma can run four times as fast as Xavier ($x$).  So $\textstyle\frac{du}{dx}=4$.
+
+\vspace{1pc}
+How much faster can Yvonne run than Xavier?  In this case, we would take both our rates and multiply them together:
+\[\frac{dy}{du} \cdot \frac{du}{dx}=2 \cdot 4 = 8.\]
+\end{ex}
+\end{frame}
+
+% % % 
+\subsubsection{Version 1 of the Chain Rule}
+% % %
+
+% % %
+\begin{frame}{\small Version 1 of the Chain Rule}
+If $g$ is differentiable at $x$, and $y=f(u)$ is differentiable at $u=g(x)$, then the composite function $y=f(g(x))$ is differentiable at $x$, and its derivative can be expressed as 
+\[\frac{dy}{dx}=\frac{dy}{du} \cdot \frac{du}{dx}\]
+\end{frame}
+
+% % %
+\subsubsection{Guidelines for Using the Chain Rule}
+% % %
+
+% % %
+\begin{frame}{\small Guidelines for Using the Chain Rule}\footnotesize
+Assume the differentiable function $y=f(g(x))$ is given.
+\begin{itemize}
+	\item[1.] Identify the outer function $f$, the inner function $g$, and let $u=g(x).$
+	\item[2.] Replace $g(x)$ by $u$ to express $y$ in terms of $u$:
+	\[y=f(g(x)) \implies y=f(u)\]
+	\item[3.]  Calculate the product $\frac{dy}{du} \cdot \frac{du}{dx}$
+	\item[4.] Replace $u$ by $g(x)$ in $\frac{dy}{du}$ to obtain $\frac{dy}{dx}.$
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+\begin{ex} Use Version 1 of the Chain Rule to calculate $\textstyle\frac{dy}{dx}$ for $y=(5x^2 +11x)^{20}$. \end{ex}
+\begin{itemize}
+\item inner function: $u=5x^2+11x$ 
+\item outer function: $y=u^{20}$
+\end{itemize}
+
+\vspace{1pc}
+We have $y = f(g(x)) = (5x^2 +11x)^{20}$.  Differentiate:
+\begin{align*} 
+\frac{dy}{dx}= \frac{dy}{du}\cdot\frac{du}{dx} &= 20u^{19} \cdot (10x+11) \\
+ &=20(5x^2 +11x)^{19} \cdot (10x+11)
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{exe} Use the first version of the Chain Rule to calculate $\textstyle\frac{dy}{dx}$ for 
+\[y=\left( \frac{3x}{4x+2} \right)^5.\]
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{exe}
+Use the first version of the Chain Rule to calculate $\textstyle\frac{dy}{dx}$ for
+\[
+y=\cos{(5x+1).}
+\]
+\begin{itemize}
+\item[A. ] $y'=-\cos{(5x+1)}\cdot\sin{(5x+1)}$
+\item[B. ] $y'=-5\sin{(5x+1)}$
+\item[C. ] $y'=5\cos{(5x+1)}-\sin{(5x+1)}$
+\item[D. ] $y'=-\sin{(5x+1)}$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Version 2 of the Chain Rule}
+% % %
+
+% % %
+\begin{frame}{\small Version 2 of the Chain Rule}
+Notice if $y=f(u)$ and $u=g(x)$, then $y=f(u)=f(g(x))$, so we can also write:
+\begin{align*}
+\frac{dy}{dx} &= \frac{dy}{du} \cdot \frac{du}{dx} \\[0.75pc]
+ &= f^{\prime}(u) \cdot g^{\prime}(x) \\[0.75pc]
+ &= f^{\prime}(g(x)) \cdot g^{\prime}(x).
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+\begin{ex} 
+Use Version 2 of the Chain Rule to calculate $\textstyle\frac{dy}{dx}$ for $y=(7x^4+2x+5)^9$. 
+\end{ex}
+\begin{itemize}\footnotesize
+\item inner function: $g(x)=7x^4+2x+5$ 
+\item outer function: $f(u)=u^9$
+\end{itemize}
+Then
+\vspace{-0.5pc}
+\begin{align*}
+f^{\prime}(u) &= 9u^8 \implies f^{\prime}(g(x))=9(7x^4+2x+5)^8 \\
+g^{\prime}(x) &=28x^3+2.
+\end{align*}
+Putting it together,
+\[\frac{dy}{dx}=f^{\prime}(g(x)) \cdot g^{\prime}(x) = 9(7x^4+2x+5)^8 \cdot (28x^3+2)\]
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{exe}
+Use Version 2 of the Chain Rule to calculate $\textstyle\frac{dy}{dx}$ for
+\[
+y=\tan{(5x^5-7x^3+2x)}.
+\]
+\end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Chain Rule for Powers}
+% % %
+
+% % % 
+\begin{frame}[allowframebreaks]{\small Chain Rule for Powers}
+If $g$ is differentiable for all $x$ in the domain and $n$ is an integer, then
+\[\frac{d}{dx} \bigg[\left(g(x)\right)^n \bigg]=n(g(x))^{n-1} \cdot g^{\prime}(x).\]
+
+\framebreak
+\begin{ex} $\frac{d}{dx} \bigg[ (1-e^x)^4 \bigg] =$ ? \end{ex}
+{\bf Answer:}
+\begin{align*}
+\frac{d}{dx} \bigg[ (1-e^x)^4 \bigg] &= 4(1-e^x)^3 \cdot (-e^x) \\
+ &= -4e^x (1-e^x)^3
+\end{align*}
+\end{frame}
+
+% % %
+\subsubsection{Composition of 3 or More Functions}
+% % %
+
+% % %
+\begin{frame}[allowframebreaks]{\small Composition of 3 or More Functions}
+\begin{ex}Compute $\frac{d}{dx} \bigg[ \sqrt{(3x-4)^2 + 3x} \bigg]$. \end{ex}
+
+\framebreak\footnotesize
+{\bf Answer:}
+\begin{alignat*}{2}
+\frac{d}{dx} \bigg[ \sqrt{(3x-4)^2 + 3x} \bigg] &= \frac{1}{2} \big( (3x-4)^2 + 3x \big)^{-\frac{1}{2}} \cdot \frac{d}{dx} \big[ (3x-4)^2 + 3x \big] \\
+&= \frac{1}{2 \sqrt{ \big( (3x-4)^2 + 3x \big)}} \cdot \bigg[ 2(3x-4) \frac{d}{dx}(3x-4)  + 3 \bigg] \\
+&= \frac{1}{2 \sqrt{ \big( (3x-4)^2 + 3x \big)}} \cdot \big[ 2(3x-4) \cdot 3 + 3 \big] \\
+&= \frac{18x-21}{2 \sqrt{ \big( (3x-4)^2 + 3x \big)}} 
+\end{alignat*}
+\end{frame}
+
+% % %
+\subsubsection{Book Problems}
+% % %
+
+% % %
+\begin{frame}
+\begin{block}{3.7 Book Problems} 7-33 (odds), 38, 45-67 (odds) \end{block} 
+\end{frame}
+
+% % %
+\subsection[3.8 Implicit Differentiation]{\S 3.8 Implicit Differentiation}
+% % %
+
+% % %
+\begin{frame}{\S 3.8 Implicit Differentiation}\footnotesize
+Up to now, we have calculated derivatives of functions of the form $y=f(x)$, where $y$ is defined {\bf explicitly} in terms of $x$.  In this section, we examine relationships between variables that are {\bf implicit} in nature, meaning that $y$ either is not defined explicitly in terms of $x$ or cannot be easily manipulated to solve for $y$ in terms of $x$.
+
+\vspace{1pc}
+The goal of {\bf implicit differentiation} is to find a single expression for the derivative directly from an equation of the form $F(x,y)=0$ without first solving for $y$.
+\end{frame}
+
+% % %
+\begin{frame}{}
+\begin{ex} Calculate $\textstyle\frac{dy}{dx}$ directly from the equation for the circle 
+\[x^2 + y^2 = 9.\]
+\end{ex}
+{\bf Solution:}  To remind ourselves that $x$ is our independent variable and that we are differentiating with respect to $x$, we can replace $y$ with $y(x)$:
+\[x^2 + (y(x))^2 = 9.\]
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+Now differentiate each term with respect to $x$:
+\[\frac{d}{dx} (x^2) + \frac{d}{dx} ((y(x))^2) = \frac{d}{dx}(9).\]
+By the Chain Rule, $\textstyle\frac{d}{dx}((y(x))^2)=2y(x) y^{\prime}(x)$ (Version 2), or $\textstyle\frac{d}{dx}(y^2)=2y \frac{dy}{dx}$ (Version 1).  So 
+\begin{align*}
+2x+2y \frac{dy}{dx} &= 0 \\
+\implies \alert{\frac{dy}{dx}} &= \frac{-2x}{2y} \\
+	&= \alert{-\frac{x}{y}}.
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+The derivative is a function of $x$ and $y$, meaning we can write it in the form 
+\[F(x,y)=-\frac{x}{y}.\] 
+To find slopes of tangent lines at various points along the circle we just plug in the coordinates.  For example, the slope of the tangent line at (0,3) is 
+\[\left. \frac{dy}{dx} \right|_{(x,y)=(0,3)} = -\frac{0}{3}=0.\]
+The slope of the tangent line at $(1,2\sqrt{2})$ is
+\[\left. \frac{dy}{dx} \right|_{(x,y)=(1,2\sqrt{2})} = -\frac{1}{2\sqrt{2}}.\]
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+The point is that, in some cases it is difficult to solve an implicit equation in terms of $y$ and then differentiate with respect to $x$.  In other cases, although it may be easier to solve for $y$ in terms of $x$, you may need two or more functions to do so, which means two or more derivatives must be calculated (e.g., circles).
+
+\vspace{1pc}
+The goal of implicit differentiation is to find one single expression for the derivative directly given $F(x,y)=0$ (i.e., some equation with $x$s and $y$s in it), without solving first for $y$.
+\end{frame}
+
+% % %
+\begin{frame}%{\small Examples of functions implicitly defined}
+\begin{que} The following functions are \alert{implicitly} defined:
+\begin{itemize}
+\item $x+y^3-xy=4$
+\item $\cos(x-y)+\sin y = \sqrt{2}$
+\end{itemize}
+For each of these functions, how would you find $\textstyle\frac{dy}{dx}$?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}{}
+\begin{exe} Find $\textstyle\frac{dy}{dx}$ for $xy+y^3=1$. \end{exe}
+\begin{exe} Find an equation of the line tangent to the curve $x^4-x^2 y+y^4=1$ at the point $(-1,1)$. \end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Higher Order Derivatives}
+% % %
+
+% % %
+\begin{frame}{\small Higher Order Derivatives}
+\begin{ex} Find $\textstyle\frac{d^2 y}{dx^2}$ if $xy+y^3=1$. \end{ex}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{exe}
+If $\sin x=\sin y$, then $\textstyle\frac{dy}{dx}=$\ ? and $\textstyle\frac{d^2y}{dx^2}=$\ ?
+\begin{itemize}
+\item[A. ]$\frac{\cos y}{\cos x};\quad \frac{\tan y\cos^2x-\sin x\cos y}{\cos^2x}$
+\item[B. ]$\frac{\cos x}{\cos y};\quad \frac{\tan y\cos^2x-\sin x\cos y}{\cos^2y}$
+\item[C. ]$\frac{\cos x}{\cos y};\quad \frac{\cos y(\sin x-\sin y)}{\cos^2 y}$
+\item[D. ]$\frac{\cos y}{\cos x};\quad \frac{\cos y(\sin x-\sin y)}{\cos^2 x}$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Power Rule for Rational Exponents}
+% % %
+
+% % %
+\begin{frame}{\small Power Rule for Rational Exponents}
+Implicit differentiation also allows us to extend the power rule to rational exponents:  Assume $p$ and $q$ are integers with $q \neq 0$.  Then 
+\[\alert{\frac{d}{dx} (x^{\frac{p}{q}})=\frac{p}{q} x^{\frac{p}{q}-1}}\]
+(provided $x \geq 0$ when $q$ is even and $\textstyle\frac{p}{q}$ is in lowest terms).
+\begin{exe}Prove it. \end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Book Problems}
+% % %
+
+% % %
+\begin{frame}
+\begin{block}{3.8 Book Problems} 5-25 (odds), 31-49 (odds) \end{block} 
+\end{frame}
+
+% % %
+\subsection{Exam \#2 Review}
+% % % 
+\begin{frame}[allowframebreaks]{Exam \#2 Review}
+\begin{itemize}
+\item \S 3.2 Working with Derivatives
+	\begin{itemize}
+	\item Be able to use the graph of a function to sketch the graph of its derivative, without computing derivatives
+	\item Know the 3 conditions for when a function is not differentiable at a point, and why these three conditions make a function not differentiable at the given point
+	\item Be able to determine where a function is not differentiable
+	\end{itemize}
+%
+\framebreak	
+\item \S 3.3 Rules for Differentiation
+	\begin{itemize}\footnotesize
+	%\item {\bf Be able to do questions similar to 7-41.}
+	\item Be able to use the various rules for differentiation (e.g., constant rule, power rule, constant multiple rule, sum and difference rule) to calculate the derivative of a function.
+	\item Know the derivative of $e^x$.
+	\item Be able to find slopes and/or equations of tangent lines.
+	\item Be able to calculate higher-order derivatives of functions.
+	\end{itemize}
+%
+\framebreak
+\begin{exe}
+Given that $y=3x+2$ is tangent to $f(x)$ at $x=1$ and that $y=-5x+6$ is tangent to $g(x)$ at $x=1$, write the equation of the tangent line to $h(x)=f(x)g(x)$ at $x=1$.
+\end{exe}
+%
+\framebreak
+\item \S 3.4 The Product and Quotient Rules
+	\begin{itemize}\footnotesize
+	%\item {\bf Be able to do questions similar to 7-42 and 47-52.}
+	\item Be able to use the product and/or quotient rules to calculate the derivative of a given function.
+	\item Be able to use the product and/or quotient rules to find tangent lines and/or slopes at a given point.
+	\item Know the derivative of $e^{kx}$.
+	\item Be able to combine derivative rules to calculate the derivative of a function.
+	\end{itemize}
+	
+{\bf Note:} Functions are not always given by a formula.  When faced with a problem where you don't know where to start, go through the rules first.
+%
+\framebreak
+\begin{exe} Suppose you have the following information about the functions $f$ and $g$:
+\[f(1)=6\quad f'(1)=2\quad g(1)=2\quad g'(1)=3\]
+\vspace{-1pc}	
+	\begin{itemize}\footnotesize
+	\item Let $F=2f+3g$.  What is $F(1)$?  What is $F'(1)$?
+	\item Let $G=fg$.  What is $G(1)$?  What is $G'(1)$?
+	\end{itemize}
+\end{exe}
+%
+\framebreak
+\item \S 3.5 Derivatives of Trigonometric Functions
+	%\vspace{-0.75pc}
+	\begin{itemize}\footnotesize
+	%\item {\bf Be able to do questions similar to 1-55.}
+	\item Know the two special trigonometric limits
+	\vspace{-0.5pc}
+	\[\lim_{x\to 0}\frac{\sin x}{x}=1\qquad\text{and}\qquad\lim_{x\to 0}\frac{\cos x-1}{x}=0\]
+	and be able to use them to solve other similar limits.
+	\item Know the derivatives of $\sin x$, $\cos x$, $\tan x$, $\cot x$, $\sec x$, $\csc x$, and be able to use the quotient rule to derive the derivatives of $\tan x$, $\cot x$, $\sec x$, and $\csc x$.
+	\item Be able to calculate derivatives (including higher order) involving trig functions using the rules for differentiation.
+	\end{itemize}
+%
+\framebreak
+\begin{exe}
+Calculate the derivative of the following functions:
+\begin{itemize}
+\item $f(x)=(1+\sec x)\sin^3x$
+%
+%\vspace{1pc}
+\item $g(x)=\displaystyle\frac{\sin x+\cot x}{\cos x}$
+\end{itemize}
+\end{exe}
+%
+%
+\begin{exe} Evaluate $\displaystyle\lim_{x\to -3}\frac{\sin{(x+3)}}{x^2+8x+15}$. \end{exe}
+%
+%
+\framebreak
+\item \S 3.6 Derivatives as Rates of Change
+	\begin{itemize}\footnotesize
+	%\item {\bf Be able to do questions similar to 11-18.}
+	\item Be able to use the derivative to answer questions about rates of change involving:
+		\begin{itemize}%\tiny
+		\item Position and velocity
+		\item Speed and acceleration
+		\item Growth rates
+		\item Business applications
+		\end{itemize}
+\framebreak		
+	\item Be able to use a position function to answer questions involving velocity, speed, acceleration, height/distance at a particular time $t$, maximum height, and time at which a given height/distance is achieved.
+	\item Be able to use growth models to answer questions involving growth rate and average growth rate, and cost functions to answer questions involving average and marginal costs.
+	\end{itemize}
+%
+\framebreak
+\item \S 3.7 The Chain Rule
+	\begin{itemize}\footnotesize
+	%\item {\bf Be able to do questions similar to 7-43.}
+	\item Be able to use both versions of the Chain Rule to find the derivative of a composition function.
+	\item Be able to use the Chain Rule more than once in a calculation involving more than two composed functions.
+	\item Know and be able to use the Chain Rule for Powers:
+	\[\frac{d}{dx}\left(f(x)\right)^n=n\left(f(x)\right)^{n-1}f'(x)\]
+	\end{itemize}
+\framebreak
+\begin{exe} Suppose $f(9)=10$ and $g(x)=f(x^2)$.  What is $g'(3)$? \end{exe}
+%
+\framebreak
+\item \S 3.7 Implicit Differentiation
+	\begin{itemize}\footnotesize
+	%\item {\bf Be able to do questions similar to 5-26 and 33-46.}
+	\item Be able to use implicit differentiation to calculate $\textstyle\frac{dy}{dx}.$
+	\item Be able to use the derivative found from implicit differentiation to find the slope at a given point and/or a line tangent to the curve at the given point.
+	\item Be able to calculate higher-order derivatives of implicitly defined functions.
+	\item Be able to calculate $\textstyle\frac{dy}{dx}$ when working with functions containing rational functions.
+	\end{itemize}
+%
+\begin{exe} Use implicit differentiation to calculate $\textstyle\frac{dz}{dw}$ for
+\[e^{2w}=\sin(wz)\]
+\end{exe}
+\begin{exe} If $\sin x=\sin y$, then 
+\begin{itemize}\footnotesize
+\item $\textstyle\frac{dy}{dx}=$ ? 
+\item $\textstyle\frac{d^2y}{dx^2}=$ ? 
+\end{itemize}
+\end{exe}
+\end{itemize}
+\end{frame}
+
+% % % 
+\subsubsection{Running Out of Time on the Exam Plus other Study Tips}
+% % %
+\begin{frame}[allowframebreaks]{\small Running Out of Time on the Exam Plus other Study Tips}\footnotesize
+\begin{itemize}
+\item Do practice problems completely, from beginning to end (as if it were a quiz).  You might think you understand something but when it's time to write down the details things are not so clear.  
+\item Find a buddy who understands concepts a little better than you and work on problems for 2-3 hours.  Then find a buddy who is struggling and work with them 2-3 hours.  %Explaining to someone else tests how deeply you really know the material.  This strategy also helps reduce stress because it doesn't require you to devote a full day or night of studying, just 2-3 hours at a time of productive work.
+\item Don't count on cookie cutter problems.  If you are doing a practice problem where you've memorized all the steps, make sure you understand why each step is needed.  The exam problems may have a small variation from homeworks and quizzes.  If you're not prepared, it'll come as a ``twist" on the exam...
+%
+\framebreak
+\item If you encounter an unfamiliar type of problem on the exam, relax, because it's most likely not a trick!  The solutions will always rely on the information from the required reading/assignments.  Take your time and do each baby step carefully.  
+\item During the exam, do the problems you are most confident with first!  %Different people will find different problems easier.
+\item During the exam, budget your time.  Count the problems and divide by 50 minutes.  The easier questions will take less time so doing them first leaves extra time for the harder ones.  When studying, aim for 10 problems per hour (i.e., 6 minutes per problem).
+%
+\framebreak
+\item Always make sure you \alert{answer the question}.  This is also a good strategy if you're not sure how to start a problem, figure out what the question wants first.
+\item The exam is not a race.  If you finish early take advantage of the time to check your work.  You don't want to leave feeling smug about how quickly you finished only to find out next week you lost a letter grade's worth of points from silly mistakes.
+\end{itemize}
+\end{frame}
+
+% % %
+\subsubsection{Other Study Tips}
+% % %
+
+% % %
+\begin{frame}{\small Other Study Tips}
+\footnotesize
+\begin{itemize}
+\item Brush up on algebra, especially radicals, logs, common denominators, etc.  Many times knowing the right algebra will simplify the problem!
+\item When in doubt, show steps.  
+\item You will be punished for wrong notation.  The slides for \S 3.1 show different notations for the derivative.  Make sure whichever one you use in your work, that you are using it correctly.
+\item Read the question!  
+\item Do the book problems.
+\item Look at the pictures in the book and the interactive applets on MLP.
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,264 @@
+\documentclass[12pt]{beamer}
+\usetheme{Warsaw}
+\usecolortheme{beaver,lily}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{frametitle continuation}[from second][(cont.)]
+% \setbeamersize{text margin left=50pt,text margin right=50pt} 
+ 
+\setbeamerfont{section in toc}{size=\fontsize{10}{11}\selectfont}
+\setbeamerfont{subsection in toc}{size=\fontsize{8}{9}\selectfont}
+\setbeamerfont{subsubsection in toc}{size=\fontsize{6}{7}\selectfont}
+\setbeamercolor{section number projected}{bg=red!50!black,fg=white}
+\setbeamercolor{subsection in toc}{fg=red!50!black}
+\setbeamercolor{subsubsection in toc}{fg=black}
+\setbeamercolor{titlelike}{fg=red!50!black}
+\setbeamertemplate{subsection in toc}{
+	\vspace{0.25pc}
+	\hspace{-20pt}\inserttocsubsection
+	
+	} % don't get rid of the above line of space!
+\setbeamertemplate{subsubsection in toc}{
+	%\hspace{20pt}
+	\textbullet\ \inserttocsubsubsection
+	
+	} % don't get rid of the above line of space!
+
+%\usepackage{amsmath}	
+\usepackage{subfiles}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+%\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{hyperref}
+%\usepackage{changepage}
+	
+%\begin{comment}
+\AtBeginPart{
+	\begin{frame}[allowframebreaks]{Part \thepart. \insertpart}
+	%\begin{multicols}{2}
+	\tableofcontents[sectionstyle=show/show]
+	%\end{multicols}
+	\end{frame}
+	}
+\AtBeginSubsection{
+	\begin{frame}[allowframebreaks]%{\insertsubsection}
+ 	\begin{multicols}{2}
+	\tableofcontents[currentsection, subsectionstyle=show/shaded/hide]
+	\end{multicols}
+	\end{frame}
+	}
+%\end{comment}	
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{que}{Question}
+\newtheorem{ex}{Example}
+\newtheorem{exe}{Exercise}
+\newtheorem{dfn}{Definition}
+
+%\everymath{\displaystyle}
+
+% % % % % % % % % % % % % % % % % % % %
+
+\title[Cal I Spring 2016]{Calculus I (Math 2554)}
+\subtitle{Spring 2016}
+\author[Wheeler]{\footnotesize Dr. Ashley K. Wheeler}
+\institute{University of Arkansas}
+\date{\footnotesize{\it last updated:} \today}
+\logo{The base for these slides was done by Dr. Shannon Dingman, later encoded into \LaTeX\ by Dr. Brad Lutes and modified/formatted by Dr. Ashley K. Wheeler.}
+
+% % % % % % % % % % % % % % % % % % % %
+\begin{document}
+% % %
+\frame{\titlepage}
+% % %
+
+%\begin{comment}
+% % %
+\begin{frame}[allowframebreaks]{Table of Contents}
+%\begin{adjustheight}{-1.5em}{-1.5em}
+%\begin{multicols}{2}
+%\begin{minipage}%{\dimexpr\textwidth+2\relax}
+ %  \raggedright3em
+\vspace{1pc} 
+\tableofcontents[currentsection]
+\vspace{-20pc}
+{
+	\setbeamertemplate{subsubsection in toc}{} %%% This is how I suppress the subsubsections 
+
+	%%% To include Parts in the TOC I use the itemize environment.
+	\begin{itemize}\color{red!50!black}\bf
+		\item[]\hspace{-30pt}Part I: Limits
+		\vspace{0.25pc}
+		%\tableofcontents[part=1]
+		\item[]\hspace{-30pt}Part II: Derivatives
+		%\tableofcontents[part=2]
+		\item[]\hspace{-30pt}Part III: Applications and Story Problems
+		%\tableofcontents[part=3]
+		\item[]\hspace{-30pt}Part IV: Introduction to Integrals
+		%\tableofcontents[part=4]	
+	\end{itemize}
+} %%% Now back to the global settings for TOC.
+
+\end{frame}
+%\end{comment}
+
+% % % 
+\subsubsection{Tips for Success}
+% % %
+
+% % %
+\begin{frame}{Tips for Success}\footnotesize
+\begin{itemize}
+\item Attend class every day.  \alert{Participate} in math discussions.  Do the lecture-cises fully, not just on a scratch paper.  
+\item Don't get behind on MLP homeworks.  Stay on top of the book problems.
+\item Find a study partner(s) to meet with on a regular basis.  Don't be afraid to seek further assistance (tutoring, office hours, etc.) if you are struggling.
+\item high school calculus $\neq$ college calculus
+\item REMEMBER... THE TERM STARTS TODAY!  SO DOES THE EVENTUAL EARNING OF YOUR FINAL GRADE!!!
+\end{itemize}
+\end{frame}
+
+%%% Days pasted together
+
+% % % % % % % % % %
+\part{Limits}
+% % % % % % % % % %
+\section[Week 1]{19-22 January}
+% % % % %
+
+\subfile{week1Wed}
+\subfile{week1Fri}
+
+% % % % %
+\section[Week 2]{25-29 January}
+% % % % %
+
+\subfile{week2Mon}
+\subfile{week2Wed}
+\subfile{week2Fri}
+
+% % % % %
+\section[Week 3]{1-5 February}
+% % % % %
+
+\subfile{week3Mon}
+\subfile{week3Wed}
+\subfile{week3Fri}
+
+% % % % %
+\section[Week 4]{8-12 February}
+% % % % %
+
+\subfile{week4Mon}
+\subfile{week4Wed}
+
+% % % % % % % % % %
+\part{Derivatives}
+% % % % % % % % % %
+
+% % % % %
+\section[Week 5]{15-19 February}
+% % % % %
+
+\subfile{week5Mon}
+\subfile{week5Wed}
+
+% % % % %
+\section[Week 6]{22-26 February}
+% % % % %
+
+\subfile{week6Mon}
+\subfile{week6Wed}
+
+% % % % %
+\section[Week 7]{29 Feb -- 4 March}
+% % % % %
+
+\subfile{week7Wed}
+
+% % % % % % % % % %
+\part{Applications and Story Problems}
+% % % % % % % % % %
+\section[Week 8]{7-11 March}
+% % % % %
+
+\subfile{week8Mon}
+\subfile{week8Fri}
+
+% % % % %
+\section[Week 9]{14-18 March}
+% % % % %
+
+\subfile{week9Mon}
+\subfile{week9Wed}
+\subfile{week9Fri}
+
+% % % % %
+\section[Week 10]{28 Mar -- 1 April}
+% % % % %
+
+\subfile{week10Mon}
+\subfile{week10Wed}
+\subfile{week10Fri}
+
+% % % % %
+\section[Week 11]{4-8 April}
+% % % % %
+
+\subfile{week11Mon}
+\subfile{week11Wed}
+
+% % % % % % % % % %
+\part{Introduction to Integrals}
+% % % % % % % % % %
+
+% % % % %
+\section[Week 12]{11-15 April}
+% % % % %
+
+\subfile{week12Mon}
+\subfile{week12Wed}
+\subfile{week12Fri}
+
+% % % % %
+\section[Week 13]{18-22 April}
+% % % % %
+
+\subfile{week13Mon}
+\subfile{week13Wed}
+\subfile{week13Fri}
+
+% % % % %
+\section[Week 14]{25-29 April}
+% % % % %
+
+\subfile{week14Mon}
+\subfile{week14Wed}
+
+% % % % %
+\section[Week 15]{2-4 May}
+% % % % %
+
+\subfile{week15Mon}
+\subfile{week15Wed}
+
+% % % % % % % % % % % % % % % % % % % %
+
+%%% Weeks pasted together
+%\begin{comment}
+%\subfile{week1}
+%\subfile{week2}
+%\subfile{week3}
+%\subfile{week4}
+%\subfile{week5}
+%\subfile{week6}
+%\subfile{week7}
+%\end{comment}
+
+% % % % % % % % % % % % % % % % % % % %
+\end{document}

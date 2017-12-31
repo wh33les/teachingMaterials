@@ -1,0 +1,251 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+
+\begin{document}
+
+\section[Week 11]{Week 11: 4-8 April}
+
+% % %
+\subsection[4.6 Mean Value Theorem]{\S 4.6 Mean Value Theorem}
+% % %
+
+% % %
+\begin{frame}{\S 4.6 Mean Value Theorem}\small
+In this section, we examine the Mean Value Theorem, one of the ``big ideas" that provides the basis for much of calculus.  
+
+\vspace{0.5pc}
+Before we get to the mean Value Theorem, we examine Rolle's Theorem, where the property $f(a)=f(b)$ holds, for some function $f(x)$ defined on an interval $[a,b]$.
+
+\begin{que}
+If you have two points $(a,f(a))$ and $(b,f(b))$, with the property that $f(a)=f(b)$, what might this look like?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}\small 
+\begin{thm}[Rolle's Theorem]  
+Let $f$ be continuous on a closed interval $[a,b]$ and differentiable on $(a,b)$ with $f(a)=f(b)$.  Then there is at least one point $c$ in $(a,b)$ such that $f^{\prime}(c)=0.$ 
+\end{thm}
+Essentially what Rolle's Theorem concludes is that at some point(s) between $a$ and $b$, $f$ has a horizontal tangent.
+\begin{que}
+Note the hypotheses in this theorem: $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$.  Why are these important?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{exe}
+Determine whether Rolle's Theorem applies to the function $f(x)=x^3-2x^2-8x$ on the interval $[-2,0]$.
+\begin{itemize}
+\item If it doesn't, find an interval for which Rolle's Thm could apply to that function.
+\item If it does, what is the ``$c$" value so that $f'(c)=0$?  
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{thm}[Mean Value Theorem (MVT)]  If $f$ is continuous on a closed interval $[a,b]$ and differentiable on $(a,b)$, then there is at least one point $c$ in $(a,b)$ such that 
+\[
+\frac{f(b)-f(a)}{b-a}=f^{\prime}(c).
+\]
+\end{thm}
+See Figure 4.68 on p.\ 276 for a visual justification of MVT.
+\end{frame}
+
+% % %
+\begin{frame}\small  
+The slope of the secant line connecting the points $(a,f(a))$ and $(b,f(b))$ is 
+\[\dfrac{f(b)-f(a)}{b-a}.\]  
+MVT says that there is a point $c$ on $f$ where the tangent line at $c$ (whose slope is $f^{\prime}(c)$) is parallel to this secant line.  
+\begin{que}
+Suppose you leave Fayetteville for a location in Fort Smith that is 60 miles away.  If it takes you 1 hour to get there, what can we say about your speed?  If it takes you 45 minutes to get there, what can we say about your speed?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{ex} Let $f(x)=x^2-4x+3.$
+\begin{itemize}
+\item[1.] Determine whether the MVT applies to $f(x)$ on the interval $[-2,3]$.
+\item[2.] If so, find the point(s) that are guaranteed to exist by the MVT.
+\end{itemize}
+\end{ex}
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{ex} How many points $c$ satisfy the conclusion of the MVT for $f(x)=x^3$ on the interval $[-1,1]$?  Justify your answer. \end{ex}
+\end{frame}
+
+% % %
+\subsubsection{Consequences of MVT}
+% % %
+
+% % %
+\begin{frame}{\small Consequences of MVT}
+\small
+\begin{thm}[Zero Derivative Implies Constant Function]
+If $f$ is differentiable and $f^{\prime}(x)=0$ at all points of an interval $I$, then $f$ is a constant function on $I$.
+\end{thm}
+
+\vspace{1pc}
+\begin{thm}[Functions with Equal Derivatives Differ by a Constant]
+If two functions have the property that $f^{\prime}(x)=g^{\prime}(x)$ for all $x$ of an interval $I$, then $f(x)-g(x)=C$ on $I$, where $C$ is a constant.
+\end{thm}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\small
+\begin{thm}[Intervals of Increase and Decrease]
+Suppose $f$ is continuous on an interval $I$ and differentiable at all interior points of $I$.
+\begin{itemize}
+\item If $f^{\prime}(x)>0$ at all interior points of $I$, then $f$ is increasing on $I$.
+\item If $f^{\prime}(x)<0$ at all interior points of $I$, then $f$ is decreasing on $I$.
+\end{itemize}
+\end{thm}
+\end{frame}
+
+% % % 
+\subsubsection{Book Problems}
+
+% % %
+\begin{frame}
+\begin{block}{4.6 Book Problems}
+7-14, 17-24
+\end{block}
+\end{frame}
+
+% % %
+\subsection{Exam \#3 Review}
+% % %
+
+% % %
+\begin{frame}[allowframebreaks]{Exam \# 3 Review}\small
+\begin{itemize}
+\item \S 3.10 Derivatives of Inverse Trig Functions
+\begin{itemize}\footnotesize
+	\item Know the derivatives of the six inverse trig functions.
+	\item Also: You are responsible for every derivative rule and every derivative formula we have covered this semester.
+\end{itemize} 
+%\end{frame}
+%
+% % %
+%\begin{frame}
+%\frametitle{\small 
+\item \S 3.11 Related Rates
+\begin{itemize}\footnotesize
+	\item Know the steps to solving related rates problems, and be able to use them to solve problems given variables and rates of change.
+	\item Be able to solve related rates problems.  If, while doing the HW (paper or computer), you were provided a formula in order to solve the problem, then I will do the same.  If you were not provided a formula while doing the HW (paper or computer), then I also will not provide the formula.
+\end{itemize}
+%\end{frame}
+%\end{frame}
+%\framebreak
+\begin{exe} An inverted conical water tank with a height of 12 ft and a radius of 6 ft is drained through a hole in the vertex at a rate of 2 ft$^{\text{3}}$/sec.  What is the rate of change of the water depth when the water depth is 3 ft? \end{exe}
+% % %
+%\begin{frame}
+%\frametitle{\small 
+%\framebreak
+\item \S 4.1 Maxima and Minima
+%\small
+	\begin{itemize}\footnotesize
+	\item Know the definitions of maxima, minima, and what makes these points local or absolute extrema (both analytically and graphically).
+	\item Know how to find critical points for a function.
+	\item Given a function on a given interval, be able to find local and/or absolute extrema.
+	\item Given specified properties of a function, be able to sketch a graph of that function.
+	\end{itemize}
+%\end{frame}
+%\framebreak
+% % %
+%\begin{frame}
+%\frametitle{\small 
+\item \S 4.2 What Derivatives Tell Us
+%\footnotesize
+	\begin{itemize}\footnotesize
+	\item Be able to use the first derivative to determine where a function is increasing or decreasing.
+	\item Be able to use the \alert{First Derivative Test to identify local maxima and minima}.  Be able to explain in words how you arrived at your conclusion.
+	\item Be able to find critical points, absolute extrema, and inflection points for a function.
+	\item Be able to use the second derivative to determine the concavity of a function.
+	\item Be able to use the \alert{Second Derivative Test to determine whether a given point is a local max or min}.  Be able to explain in words how you arrived at your conclusion.
+	\item Know your Derivative Properties!!! (see Figure 4.36 on p.\ 256)
+	\end{itemize}
+%\end{frame}
+%\framebreak
+% % %
+%\begin{frame}
+%\frametitle{\small 
+\item \S 4.3 Graphing Functions
+%\small
+	\begin{itemize}\footnotesize
+	\item Be able to find specific characteristics of a function that are spelled out in the Graphing Guidelines on p.\ 261 (e.g., know how to find $x$- and $y$-intercepts, vertical/horizontal asymptotes, critical points, inflection points, intervals of concavity and increasing/decreasing, etc.).  
+	\item Be able to use these specific characteristics of a function to sketch a graph of the function.
+	%\item TIP: If you are looking for intervals for increasing/decreasing or concave up/down, you should {\it treat} the naughty points as critical points and/or possible points of inflection.
+	\end{itemize} 
+%\end{frame}
+%\framebreak
+% % %
+%\begin{frame}
+%\frametitle{\small 
+\item \S 4.4 Optimization Problems
+%\small
+	\begin{itemize}\footnotesize
+	\item Be able to solve optimization problems that maximize or minimize a given quantity.
+	\item Be able to identify and express the constraints and objective function in an optimization problem.
+	\item Be able to determine your interval of interest in an optimization problem (e.g., what range of $x$-values are you searching for your extreme points?)
+	\item {\bf As to formulas, the same comment made above with respect to formulas for related rates problems applies here as well.}
+	\end{itemize}
+%\end{frame}
+%\framebreak
+\begin{exe} What two nonnegative real numbers $a$ and $b$ whose sum is 23 will 
+		\begin{itemize}
+		\item[(a)] minimize $a^2+b^2$?
+		\item[(b)] maximize $a^2+b^2$?
+		\end{itemize}	
+\end{exe}
+% % %
+%\begin{frame}
+%\frametitle{\small
+%\framebreak 
+\item \S 4.5 Linear Approximation and Differentials
+%\small
+	\begin{itemize}\footnotesize
+	\item Be able to find a linear approximation for a given function.
+	\item Be able to use a linear approximation to estimate the value of a function at a given point.
+	\item Be able to use differentials to express how the change in $x$ ($dx$) impacts the change in $y$ ($dy$).
+	\end{itemize}
+%\end{frame}
+%\framebreak
+%\frametitle{4.6 Mean Value Theorem}
+%\small
+%\begin{itemize}
+\item \S 4.6 Mean Value Theorem (for Derivatives)
+	\begin{itemize}\footnotesize
+	\item Know and be able to state Rolle's Thm and the Mean Value Thm, including knowing the hypotheses and conclusions for both.
+	\item Be able to apply Rolle's Thm to find a point in a given interval.
+	\item Be able to apply the MVT to find a point in a given interval.
+	\item Be able to use the MVT to find equations of secant and tangent lines.
+	\end{itemize}
+%\framebreak
+\begin{exe}[s]
+Determine whether the Mean Value Theorem (or Rolle's Theorem) applies to the following functions.  If it does, then find the point(s) guaranteed by the theorem to exist.
+	\begin{itemize}\footnotesize
+	\item[(1)] $f(x)=\sin{(2x)}$ on $\left[0,\textstyle\frac{\pi}{2}\right]$
+	\item[(2)] $g(x)=\ln{(2x)}$ on $\left[1,e\right]$
+	\item[(3)] $h(x)=1-\left|x\right|$ on $\left[-1,1\right]$
+	\end{itemize}
+\end{exe}
+\framebreak
+\begin{exe}[s] 
+	\begin{itemize}\footnotesize
+	\item[(4)] $j(x)=x+\textstyle\frac{1}{x}$ on $\left[1,3\right]$
+	\item[(5)] $k(x)=\textstyle\frac{x}{x+2}$ on $\left[-1,2\right]$
+	\end{itemize}
+\end{exe}	
+%\end{frame}
+\end{itemize}
+\end{frame}
+
+\end{document}

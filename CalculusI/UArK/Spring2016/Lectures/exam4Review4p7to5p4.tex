@@ -1,0 +1,133 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+
+\begin{document}
+
+%\section[]{}
+
+% % %
+\subsection[Exam \#4 Review]{Exam \#4 Review}
+% % %
+
+% % %
+\begin{frame}[allowframebreaks]{\S 5.4 Exam \#4 Review}\small
+\begin{itemize}
+\item \S 4.7 L'H\^opital's Rule
+	\begin{itemize}\footnotesize
+	\item Know how to use L'H\^{o}pital's Rule, including knowing under what conditions the Rule works.
+	\item Be able to apply L'H\^{o}pital's Rule to a variety of limits that are in indeterminate forms (e.g., 0/0, $\infty/\infty$, $0 \cdot \infty$, $\infty-\infty$, $1^{\infty}$, $0^0$, $\infty^0$).
+	\item Be able to use L'H\^{o}pital's Rule to determine the growth rates of two given functions.
+	\item Be aware of the pitfalls in using L'H\^{o}pital's Rule.
+%
+\framebreak	
+	\item \alert{PRACTICE THESE.}  Some of the book problems have non-obvious algebra tricks that simplify an otherwise crazy problem.
+	\end{itemize}
+\begin{exe}[s]
+Use analytical methods to evaluate the following limits:
+\begin{itemize}
+\item[(1)] $\lim_{x\to\infty}x^2\ln\left(\cos{\frac{1}{x}}\right)$
+\item[(2)] $\lim_{x\to\frac{\pi}{2}}(\pi-2x)\tan x$
+\item[(3)] $\lim_{x\to\infty}(x^2e^{\frac{1}{x}}-x^2-x)$
+\item[(4)] $\lim_{x\to 0^+}x^{\frac{1}{\ln x}}$
+\end{itemize}
+\end{exe}	
+%
+\framebreak	
+\begin{exe}
+Show, using limits, that $x^x$ grows faster than $b^x$ as $x\to\infty$, for any $b>1$.
+\end{exe}
+\item \S 4.9 Antiderivatives
+	\begin{itemize}\footnotesize
+	\item Know the definition of an antiderivative and be able to find one or all antiderivatives of a function.
+	\item Be able to evaluate indefinite integrals, including using known properties of indefinite integrals (i.e., Power Rule, Constant Multiple Rule, Sum Rule).
+	\item Know how to find indefinite integrals of the six trig functions, of $e^{ax}$, of $\ln x$, and of the three inverse trig functions listed in the notes.
+%
+\framebreak
+	\item Be able to solve initial value problems to find specific antiderivatives.
+	\item Be able to use antiderivatives to work with motion problems.
+	\end{itemize}
+\begin{exe}
+A payload is dropped at an elevation of 400 m from a hot-air balloon that is descending at a rate of 10 m/s.  Its acceleration due to gravity is -9.8 m/s$^{\text{2}}$.
+\begin{itemize}
+\item[(a)] Find the velocity function for the payload.
+\item[(b)] Find the position function for the payload.
+\item[(c)] Find the time when the payload strikes the ground.
+\end{itemize}
+\end{exe}	
+%
+\framebreak
+\item \S 5.1 Approximating Areas under Curves
+	\begin{itemize}\footnotesize
+	\item Be able to use rectangles to approximate area under the curve for a given function.
+	\item Be able to write and compute a Riemann sum using a table (\#35-38 in text).
+	\item Be able to identify whether a given Riemann sum written in sigma notation is a left, right, or midpoint sum.
+	\end{itemize}
+%
+\framebreak	
+\item \S 5.2 Definite Integrals
+	\begin{itemize}\footnotesize
+	\item Be able to compute left, right, or midpoint Riemann sums for curves that have negative components, and understand the concept of net area.  Know the difference between (total) area and net area.
+	\item Be able to evaluate a definite integral using geometry or a given graph.
+	\item Know the properties of definite integrals and be able to use them to evaluate a definite integral.
+	\end{itemize}
+\begin{que}
+If $f$ is continuous on $[a,b]$ and $\int_a^b|f(x)|dx=0$, what can you conclude about $f$?
+\end{que}	
+\begin{exe}
+Use geometry to evaluate $\int_1^{10}g(x)\ dx$, where
+\[
+g(x)=\begin{cases}
+	4x & 0\leq x\leq 2 \\
+	-8x+16 & 2<x\leq 3 \\
+	-8 & x>3
+	\end{cases}.
+\]
+\end{exe}
+%
+\framebreak	
+\item \S 5.3 Fundamental Theorem of Calculus
+	\begin{itemize}\footnotesize
+	\item Understand the concept of an area function, and be able to evaluate an area function as $x$ changes.
+	\item Know the two parts of the Fundamental Theorem of Calculus and its significance (i.e., the inverse relationship between differentiation and integration).
+	\item Use the FTC to evaluate definite integrals or simplify given expressions.
+	\end{itemize}
+\begin{exe}
+Given $g(x)=\int_0^x(t^2+1)\ dt$, compute $g'(x)$ using
+\begin{itemize}
+\item FTOC I.
+\item FTOC II.
+\end{itemize}
+\end{exe}
+\item \S 5.4 Working with Integrals
+	\begin{itemize}\footnotesize
+	\item Be able to integrate even and odd functions knowing the ``shortcuts'' provided by these functions' characteristics.
+	\item Be able to find the average value of a function.
+	\item Know the Mean Value Theorem for Integrals and be able to use it to find points associated with the average value of a function.
+	\end{itemize}
+\end{itemize}
+\begin{exe}
+Find the point(s) at which the given function equals its average value on the given interval.
+\begin{itemize}
+\item[(1)] $f(x)=e^x$ on $[0,2]$
+\item[(2)] $f(x)=\frac{\pi}{4}\sin x$ on $[0,\pi]$
+\item[(3)] $f(x)=\frac{1}{x}$ on $[1,4]$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Other Remarks on the Exam}
+% % %
+
+% % %
+\begin{frame}{\small Other Remarks on the Exam}\footnotesize
+Tips for studying efficiently and effectively:
+\begin{itemize}
+\item Given today's lists of materials you should know for the exam, if you see a topic you don't know then go back to the slides covering that topic first.
+\item Review slides for days you missed.
+\item Redo the quizzes until you can get a perfect score without looking at the key.
+\item Book problems.  Do those problems with the same attention and care you put into Exam \#3.  
+\item Read the textbook.
+\end{itemize}	
+\end{frame}
+
+\end{document}

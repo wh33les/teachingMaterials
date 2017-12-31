@@ -1,0 +1,116 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+
+\begin{document}
+
+%\section[Week 13]{Week 13: 18-22 Apr}
+
+% % % 
+\subsubsection{\bf Monday 18 April}
+% % %
+
+\begin{frame}[allowframebreaks]{Mon 18 Apr}
+\begin{itemize}
+\item April 22: Last day to drop with a "W".
+\item Exam 4 next week, probably Friday.  Covers \S 4.7-5.4
+\end{itemize}
+\end{frame}
+
+% % %
+\subsubsection{Sigma Notation}
+% % %
+
+% % %
+\begin{frame}{\small Sigma Notation}\footnotesize
+Riemann sums become more accurate when we make $n$ (the number of rectangles) bigger, but obviously writing it all down is no fun!  Sigma notation gives a shorthand.  Here is how sigma notation works, through an example: 
+\begin{ex} 
+$\sum_{n=1}^5 n^2$ is the sum all integer values from the lowest limit ($n=1$) to the highest limit ($n=5$) in the summand $n^2$ (in this case $n$ is the indexing variable).  
+\[\sum_{n=1}^5 \alert n^2 = \alert 1^2+\alert 2^2+\alert 3^2+\alert 4^2+\alert 5^2=55.\] 
+\end{ex}
+\end{frame}
+
+% % %
+\begin{frame}\small
+\begin{ex} 
+Evaluate $\sum_{k=0}^3 (2k-1)$. 
+\end{ex}
+\footnotesize
+{\bf Solution:} In this example, $k$ is the indexing variable.  It starts at $0$ and goes to $3$, which means we write down the expression in the parentheses for each of the integers from $0$ to $3$, then add the results together:
+\begin{align*}
+\sum_{k=0}^3(2\alert k-1) &= (2(\alert 0)-1)+(2(\alert 1)-1)+(2(\alert 2)-1)+(2(\alert 3)-1) \\
+	&= -1+1+3+5 = 8.
+\end{align*}
+\end{frame}
+
+% % %
+\subsubsection{$\Sigma$-Shortcuts}
+% % %
+
+% % %
+\begin{frame}{\small $\Sigma$-Shortcuts}\footnotesize
+($n$ is always a positive integer)
+\vspace{-1pc}
+\begin{align*}
+\sum_{k=1}^n c & = cn \text{ (where $c$ is a constant)} \\%[0.25pc]
+\sum_{k=1}^n k &= \dfrac{n(n+1)}{2} \\%[0.25pc]
+\sum_{k=1}^n k^2 &= \dfrac{n(n+1)(2n+1)}{6} \\%[0.25pc]
+\sum_{k=1}^n k^3 &= \dfrac{n^2(n+1)^2}{4}
+\end{align*}
+\vspace{-1.5pc}
+\begin{que}
+What is the indexing variable in these formulas?
+\end{que}
+\end{frame}
+
+% % %
+\subsubsection{Riemann Sums Using Sigma Notation}
+% % %
+
+% % %
+\begin{frame}{\small Riemann Sums Using Sigma Notation}\footnotesize
+Suppose $f$ is defined on a closed interval $[a,b]$ which is divided into $n$ subintervals of equal length $\Delta x$.  As before, $\overline{x}_k$ denotes a point in the $k$th subinterval $[x_{k-1},x_k]$, for $k=1,2,\dots,n$.  Recall that $x_0=a$ and $x_n=b$. 
+
+\vspace{1pc}
+Here is how we can write the Riemann sum in a much more compact form:
+\vspace{-1pc}
+\[
+R = f(\overline{x}_1)\Delta x + f(\overline{x}_2)\Delta x + \cdots + f(\overline{x}_n)\Delta x 
+ = \alert{\sum_{k=1}^n f(\overline{x}_k) \Delta x}.
+\]
+\end{frame}
+
+% % %
+\begin{frame}
+With sigma-notation we can even derive explicit formulas for the basic Riemann sums (the expression in \alert{red} is $\overline x_k$ for each case:
+
+\begin{itemize}
+\item[1.] $\displaystyle\sum_{k=1}^n f(\alert{a+(k-1)\Delta x}) \Delta x=$ left Riemann sum
+\item[2.] $\displaystyle\sum_{k=1}^n f(\alert{a+k\Delta x}) \Delta x=$  right Riemann sum
+\item[3.] $\displaystyle\sum_{k=1}^n$\hspace{-1pt} $f(\alert{a+\left(k-\frac{1}{2}\right)\Delta x}) \Delta x=$ midpoint Riemann sum
+\end{itemize}
+\end{frame}
+
+\begin{frame}\small
+\begin{exe} 
+\begin{itemize}
+\item[(a)] Use sigma notation to write the left, right, and midpoint Riemann sums for the function $f(x)=x^2$ on the interval $[1,5]$ given that $n=4$.
+\item[(b)] Based on these approximations, estimate the area bounded by the graph of $f(x)$ over $[1,5]$.
+\end{itemize}
+\end{exe}
+{\bf Suggestion:} As $n$ gets very big, Riemann sums, along with the $\Sigma$-shortcuts plus algebra, often make the problem way more manageable. 
+\end{frame}
+
+% % %
+\subsubsection{Book Problems}
+% % %
+
+% % %
+\begin{frame}
+\begin{block}{5.1 Book Problems}
+9-37
+\end{block}
+\end{frame}
+
+% % %
+\subfile{5p2definiteIntegrals}
+
+\end{document}

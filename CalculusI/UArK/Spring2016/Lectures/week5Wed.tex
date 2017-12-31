@@ -1,0 +1,196 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+%\AtBeginSubsection{
+%	\begin{frame}[allowframebreaks]{}
+%	\begin{multicols}{2}
+%	\tableofcontents[currentsubsection]
+%	\end{multicols}
+%	\end{frame}
+%	}
+	
+\begin{document}
+
+%\section[Week 5]{Week 5: 15-19 February}
+
+% % %
+\subsubsection{\bf Wednesday 17 February}
+\begin{frame}[allowframebreaks]{Wed 17 Feb}
+\begin{itemize}\footnotesize
+\item Expect Exam back on Thursday.  Feedback on Friday.  Scores $\to$ MLP?
+\item \alert{Instructions for when you get your exam back:}
+\begin{itemize}\footnotesize
+	\item Look over your test, but don't write on it.
+	\item If you find discrepancies on points or grading, write your grievances on a separate sheet of paper.
+	\item Return that paper with your exam to your drill instructor by the end of drill.
+	\item Once you leave the room with your exam you lose this opportunity.
+	\item This is the only way you can get points back on the exam.
+\end{itemize}
+\framebreak
+\item MIDTERM in less than three weeks.
+\begin{itemize}
+	\item Tuesday 8 March 6-7:30p
+	\item If you have legitimate conflict, i.e., anything that is also scheduled in ISIS, I need to know now.  If you are not sure if it conflicts with a course, please have that instructor contact me ASAP.
+	\item Morning Section: Walker rm 124
+	
+	Afternoon Section: Walker rm 218
+\end{itemize}
+\item Later this month: Sub on Friday 26 Feb and Monday 29 Feb.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}{}
+\begin{exe} 
+	\begin{itemize}
+	\item[(a)] Find the slope of the line tangent to the curve $f(x)=x^3-4x-4$ at the point $(2,-4)$. 
+	\item[(b)] Where does this curve have a horizontal tangent?
+	\end{itemize}
+\end{exe}	
+\end{frame}
+
+% % %
+\subsubsection{Higher-Order Derivatives}
+% % %
+
+% % %
+\begin{frame}{\small Higher-Order Derivatives}
+If we can write the derivative of $f$ as a function of $x$, then we can take \emph{its} derivative, too.  The derivative of the derivative is called the {\bf second derivative} of $f$, and is denoted $f^{\prime\prime}$.  
+
+\vspace{1pc}
+In general, we can differentiate $f$ as often as needed.  If we do it $n$ times, the $n$th derivative of $f$ is 
+\[\alert{f^{(n)}}(x)=\frac{\alert{d^n} f}{\alert{dx^n}}=\alert{\frac{d}{dx}}[\alert{f^{(n-1)}}(x)].\]
+\end{frame}
+
+% % %
+\subsubsection{Book Problems}
+% % %
+
+% % %
+\begin{frame}{}
+\begin{block}{3.3 Book Problems} 9-48 (every 3rd problem), 51-53, 58-60 \end{block} 
+\begin{itemize}
+\item For these problems, use only the rules we have derived so far.
+\end{itemize}
+\end{frame}
+
+% % %
+\subsection[3.4 The Product and Quotient Rules]{\S 3.4 The Product and Quotient Rules}
+% % %
+
+% % %
+\begin{frame}{\S 3.4 The Product and Quotient Rules}
+Issue: Derivatives of products and quotients do \alert{NOT} behave like they do for limits.  
+\end{frame}
+
+% % %
+\begin{frame}\footnotesize
+As an example, consider $f(x)=x^2$ and $g(x)=x^3$.  We can try to differentiate their product in two ways:
+\begin{itemize}\footnotesize
+\item $\begin{aligned}[t]
+	\frac{d}{dx}[f(x)g(x)] &= \frac{d}{dx}\left(x^5 \right) \\[0.25pc]
+	 &= 5x^4
+	\end{aligned}$
+\item $\begin{aligned}[t]
+	f^{\prime}(x)g^{\prime}(x) &= (2x)(3x^2) \\
+	 &= 6x^3
+	 \end{aligned}$
+\end{itemize}
+\begin{que}Which answer is the correct one? \end{que}
+\end{frame}
+
+% % %
+\subsubsection{Product Rule}
+% % %
+
+% % %
+\begin{frame}{\small Product Rule}\footnotesize
+If $f$ and $g$ are any two functions that are differentiable at $x$, then
+\[\alert{\frac{d}{dx}[f(x) g(x)] = f^{\prime}(x) g(x) + g^{\prime}(x) f(x)}.\]
+In the example from the previous slide, we have
+\begin{align*}
+\frac{d}{dx}[x^2\cdot x^3] &= \frac{d}{dx}(x^2)\cdot (x^3)+x^2\cdot\frac{d}{dx}(x^3) \\
+ &= (2x)\cdot (x^3)+x^2\cdot (3x^2) \\[0.25pc]
+ &= 2x^4+3x^4 \\[0.25pc]
+ &= 5x^4
+\end{align*}
+\end{frame}
+
+% % %
+\subsubsection{Derivation of the Product Rule}
+% % %
+
+% % %
+\begin{frame}[allowframebreaks]{\small Derivation of the Product Rule}\footnotesize
+\begin{align*}
+&\frac{d}{dx}[f(x)g(x)] = \lim_{h \to 0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h} \\[1pc]
+ =\lim_{h \to 0} &\left(\frac{f(x+h)g(x+h)+\alert{[-f(x)g(x+h)+f(x)g(x+h)]}-f(x)g(x)}{h}\right) \\[0.5pc] 
+ =\lim_{h \to 0} &\left(\frac{f(x+h)g(x+h)\alert{-f(x)g(x+h)}}{h}\right) \\
+&\hspace{5pc} + \left(\lim_{h \to 0}\frac{\alert{f(x)g(x+h)}-f(x)g(x)}{h}\right) \\[0.5pc]
+\end{align*} 
+
+\framebreak
+\begin{align*} 
+ =\lim_{h \to 0} &\left(g(x+h) \frac{f(x+h)-f(x)}{h}\right) + \left(\lim_{h \to 0} f(x) \frac{g(x+h)-g(x)}{h}\right) \\[0.5pc]
+ &=g(x)f^{\prime}(x)+f(x)g^{\prime}(x)
+\end{align*}
+\end{frame}
+
+% % % 
+\begin{frame}
+\begin{exe} 
+Use the product rule to find the derivative of the function $(x^2+3x)(2x-1)$.
+\begin{itemize}
+\item[A. ] $2(2x+3)$
+\item[B. ] $6x^2+10x-3$
+\item[C. ] $2x^3+5x^2-3x$
+\item[D. ] $2x(x+3)+x(2x-1)$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\subsubsection{Derivation of the Quotient Rule}
+% % %
+
+% % %
+\begin{frame}{\small Derivation of Quotient Rule}\footnotesize
+\begin{que} Let $q(x)=\frac{f(x)}{g(x)}$.  What is $\frac{d}{dx}q(x)$? \end{que}
+{\bf Answer:} We can write $f(x)=q(x) g(x)$ and then use the Product Rule:
+\[f^{\prime}(x) = q^{\prime}(x) g(x) + g^{\prime}(x) q(x)\] 
+and now solve for $q^{\prime}(x)$: 
+\[q^{\prime}(x)=\frac{f^{\prime}(x)-q(x)g^{\prime}(x)}{g(x)}.\]
+\end{frame} 
+
+% % %
+\begin{frame}{}\footnotesize
+Then, to get rid of $q(x)$, plug in $\frac{f(x)}{g(x)}$:
+\begin{align*}
+q^{\prime}(x) &= \frac{f^{\prime}(x)-g^{\prime}(x)\alert{\frac{f(x)}{g(x)}}}{g(x)} \\[0.5pc]
+ &= \frac{\alert{g(x)} \left( f^{\prime}(x)-g^{\prime}(x)\frac{f(x)}{g(x)} \right)}{\alert{g(x)}\cdot g(x)} \\[1pc]
+\alert{\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right)} & \alert{=\frac{f^{\prime}(x) g(x)-g^{\prime}(x)f(x)}{g(x)^2}}
+\end{align*}
+``LO-D-HI minus HI-D-LO  over LO squared"
+\end{frame}
+
+% % %
+\subsubsection{Quotient Rule}
+% % %
+
+% % % 
+\begin{frame}{\small Quotient Rule}
+Just as with the product rule, the derivative of a quotient is not a quotient of derivatives, i.e.
+\[\frac{d}{dx} \left[ \frac{f(x)}{g(x)}\right] \ne \frac{f^{\prime}(x)}{g^{\prime}(x)}.\]
+Here is the correct rule, the Quotient Rule:
+\[\frac{d}{dx} \left[ \frac{f(x)}{g(x)}\right] = \frac{f^{\prime}(x) g(x)-g^{\prime}(x) f(x)}{[g(x)]^2}.\]
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{exe} Use the Quotient Rule to find the derivative of 
+\[\frac{4x^3+2x-3}{x+1}.\]
+\end{exe}
+\begin{exe} Find the slope of the tangent line to the curve 
+\[f(x)=\frac{2x-3}{x+1}\text{ at the point }(4,1).\] 
+\end{exe}
+\end{frame}
+
+\end{document}

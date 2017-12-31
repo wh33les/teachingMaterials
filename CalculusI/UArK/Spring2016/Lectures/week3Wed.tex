@@ -1,0 +1,86 @@
+\documentclass[cal1spr16Lectures.tex]{subfiles}
+%\AtBeginSubsection{
+%	\begin{frame}[allowframebreaks]{}
+%	\begin{multicols}{2}
+%	\tableofcontents[currentsubsection]
+%	\end{multicols}
+%	\end{frame}
+%	}
+	
+\begin{document}
+
+%\section[Week 3]{Week 2: 1-5 February}
+
+% % %
+\subsubsection{\bf Wednesday 3 February}
+\begin{frame}[allowframebreaks]{Wed 3 Feb}
+\begin{itemize}%\footnotesize
+\item GET YOUR CLICKER NOW.  If you haven't gotten any email from me, then your clicker should be working fine.  	
+\item EXAM 1 is one week from Friday.  Covers up to \S 3.1 (see the semester schedule of material on the course webpage).  \alert{You must attend your own lecture on exam day.}  CEA: Register with the CEA office for a time on 12 Feb, as close to your normal lecture time as possible.
+\item Look at old Wheeler exams to study.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{ex}Let $f(x)=\begin{cases}
+	x^3+4x+1 & \text{if}\ x \leq 0 \\
+	2x^3 & \text{if}\ x>0.
+	\end{cases}$
+\begin{itemize}
+\item[1.] Use the continuity checklist to show that $f$ is not continuous at 0.
+\item[2.] Is $f$ continuous from the left or right at 0?
+\item[3.] State the interval(s) of continuity.
+\end{itemize}
+\end{ex}
+\end{frame}
+
+% % %
+\subsubsection{Continuity of Functions with Roots}
+% % %
+
+% % %
+\begin{frame}{\small Continuity of Functions with Roots}{}
+{\small (assuming $m$ and $n$ are positive integers and $\textstyle\frac{n}{m}$ is in lowest terms)}
+\begin{itemize}
+\item If $m$ is odd, then $[f(x)]^{\frac{n}{m}}$ is continuous at all points at which $f$ is continuous.
+\item If $m$ is even, then $[f(x)]^{\frac{n}{m}}$ is continuous at all points $a$ at which $f$ is continuous \alert{and $f(a)\geq 0$}.
+\end{itemize}
+\begin{que}  Where is $f(x)=\sqrt[4]{4-x^2}$ continuous?\end{que}
+\end{frame}
+
+% % %
+\subsubsection{Continuity of Transcendental Functions}
+% % %
+
+% % %
+\begin{frame}{\small Continuity of Transcendental Functions}
+\footnotesize
+{\bf Trig Functions:} The basic trig functions are all continuous at all points \alert{IN THEIR DOMAIN}.  Note there are points of discontinuity where the functions are not defined -- for example, $\tan x$ has asymptotes everywhere that $\cos x=0$.  
+
+\vspace{1pc}
+{\bf Exponential Functions:}  The exponential functions $b^x$ and $e^x$ are continuous on all points of their domains.
+
+\vspace{1pc}
+{\bf Inverse Functions:}  If a continuous function $f$ has an inverse on an interval $I$ (meaning if $x\in I$ then $f^{-1}(y)$ passes the vertical line test), then its inverse $f^{-1}$ is continuous on the interval $J$, which is defined as all the numbers $f(x)$, given $x$ is in $I$.
+\end{frame}
+
+% % %
+\subsubsection{Intermediate Value Theorem (IVT)}
+% % % 
+
+% % %
+\begin{frame}{\small Intermediate Value Theorem (IVT)}
+\begin{thm}[Intermediate Value Theorem] Suppose \alert{$f$ is continuous on the interval $[a,b]$} and $L$ is a number satisfying
+\[f(a)<L<f(b)\quad\text{or}\quad f(b)<L<f(a).\]  
+Then there is at least one number $c\in (a,b)$, i.e., $a<c<b$, satisfying 
+\[f(c)=L.\] 
+\end{thm}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{ex} Let $f(x)=-x^5-4x^2+2\sqrt{x}+5.$  Use IVT to show that $f(x)=0$ has a solution in the interval $(0,3)$. \end{ex}
+\end{frame}
+
+\end{document}
