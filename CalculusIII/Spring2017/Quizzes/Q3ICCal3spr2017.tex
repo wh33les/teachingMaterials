@@ -1,0 +1,66 @@
+\documentclass[]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage[top=1in,bottom=1in,margin=1in]{geometry}
+\usepackage{supertabular}
+\usepackage{graphicx,tikz}	
+%\usepackage{tkz-euclide}
+%\usetkzobj{all}
+\usetikzlibrary{calc}
+\usepackage{array,multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\DeclareMathOperator{\proj}{proj}
+
+\fancypagestyle{plain}{
+	\addtolength{\headheight}{0.485in}
+	\rhead{\bf MATH 2574 (Calculus III) \\
+		%\vspace{0.5pc}
+		Mon 13 Feb 2017 \\}
+	\rfoot{\footnotesize $\;$Quiz 3IC, p. \thepage\ (of \pageref{LastPage})
+	}
+\renewcommand{\headrulewidth}{0pt}
+}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\footnotesize Quiz 3IC, p. \thepage\ (of \pageref{LastPage})$\;$}
+
+\title{\vspace{-3.5pc} 
+	\flushleft \bf \Large In-Class Quiz 3: \\ Limits and continuity (\S 12.3)}
+\date{}
+
+% % % % %
+\begin{document}
+\maketitle
+
+\vspace{-3pc}
+\noindent{\bf Directions:} This quiz is due at the end of lecture.  
+
+\noindent\hrulefill
+
+\begin{enumerate}
+
+% % %
+\item %{\bf 12.3} 
+Which of the following limits exist?
+\begin{enumerate}
+	\item $\lim_{(x,y)\to(1,1)}3x^{12}y^2$
+	\vspace{10pc}
+	
+	\item $\lim_{(x,y)\to(0,0)}3x^{-2}y^2$
+	\vspace{10pc}
+	
+	\item $\lim_{(x,y)\to(1,2)}\sqrt{x-y^2}$
+
+\end{enumerate}
+
+% % % % %
+\end{enumerate}
+\end{document}
