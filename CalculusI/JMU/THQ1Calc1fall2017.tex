@@ -1,0 +1,115 @@
+\documentclass[%margin%,line,pifont,palatino,courier
+]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage[top=1in,bottom=1in,margin=1in]{geometry}
+\usepackage{supertabular}
+\usepackage{graphicx,tikz}	
+%\usepackage{tkz-euclide}
+%\usetkzobj{all}
+%\usetikzlibrary{calc}
+\usepackage{array,multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\DeclareMathOperator{\proj}{proj}
+
+\fancypagestyle{plain}{
+	\addtolength{\headheight}{0.485in}
+	\rhead{\bf MATH 235 (Calculus I) \\
+		%\vspace{0.5pc}
+		due Mon 11 Sep 2017 \\}
+	\rfoot{\footnotesize THQuiz 1, p. \thepage\ (of \pageref{LastPage})
+	}
+\renewcommand{\headrulewidth}{0pt}
+}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\footnotesize THQuiz 1, p. \thepage\ (of \pageref{LastPage})$\;$}
+
+\title{\vspace{-3.5pc} 
+	\flushleft \bf \Large Take-Home Quiz 1: %\\ 
+	A catalog of functions for modelling real-world phenomena (\S 1.1-1.3)}
+\date{}
+
+% % % % %
+\begin{document}
+\maketitle
+
+\vspace{-3pc}
+\noindent{\bf Directions:} This quiz is due on September 11, 2017 at the beginning of lecture.  You may use whatever resources you like -- e.g., other textbooks, websites, collaboration with classmates -- to complete it \textbf{but YOU MUST DOCUMENT YOUR SOURCES}.  Acceptable documentation is enough information for me to find the source myself.  Rote copying another's work is unacceptable, regardless of whether you document it.  
+
+\noindent\hrulefill
+
+\begin{enumerate}
+% % %
+\item {\bf 1.2 \#32} The following table shows the mean (average) distances $d$ of the planets from the sun (taking the unit of measurement to be the distance from the earth to the sun) and their periods $T$ (time of revolution in years).
+
+\begin{center}
+\begin{tabular}{l|rr}
+ & {$d$} & {$T$} \\
+\hline
+Mercury & 0.387 & 0.241 \\
+Venus & 0.723 & 0.615 \\
+Earth & 1.000 & 1.000 \\
+Mars & 1.523 & 1.881 \\
+Jupiter & 5.203 & 11.861 \\
+Saturn & 9.541 & 29.457 \\
+Uranus & 19.190 & 84.008 \\
+Neptune & 30.086 & 164.784
+\end{tabular}
+\end{center}
+	
+	\begin{enumerate}
+	\item Fit a power model to the data:  
+		\begin{itemize}
+		\item Plot the data on a graph with horizontal axis $d$ and vertical axis $T$.  
+		\item Choose an appropriate value of $n$ so that $T(d)=d^n$ best fits your data.  Be clear in your process on how you chose $n$.
+		\item Draw the graph of $T(d)$ on the same axes as the points you plotted, to illustrate the fit. 
+		\end{itemize}	
+	\item Kepler's Third Law of Planetary Motion states that ``The square of the period of revolution of a planet is proportional to the cube of its mean distance from the sun."
+	
+	Does your model corroborate Kepler's Third Law?  Explain how it does or doesn't.
+	\end{enumerate}
+	
+% % %
+\item {\bf 1.3 \#26} A \emph{variable star} is one whose brightness alternately increases and decreases.  For the most visible variable star, Delta Cephei, the time between periods of maximum brightness is 5.4 days, the average brightness (or \emph{magnitude}) of the star is 4.0, and its brightness varies by $\pm$0.35 magnitude.  Find a function (formula) that models the brightness of Delta Cephei as a function of time.  Include a well-labelled graph of your function and argue why your function is consistent with information given.
+	
+% % %
+%\item {\bf 1.3 \#56} A spherical balloon is being inflated and the radius of the balloon is increasing at a rate of 2 cm/s.
+%	\begin{enumerate}
+%	\item Express the radius $r$ of the balloon as a function of the time $t$ (in seconds).
+%	\item If $V$ is the volume of the balloon as a function of the radius, find $V\circ r$ and interpret it.
+%	\end{enumerate}
+
+% % %
+\item {\bf 1.3 \#60} The \emph{Heaviside function} $H$ is defined by 
+\[
+H(t) = \begin{cases}
+	0 & \text{if } t<0 \\
+	1 & \text{if } t\geq 0
+	\end{cases}.
+\]  
+It is used in the study of electric circuits to represent the sudden surge of electric current, or voltage, when a switch is instantaneously turned on.  It can also be used to define the \emph{ramp function} $y=ctH(t)$, which represents a gradual increase in the voltage or current in a circuit.
+	\begin{enumerate}
+	\item On the same axes, sketch the graphs of the Heavidside function and the ramp function.  Make sure to label which graph is which.  
+	\item What are the restrictions on the possible values of $c$?  Where do the two graphs in part (a) intersect?
+	\item On a different set of axes, sketch the graph of the voltage $V(t)$ in a circuit if the switch is turned on at time $t=0$ and the voltage is gradually increased to 120 volts over a 60-second time interval.  Write a forumla for $V(t)$ in terms of $H(t)$ for $t\leq 60$.
+	\item On another set of axes, sketch the graph of the voltage $V(t)$ in a circuit if the switch is turned on at time $t=7$ seconds and the voltage is gradually increased to 100 volts over a period of 25 seconds.  Write a formula for $V(t)$ in terms of $H(t)$ for $t\leq 32$.
+	\end{enumerate}
+
+% % %
+\item {\bf 1.3 \#62} If you invest $x$ dollars at 4\% interest compounded annually, then the amount of the investment after one year is $A(x)=1.04x$.  Find $A\circ A$, $A\circ A\circ A$, and $A\circ A\circ A\circ A$.  What do these compositions represent?  Find a formula for the composition of $n$ copies of $A$.
+
+% % %
+\item {\bf 1.3 \#64} If $f(x)=x+4$ and $h(x)=4x-1$, find a function $g$ such that $g\circ f=h$.
+
+% % % % %
+\end{enumerate}
+\end{document}
