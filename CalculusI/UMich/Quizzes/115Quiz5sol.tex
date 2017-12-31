@@ -1,0 +1,192 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{pstricks, pst-node, pst-plot}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bv}{\mathbf}
+\newcommand{\lv}{\langle}
+\newcommand{\rv}{\rangle}
+
+\begin{document}
+\flushleft
+\begin{multicols}{2}
+
+
+\begin{large}\textbf{Math 115 Quiz 5: $\oint $ 3.1-4 Basic Shortcuts \\
+Mon 25 October 2010}\end{large}
+
+\textbf{Name:  }\underline{\hspace{35ex}}
+
+\vspace{.5in}
+
+\end{multicols}
+
+\pagestyle{empty}
+
+\flushleft
+
+You have 30 minutes to complete this quiz.  Make your variables clear and
+consistent (so if you want to say, for example, $\frac{dy}{dx}$, you should also
+mention $y=f(x)$, or ``$y$ is a function of $x$'').  Calculators are OK.  
+
+\begin{enumerate}
+\item  \textbf{Definitions/Concepts.} (1 pt each)  State the following:
+\begin{enumerate}
+ \item Product Rule: 
+
+\vspace{.5pc}
+If $u=f(x)$ and $v=g(x)$ are differentiable, then
+\[(fg)'=f'g+g'f.\]
+The product rule can also be written 
+\[\frac{d(uv)}{dx}=\frac{du}{dx}\cdot v+u\cdot \frac{dv}{dx}.\]
+In words: 
+\linebreak
+The derivative of a product is the derivative of the first times the second plus the first times the derivative of the second.
+
+\vspace{.5pc}
+ \item Quotient Rule:
+
+\vspace{.5pc}
+If $u=f(x)$ and $v=g(x)$ are differentiable, then
+\[\left(\frac{f}{g}\right) '=\frac{f'g-fg'}{g^2},\]
+or equivalently,
+\[\frac{d}{dx}\left(\frac{u}{v}\right)=\frac{\frac{du}{dx}\cdot v-u\cdot \frac{dv}{dx}}{v^2}.\]
+In words:
+\linebreak
+The derivative of a quotient is the derivative of the numerator times the denominator minus the numerator times the derivative of the denominator, all over the denominator squared.
+
+\vspace{.5pc}
+ \item Chain Rule:
+
+\vspace{.5pc}
+If $f$ and $g$ are differentiable functions, then
+\[\frac{d}{dx}f\left(g(x)\right)=f'\left(g(x)\right)\cdot g'(x).\]
+In words:
+\linebreak
+The derivative of a composite function is the product of the derivatives of the outside and inside functions.  The derivative of the outside function must be evaluated at the inside function.
+
+\end{enumerate}
+
+\vspace{1pc}
+\item \textbf{Questions/Problems.}  The acceleration due to gravity, $g$, at a
+distance $r$ from the center of the earth is given by
+\[g=\frac{GM}{r^2},\]
+where $M$ is the mass of the earth and $G$ is a constant.
+
+\begin{enumerate}
+\item (1 pt) Find $\frac{dg}{dr}$.
+
+\vspace{.5pc}
+Use the power rule applied to $r^{-2}$ and multiply by the constant $GM$.
+\begin{eqnarray*}
+\frac{dg}{dr} &=& -2\cdot r^{-3}\cdot GM \\
+&=& \frac{-2GM}{r^3}
+\end{eqnarray*}
+
+\vspace{.5pc}
+\item (2 pts) What is the practical interpretation (in terms of acceleration) of
+$\frac{dg}{dr}$?  Why would you expect it to be negative?
+
+\vspace{.5pc}
+The derivative $\frac{dg}{dr}$ is the rate of change of acceleration due to gravity, as the distance, $r$, from the center of the earth increases.  Gravitational pull toward the earth decreases at distances far from the earth, so $g$ decreasing implies $\frac{dg}{dr}<0$.
+
+\vspace{.5pc}
+\item (1 pt) You are told that $M=6\cdot 10^{24}$ and $G=6.67\cdot 10^{-20}$
+where $M$ is in kilograms and $r$ in kilometers.  What is the value of
+$\frac{dg}{dr}$ at the surface of the earth ($r=6400$ km)?
+
+\vspace{.5pc}\textit{The typo in this problem is fixed.}
+\linebreak
+Replace the constants with the given values and evaluate the derivative at $r=6400$.
+\begin{eqnarray*}
+ g'(6400) &=& -2\frac{(6.67\cdot 10^{-20})(6\cdot 10^{24})}{6400^3} \\
+&\approx & -3.053\cdot 10^{-6} \text{ kg/km}^3
+\end{eqnarray*}
+
+\vspace{.5pc}
+\item (1pt) What does this tell you about whether or not it is reasonable to
+assume $g$ is constant near the surface of the earth?
+
+\vspace{.5pc}
+It is totally reasonable.  According to part (c), near the surface of the earth the acceleration due to gravity decreases very slightly if $r$ increases by 1 km. To ease computations, assuming $g$ is constant near the surface of the earth will only give an error on the order of $10^{-6}$ kg/km$^2$. 
+\end{enumerate}
+ 
+\vspace{1pc}
+\item \textbf{Computations/Algebra.} (1 pt each) Differentiate with respect to
+$x$.  You must show work to get credit.
+\begin{enumerate}
+\item $f(x)=\frac{x^2 +3x+2}{x+1}$
+
+\begin{eqnarray*}
+ f'(x) &=& \frac{(x+1)\frac{d}{dx}(x^2+3x+2)-(x^2+3x+2)\frac{d}{dx}(x+1)}{(x+1)^2} \\
+&=& \frac{(x+1)(2x+3)-(x^2+3x+2)(1)}{(x+1)^2} \\
+&=& \frac{x^2+2x+1}{(x+1)^2} \\
+&=& 1
+\end{eqnarray*}
+Alternate answer:  Notice
+\begin{eqnarray*}
+\frac{x^2+3x+2}{x+1} &=& \frac{(x+2)(x+1)}{x+1} \\
+&=& x+2. 
+\end{eqnarray*}
+Then 
+\begin{eqnarray*}
+ f'(x) &=& \frac{d}{dx}(x+2) \\
+&=& 1.
+\end{eqnarray*}
+
+\vspace{.5pc}
+\item $g(x)=x^k +k^x$
+
+\[g'(x)=kx^{k-1}+(\ln{k})k^x\]
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{1pc}
+----------------------------------------------------------------------------------------
+
+\vspace{1pc}
+\noindent \textbf{ChAlLeNgE PrObLeM:}  Use the identity 
+\[\ln{(a^x)}=x\ln{a}\]
+and the chain rule to write an alternate justification of the formula 
+\[\frac{d}{dx}a^x=(\ln{a})a^x.\]
+
+\vspace{.5pc}\textit{The point of this exercise was to segue into $\oint $3.6.  The answer is part of the text; see p. 147.}
+\linebreak
+Differentiate both sides of the identity with respect to $x$:
+\begin{eqnarray*}
+\frac{d}{dx}\left(\ln{(a^x)}\right. &=& \left.x\ln{a}\right) \\
+\frac{d}{d(a^x)}\ln{(a^x)}\cdot \frac{d}{dx}a^x &=& \frac{d}{dx}x\ln{a} \\
+\frac{d}{dx}a^x &=& \frac{\ln{a}}{\frac{d}{d(a^x)}\ln{(a^x)}}
+\end{eqnarray*}
+The last step is to verify 
+\[\frac{d}{d(a^x)}\ln{(a^x)}=\frac{1}{a^x}.\]
+To simplify notation, put $y=a^x$.  We want to find
+\[\frac{d}{dy}\ln{y}.\]
+Recall the identity $e^{\ln{y}}=y$.  Now differentiate both sides with respect to $y$, using the chain rule on the lefthand side.
+\begin{eqnarray*}
+\frac{d}{dy}\left(e^{\ln{y}}\right. &=& \left.y\right) \\
+\frac{d}{dy}e^{\ln{y}} &=& \frac{d}{dy}y \\
+e^{\ln{y}}\cdot \frac{d}{dy}(\ln{y}) &=& 1.
+\end{eqnarray*}
+Use the identity $e^{\ln{y}}=y$ again and solve for $\frac{d}{dy}\ln{y}$.
+\begin{eqnarray*}
+y\cdot \frac{d}{dy}\ln{y} &=& 1 \\
+\frac{d}{dy}\ln{y} &=& \frac{1}{y}.
+\end{eqnarray*}
+Since $y=a^x$, indeed,
+\[\frac{d}{d(a^x)}\ln{(a^x)}=\frac{1}{a^x}.\]
+Therefore 
+\begin{eqnarray*}
+\frac{d}{dx}a^x &=& \frac{\ln{a}}{\frac{d}{d(a^x)}\ln{(a^x)}} \\
+&=& \frac{\ln{a}}{\frac{1}{a^x}} \\
+&=& (\ln{a})a^x. 
+\end{eqnarray*}
+
+\end{document}
+
+

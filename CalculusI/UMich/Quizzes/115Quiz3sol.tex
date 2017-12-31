@@ -1,0 +1,134 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{pstricks, pst-node, pst-plot}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bv}{\mathbf}
+\newcommand{\lv}{\langle}
+\newcommand{\rv}{\rangle}
+
+\begin{document}
+\flushleft
+\begin{multicols}{2}
+
+
+\begin{large}\textbf{Math 115 Quiz 3: $\oint $ 2.2-4 (Practice Probs for Exam 1) \\
+Mon 4 October 2010}\end{large}
+
+\textbf{Name:  }\underline{\hspace{35ex}}
+
+\vspace{.5in}
+
+\end{multicols}
+
+\pagestyle{empty}
+
+
+\flushleft
+
+You have 15 minutes to complete this quiz.  No calculators allowed.  
+
+\begin{enumerate}
+\item  \textbf{Definitions/Concepts.} (1 pt each) 
+You are teaching an introductory calculus course at
+Michigan
+State, and your
+students have just turned in a homework assignment on
+interpretations of
+the derivative. You must read all their explanations
+and decide whether
+they make sense. Some excerpts from their solutions are
+given below.
+Mark each correct or sensible statement with a '+' and
+each incorrect or
+nonsensical statement with a '-.'
+\vskip 12pt
+Let $g(v)$ denote the fuel efficiency (in miles per
+gallon) of a car
+travelling at $v$ miles per hour.
+\vskip 5pt
+\underline {\hskip 8pt + \hskip 5pt} (a) The statement $g'(55) =
+-0.5$ means tha t
+when you use one more gallon of gasoline, the time you
+can drive at $55$ mph
+decreases by about a half hour.
+\vskip 5pt
+\underline {\hskip 8pt + \hskip 5pt} (b) If $g'(v) < 0$ for $v
+\geq 45$, then the
+car's fuel
+efficiency will be lower at 65 mph than at 45 mph.
+\vskip 5pt
+\underline {\hskip 10pt -- \hskip 5pt} (c) If $g'(65) = g'(55) =
+0$, then the car's fuel
+efficiency is constant on the interval $55 \leq v \leq
+65$.
+
+\vspace{.5pc}
+No information is given about the fuel efficiency between 55 and 65 mph.
+
+\vskip 5pt
+\underline {\hskip 10pt -- \hskip 5pt} (d) Since the units of
+$g'(v)$ are hours per gallon,
+the units of $g''(v)$ are hours per gallon squared.
+
+\vspace{.5pc}
+The units are hours per gal per mph.
+
+\vspace{1pc}
+\item \textbf{Questions/Problems.} (2 pts each)  Suppose that the line tangent to the graph of $f(x)$ at $x=3$ passes through the points $(1,2)$ and $(5,-4)$.
+\begin{enumerate}
+ \item Find $f'(3)$.
+
+\vspace{.5pc}
+This is just the slope of the line tangent to the graph at $x=3$, which can be computed using the two points given:
+\begin{eqnarray*}
+   f'(3) &=& \frac{-4-2}{5-1} \\ 
+       &=& \frac{-6}{4} \\
+       &=& \frac{-3}{2}.
+  \end{eqnarray*}
+
+\vspace{1pc}
+ \item Find $f(3)$.
+
+\vspace{.5pc}
+When $x=3$ the function and the tangent line intersect.  So, to find $f(3)$, use the equation for the tangent line. Using one of the given points and the slope computed above:
+\begin{eqnarray*}
+ y-y_0 &=& \frac{-3}{2}(x-x_0) \\
+ y-5 &=& \frac{-3}{2}(x-1) \\
+ y &=& \frac{-3}{2}x+\frac{3}{2}+5 \\
+   &=& \frac{-3}{2}x+\frac{7}{2}.
+\end{eqnarray*}
+Therefore,
+\begin{eqnarray*}
+ f(3) &=& \frac{-3}{2}(3)+\frac{7}{2} \\
+   &=& \frac{-9}{2}+\frac{7}{2} \\
+   &=& \frac{-2}{2} \\
+   &=& -1.
+\end{eqnarray*}
+
+\vspace{1pc}
+ \item Estimate the value of $f(2.9)$.
+
+\vspace{.5pc}
+The derivative at $x=3$ gives a linear approximation to the function $f(x)$ near $x=3$.  So use the tangent line to approximate $f(2.9)$.
+\begin{eqnarray*}
+ f(2.9) &\approx & \frac{-3}{2}(2.9)+\frac{7}{2} \\
+  &=& \frac{-1.7}{2} \\
+  &=& -0.85
+\end{eqnarray*}
+So $f(2.9)\approx -0.85$.
+
+\end{enumerate}
+
+\vspace{1pc}
+\item \textbf{Computations/Algebra.}  \emph{-- none this week --}
+
+\end{enumerate}
+
+\end{document}
+
+

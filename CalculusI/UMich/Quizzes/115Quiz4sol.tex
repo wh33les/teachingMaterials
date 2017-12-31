@@ -1,0 +1,115 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{pstricks, pst-node, pst-plot}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bv}{\mathbf}
+\newcommand{\lv}{\langle}
+\newcommand{\rv}{\rangle}
+
+\begin{document}
+\flushleft
+\begin{multicols}{2}
+
+
+\begin{large}\textbf{Math 115 Quiz 4: $\oint $ 2.5-6 and Barehanded Differentiation \\
+Mon 11 October 2010}\end{large}
+
+\textbf{Name:  }\underline{\hspace{35ex}}
+
+\vspace{.5in}
+
+\end{multicols}
+
+\pagestyle{empty}
+
+\flushleft
+
+You have 25 minutes to complete this quiz.  Calculators are OK.  
+
+\begin{enumerate}
+\item  \textbf{Definitions/Concepts.} (1 pt) 
+Let $g$ be the function defined by
+\[ g(x)=\left\{\begin{array}{lcl}
+              1 & \text{if} & x\leq 0 \\
+              \cos x & \text{if} & 0 < x < \frac{\pi}{2} \\
+              0 & \text{if} & x > \frac{\pi}{2}
+             \end{array}\right..
+ \]
+Which of the following statements are true? Check all
+that apply.
+\begin{enumerate}
+ \item $g$ is continuous at $x=0$ \emph{TRUE}
+ \item $g$ is continuous at $x=\frac{\pi}{2}$ \emph{FALSE}
+ \item $g$ is differentiable at $x=0$ \emph{TRUE} 
+ \item $g$ is differentiable at $x=\frac{\pi}{2}$ \emph{FALSE}
+\end{enumerate}
+
+\vspace{1pc}
+\item \textbf{Questions/Problems.} 
+\noindent
+A Purple-Headed Uniquely Nocturnal Chartreuse And
+Luridly Colored
+wombat is sighted moving across the diag. Its position,
+measured in
+feet from the West Engineering arch, is given as a
+function of time
+(in minutes past midnight) in the following table.
+\smallskip
+\begin{center}
+\begin{tabular}{c|ccccccc}
+$t$ & 0 & 5 & 10 & 15 & 20 & 25 & 30 \\
+\hline
+position & 0 & 7 & 15 & 27 & 30 & 31 & 218
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item (4 pts)
+Estimate the wombat's velocity at $t=0$, $t=5$, $t=10$
+and $t=15$.
+
+At $t=0$ the velocity is 0, since the wombat hasn't moved yet.  For $t=5$ look at the average velocities from 0 to 5 seconds, and from 5 to 10 seconds.
+\[\frac{7-0}{5-0}=\frac{7}{5} \]
+\[ \frac{15-7}{10-5}=\frac{8}{5}\]
+The velocity at $t=5$ should be somewhere in between so taking the mean of the two numbers above gives an estimated velocity of 1.5 ft/sec.  Similarly, at $t=10$ the velocity is about 2 ft/sec, and at $t=15$ is about 1.5 ft/sec.
+
+\vspace{1pc}
+\item (2 pts)
+Estimate the wombat's acceleration at $t=5$ and $t=10$.
+
+Use the values from part (a), which gives the following table:
+\begin{center}
+\begin{tabular}{c|cccc}
+$t$ & 0 & 5 & 10 & 15 \\
+\hline
+estimated velocity & 0 & 1.5 & 2 & 1.5 
+\end{tabular}
+\end{center}
+So the average acceleration at $t=5$ can be found by looking at the change in average velocity between 0 and 5 seconds, and between 5 and 10 seconds:
+\[\frac{1.5-0}{5-0}=\frac{3}{10}\]
+\[\frac{2-1.5}{10-5}=\frac{1}{10}\]
+so taking the mean, the average acceleration at $t=5$ seconds is 0.2 ft/sec per sec.  Similarly, at $t=10$ the average acceleration is 0.1 ft/sec per sec.
+
+\vspace{1pc}
+\item (1 pt)
+What do you think happened between $t=25$ and $t=30$?
+
+During this time the position jumps dramatically.  This means the PHUNCALC wombat's velocity increased dramatically, possibly as a result of being chased by another rodent.
+\end{enumerate}
+
+\vspace{1pc}
+\item \textbf{Computations/Algebra.} (2 pts) Use the limit definition of the derivative to compute the following.  You \emph{must} show all steps.
+\[\frac{d}{dx}\left(\frac{x^2+3}{x^9}\right)\]
+
+\textit{The algebra was wayyy too nasty to actually do this by hand.  The following answer is what you should include at the very least:}
+\[=\lim_{h\rightarrow 0}\frac{\frac{(x+h)^2+3}{(x+h)^9}-\frac{x^2+3}{x^9}}{h}\]
+
+\end{enumerate}
+
+\end{document}
+
+
