@@ -1,0 +1,181 @@
+\documentclass[%margin%,line,pifont,palatino,courier
+]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage[top=1in,bottom=1in,margin=1in]{geometry}
+\usepackage{supertabular}
+\usepackage{graphicx,tikz}	
+%\usepackage{tkz-euclide}
+%\usetkzobj{all}
+%\usetikzlibrary{calc}
+\usepackage{array,multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{url}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\DeclareMathOperator{\proj}{proj}
+
+\fancypagestyle{plain}{
+	\addtolength{\headheight}{0.485in}
+	\rhead{\bf MATH 235 (Calculus I) \\
+		%\vspace{0.5pc}
+		due Wed 15 Nov 2017 \\}
+	\rfoot{\footnotesize THQuiz 7, p. \thepage\ (of \pageref{LastPage})
+	}
+\renewcommand{\headrulewidth}{0pt}
+}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\footnotesize THQuiz 7, p. \thepage\ (of \pageref{LastPage})$\;$}
+
+\title{\vspace{-3.5pc} 
+	\flushleft \bf \Large Take-Home Quiz 7: Geometric applications of derivatives %\\ 
+	 (\S4.3-4.6)}
+\date{}
+
+% % % % %
+\begin{document}
+\maketitle
+
+\vspace{-3pc}
+\noindent{\bf Directions:} This quiz is due on November 15, 2017 at the beginning of lecture.  You may use whatever resources you like -- e.g., other textbooks, websites, collaboration with classmates -- to complete it \textbf{but YOU MUST DOCUMENT YOUR SOURCES}.  Acceptable documentation is enough information for me to find the source myself.  Rote copying another's work is unacceptable, regardless of whether you document it.  
+
+\noindent\hrulefill
+
+\begin{enumerate}
+% % %
+% % %
+\item \textbf{Interpreting 1st and 2nd derivatives}
+	\begin{enumerate}
+	\item {\bf \S4.3 \#66}  On an episode of \textit{The Simpsons}, Homer reads from a newspaper and announces ``Here's good news!  According to this eye-catching article, SAT scores are declining at a slower rate."  Interpret Homer's statement in terms of a function and its first and second derivatives.
+	\item {\bf \S4.3 \#68} Let $f(t)$ be the temperature in Moody 201, in degrees Celsius, $t$ minutes after the Calc I Exam 3 has begun.  At $t=3$ you feel uncomfortably hot.  How do you feel about the given data in each of the following cases?
+		\begin{enumerate}
+		\item $f'(3)=0.2$, $f''(3)=0.4$
+		\item $f'(3)=0.2$, $f''(3)=-0.4$
+		\item $f'(3)=-0.2$, $f''(3)=0.4$
+		\item $f'(3)=-0.2$, $f''(3)=-0.4$
+		\end{enumerate}
+	\end{enumerate}
+	
+	
+% % % 
+\item {\bf \S4.6 \#26} The function $f(x)=(\sin x)^{\sin x}$ is weird.
+	\begin{enumerate}
+	\item Because of the exponential, $f$ is only defined when $\sin x> 0$.  (\textit{Helpful hint: To see this, on \url{desmos} graph it on the same axes as $y=\sin x$.})  Write down the domain of $f(x)$ using interval notation.  \textit{Hint: For what values of $x$ is $\sin x> 0$?}
+	\item Explain why $f(x)$ is periodic.  What is its period?
+	\item Find $\lim_{x\to 0^+}f(x)$ and $\lim_{x\to\pi^-}f(x)$ using L'H\^{o}pital's Rule.  
+	\item \begin{enumerate}
+		\item Use logarithmic differentiation to show 
+		\[
+		f'(x)=(\sin x)^{\sin x}\cos x\left(\ln(\sin x)+1\right).
+		\]
+		\item Why doesn't $f(x)$ ever equal 0?
+		\item For what value(s) of $x$ does $\cos x=0$?
+		\item For what value(s) of $\sin x$ does $\ln(\sin x)=-1$?
+		\item Use your answers to parts i.-iv. to identify the critical points for $f$ in the interval $(0,\pi)$.  \textit{Hint: There are three.  You may have to look up information about the function $\arcsin x$ to properly identify them.}
+		\end{enumerate}
+	\item The second derivative of $f$ is
+	\[
+	f''(x)=(\sin x)^{\sin x}\left(\ln(\sin x)+1\right)  \left(\cos^2x\left(\ln(\sin x)+1\right) +\frac{\cos^2x}{\sin x}-\sin x\right)
+	\]
+	(if you wish, you may verify this in private).  Use the 2nd Derivative Test to classify whether or not the critical points are local minima or maxima.  \textit{Hint: You can save some time by using part (d)iv.}  If the test is inconclusive, say so.
+	\item Sketch the graph of $f(x)$ (you will need \url{desmos}).  Label the critical points and make sure your graph is consistent with your answers to parts (a)-(e).
+	\end{enumerate}
+
+% % % 
+\item {\bf \S4.6 \#30} The graph of $f(x)=\ln(x^2+c)$ varies as $c$ varies.  In this problem, we go through the procedures in \S4.5 to investigate how.
+
+\vspace{0.25pc}
+\textit{Helpful hint:  In \url{desmos}, type in ``$f(x)=ln(x^2+c)$" and add the slider for $c$.  Click on the wrench icon in the top right corner of the page to change the graphing window to $-10\leq x\leq 10$, $-4\leq y\leq 6$.  Click on the endpoints that come with the slider to change them to $-5\leq c\leq 5$.  There will be a play button with the slider; press it.}
+
+%\vspace{0.25pc}  
+	\begin{enumerate}
+	\item \textbf{Domain} Find the domain of $f$ (\textit{Hint: Compare it to the domain of $\ln x$.}) when
+		\begin{itemize}
+			\item $c>0$.
+			\item $c=0$.
+			\item $c<0$.  \textit{Hint: Draw a number line and shade the values that satisfy the inequality $|x|>\sqrt{-c}$.}			
+		\end{itemize}
+	\item \textbf{Intercepts} \begin{enumerate}
+		\item \underline{$y$-intercepts}: Even though $f$ is a logarithmic function, in this example it will have $y$-intercepts for certain values of $c$.  To find them you must evaluate $f(0)$.
+			\begin{itemize}
+			\item What are the $y$-intercepts for the values of $c$, when $f$ does have them?
+			\item For what values of $c$ does $f$ not have any $y$-intercepts?
+			\end{itemize}
+		\item \underline{$x$-intercepts}: To find the $x$-intercepts, set $f(x)=0$.  \textit{Hint: Recall that to solve logarithmic equations, you must ``$e$" both sides.}
+			\begin{itemize}
+			\item For what values of $c$ does $f$ have $x$-intercepts?
+			\item What are the $x$-intercepts, when $f$ has them?
+			\end{itemize}
+		\end{enumerate}
+	\item \textbf{Symmetry} \begin{enumerate}
+		\item Simplify $f(-x)$.  Is $f$ an even or odd function (or neither)?
+		\item Rather than checking $f(x+p)=f(x)$ as in the textbook, explain in words why $f$ isn't periodic in this example.
+		\end{enumerate}
+	\item \textbf{Asymptotes} \begin{enumerate}
+		\item \underline{Horizontal asymptotes}:  Horizontal asymptotes are found by checking the \textbf{end behavior} (the limit as $x$ approaches positive infinity and negative infinity).  If $f$ is symmetric, you can save time by only computing $\lim_{x\to\infty}f(x)$, since 
+		\begin{align*}
+		\lim_{x\to-\infty}f(x) &= \lim_{x\to\infty}f(x)\quad\text{when $f(x)$ is even and} \\
+		\lim_{x\to-\infty}f(x) &= -\lim_{x\to\infty}f(x)\quad\text{ when $f(x)$ is odd.}
+		\end{align*}  
+		Find the horizontal asymptotes for $f$.  If you use symmetry, then say so.
+		\item \underline{Vertical asymptotes}: For the values of $c$ where $f$ has them, the vertical asymptotes of $f$ are at $x=\pm\sqrt{-c}$.  
+			\begin{itemize}
+			\item For what values of $c$ does $f$ have vertical asymptotes?  How do you know?
+			\item In the case where $f$ does have vertical asymptotes, evaluate
+			\[
+			\lim_{x\to -\sqrt{-c}^-}f(x) \quad\text{ and }\quad \lim_{x\to \sqrt{-c}^+}f(x)
+			\]
+			(if you use symmetry, explain how).  Why are the one-sided limits necessary?
+			\end{itemize}
+		\item \underline{Slant asymptotes}: Explain in words why $f$ will not have any slant asymptotes.	
+		\end{enumerate}	
+	\item \textbf{Extrema}	\textit{Helpful hint: Type ``$y=f'(x)$" into \url{desmos}, using the same browser window as your graph for $f(x)$.} 
+		\begin{enumerate}
+		\item \underline{Critical points}:
+			\begin{itemize}
+			\item Compute $f'(x)$.
+			\item Identify points \textbf{\textit{in the domain}} where $f'$ does not exist.  Be specific, since your answer depends on the different possible values of $c$.  
+			\item Identify points \textbf{\textit{in the domain}} where $f'(x)=0$.  Be specific, since your answer depends on the different possible values of $c$.  
+			\end{itemize}
+		\item \underline{1st Derivative Test}:  Use it to identify local extrema.  If you are using symmetry as a shortcut, explain how.  Be specific about which values of $c$ you are considering and why.  
+		\item \underline{2nd Derivative Test}:  \textit{Helpful hint: Type ``$y=f''(x)$" into \url{desmos}, using the same browser window as your graphs for $f(x)$ and $f'(x)$.}
+			\begin{itemize}
+			\item Find $f''(x)$.  
+			\item Use the 2nd Derivative Test to identify local extrema.  Be specific about which values of $c$ you are considering and why.	
+			\end{itemize}
+		\item \underline{Global extrema}:
+			\begin{itemize}
+			\item What is the range of $f(x)$?  Be specific, since it depends on the values of $c$.
+			\item For what values of $c$ does $f(x)$ have global extrema?  What are the global extrema in those cases (give the $x$- and $y$-coordinates for each extremum, and whether it is a max or min).
+			\end{itemize}
+		\end{enumerate}
+	\item \textbf{Intervals of Increase or Decrease} Identify the intervals where $f$ is increasing and decreasing when
+		\begin{itemize}
+		\item $c>0$.
+		\item $c=0$.
+		\item $c<0$.
+		\end{itemize}
+	\item \textbf{Concavity and Points of Inflection} Identify the intervals where $f$ is concave up and concave down, as well as any inflection points, when
+		\begin{itemize}
+		\item $c>0$.
+		\item $c=0$.
+		\item $c<0$.
+		\end{itemize}
+	\item \textbf{Sketch the Curve} Sketch a graph of $f$ in each of the following cases.  Make sure in every case your curve is consistent with your answers to parts (a)-(g) by labelling	the domain, the intercepts, the asymptotes, the extrema, and the inflection points.
+		\begin{itemize}
+		\item $c>0$
+		\item $c=0$
+		\item $c<0$
+		\end{itemize}
+	\end{enumerate}	
+	
+% % % % %
+\end{enumerate}
+\end{document}

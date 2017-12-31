@@ -1,0 +1,111 @@
+\documentclass[%margin%,line,pifont,palatino,courier
+]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage[top=1in,bottom=1in,margin=1in]{geometry}
+\usepackage{supertabular}
+\usepackage{graphicx,tikz}	
+%\usepackage{tkz-euclide}
+%\usetkzobj{all}
+%\usetikzlibrary{calc}
+\usepackage{array,multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{url}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\DeclareMathOperator{\proj}{proj}
+
+\fancypagestyle{plain}{
+	\addtolength{\headheight}{0.485in}
+	\rhead{\bf MATH 235 (Calculus I) \\
+		%\vspace{0.5pc}
+		due Tues 5 Dec 2017 \\}
+	\rfoot{\footnotesize THQuiz 8, p. \thepage\ (of \pageref{LastPage})
+	}
+\renewcommand{\headrulewidth}{0pt}
+}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\footnotesize THQuiz 8, p. \thepage\ (of \pageref{LastPage})$\;$}
+
+\title{\vspace{-3.5pc} 
+	\flushleft \bf \Large Take-Home Quiz 8: Optimization and integrals %\\ 
+	 (\S4.7, 4.9, 5.1-5.5)}
+\date{}
+
+% % % % %
+\begin{document}
+\maketitle
+
+\vspace{-3pc}
+\noindent{\bf Directions:} This quiz is due on December 5, 2017 at the beginning of lecture.  You may use whatever resources you like -- e.g., other textbooks, websites, collaboration with classmates -- to complete it \textbf{but YOU MUST DOCUMENT YOUR SOURCES}.  Acceptable documentation is enough information for me to find the source myself.  Rote copying another's work is unacceptable, regardless of whether you document it.  
+
+\noindent\hrulefill
+
+\begin{enumerate}
+
+% % %
+\item {\bf \S4.7 \#56} The equation of a line with slope $m$ passing through the point $(3,5)$ is given by 
+\[
+y-5=m(x-3).
+\]
+If $m$ is negative, then that line will cut out a triangle in the first quadrant.  Find the value of $m$ that minimizes the area of the triangle.
+
+
+% % %
+\item {\bf \S4.9 \#68} Prof Wheeler tosses a red ball from the edge of a 432 ft cliff at an upward speed of 48 ft/s.  One second later, she tosses a blue ball off the edge of the cliff at an upward speed of 24 ft/s.
+	\begin{enumerate}
+	\item Recall, the acceleration force due to gravity is 32 ft/s$^2$.  Use it to find the height, $h_{\text{red}}(t)$ of the red ball at time $t$ seconds (assume Wheeler tosses the ball at $t=0$).  \textit{Hint: This is done in Example 7.}
+	\item Find the height $h_{\text{blue}}(t)$ of the blue ball, $t$ seconds after Wheeler has tossed the first ball.  In other words, assume Wheeler tosses the blue ball at $t=1$. 
+	\item Do the balls ever pass eachother?  If so, at what time?
+	\item Which ball hits the ground first?
+	\item Sketch or print a graph of $h_{\text{red}}$ and $h_{\text{blue}}$ on the same axes.
+	\end{enumerate}
+
+% % %
+\item {\bf \S5.1 \#26} \textit{How well can you estimate the area under the curve $f(x)=x^3$ from $0$ to $1$, using five approximation rectangles?}
+
+\hspace{5pt} Before calculus was invented, people estimated the area under a curve by drawing rectangles to get an approximate shape, and then adding up the areas of the rectangles.  The more rectangles, the better the approximation.
+  
+	\begin{enumerate}
+	\item Sketch or print the graph of $f(x)$ illustrating your choice of how to draw the five rectangles.  \textit{Hint: For a better estimate, your rectangles don't all have to be the same size!}
+	\item In the following table, $k$ enumerates the rectangles you've drawn.  For example, $x_2$ and $x_3$ are the endpoints of Rectangle No. 3.  The width of Rectangle No. 3 is $\Delta x_3=x_3-x_2$.  The number you choose to plug into $f(x)$ for the height of Rectangle No. 3 is $x_3^*$, and must be between $x_2$ and $x_3$.  
+	
+	\vspace{0.5pc}
+	Fill in the table to correspond to your choice of rectangles.
+	\begin{center}
+	\begin{tabular}{c | c | c | c | c}
+	$k$ & $x_k$ & $x_k^*$ & $f(x_k^*)$ & $\Delta x_k^*$ \\[0.25pc]
+	\hline
+	 & & & & \\[-0.75pc]
+	0 & 0 & - & & \\[0.25pc]
+	1 & & & & \\[0.25pc]
+	2 & & & & \\[0.25pc]
+	3 & & & & \\[0.25pc]
+	4 & & & & \\[0.25pc]
+	5 & 1 & & & 
+	\end{tabular}
+	\end{center}
+	
+	\item The area is $\displaystyle \approx \sum_{k=1}^5f(x_k^*)\Delta x_k^*=$ ?
+	
+	\end{enumerate}
+	
+% % % 
+\item {\bf \S5.5 \#62} Consider the integral $\displaystyle \int_0^{\frac{\pi}{2}}\cos x \sin(\sin x)\ dx$. 
+	\begin{enumerate}
+	\item This integral requires $u$-substitution to solve.  Find $u$ and $du$.
+	\item Rewrite the integral in terms of $u$, \underline{including the bounds}.
+	\item Sketch or print a graph of the integrands of both integrals on the same axes.  Under each curve, shade the area the integrals compute.  
+	\item Compute the integral you wrote from part (b).  Use a calculator or online integrator (\url{desmos} will do it, for example) to check your answer equals the original integral.
+	\end{enumerate}
+	
+% % % % %
+\end{enumerate}
+\end{document}
