@@ -1,0 +1,503 @@
+\documentclass[../algebraNotesMSRI-UP2016.tex]{subfiles}
+
+\begin{document}
+
+\section[\S \thesection]{Group homomorphisms}\label{sec:2p6groupHomomorphisms}
+% % % % %
+\subsection[\subsecname]{Definition}
+% % %
+\begin{frame}{\subsecname}{}
+When its source and target have additional structure (e.g., the sets are groups, rings, vector spaces, etc.), a function that preserves the structure is called a \vocab{morphism}.  In our context, formally,
+\begin{dfn}
+A function $\varphi:(G,\star)\to(H,\bullet)$ between groups is called a \vocab{group homomorphism} means for every $g_1,g_2\in G$,
+\[
+\varphi(g_1\star g_2)=\varphi(g_1)\bullet\varphi(g_2).
+\]
+\end{dfn}
+
+\smallGap
+In other words, a group homomorphism stays consistent with the respective group operations of the source and target.
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{exe}[cf. Problem 62]\label{exe:detExample}
+Which of the following are group homomorphisms? (What are the implied operations?)
+\begin{enumerate}[(a)]
+\item $\phi_1:\R\to \R$ via $\phi_1:a\mapsto a^2$
+\item $\phi_2:\Q\to \Q$ via $\phi_2:a\mapsto a+10$
+\item $\phi_3:\Z\to \Z$ via $\phi_3:a\mapsto 6a$.
+\item\label{expt:detExampled} $\delta:\GL(2,\R)\to \R^{\times}$ via 
+\[
+\delta: \begin{pmatrix}
+	a & b \\
+	c & d 
+	\end{pmatrix}
+	\mapsto ad-bc.
+\]
+\end{enumerate}
+\end{exe}
+\end{frame}
+
+% % % % %
+\subsection[\subsecname]{Isomorphisms}\label{subsec:isomorphisms}
+% % %
+\begin{frame}{\subsecname}
+Recall, from Section \ref{subsec:setsAndFunctions}, what it means for a function to be one-to-one (injective) or onto (surjective).
+
+\smallGap
+When a function is both injective and surjective, it is called \vocab{bijective}.  We say there is a \vocab{one-to-one correspondence} between the source and the target.
+
+\smallGap  
+\begin{dfn}
+A bijective homomorphism is called an \vocab{isomorphism}.  The source and target are said to be \vocab{isomorphic}.
+\end{dfn}
+
+\smallGap
+Exhibiting a group isomorphism demonstrates that the source and target are really the ``same" group, with different names.
+\end{frame}
+
+% % % 
+\begin{frame}
+\begin{ex}\label{ex:exponentialFunction}
+Define the exponential function
+\begin{align*}
+E:(\R,+) &\to (\R^+,\cdot) \\
+a &\mapsto e^a,
+\end{align*}
+where $\R^+$ denotes the set of positive real numbers and $e\approx 2.71928$ is the Euler number.  
+\end{ex}
+
+\smallGap
+\textbf{Claim.} $E$ gives a bijection between $(\R,+)$ and $(\R^+,\cdot)$.  In other words, $(\R,+)$ and $(\R^+,\cdot)$ are isomorphic as groups, and we write: 
+\[
+(\R,+)\cong (\R^+,\cdot)
+\]
+\end{frame}
+
+% % %
+\begin{frame}{}{}
+\pf When exhibiting an isomorphism, make sure to verify it is well-defined -- i.e., is $E:\R\to \R^+$ truly a group homomorphism?
+\begin{itemize}
+\item Recall, from Precalculus courses, the exponential function is always positive and passes the ``vertical line test" (see the figure below).  So $E$ is a function.
+
+\begin{center}
+\includegraphics[scale=0.19]{expFunction}
+
+{\footnotesize Exponential function drawn using \url{https://www.desmos.com/calculator}.}
+\end{center}
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{itemize}
+\item Suppose $a,b\in\R$.  Then $e^{a+b}=e^a\cdot e^b$ implies $E(a+b)=E(a)\cdot E(b)$, the requirement for $E$ to be a group homomorphism.
+\end{itemize}
+
+\smallGap
+Now we check $E$ is one-to-one.  Suppose there exist $a,b\in \R$ such that $E(a)=E(b)$.  Then 
+\begin{align*}
+e^a &= e^b \\
+\implies \ln{(e^a)} &= \ln{(e^b)} \\
+\implies a &= b,
+\end{align*}
+as required.
+
+\smallGap
+Finally, we must check $E$ is onto; if $x\in\R^+$ then we must show there exists $a\in\R$ such that $E(a)=x$.  One common technique is to define an \vocab{inverse} function for $E$.  Define
+\begin{align*}
+L:\R^+ &\to \R \\
+x &\mapsto \ln x.
+\end{align*}
+\end{frame}
+
+% % % 
+\begin{frame}
+If we put $a=\ln x$ for fixed $x\in\R^+$ then 
+\[
+E(a)=E(\ln x)=e^{\ln x}=x
+\]
+and we are done -- provided $L$ is well-defined.
+
+\smallGap
+Again, from Precalculus, we know the natural logarithm function is well-defined (see figure below); log algebra then shows for $x,y\in\R^+$, $\ln{(xy)}=\ln x+\ln y$, meaning $L(xy)=L(x)+L(y)$ and hence $L$ is a group homormorphism. 
+
+\begin{center}
+\includegraphics[scale=0.19]{lnFunction}
+
+{\footnotesize Natural logarithm function drawn using \url{https://www.desmos.com/calculator}.}
+\end{center}
+\qed
+
+%{\bf REMARK ABOUT RELATIONSHIP BETWEEN ADDITIVE AND MULTIPLICATIVE OPERATIONS}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{prop}\label{prop:homomorphismIdentities}
+Let $\varphi: G\to H$ denote a group homomorphism where the identities of $G$ and $H$, respectively, are $1_G$ and $1_H$.  Then $\varphi(1_G)=1_H$.
+\end{prop}
+
+\smallGap
+\begin{proof}
+The identity $1_H$ is the unique element in $H$ that satisfies the property $h\cdot 1_H=1_H\cdot h=h$ for all $h\in H$.  Using the properties of identities and group homomorphisms,  
+\begin{align*}
+\varphi(1_G) &=\varphi(1_G)\cdot 1_H \\
+\varphi(1_G\cdot 1_G) &= \varphi(1_G)\cdot 1_H \\
+\varphi(1_G)\cdot\varphi(1_G) &= \varphi(1_G)\cdot 1_H \\
+\varphi(1_G) &= 1_H,
+\end{align*}
+where the last step is left cancellation.
+\end{proof}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{exe}\label{exe:homomorphismIdentities}
+Verify Proposition \ref{prop:homomorphismIdentities} for Example \ref{ex:exponentialFunction}.
+\end{exe}
+\begin{prop}\label{prop:relativelyPrime}
+Let $p$ and $q$ be relatively prime numbers.  Then
+\[
+\Z/p\Z\times \Z/q\Z \cong \Z/pq\Z.
+\]
+\end{prop}
+\begin{exe}\label{exe:relativelyPrime}
+Prove Proposition \ref{prop:relativelyPrime}.
+\end{exe}
+\begin{exe}[cf. Problem 64]\label{exe:prob64}
+Prove $\Z/2\Z\times \Z/4\Z \ncong \Z/8\Z$.
+\end{exe}
+\end{frame}
+
+% % % % %
+\subsection[\subsecname]{Kernels and images}\label{subsec:kernelsAndImages}
+% % %
+\begin{frame}{\subsecname}
+One can show (see Exercise \ref{exe:prob65}) that the image of a group homomorphism is a subgroup of the target.  The source also has an important related subgroup.      
+\begin{dfn}
+Let $\varphi:G\to H$ denote a group homomorphism where $1_G$ and $1_H$ are the respective identity elements in $G$ and $H$.
+\begin{enumerate}[(a)]
+\item The \vocab{kernel} of $\varphi$, denoted $\ker{(\varphi)}$, is the set of all elements in $G$ mapped to the identity in $H$:
+\[
+\ker{(\varphi)}:=\{g\in G\mid \varphi(g)=1_H\}
+\]
+\item The \vocab{image} of $\varphi$ is the set of all elements in $H$ of the form $\varphi(g)$ for some $g\in G$:
+\[
+\image{(\varphi)}:=\{h\in H\mid h=\varphi(g)\text{ for some $g\in G$}\}.
+\]
+\end{enumerate}
+\end{dfn}
+\end{frame}
+
+% % % 
+\begin{frame}[fragile]{}{}
+\begin{ex}\label{ex:kernalAsAZeroSet}
+Define a linear map $f:\R^4\to \R^3$ via left multiplication by the matrix
+\[
+A=\begin{pmatrix}
+3 & 8 & 7 & 9 \\
+2 & 4 & 6 & 6 \\
+1 & 2 & 2 & 1
+\end{pmatrix}.
+\]
+The kernel of $f$ is exactly the nullspace of $A$.
+\end{ex}
+
+\smallGap
+Given $x,y,z,w\in \R$, we set up the equation:
+\begin{align*}
+\begin{matrix}
+\begin{pmatrix*}[r]
+3 & 8 & 7 & 9 \\
+2 & 4 & 6 & 6 \\
+1 & 2 & 2 & 1 \\
+\end{pmatrix*} \\
+\mbox{}
+\end{matrix} &
+\begin{pmatrix}
+x \\
+y \\
+z \\
+w
+\end{pmatrix}= \vect 0
+\end{align*}
+Row-reducing $A$, we get (via Sage)
+\[
+\begin{pmatrix*}[r]
+1 & 0 & 0 & -7 \\
+0 & 1 & 0 & 2 \\
+0 & 0 & 1 & 2
+\end{pmatrix*} \quad \implies 
+\quad \left\{\begin{array}{l}
+	x=7w \\
+	y=z=-2w.
+	\end{array}\right.
+\]
+\end{frame}
+
+% % %
+\begin{frame}[c]
+Thus the nullspace of $A$ is the $\R$-span of the vector $(7,-2,-2,1)$.  In other words, 
+\[
+\ker(f)=\begin{pmatrix*}[r]
+	7 \\
+	-2 \\
+	-2 \\
+	1
+	\end{pmatrix*}\R\subset \R^4.
+\]
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{exe}[cf. Problem 65]\label{exe:prob65}
+Let $\varphi:G\to H$ denote a group homomorphism.  Prove $\ker{\varphi}< G$ and $\image{\varphi}< H$.
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{ex}\label{ex:ZmodnZ}
+This example motivates the content of Section \ref{sec:2p7quotientGroups}.  Define
+\begin{align*}
+\varphi:\Z &\to \Z/n\Z \\
+m &\mapsto m\mod n
+\end{align*}
+where $m\mod n$ is the remainder of $m$ upon division by $n$.
+\end{ex}
+\begin{que}
+Why is $\varphi$ a well-defined function?
+\end{que}
+
+\smallGap
+\textbf{Claim.} $\varphi$ is a (group) homomorphism.
+\end{frame}
+
+% % % 
+\begin{frame}
+\pf  
+Suppose $m_1,m_2\in\Z$.  By the Division Algorithm, there exist unique integers $q$ and $r$, with $0\leq r<n$, such that 
+\begin{align*}
+(m_1+m_2) &= nq+r \\
+\implies r&= (m_1+m_2) -nq \\
+	&\equiv (m_1+m_2) \mod n \\
+	&= \varphi(m_1+m_2).
+\end{align*}
+
+\smallGap
+Apply the Division Algorithm to $m_1,m_2$ as well, so that there exist unique integers $q_1,q_2$ and $r_1,r_2$, with $0\leq r_1,r_2<n$, such that 
+\[
+\begin{array}{cc}
+{
+	\begin{aligned}
+	m_1 &= nq_1+r_1 \\
+	\implies r_1&= m_1 -nq_1 \\
+	&\equiv m_1\mod n \\
+	&= \varphi(m_1).
+\end{aligned}
+}
+\qquad 
+{
+	\begin{aligned}
+	m_2 &= nq_2+r_2 \\
+	\implies r_2&= m_2 -nq_2 \\
+	&\equiv m_2 \mod n \\
+	&= \varphi(m_2).
+\end{aligned}
+}
+\end{array}
+\]
+\end{frame}
+
+% % %
+\begin{frame}{}{}
+Now apply the Division Algorithm to get unique integers $p,s$, with $0\leq s<n$ such that
+\begin{align*}
+np+s &= \left(\varphi(m_1)+\varphi(m_2)\right)\equiv s\mod n \\
+	&= (m_1-nq_1)+(m_2-nq_2) \\
+	&= (m_1+m_2)-n(q_1+q_2)
+\end{align*}
+by associativity.  Rearranging,
+\[
+m_1+m_2 = s+n(p+q_1+q_2).
+\]
+The uniqueness condition of the Division Algorithm says that $s=r$, because $0\leq s<n$.  Therefore
+\[
+\varphi(m_1+m_2)=r=s\equiv s\mod n=\varphi(m_1)+\varphi(m_2).
+\]
+\qed
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\textbf{Claim.} $\varphi$ is not injective.
+
+\smallGap
+\pf
+We exhibit two distinct elements in $\Z$ with the same image.  Take $n-1\in\Z$ and $(n-1)+n\in\Z$.  Note, from Definition \ref{dfn:ZmodnZ}, $n\neq 0$, so $n-1\neq (n-1)+n$.  Since $n-1<n$, we have
+\[
+\varphi{(n-1)}=n-1\mod n=n-1.
+\]
+By the uniqueness condition in the Division Algorithm, we have
+\begin{align*}
+\varphi{\left((n-1)-n\right)} &= (n-1)+n(-1) \\
+	&= (n-1)\mod n \\
+	&= n-1.
+\end{align*}
+\qed
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\textbf{Claim.} $\varphi$ is surjective.
+
+\smallGap
+\pf
+$\Z/n\Z$ consists of non-negative integers strictly less than $n$, which are also in $\Z$.  If $m\in\Z/n\Z$, then 
+\[
+m=m\mod n=\varphi(m).
+\]
+\qed
+\begin{que}
+What are $\ker{(\varphi)}$ and $\image{(\varphi)}$?
+\end{que}
+\end{frame}
+
+% % % % %
+\answerKey
+% % %
+\begin{frame}{\subsecname}
+\exeSol[(cf. Problem 62)]{exe:detExample}
+\begin{itemize}
+\item[(a)] We must compare $\phi_1(a+b)$ with $\phi_1(a)+\phi_1(b)$, since the group operation on $\R$ is addition:
+\begin{align*}
+\phi_1(a+b) &= (a+b)^2 = a^2+2ab+b^2 \\
+\phi_1(a)+\phi_1(b) &= a^2+b^2\neq \phi_1(a+b).
+\end{align*}
+So $\phi_1$ is not a group homomorphism.
+
+\smallGap
+\item[(b)] For $a,b\in \Q$,
+\begin{align*}
+\phi_2(a+b) &= (a+b)+10 \\
+\phi_2(a)+\phi_2(b) &= (a+10)+(b+10) \neq \phi_2(a+b).
+\end{align*}
+Therefore $\phi_2$ is not a group homomorphism.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{itemize}
+\item[(c)] Given $a,b\in\Z$,
+\begin{align*}
+\phi_3(a+b) &= 6(a+b) \\
+\phi_3(a)+\phi_3(b) &= 6a+6b=\phi_3(a+b),
+\end{align*}
+so $\phi_3$ is a group homomorphism.
+
+\smallGap
+\item[(d)]
+Multiplication is the group operation in both the source and the target.  Choose $A,B\in\GL(2,\R)$.  From Linear Algebra, the product of the determinants of two matrices is equal to the determinant of their product.  Since $\delta$ maps a matrix to its determinant,
+\begin{align*}
+\delta(AB) &= \det{(AB)} = \det(A)\det(B) \\
+\delta(A)\delta(B) &= \det(A)\det(B) = \delta(AB).
+\end{align*}
+Thus, $\delta$ is a group homomorphism.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol{exe:homomorphismIdentities}
+We must check the image of the identity element $0\in \R$:
+\[
+E(0)=e^0=1,
+\]
+which is the identity in $\R^+$.
+
+\smallGap
+\exeSol{exe:relativelyPrime}
+Note that $\Z/pq\Z$ is cyclic, generated by $1$, and both groups have order $pq$.  It suffices to find a cyclic generator $g$ of $\Z/p\Z\times \Z/q\Z$ to map to $1$.  Then take $g^r\mapsto r\mod{pq}$ for each $r\in \Z$.  
+
+\smallGap 
+We claim $\langle (1,1)\rangle =\Z/p\Z\times \Z/q\Z$.  For $r\in \Z$, $r(1,1)=(r\mod p,r\mod q)$.  Because $p$ and $q$ are relatively prime, the first number divisible by both is $pq$ and $pq(1,1)=(0,0)$.  So $|(1,1)|=pq$ implies $\langle (1,1)\rangle =\Z/p\Z\times \Z/q\Z$.
+\qed 
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol[(cf. Problem 64)]{exe:prob64}
+A group isomorphism $\phi$ must preserve the order of each element.  Otherwise, wolog, an element $a$ in the source has order $r$, which is less than the order of its image.  Then $\phi(a^r)=\phi(1)=1$, where $1$ denotes the identity element, respectively in the source and target of $\phi$.  On the other hand,
+\[
+a^r\mapsto \phi{(\underbrace{a\cdots a}_{\text{$r$ times}})}=\underbrace{\phi(a)\cdots \phi(a)}_{\text{$r$ times}}=\phi(a)^r\neq 1.
+\]
+
+\smallGap
+We can directly check the order or each element in $\Z/2\Z\times \Z/4\Z$:
+
+\vspace{-0.75pc}
+\begin{tabular}{p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}}
+{\begin{align*}
+|(0,0)| &= 1 \\
+|(0,1)| &= 4 
+\end{align*}
+} & {\begin{align*}
+|(0,2)| &= 2 \\
+|(0,3)| &= 4 
+\end{align*}
+} & {\begin{align*}
+|(1,0)| &= 2 \\
+|(1,1)| &= 4 
+\end{align*}
+} & {\begin{align*}
+|(1,2)| &= 2 \\
+|(1,3)| &= 4
+\end{align*}
+}
+\end{tabular}
+
+While $\Z/8\Z$ is cyclic of order $8$, no element of $\Z/2\Z\times \Z/4\Z$ has order greater than $4$.  Therefore, $\Z/2\Z\times\Z/4\Z\ncong \Z/8\Z$.
+\qed
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol[(cf. Problem 65)]{exe:prob65}
+It suffices to check closure under the binary operation and under taking inverses.
+
+\smallGap
+\textbf{Claim.} $\ker\varphi<G$.
+
+Suppose $g,h\in \ker\varphi$.  Then 
+\[
+\varphi(gh)=\varphi(g)\varphi(h)=1_H\cdot 1_H = 1_H,
+\]
+so $gh\in \ker\varphi$.  Write  
+\[
+\varphi(g\1)\cdot \varphi(g)=\varphi(g\1g)=1_H=1_H\cdot 1_H=1_H\cdot \varphi(g).
+\]
+In the first and last experssion we can right cancel $\varphi(g)$ to conclude $\varphi(g\1)=1_H$, i.e., $g\1\in\ker\varphi$.   
+\qed
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\textbf{Claim.} $\image\varphi<H$.
+
+Now suppose $a,b\in \image\varphi$.  Then there exist $g,h\in G$ such that $\varphi(g)=a$ and $\varphi(h)=b$, and 
+\[
+ab=\varphi(g)\varphi(h)=\varphi(gh)\in \image(\varphi).
+\]
+For $a=\varphi(g)\in \image{\varphi}$,
+\[
+a\1a=a\1\varphi(g)=1_H=\varphi(1_G)=\varphi(g\1)\varphi(g),
+\]
+and we cancel $\varphi(g)$ on the right to conclude $a\1=\varphi(g\1)\in \image\varphi$.
+\qed
+\end{frame}
+
+% % % % % % % % % %
+\end{document}

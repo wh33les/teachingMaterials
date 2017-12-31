@@ -1,0 +1,309 @@
+\documentclass[../algebraNotesMSRI-UP2016.tex]{subfiles}
+
+\begin{document}
+
+\section[\S \thesection]{First Isomorphism Theorem}\label{sec:2p8firstIsomorphismTheorem}
+% % % % %
+\subsection[\subsecname]{First Isomorphism Theorem}
+% % %
+\begin{frame}[c]{\subsecname}
+%By Exercise \ref{exe:normalKernel}, 
+There are naturally many homomorphisms of the form $\bar{\varphi}:G\to G/\ker{\bar{\varphi}}$.  
+
+\smallGap
+A more general observation can be made, namely, that the image of any homomorphism is itself a quotient group -- by the kernel! 
+
+\smallGap
+\begin{thm}[First Isomorphism Theorem]\label{thm:firstIsomorphismTheorem}
+Suppose $\varphi: G\to H$ is a group homomorphism.  Then 
+\[
+\varphi(G)=\image{\varphi}\cong G/\ker{\varphi}.
+\]
+\end{thm}
+\end{frame}
+
+% % %
+\begin{frame}
+\bigProof
+To simplify notation, put $K=\ker{\varphi}$ and use multiplicative notation to denote group operations.  We shall exhibit an isomorphism; define
+\begin{align*}
+\psi:G/K &\to \varphi(G) \\
+gK &\mapsto \varphi(g).
+\end{align*}
+Verifying $\psi$ is an isomorphism is routine:
+\begin{itemize}
+\item \textbf{Claim.} $\psi$ is well-defined.
+
+\smallGap
+\pf To show $\psi$ is a function, we must make sure $\image{\psi}\subset \varphi(G)$ -- apparent in the definition of $\psi$ -- and that no element in $G/K$ is mapped to two different elements in $\varphi(G)$.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{itemize}
+\item[] Suppose $gK=hK$.  By Proposition \ref{prop:equalCosets}, there exists $k\in K$ such that $g=hk$.  By definition of the kernel, $k\in K=\ker{\varphi}$ implies $\varphi(k)=1_{H}$, the identity element in $H$.  Then, since by hypothesis, $\varphi$ is a homomorphism,
+\[
+\psi(gK)=\varphi(g)=\varphi(hk)=\varphi(h)\varphi(k)=\varphi(h)\cdot 1_{H}=\varphi(h)=\psi(hK),
+\]
+as required.
+\qed
+
+\smallGap
+\item \textbf{Claim.} $\psi$ is a homomorphism.
+
+\smallGap
+\pf Choose $gK,hK\in G/K$.  Then
+\begin{align*}
+\psi{\left((gK)(hK)\right)} = \psi{\left((gh)K\right)} &= \varphi(gh) \\
+	&= \varphi(g)\varphi(h)=\psi{(gK)}\psi{(hK)},	
+\end{align*}
+as required.
+\qed
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{itemize}  
+\item \textbf{Claim.} $\psi$ is one-to-one.
+
+\smallGap
+\pf Suppose $\psi(gK)=\psi(hK)$.  Then $\varphi(g)=\varphi(h)$.  Multiply by $\varphi(h)\1$:
+\begin{align*}
+\varphi(g)\varphi(h)\1 &= \varphi(h)\varphi(h)\1=1_{H} \\
+\implies \varphi(g)\varphi(h)\1 &= \varphi(gh\1)= 1_H \\
+\implies gh\1 &\in\ker{\varphi}=K.
+\end{align*}
+Multiply by $h$:% and use the fact that $K\unlhd G$:
+\[
+g=gh\1h\in Kh=hK,
+\] 
+and so by Proposition \ref{prop:equalCosets}, $gK=hK$.
+\qed
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{itemize}
+\item \textbf{Claim.} $\psi$ is onto.
+
+\smallGap
+\pf Suppose $h\in\varphi(G)$.  By definition of $\varphi(G)$, $h=\varphi(g)$ for some $g\in G$.  Then $h=\varphi(g)=\psi(gK)$.
+\qed
+\end{itemize}
+This completes the proof of Theorem \ref{thm:firstIsomorphismTheorem}.
+\qed
+
+\smallGap 
+There are two more Isomorphism Theorems.  The second one says the product of a subgroup $H$ and a normal subgroup $N$ is a subgroup, and $(HN)/N\cong H/(H\cap N)$.  The third one says if $H$ is a subgroup in $G$ that contains a normal subgroup $N$, then $(G/N)/(H/N)\cong G/K$.
+\end{frame}
+
+% % % % %
+\subsection[\subsecname]{Example: Special Linear Group}
+% % %
+\begin{frame}{\subsecname}
+\begin{ex}\label{ex:specialLinearGroup}
+Recall part \hyperref[expt:detExampled]{\usebeamercolor[fg]{block title}(\ref{expt:detExampled})} of Example \ref{exe:detExample}, the group homomorphism
+\begin{align*}
+\delta: \GL(2,\R) &\to \R^{\times} \\
+	\begin{pmatrix}
+		a & b \\
+		c & d 
+		\end{pmatrix} &\mapsto ad-bc.
+\end{align*}
+\end{ex}
+
+\smallGap
+\begin{que}
+What is $\ker{\delta}$ in Example \ref{ex:specialLinearGroup}?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}{}{}
+The kernel in Example \ref{ex:specialLinearGroup} is called the \vocab{special linear group} and is denoted $\SL(2,\R)$.  It is the set of all $2\times 2$ matrices with real entries, whose determinant is $1$.  Similarly, we have $\SL(n,\R)$ for each $n\in \N$.
+\begin{exe}\label{exe:specialLinearGroup}
+Prove $\delta$ in Example \ref{ex:specialLinearGroup} is surjective.
+\end{exe}
+
+\smallGap
+It follows, from the First Isomorphism Theorem, that 
+\[
+\GL(2,\R)/\SL(2,\R)\cong \R^{\times}.
+\]
+\smallGap
+\begin{que}
+What are the cosets of $\SL(2,\R)$ in $\GL(2,\R)$?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}
+Alternatively, suppose $A=\left(\begin{smallmatrix}
+	a & b \\
+	c & d
+	\end{smallmatrix}\right)\in \GL(2,\R).$
+We can write
+\[
+A=\begin{pmatrix}
+	\Delta & 0 \\
+	0 & 1 
+	\end{pmatrix}
+\begin{pmatrix}
+\frac{a}{\Delta} & \frac{b}{\Delta} \\
+c & d 
+\end{pmatrix},
+\]
+where $\Delta=\det A\neq 0$ and note, 
+\[
+\det{\begin{pmatrix}
+	\frac{a}{\Delta} & \frac{b}{\Delta} \\
+	c & d 
+	\end{pmatrix}
+	}=1 
+\quad\implies \quad 
+\begin{pmatrix}
+\frac{a}{\Delta} & \frac{b}{\Delta} \\
+c & d 
+\end{pmatrix} \in \SL(2,\R).
+\]
+
+\smallGap 
+So $A$ is in the coset $\left(\begin{smallmatrix}
+	\Delta & 0 \\
+	0 & 1 
+	\end{smallmatrix}\right)\SL(2,\R)$, as is any other invertible matrix with determinant $\Delta$.  Thus we get an isomorphism
+\begin{align*}
+\GL(2,\R)/\SL(2,\R) &\overset{\cong}{\to} \R^{\times} \\
+\begin{pmatrix}
+	\Delta & 0 \\
+	0 & 1 
+	\end{pmatrix}\SL(2,\R) &\mapsto \Delta.
+\end{align*}		
+\end{frame}
+
+% % % % %
+\subsection[\subsecname]{Finitely generated abelian groups}\label{subsec:FGAG}
+% % %
+\begin{frame}{\subsecname}{}
+The following exercises motivate Theorem \ref{thm:quotientOfZs}.
+
+\smallGap
+\begin{exe}[cf. Problem 74]\label{exe:prob74}
+Use the First Isomorphism Theorem to prove $\Z/n\Z\cong \Z_n$.
+\end{exe}
+
+\smallGap
+Let us define a ``basis" for the $n$-tuples in $\Z^n$.  For each $i=1,\dots,n$, let 
+\[
+\vect e_i := (e_{i1},e_{i2},\dots,e_{in}), \text{ where }e_{ij}=\begin{cases}
+	1 & i=j \\
+	0 & i\neq j
+	\end{cases}.
+\]
+
+\smallGap
+We can think of each $\vect e_i$ is a ``component-wise identity" of $\Z^n$.
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{exe}[cf. Problem 75]\label{exe:fgAbGroup}
+Let $m,n$ denote non-zero integers. Use the First Isomorphism Theorem to show
+\[
+\Z^2/\langle m\vect e_1,n\vect e_2\rangle\cong \Z_m\times \Z_n.
+\]
+\end{exe}
+\begin{que}
+How does Exercise \ref{exe:fgAbGroup} compare to Example \ref{ex:isoToZ6}?  What about Proposition \ref{prop:relativelyPrime}?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}[c]{}
+Theorem \ref{thm:quotientOfZs} is the generalization:
+
+\smallGap
+\begin{thm}\label{thm:quotientOfZs}
+Let $H=\langle m_1\vect e_1,\dots,m_n\vect e_n\rangle< \Z^n$.  Then
+\[
+\Z^n/H\cong \Z_{m_1}\times\cdots\times\Z_{m_n}.
+\]
+\qed
+\end{thm}
+\end{frame}
+
+% % %
+\begin{frame}{}{}
+\begin{prop}\label{prop:fgab}
+Every finitely generated abelian group is a quotient group of $\Z^m$, for some $m\in \N$.
+\end{prop}
+
+\smallGap
+\bigProof
+Suppose $G$ is an abelian group with generators $g_1,\dots,g_m$.  Then every element in $G$ is of the form $g_1^{a_1}\cdots g_m^{a_m}$ for integers $a_1,\dots,a_m$.  Define a map
+\begin{align*}
+\phi: \Z^m &\to G \\
+\vect a:=(a_1,\dots,a_m) &\mapsto g_1^{a_1}\cdots g_m^{a_m}.
+\end{align*}
+If $\phi$ is surjective then we may apply the First Isomorphism Theorem to conclude
+\[
+\Z^m/\ker{(\phi)}\cong \phi(\Z^m)=G,
+\]
+completing the proof.
+\end{frame}
+
+% % %
+\begin{frame}
+First we show $\phi$ is a group homomorphism.  Suppose $\vect a,\vect b\in \Z^m$.
+\begin{align*}
+\phi(\vect a+\vect b) &= \phi\left((a_1+b_1,\dots,a_m+b_m)\right) \\
+	&= g_1^{a_1+b_1}\cdots g_n^{a_m+b_m} \\
+	&= (g_1^{a_1}g_1^{b_1})\cdots(g_m^{a_m}g_m^{b_m}) \\
+	&= (g_1^{a_1}\cdots g_m^{a_m})(g_1^{b_1}\cdots g_m^{b_m}) \\
+	&= \phi\left((a_1,\dots,a_m)\right)\phi\left(b_1,\dots,b_m)\right).
+\end{align*}
+
+\smallGap
+Now we show $\phi$ is surjective.  Take $g\in G$, which again, can be written $g=g_1^{a_1}\cdots g_m^{a_m}$ for some $a_1,\dots,a_m\in \Z$.  By definition, $\phi:(a_1,\dots,a_m)\mapsto g$.  So $\phi$ is surjective.
+\qed
+\end{frame}
+
+% % %
+\begin{frame}[c]
+The \vocab{Fundamental Theorem of Finitely Generated Abelian Groups}, which we state in Section \ref{sec:2p10FTOFinitelyGeneratedAbelianGroups}, actually gives the precise structure of the quotient groups in Proposition \ref{prop:fgab}.
+\end{frame}
+
+% % % % %
+\answerKey
+% % %
+\begin{frame}[c]{\subsecname}
+\exeSol{exe:specialLinearGroup}
+Suppose $x\in \R^+$.  The matrix $X=\left(\begin{smallmatrix} x & 0 \\ 0 & 1 \end{smallmatrix}\right)$ is in $\GL(2,\R)$ and has determinant equal to $x$.  So $\delta(X)=x$.
+\qed
+
+\smallGap
+\exeSol[(cf. Problem 74)]{exe:prob74}
+Define $\bar{\varphi}: \Z\to \Z_n$ by mapping $a\in \Z$ to $a\mod n$.  Then $\bar{\varphi}$ is surjective, and the kernel consists of multiples of $n$, i.e., the subgroup $n\Z$.  By the First Isomorphism Theorm, $\Z/n\Z\cong \Z_n$.
+\qed
+\end{frame}
+
+% % %
+\begin{frame}[c]
+%
+%\smallGap
+\exeSol[(cf. Problem 75)]{exe:fgAbGroup}
+We define a map on the generators of $\Z^2$:
+\begin{align*}
+\bar{\varphi}: \Z^2/ &\to \Z_m\times \Z_n \\
+\vect e_1 &\mapsto (1,0) \\
+\vect e_2 &\mapsto (0,1) 
+\end{align*}
+Then $(a,b)\in \Z^2$ maps to $(a\mod n,b\mod n)$ and so $\bar{\varphi}$ is surjective.  The kernel is generated by $m\vect e_1$ and $n\vect e_2$.  Therefore the First Isomorphism Theorem syas $\Z^2/\langle m\vect e_1,n\vect e_2\rangle\cong \Z_m\times \Z_n$.
+\qed
+\end{frame}
+
+% % % % % % % % % %
+\end{document}

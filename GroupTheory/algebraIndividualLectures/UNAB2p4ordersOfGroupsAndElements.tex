@@ -1,0 +1,209 @@
+\documentclass[../algebraNotesMSRI-UP2016.tex]{subfiles}
+
+\begin{document}
+
+\section[\S \thesection]{Orders of groups and elements}
+% % % % %
+\subsection[\subsecname]{Order of an element}
+% % %
+\begin{frame}{\subsecname}
+\begin{dfn}
+Let $G$ denote a group with $g\in G$.
+\begin{enumerate}[(a)]
+\item $g$ has \vocab{infinite order} means all the non-negative powers of $g$ are distinct.
+\item $g$ has \vocab{order $d$} means $d$ is the smallest positive integer such that $g^d=g^0=1$.  We say $g$ has \vocab{finite order}.
+\end{enumerate} 
+
+\smallGap
+We write $|g|$ or $\ord(g)$ to denote the order of $g$.
+\end{dfn}
+
+\smallGap
+\begin{que}[cf. Problem 54]
+What is the order of each element in $\Z_{12}$?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{exe}[cf. Problem 53]\label{exe:prob53}
+In $G=(\GL(2,\R),\cdot)$ find the order of each of the following elements:
+\[
+g=\begin{pmatrix}
+	0 & -1 \\
+	1 & 0 
+	\end{pmatrix}
+\qquad
+h=\begin{pmatrix}
+	3 & 5 \\
+	4 & 7
+	\end{pmatrix}
+\qquad 
+j=\begin{pmatrix}
+	-\frac{1}{2} & -\frac{\sqrt 3}{2} \\
+	\frac{\sqrt 3}{2} & -\frac{1}{2}
+	\end{pmatrix}
+\]
+\end{exe}
+
+\smallGap
+\begin{exe}[cf. Problem 55]\label{exe:prob55}
+Find the order of each element in the sandpile group $\mathscr S(\Gamma)$ corresponding to the graph in Figure \ref{fig:graphWithLoops}. 
+\end{exe}
+\end{frame}
+
+% % % % %
+\subsection[\subsecname]{Order of a group}
+% % %
+\begin{frame}[c]{\subsecname}
+\begin{dfn}
+The \vocab{order} of a group $G$ is its cardinality as a set, $|G|$.
+\end{dfn}
+
+\smallGap
+\textbf{Caution:} The \emph{dihedral group $D_n$ of order $n$} has group order not $n$, but $2n$.  
+
+\smallGap
+\begin{exe}\label{exe:orderOfSn}
+Find the order of the \emph{symmetric group of order $n$}, $S_n$ (it's not $n$).
+\end{exe}  
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{thm}[Lagrange's Theorem]\label{thm:Lagrange}
+Given a finite (order) group $G$, the order of every subgroup of $G$ divides $|G|$.
+\qed
+\end{thm}
+
+\smallGap
+\begin{que}
+Verify Lagrange's Theorem for $\Z_{12}$. 
+\end{que}
+\end{frame}
+
+% % % % %
+\answerKey
+% % %
+\begin{frame}{\subsecname}
+\exeSol[(cf. Problem 53)]{exe:prob53}
+%\textbf{Solution:} 
+We compute the powers of $g,h,j$:
+\begin{align*}
+g^2=\begin{pmatrix*}[r]
+	0 & -1 \\
+	1 & 0 \end{pmatrix*}
+	\begin{pmatrix*}[r]
+	0 & -1 \\
+	1 & 0 \end{pmatrix*}
+	&= \begin{pmatrix*}[r]
+	-1 & 0 \\
+	0 & -1 
+	\end{pmatrix*}; \\
+g^3=\begin{pmatrix*}[r]
+	-1 & 0 \\
+	0 & -1 \end{pmatrix*}
+	\begin{pmatrix*}[r]
+	0 & -1 \\
+	1 & 0 \end{pmatrix*}
+	&= \begin{pmatrix*}[r]
+	0 & 1 \\
+	-1 & 0 
+	\end{pmatrix*}; \\
+g^4 = \begin{pmatrix*}[r]
+	0 & 1 \\
+	-1 & 0 \end{pmatrix*}
+	\begin{pmatrix*}[r]
+	0 & -1 \\
+	1 & 0 
+	\end{pmatrix*}
+	&= \begin{pmatrix*}[r]
+	1 & 0 \\
+	0 & 1
+	\end{pmatrix*} \implies \boxed{|g|=4} \\
+h^2=\begin{pmatrix}
+	3 & 5 \\
+	4 & 7 
+	\end{pmatrix}
+	\begin{pmatrix}
+	3 & 5 \\
+	4 & 7
+	\end{pmatrix}
+	&= \begin{pmatrix}
+	29 & 50 \\
+	40 & 69
+	\end{pmatrix};
+\end{align*}
+Note, since the entries of $h$ are strictly positive, no power of $h$ will ever reach the identity.  Thus $\boxed{|h|=\infty}$.
+
+\smallGap
+The matrix $j$ is a rotation matrix, so we expect it to have finite degree:
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{align*}
+j^2=\begin{pmatrix}
+	-\frac{1}{2} & -\frac{\sqrt 3}{2} \\
+	\frac{\sqrt 3}{2} & -\frac{1}{2}
+	\end{pmatrix}
+	\begin{pmatrix}
+	-\frac{1}{2} & -\frac{\sqrt 3}{2} \\
+	\frac{\sqrt 3}{2} & -\frac{1}{2}
+	\end{pmatrix}
+	&=\begin{pmatrix}
+	-\frac{1}{2} & \frac{\sqrt 3}{2}\\
+	-\frac{\sqrt 3}{2} & -\frac{1}{2}
+	\end{pmatrix}; \\
+j^3 =\begin{pmatrix}
+	-\frac{1}{2} & \frac{\sqrt 3}{2}\\
+	-\frac{\sqrt 3}{2} & -\frac{1}{2}
+	\end{pmatrix}
+	\begin{pmatrix}
+	-\frac{1}{2} & -\frac{\sqrt 3}{2} \\
+	\frac{\sqrt 3}{2} & -\frac{1}{2}
+	\end{pmatrix}
+	&=\begin{pmatrix}
+	1 & 0 \\
+	0 & 1
+	\end{pmatrix} \implies \boxed{|j|=3}
+\end{align*}
+
+\smallGap
+\begin{que}
+What is the rotation given by $j$?
+\end{que}
+\end{frame}
+% % %
+\begin{frame}
+\exeSol[(cf. Problem 55)]{exe:prob55}
+By adding various configurations to the maximal sandpile $(2,2)$ we can conclude 
+\[
+\mathscr S(\Gamma)=\{(1,1),(1,2),(2,1),(2,2)\}.
+\]
+The elements and addition table for $\mathscr S(\Gamma)$ are given in the solution to Exericse \ref{exe:prob42}.  No sandpile will have order larger than $4$ so we compute them by hand:
+\begin{align*}
+(1,1) \oplus (1,1) &= (2,2) \\
+	\oplus \;(1,1) &= (3,3)^{\circ}=(1,2) \\
+	\oplus \;(1,1) &= (2,3)^{\circ}=(2,1) \leftarrow \text{identity} \\[-0.25pc]
+	\oplus \;(1,1) &= (3,2)^{\circ}=(1,1)  \implies \boxed{|(1,1)|=4}. \\
+(1,2) \oplus (1,2) &= (2,4)^{\circ}=(2,2) \\
+	\oplus \;(1,2) &= (3,4)^{\circ}=(1,1) \\[-0.25pc]
+	\oplus \;(1,2) &= (2,3)^{\circ}=(2,1) \implies \boxed{|(1,2)|=4}. \\
+(2,2) \oplus (2,2) &= (4,4)^{\circ}=(2,1) \implies \boxed{|(2,2)|=2}. 
+\end{align*}
+The identity, $(2,1)$, has order $1$.
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol{exe:orderOfSn}
+%\textbf{Solution:} 
+Let $S$ denote a set with $n$ distinct elements.  Each permutation in the symmetric group of order $n$ corresponds to an ordering of the members of $S$.  We count the number of orderings one position at a time.  
+
+\smallGap
+For the first position in an ordering, there are $n$ possible choices.  Then for each such choice, the second position has $n-1$ remaining choices from $S$.  Thus there are $n(n-1)$ possibilities for the first two elements in an ordering.  For each of those $n(n-1)$ possibilities the third position has $n-2$ remaining choices.  In general, having chosen the first $k<n$ elements of an ordering, the $(k+1)$st position has $n-k-1$ possible choices left in $S$.  It follows that the total number of ordering of the members of $S$ is $n(n-1)\cdots(2)(1)=\boxed{n!}$.
+\end{frame}
+
+% % % % % % % % % %
+\end{document}

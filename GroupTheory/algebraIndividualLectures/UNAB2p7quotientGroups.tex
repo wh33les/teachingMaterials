@@ -1,0 +1,610 @@
+\documentclass[../algebraNotesMSRI-UP2016.tex]{subfiles}
+
+\begin{document}
+
+\section[\S \thesection]{Quotient groups}\label{sec:2p7quotientGroups}
+% % % % % 
+\subsection[\subsecname]{Cosets}
+% % %
+\begin{frame}{\subsecname}
+\begin{dfn}
+Let $(G,\star)$ denote a group with subgroup $H< G$ and suppose $g\in G$.  The set
+\[
+g\star H:=\{g\star h\mid h\in H\}
+\]
+is called a \vocab{left coset} of $H$ in $G$.  The set
+\[
+H\star g:=\{h\star g\mid h\in H\}
+\]  
+is called a \vocab{right coset} of $H$ in $G$.
+\end{dfn}
+%
+%\smallGap
+When using multiplicative notation we may write $gH=g\star H$; likewise with additive notation we write $g+H=g\star H$.
+
+\begin{que}
+What is the condition for a coset to be a subgroup?  (In general, a coset is NOT a subgroup!)
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}{}{}
+\begin{ex}\label{ex:D3}
+Let $G=D^3$, the dihedral group of order $3$ (see Example \ref{ex:D4}).  Take $H=\{e,s\}<G$.  The left cosets of $H$ are 
+\[
+\begin{aligned}
+eH &= H \\
+sH &= H
+\end{aligned}
+\quad
+\begin{aligned}
+rH &= \{r,rs \} \\
+rsH &= \{rs, r\}
+\end{aligned}
+\quad
+\begin{aligned}
+r^2H &= \{r^2,r^2s\} \\
+r^2sH &= \{r^2s, r^2\}.
+\end{aligned}
+\]
+The right cosets of $H$ are
+\[
+\begin{aligned}
+He &= H \\
+Hs &= H
+\end{aligned}
+\quad
+\begin{aligned}
+Hr &= \{r, r^2s \} \\
+Hrs &= \{rs, r^2\}
+\end{aligned}
+\quad
+\begin{aligned}
+Hr^2 &= \{r^2,rs\} \\
+Hr^2s &= \{r^2,r\}.
+\end{aligned}
+\]
+\end{ex}
+
+\smallGap
+In particular, the left and right cosets are not equal.
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{ex}\label{ex:alternating}
+In $S_n$, a permutation that switches two elements $a$ and $b$ and leaves the rest fixed is called a \vocab{transposition}, denoted $(a b)$.  It can be shown that every permutation can be decomposed as a product of transpositions.  A permutation is \vocab{even} (resp., \vocab{odd})  means its product of transpositions has an even (resp. odd) number of factors.  
+
+\smallGap
+The set $A_n$ of even permutations is a subgroup in $S_n$ (check!) called the \vocab{alternating group of order $n$}.  $A_n$ has $2$ cosets: itself, and the set of odd permutations.  In fact, for any $\sigma\in S_n$, $\sigma A_n=A_n\sigma$.  However, $S_n$ is not abelian, nor is $A_n$:
+\[
+(12)(23)\left(1,2,3\right)=(3,1,2)\quad \text{but}\quad (23)(12)\left(1,2,3\right)=(2,3,1).
+\]
+\end{ex}
+
+\smallGap
+Example \ref{ex:alternating} demonstrates that equality of left and right cosets is still a weaker condition than abelianness.
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{dfn}\label{dfn:normal}
+A subgroup $H<G$ is \vocab{normal} in $G$ means $gH=Hg$ for all $g\in G$.  We write $H\norml G$.
+\end{dfn}
+
+\smallGap We may also say a subgroup $H<G$ is normal if and only if $H$ is closed under \vocab{conjugacy}, meaning, $g\1Hg=H$ for all $g\in G$.  Evidently this is equivalent to Definition \ref{dfn:normal}.  The operation 
+\begin{align*}
+g:\{\text{subgroups in $G$}\} &\to \{\text{subgroups in $G$}\} \\
+ H &\mapsto g\1Hg
+\end{align*} 
+for fixed $g\in G$ is called \vocab{conjugation}.  We can also conjugate individual elements $h\in G$, i.e., $g\1hg$.  For example, in Linear Algebra conjugating a matrix $A$ by the ``correct" matrix $B$ can result in a simpler way to express the linear transformation given by $A$ (see Section \ref{subsec:normalizing}).
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{ex}\label{ex:trivialNormal}
+For any group $G$, the two \vocab{trivial} subgroups, $\langle 1_G\rangle<G$ and $G<G$, are normal.
+\end{ex}
+
+\smallGap
+\begin{UNABexe}\label{exe:normalKernel}
+Prove the kernel of a group homormorphism is always normal in its source.
+\end{UNABexe}
+
+\smallGap
+\begin{UNABexe}\label{exe:normalSubgroups}
+Prove all subgroups of an abelian group are normal.
+\end{UNABexe}
+
+\smallGap
+Nearly all the groups we consider are abelian.  By default we shall work with left cosets, keeping in mind all statements we make have right coset analogues.  
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{ex}
+In $\Z_{12}$, the cosets of $H:=\{0,4,8\}=4\Z_{12}$ are:
+\begin{align*}
+H = 0\oplus_{12}H &= 4\oplus_{12}H = 8\oplus_{12}H = \{0,4,8\}, \\
+	 1\oplus_{12}H &= 5\oplus_{12}H = 9\oplus_{12}H = \{1,5,9\},	\\
+	 2\oplus_{12}H &= 6\oplus_{12}H = 10\oplus_{12}H = \{2,6,10\}, \\
+	 3\oplus_{12}H &= 7\oplus_{12}H = 11\oplus_{12}H = \{3,7,11\} 
+\end{align*}
+\end{ex}
+
+\smallGap
+\begin{que}
+What are some observations you can make?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}
+We use $G/H$ to denote the collection of distinct cosets of $H$ in $G$, called \vocab{$G$ modulo $H$}.  The cosets of a subgroup \vocab{partition} the group:
+\begin{prop}\label{prop:cosetsPartition}
+Let $G$ denote a group with subgroup $H< G$.
+\begin{enumerate}[(a)]
+\item The union of all (left, respectively, right) cosets of $H$ in $G$ is the entire group $G$.
+\item For any two cosets $g\star H,h\star H\in G/H$, either
+\begin{enumerate}[(i)]
+	\item $g\star H=h\star H$ or
+	\item $g\star H\cap h\star H=\emptyset$.
+\end{enumerate}
+\end{enumerate}
+\end{prop}
+
+\smallGap
+\pf
+\begin{itemize}
+\item[(a)] The union of all cosets of $H$ is contained in $G$; on the other hand, for any $g\in G$, $gH$ contains $g$ since $1_G\in H$.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{itemize}
+\item[(b)] Suppose $g_1H\cap g_2H\neq \emptyset$ and $g\in g_1H\cap g_2H$.  Then there exist $h_1,h_2\in H$ such that 
+\[
+g=g_1h_1=g_2h_2.
+\]
+Multiplying on the right by $h_1\1$ shows $g_1\in g_2H$, and so $g_1H\subseteq g_2H$.  Likewise, multiplying on the right by $h_2\1$ shows $g_2\in g_1H$ and so $g_2H\subseteq g_1H$.  Therefore $g_1H=g_2H$.
+\end{itemize}
+\qed
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{exe}[cf. Problem 66]\label{exe:prob66}
+Let $G=\Z_{30}$ and put $H=5G$.  Using Proposition \ref{prop:cosetsPartition}, list the elements of $G/H$.  
+\end{exe}
+
+\smallGap
+\begin{exe}[cf. Problem 67]\label{exe:prob67}
+Let $G=\Z_2\times \Z_4$ and let $H=(1,1)G< G$.  List the elements of $H$, then list the cosets of $H$.
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+The following proposition gives a way to prove two cosets are equal.
+
+\smallGap
+\begin{prop}\label{prop:equalCosets}
+Suppose $(G,\star)$ is a group with subgroup $H< G$ and suppose $g,h\in G$.  Then:
+\begin{enumerate}[(a)]
+\item $g\star H=H$ if and only if $g\in H$
+\item $g\star H=h\star H$ if and only if $g\1h\in H$.
+\item $g\star H=h\star H$ if and only if $h\in g\star H$.
+\end{enumerate}
+\end{prop}
+
+\smallGap
+\begin{exe}[cf. Problem 68]\label{exe:prob68}
+Prove Proposition \ref{prop:equalCosets}.  \textit{Hint: Prove {\usebeamercolor[fg]{block title}(a)} first, then use it to prove {\usebeamercolor[fg]{block title}(b)}, then use {\usebeamercolor[fg]{block title}(b)} to prove {\usebeamercolor[fg]{block title}(c)}.}
+\end{exe}
+\end{frame}
+
+% % % % %
+\subsection[\subsecname]{Quotient groups}
+% % %
+\begin{frame}{\subsecname}
+Let $G=(G,\star)$ denote a group with subgroup $H< G$.  The notation used thusfar suggest a group structure on $G/H$ with a binary operation $\star_{/H}$ well-defined ``up to", or \emph{modulo} elements in $H$.  The natural choice is to define
+\begin{gather}\label{eq:quotientOperation}
+\begin{split}
+\star_{/H}: G/H\times G/H &\to G/H \\
+(g\star H,h\star H) &\mapsto (g\star h)\star H.
+\end{split}
+\end{gather} 
+
+\smallGap
+Given $g_1,g_2,h_1,h_2\in G$, we must verify 
+\begin{align*}
+(g_1\star H,h_1\star H) &=(g_2\star H,h_2\star H) \\
+\implies (g_1\star H)\star_{/H}(h_1\star H) &=(g_2\star H)\star_{/H}(h_2\star H) \\
+\implies (g_1\star h_1)\star H &= (g_2\star h_2)\star H.
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}
+Component-wise, we have, by hypothesis, 
+\[
+g_1\star H=g_2\star H\quad\text{ and }\quad h_1\star H=h_2\star H.
+\]
+Along with associativity,
+\begin{align*}
+(g_1\star h_1)\star H = g_1\star(h_1\star H) \\
+	= g_1\star(h_2\star H) &= g_1\star(H\star h_2) \tag{\alert{!!!}}\\
+	&= (g_1\star H)\star h_2 \\
+	&= (g_2\star H)\star h_2 \\
+	&= g_2\star (H\star h_2) = g_2\star (h_2\star H) \tag{\alert{!!!}}\\
+	&\phantom{= g_2\star (H\star h_2)} \;=(g_2\star h_2)\star H;
+\end{align*}
+provided the lines tagged with (\alert{!!!}) are correct.
+
+\smallGap
+\begin{que}
+What additional hypothesis do we need?
+\end{que}
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{thm}\label{thm:quotientGroup}
+Let $G=(G,\star)$ denote a group with normal subgroup $H\norml G$.  The set $G/H$ is a group, called the \vocab{quotient group} of $G$ by $H$, equipped with the operation $\star_{/H}$ defined in Equation \eqref{eq:quotientOperation}.
+\end{thm}
+
+\smallGap
+\begin{UNABexe}\label{exe:quotientGroup}
+Prove Theorem \ref{thm:quotientGroup}.
+\end{UNABexe}
+
+\smallGap
+The alternate notation $\Z/n\Z$ to $\Z_n$ arises exactly because it is a quotient group.  A more rigorous statement is given in Section \ref{sec:2p8firstIsomorphismTheorem}. 
+\end{frame}
+
+% % % 
+\begin{frame}[c]
+\begin{exe}[cf. Problems 69-70]\label{exe:probs69-70}
+Write down the addition table for $G/H$ in 
+\begin{enumerate}[(a)]
+\item Exercise \ref{exe:prob66}.
+\item Exercise \ref{exe:prob67}.
+\end{enumerate}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}[c]
+We saw in Example \ref{ex:D3} the subgroup $\langle s\rangle< D_3$ is not normal.  As a consequence, the operation $\star$ defined in Equation \eqref{eq:quotientOperation} is not well-defined on its cosets.
+
+\smallGap
+Take $r\in r\langle s\rangle$ and $r^2\in r^2\langle s\rangle$.  Since $(r)(r^2)=e$, we should have 
+\[
+r\langle s\rangle \star r^2\langle s\rangle.
+\]
+On the other hand, take $rs\in r\langle s\rangle$ and $r^2s\in r^2\langle s\rangle$.  Then 
+\[
+(rs)(r^2s)=r^2\in r^2\langle s\rangle\neq \langle s\rangle.
+\]
+\end{frame}
+
+% % % % %
+\subsection[\subsecname]{Non-obvious isomorphisms}
+% % %
+\begin{frame}{\subsecname}
+\begin{ex}\label{ex:isoToZ6}
+Let $G=\Z\times \Z$ and define 
+\begin{align*}
+H=(3,0)G+(0,2)G &= \{m(3,0)+n(0,2)\mid m,n\in \Z\} \\
+	&= \{(3m,2n)\mid m,n\in \Z\}.
+\end{align*}
+\end{ex}
+Think of the elements in $H$ as movements on a grid indexed by $\Z\times \Z$.  The generator $(3,0)$ is right by 3; the generator $(0,2)$ is up by 2.  
+
+\smallGap 
+The cosets of $H$ in $G$ are: 
+\smallGap
+\[
+\begin{aligned}
+\die{6} &:=(0,0)+H=H \\
+\die{1} &:=(1,1)+H \\
+\die{2} &:=(2,0)+H
+\end{aligned} \qquad	
+\begin{aligned}
+\die{3} &:=(0,1)+H \\
+\die{4} &:=(1,0)+H \\
+\die{5} &:=(2,1)+H
+\end{aligned}
+\]
+\end{frame}
+
+% % %
+\begin{frame}[c]
+Compare the addition table for $G/H$ to the one for $\Z/6\Z$:
+\[
+\begin{array}{c | c c c c c c }
+ G/H  & \die{6} & \die{1} & \die{2} & \die{3} & \die{4} & \die{5} \\
+ \hline
+ \die{6} & \die{6} & \die{1} & \die{2} & \die{3} & \die{4} & \die{5} \\ 
+ \die{1} & \die{1} & \die{2} & \die{3} & \die{4} & \die{5} & \die{6} \\
+ \die{2} & \die{2} & \die{3} & \die{4} & \die{5} & \die{6} & \die{1} \\
+ \die{3} & \die{3} & \die{4} & \die{5} & \die{6} & \die{1} & \die{2} \\
+ \die{4} & \die{4} & \die{5} & \die{6} & \die{1} & \die{2} & \die{3} \\
+ \die{5} & \die{5} & \die{6} & \die{1} & \die{2} & \die{3} & \die{4}
+\end{array}
+\qquad
+\begin{array}{c | c c c c c c }
+ \Z/6\Z  & 0 & 1 & 2 & 3 & 4 & 5 \\
+ \hline
+ 0 & 0 & 1 & 2 & 3 & 4 & 5 \\ 
+ 1 & 1 & 2 & 3 & 4 & 5 & 0 \\
+ 2 & 2 & 3 & 4 & 5 & 0 & 1 \\
+ 3 & 3 & 4 & 5 & 0 & 1 & 2 \\
+ 4 & 4 & 5 & 0 & 1 & 2 & 3 \\
+ 5 & 5 & 0 & 1 & 2 & 3 & 4
+\end{array}
+\]	
+
+\smallGap
+\textbf{Conclusion:} $G/H\cong \Z/6\Z$ via the correspondence in the addition tables.
+\end{frame}
+
+% % %
+%\begin{frame}
+%\begin{ex}
+%The elements in $\Z^2/\langle(2,-2),(2,2)\rangle$, i.e., the cosets of $H:=\langle (2,-2),(2,2)\rangle$ are 
+%\end{ex}
+%\centering
+% \begin{tikzpicture}[scale=0.5]
+%  \coordinate (Origin)   at (0,0);
+%    \coordinate (XAxisMin) at (-5,0);
+%    \coordinate (XAxisMax) at (5,0);
+%    \coordinate (YAxisMin) at (0,-5);
+%    \coordinate (YAxisMax) at (0,5);
+%    \draw [thin, gray,-latex] (XAxisMin) -- (XAxisMax);% Draw x axis
+%    \draw [thin, gray,-latex] (YAxisMin) -- (YAxisMax);% Draw y axis
+%
+%    \clip (-5,-5) rectangle (5cm,5cm); % Clips the picture...
+%    %\pgftransformcm{1}{0.6}{0.7}{1}{\pgfpoint{0cm}{0cm}}
+%          % This is actually the transformation matrix entries that
+%          % gives the slanted unit vectors. You might check it on
+%           % MATLAB etc. . I got it by guessing.
+%    \coordinate (Bone) at (2,2);
+%    \coordinate (Btwo) at (2,-2);
+%    \draw[style=help lines,dashed] (-4,-4) grid[step=1cm] (4,4);
+%          % Draws a grid in the new coordinates.
+%          %\filldraw[fill=gray, fill opacity=0.3, draw=black] (0,0) rectangle (2,2);
+%              % Puts the shaded rectangle
+%    \foreach \x in {-7,-6,...,7}{% Two indices running over each
+%      \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn 
+%        \node[draw,circle,inner sep=2pt,fill] at (2*\x+2*\y,2*\x-2*\y) {};
+%            % Places a dot at those points
+%      }
+%    }
+%    %\draw [ultra thick,-latex,red] (Origin)
+%     %   -- (Bone) node [above left] {$b_1$};
+%    %\draw [ultra thick,-latex,red] (Origin)
+%     %   -- (Btwo) node [below right] {$b_2$};
+%    %\draw [thin,-latex,red, fill=gray, fill opacity=0.3] (0,0)
+%        % -- ($2*(0,2)+(2,-2)$)
+%        % -- ($3*(0,2)+2*(2,-2)$) -- ($(0,2)+(2,-2)$) -- cycle;
+%  \end{tikzpicture}`
+%\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{exe}[cf. Problem 72]\label{exe:prob72}
+``Simplify" the following \vocab{group presentations} (a term we define in Section \ref{sec:2p10FTOFinitelyGeneratedAbelianGroups}) by exhibting an isomorphism in each case.
+\begin{enumerate}
+\item $\Z\times \Z/\langle(1,1)\rangle$
+\item\label{exept:prob72-2} $\Z\times \Z/\langle(2,-1),(-1,2)\rangle$
+\end{enumerate} 
+\end{exe}
+\end{frame}
+
+% % % % %
+\subsection[\subsecname]{Quotient means kill}\label{subsec:quotientMeansKill}
+% % %
+\begin{frame}[c]{\subsecname}
+We saw in Example \ref{ex:ZmodnZ}, the (group) homomorphism
+\begin{align*}
+\varphi : \Z &\to \Z/n\Z \\
+m &\mapsto m\mod n
+\end{align*}
+is surjective, and $\ker{\varphi}=n\Z$.  We say $\varphi$ \vocab{kills} $n$.  
+\end{frame}
+
+% % %
+\begin{frame}[c]
+Generalizing this notion:
+\begin{UNABexe}[cf. Problem 73]\label{exe:prob73}
+Prove that if $H\norml G$ then the natural group homomorphism 
+\begin{align*}
+\bar{\psi}: G &\to G/H \\
+	g &\mapsto gH
+\end{align*}
+is surjective.  Colloquially, when we apply $\bar{\psi}$ we say we are \emph{killing} the subgroup $H$. 
+\end{UNABexe}
+
+\smallGap
+Often, when defining quotient maps, we use a bar.
+\end{frame}
+
+% % % % %
+\answerKey
+% % %
+\begin{frame}{\subsecname}
+\begin{block}{Exercise*}\end{block}
+\vspace{-0.75pc}
+\textbf{Solution:} Let $\varphi:G\to H$ denote a group homomorphism with $K=\ker\varphi$.  We wish to show $gK=Kg$ for all $g\in G$, in fact, equivalently, $gKg\1=K$ for all $g\in G$.  Suppose $k\in K$.  Put $k'=g\1kg$.  Then $k=gk'g\1\in gKg\1$, so $K\subseteq gKg\1$.  For the other containment, say $gkg\1\in gKg\1$ for some $k\in K$.  Then 
+\[
+\varphi(gkg\1)=\varphi(g)\varphi(k)\varphi(g\1)=\varphi(g)\cdot 1_H\cdot \varphi(g\1)=\varphi(gg\1)=1_H.
+\]
+It follows that $gkg\1\in K$ and therefore $gKg\1=K$.
+\qed
+
+\smallGap
+\begin{block}{Exercise*}\end{block}
+\vspace{-0.75pc}
+\textbf{Solution:}  Suppose $G$ is abelian and $g\in G$.  Let $H$ denote a subgroup of $G$.  Then for all $h\in H$, $gh=hg$ so $gH=Hg$.
+\qed
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol[(cf. Problem 66)]{exe:prob66}
+The elements in $G/H$ are the cosets of $H=5G$:
+\[
+\begin{aligned}
+H &= \{0,5,10,15,20,25\} \\
+1\oplus_{30}H &= \{1,6,11,16,21,26\} \\
+2\oplus_{30}H &= \{2,7,12,17,22,27\}
+\end{aligned} \quad
+\begin{aligned}
+3\oplus_{30}H &= \{3,8,13,18,23,28\} \\
+4\oplus_{30}H &= \{4,9,14,19,24,29\}
+\end{aligned} 
+\]
+By Proposition \ref{prop:cosetsPartition}, since we have already partitioned the elements in $G=\Z_{30}$, there are no other distinct cosets.
+
+\smallGap
+\exeSol[(cf. Problem 67)]{exe:prob67}
+The elements in $H$ are
+\[
+\langle (1,1)\rangle = \{(0,0),(1,1),(0,2),(1,3)\}.
+\]
+There are two cosets of $H$:
+\begin{align*}
+H &= \{(0,0),(1,1),(0,2),(1,3)\} \\
+(1,0)+H &= \{(1,0),(0,1),(1,2),(0,3)\}
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol[(cf. Problem 68)]{exe:prob68}
+\begin{itemize}
+\item[(a)] Suppose $g\star H=H$.  $H$ is a subgroup and so contains the identity, $e$, and so $g=g\star e \in g\star H=H$.  
+
+\smallGap
+Conversely, suppose $g\in H$.  We know $g\star H\cap H$ contains $g\star e=g$.  By Proposition \ref{prop:cosetsPartition} the cosets must be equal.
+
+\smallGap
+\item[(b)] Suppose $g\star H=h\star H$.  Multiplying on the left, 
+\begin{align*}
+g\1\star(g\star H) &= g\1\star(h\star H) \\
+\implies H &= (g\1h)\star H. 
+\end{align*}
+By part {\usebeamercolor[fg]{block title}(a)}, it follows that $g\1h\in H$.
+
+\smallGap
+On the other hand, suppose $g\1h\in H$.  Multiplying on the left,
+\[
+g\star g\1h=h\in g\star H,
+\]
+while $h=h\star e\in h\star H$.  It follows that $g\star H\cap h\star H\neq \emptyset$ and by Proposition \ref{prop:cosetsPartition}, the two cosets are equal.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{itemize}
+\item[(c)] By left multiplication by $g$, the statements $g\1h\in H$ and $h\in g\star H$ are equivalent.  Part {\usebeamercolor[fg]{block title}(b)} says $g\1h\in H$ is equivalent to $g\star H=h\star H$.  Therefore $h\in g\star H$ if and only if $g\star H=h\star H$.
+\end{itemize}
+\qed
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{block}{Exercise*}\end{block}
+\vspace{-0.75pc}
+\textbf{Solution:}
+The operation $\star_{/H}$ is constructed to be binary.  We check associativity:
+\begin{align*}
+\left((g_1\star H)\star_{H}(g_2\star H)\right)\star_{H}(g_3\star H) &= \left((g_1\star g_2)\star H\right)\star_H(g_3\star H) \\
+	&= \left((g_1\star g_2)\star g_3\right)\star H \\
+	&= \left(g_1\star (g_2\star g_3)\right)\star H \\
+	&= (g_1\star H)\star_H\left((g_2\star g_3)\star H\right) \\
+	&= (g_1\star H)\star_H\left((g_2\star H)\star_H(g_3\star H)\right)
+\end{align*}
+
+Let $e$ denote the identity in $G$.  The identity element in $G/H$ is $H= e\star H$.  To see why, take $g\star H\in G/H$.  Then
+\begin{align*}
+(g\star H)\star_H (e\star H) &= (g\star e)\star_H H = g\star H; \\
+(e\star H)\star_H (g\star H) &= (e\star g)\star_H H = g\star H.
+\end{align*}
+
+\smallGap
+Finally, given a coset $g\star H\in G/H$, its inverse is $g\1\star H$:
+\begin{align*}
+(g\star H)\star_H(g\1\star H) &= (g\star g\1)\star H = e\star H; \\
+(g\1 \star H)\star_H(g\star H) &= (g\1 \star g)\star H = e\star H 
+\end{align*}
+\qed
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol[(cf. Problems 69-70)]{exe:probs69-70}
+\begin{itemize}
+\item[(a)] $
+\begin{array}[t]{c | c c c c c }
+ \Z_{30}/\langle 5\rangle  & H & 1\oplus_{30}H & 2\oplus_{30} H & 3\oplus_{30}H & 4\oplus_{30}H \\
+ \hline
+ H & H & 1\oplus_{30}H & 2\oplus_{30}H & 3\oplus_{30}H & 4\oplus_{30}H \\ 
+ 1\oplus_{30}H & 1\oplus_{30}H & 2\oplus_{30}H & 3\oplus_{30}H & 4\oplus_{30}H & H \\
+ 2\oplus_{30}H & 2\oplus_{30}H & 3\oplus_{30}H & 4\oplus_{30}H & H &1\oplus_{30}H \\
+ 3\oplus_{30}H & 3\oplus_{30}H & 4\oplus_{30}H & H & 1\oplus_{30}H & 2\oplus_{30}H \\
+ 4\oplus_{30}H & 4\oplus_{30}H & H & 1\oplus_{30}H & 2\oplus_{30}H & 3\oplus_{30}H 
+\end{array}
+$
+
+\smallGap
+\item[(b)]$
+\begin{array}[t]{ c | c c }
+\Z_2\times \Z_4/\langle (1,1)\rangle & H & (1,0)+H \\
+\hline
+H & H & (1,0)+H \\
+(1,0)+H & (1,0)+H & H
+\end{array}
+$
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol[(cf. Problem 72)]{exe:prob72}
+\begin{itemize}
+\item[(a)] On the $\Z\times \Z$ lattice, the elements in $\langle (1,1)\rangle$ all lie on the line $y=x$.  The each coset consists of points on a line parallel to $y=x$.  Each coset crosses the $x$-axis in exactly one point, so identify each coset with the $x$-coordinate where it crosses the axis.  This gives a one-to-one correspondence with $\Z$.
+
+\smallGap
+\item[(b)] We can identify the cosets of $H=\langle (2,-1),(-1,2)\rangle$ by drawing an addition table.
+\[
+\begin{array}{ c | c c c }
+\Z\times \Z/\langle (2,-1),(-1,2)\rangle & H & (1,0)+H & (0,1)+H \\
+\hline
+H & H & (1,0)+H & (0,1)+H \\
+(1,0)+H & (1,0)+H & (0,1)+H & H \\
+(0,1)+H & (0,1)+H & H & (1,0)+H
+\end{array}
+\]
+Any other $\Z$-linear combination of the cosets listed above will not result in a new coset.  We see the quotient group $\Z\times \Z/\langle (2,-1),(-1,2)\rangle$ has three elements; we define the isomorphism $\Z\times\Z/\langle (2,-1),(-1,2)\rangle\xrightarrow{\cong} \Z_3$ by 
+\[
+H \mapsto 0 \qquad
+(1,0) \mapsto 1 \qquad 
+(0,1) \mapsto 2.
+\]
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{block}{Exercise*}\end{block}
+\vspace{-0.75pc}
+\textbf{Solution:} Take a coset $gH\in G/H$.  Then $\bar{\psi}(g)=gH$.
+\qed
+\end{frame}
+
+% % % % % % % % % %
+\end{document}

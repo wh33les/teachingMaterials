@@ -1,0 +1,341 @@
+\documentclass[../algebraNotesMSRI-UP2016.tex]{subfiles}
+
+\begin{document}
+
+\section[\S \thesection]{Basic properties of groups}
+% % % % %
+\subsection[\subsecname]{Identities and inverses}\label{subsec:identitiesInverses}
+% % %
+\begin{frame}{\subsecname}
+In mathematics defining a new concept entails pointing out the more immediate, even obvious, results -- with proof.  These are known as \vocab{propositions}.
+
+\smallGap
+\begin{prop}
+The identity element of a group $(G,\star)$ is unique.
+\end{prop}
+
+\smallGap
+\begin{proof}
+Suppose $e,e'\in G$ are both identity elements.  Then we have 
+\[
+e=e\star e'=e'\star e=e'
+\] 
+so $e=e'$ are the same element.
+\end{proof}
+\end{frame}
+
+% % %
+\begin{frame}[c]
+Often, when multiplicative notation is used $1$ denotes the identity element.  Likewise, we use $0$ to denote the identity under additive notation.  
+
+\smallGap
+\begin{que} The set $\Z$ has both $0$ and $1$.  Are they equal?  If not, then which is the true identity element?  \textit{Hint: Under which operation is $\Z$ a group?}
+\end{que}
+
+\smallGap
+We shall see in Section \ref{subsec:cyclicDefs}, that $1$ \vocab{generates} the group $\Z$.  Meanwhile, $0$ generates the \vocab{trivial} subgroup of $\Z$.
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{prop}[The Cancellation Law]
+Let $(G,\star)$ denote a group.  For every $a,b,c\in G$, 
+\[
+a\star b=c\star b\implies a=c\qquad\text{ and }\qquad b\star a=b\star c\implies a=c.
+\]
+\end{prop}
+
+\smallGap
+The $\implies$ symbol means ``implies".
+
+
+\smallGap
+\begin{exe}\label{exe:cancellationLaw}
+Prove the Cancellation Law.
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}[c]
+To ease readability, in the following we shall use multiplicative notation, i.e, if $g,h$ are elements in the group $G=(G,\star)$, then we write $gh=g\star h$.
+
+\smallGap
+\begin{prop}[Properties of Inverses]\label{prop:inverses}
+Let $G$ denote a group. 
+\begin{enumerate}[(a)]
+\item For every $g\in G$, the inverse $g\1$ is unique.
+\item For every $g\in G$, $(g\1)\1=g$.
+\item (\vocab{Shoes-Socks Theorem})  For every $g,h\in G$, $(gh)\1=h\1g\1$.
+\end{enumerate}
+\end{prop}
+
+\smallGap
+\begin{exe}[cf. Problem 45]\label{exe:inverses}
+Prove Proposition \ref{prop:inverses}.
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}[c]
+\begin{exe}[cf. Problem 46]\label{exe:abelian}
+Suppose $G$ is a group with the property that every element is its own inverse.  Prove $G$ must be abelian.
+\end{exe}
+
+\smallGap
+\begin{que}
+What is an example where the \vocab{converse} in Exercise \ref{exe:abelian} fails?  In other words, name an abelian group with an element that is not its own identity.
+\end{que}
+\end{frame}
+
+% % % % %
+\subsection[\subsecname]{Integer exponents}\label{subsec:integerExponents}
+% % %
+\begin{frame}[c]{\subsecname}
+\textbf{Recall:} In $\R$ we have the property that multiplying exponents with the same base is the same as adding the exponents.  In other words, for $a\in \R$, and integers $n,m$, we have 
+\begin{equation}\label{eq:expRule1}
+a^na^m=a^{n+m}.
+\end{equation}
+
+\smallGap
+Consequently, we also have the property that
+\begin{equation}\label{eq:expRule2}
+(a^n)^m=\underbrace{a^n\cdots a^n}_{\text{$m$ times}}=a^{\overbrace{\scriptstyle n+\cdots+n}^{\scriptstyle\text{$m$ times}}}=a^{m\cdot n}.
+\end{equation}
+\end{frame}
+
+% % %
+\begin{frame}[c]
+Suppose $g$ is in the group $G=(G,\star)$ and $n\in\N$.  We define $g^1:=g$, then recursively, $g^n:=g^{n-1}\star g^1=g^{n-1}g$.  By associativity of groups, $g^n=\underbrace{g\cdot\cdots \cdot g}_{\text{$n$ times}}$.
+
+\smallGap
+\begin{que}
+What are the analogous notions when we use \vocab{additive notation}, i.e., for $g,h$ in the group $G=(G,\star)$ write $g+h=g\star h$?
+\end{que}
+
+\smallGap
+\begin{exe}\label{exe:expRules1and2}
+Prove Equations \eqref{eq:expRule1} and \eqref{eq:expRule2} hold for groups.
+\end{exe}
+\end{frame}
+
+% % % 
+\begin{frame}[c]
+In the reals we also had a notion of zero and negative exponents, namely, for $a\in\R$ and a positive integer $n$,
+\[
+a^0=1\qquad\text{ and }\qquad a^{-n}=\frac{1}{a^n}.
+\]
+We shall generalize this notion for groups.
+\end{frame}
+
+% % %
+\begin{frame}[c]
+Again, use multiplicative notation for the group $G$.  To stay consistent with the definition of a group and with our definition of positive exponents, we must have 
+\[
+g^0g = g^0g^1 = g^{0+1}=g =eg,
+\]
+where $e$ is the identity element.  We can right-cancel the $g$ in $g^0g=eg$ to conclude $g^0=e$.  This is why under multiplicative notation we often use $1$ to denote $e$.   
+
+\smallGap
+\end{frame}
+
+% % % 
+\begin{frame}[c]
+Finally, for fixed $n\in\N$ we define $a^{-n}:=(a\1)^n$.  
+
+\smallGap
+\begin{UNABexe}[cf. Problem 48]\label{exe:negExp}
+Show that indeed this definition of $a^{-n}$ is consistent with the rules of exponents.  In other words, show Equations \eqref{eq:expRule1} and \eqref{eq:expRule2} still work for negative exponents.
+\end{UNABexe}
+
+\smallGap
+\begin{que}
+What are the analogous notions under additive notation?
+\end{que}
+
+\smallGap
+\begin{exe}\label{exe:negExpD4}
+What are the negative exponents for each element in $D_4$, the dihedral group of order 4?  (See Example \ref{ex:D4} and Exercise \ref{exe:prob40}.)
+\end{exe}
+\end{frame}
+
+% % % % %
+\answerKey
+% % % 
+\begin{frame}{\subsecname}
+\exeSol{exe:cancellationLaw}
+%\textbf{Proof.}
+We manipulate each of the equations $a\star b=c\star b$ and $b\star a=b\star c$ using inverses, associativity, and the identity element, $e$:
+\begin{columns}
+\begin{column}{0.2\textwidth}
+	\begin{align*}
+	a\star b &= c\star b \\
+	(a\star b)\star b\1 &= (c\star b)\star b\1 \\
+	a\star (b\star b\1) &= c\star(b\star b\1) \\
+	a\star e &= c\star e \\
+	a &= c
+	\end{align*}
+\end{column}
+\begin{column}{0.2\textwidth}
+	\begin{align*}
+	b\star a &= b\star c \\
+	b\1\star(b\star a) &= b\1\star(b\star c) \\
+	(b\1\star b)\star a &= (b\1\star b)\star c \\
+	e\star a &= e\star c \\
+	a &= c
+	\end{align*}
+\end{column}
+\end{columns}	
+\qed
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol[(cf. Problem 45)]{exe:inverses}
+%\textbf{Proof.}
+\begin{itemize}
+\item[(a)]\label{exeSol:inverses-a} Suppose $g\1$ and $\gamma$ are inverses for $g$.  Multiplying either of them by $g$, on either the left or the right, gives the identity:
+\begin{align*}
+gg\1 &= g\gamma \\
+g\1gg\1 &= g\1 g\gamma \\
+eg\1 &= e\gamma \\
+g\1 &= \gamma 
+\end{align*}
+and so there is only one inverse.
+\item[(b)] Multiplying an element by its inverse gives the identity.  Then multiply on the left by $g$:
+\begin{align*}
+g\1(g\1)\1 &= e \\
+gg\1(g\1)\1 &= ge \\
+= (g\1)\1 &= g. 
+\end{align*}
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{itemize}
+\item[(c)] By part {\usebeamercolor[fg]{block title}(a)}, the inverse element is unique.  We just check if multiplying by $h\1g\1$ on either side gives the identity:
+\begin{align*}
+(gh)(h\1g\1) &= g(hh\1)g\1 \\
+	&= geg\1 \\
+	&= gg\1 \\
+	&= e; \\
+(h\1g\1)(gh) &= h\1(g\1g)h \\
+		&= h\1eh \\
+		&= h\1h \\
+		&= e.
+\end{align*}
+\end{itemize}
+\qed
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol[(cf. Problem 46)]{exe:abelian}
+%\textbf{Proof.} 
+Choose $g,h\in G$.  We will show $gh=hg$.  Since $g\1=g$ and $h\1=h$, and in particular, $(gh)\1=gh$,
+\begin{align*}
+(gh)(gh) &= e \\
+ghghh &= eh \\
+ghg &= h \\
+ghgg &= hg \\
+gh &= hg.
+\end{align*}
+\qed
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol[(cf. Problem 47)]{exe:expRules1and2}
+%\textbf{Proof:} 
+Let $(G,\star)$ denote a group and choose $g\in G$.  From the recursive definition of positive exponents of $g$,
+\begin{align*}
+g^m\star g^n &= (g^{m-1}\star g)\star(g^{n-1}\star g) \\
+ &= \left((g^{m-2}\star g) \star g\right)\left((g^{n-2}\star g)\star g\right) \\[-5pt]
+ &\;\;\vdots \\[-5pt]
+ &= (g^1\star \underbrace{g\star \cdots \star g}_{\text{$m-1$ times}})\star (g^1\star \underbrace{g\star \cdots \star g}_{\text{$n-1$ times}}) \\
+ &=g^1\star \underbrace{g\star \cdots \star g}_{\text{$m+n-1$ times}} \\
+ &=g^{m+n}, \tag{1.1} \\[2pt]
+\text{and hence,}\quad(g^m)^n &= \underbrace{g^m\star \cdots \star g^m}_{\text{$n$ times}} \\
+	&= \underbrace{g\star \cdots \star g}_{\text{$mn$ times}} = g^{mn}. \tag{1.2}
+\end{align*}
+\qed
+\end{frame}
+
+% % %
+\begin{frame}
+\begin{block}{Exercise* (cf. Problem 48)}
+\end{block}
+\vspace{-0.75pc}
+\textbf{Solution:}
+Let $(G,\star)$ denote a group and choose $g\in G$, $m,n\in\N$.  Then
+\begin{align*}
+g^{-m}\star g^{-n} &= (g\1)^m\star (g\1)^n \\
+	&= (g\1)^{m+n} \\
+	&= g^{-(m+n)} \\
+	&= g^{-m+(-n)} \tag{1.1} \\
+\text{and,}\quad (g^{-m})^{-n} &= ((g\1)^m)^{-n} \\
+	&= \left(\left((g\1)^m\right)\1\right)^n.
+\end{align*}
+To move forward, we claim for any $h\in G$, $h^{-k}=(h^k)\1$.  If true, then when we multiply on either side by $h^k$ we get the identity:
+\begin{align*}
+(h^k)\star (h^{-k}) &= (h^k)\star (h\1)^k \\
+	&= h^{k-1}\star (h\star h\1)\star (h\1)^k \\
+	&= h^{k-1}\star e \star (h\1)^{k-1} \\
+	&= h^{k-2}\star (h\star h\1)\star (h\1)^{k-2} \\[-5pt]
+	&\;\;\vdots \\[-5pt]
+	&= e.
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}
+Likewise,
+\begin{align*}
+(h^{-k})\star h^k &= (h\1)^k\star h^k \\
+	&= (h\1)^{k-1}\star (h\1\star h)\star h^{k-1} \\
+	&= (h\1)^{k-1}\star e \star h^{k-1} \\
+	&= (h\1)^{k-2}\star (h\1\star h)\star h^{k-2} \\[-5pt]
+	&\;\;\vdots \\[-5pt]
+	&= e.
+\end{align*}
+Consequently,
+\begin{align*}	
+ \left(\left((g\1)^m\right)\1\right)^n &= \left((g\1)^{-m}\right)^n \\
+	&= \left((g\1)\1)^m\right)^n \\
+	&= (g^m)^n \\
+	&= g^{mn} \\[-1pt]
+	&= g^{(-m)(-n)}. \tag{1.2}
+\end{align*}
+\qed
+\end{frame}
+
+% % %
+\begin{frame}
+\exeSol{exe:negExpD4}
+%\textbf{Solution:} 
+In $D_4$, all negative exponents of $e$ are equal to $e$.  For the other elements, since the positive exponents are cyclic, so are the negative exponents.
+\begin{tabular}{p{0.4\textwidth}p{0.4\textwidth}}
+{\begin{align*}
+r\1 &= r^3 \\
+r^{-2} &= (r^2)\1 = r^2 \\
+r^{-3} &= (r^3)\1 = r \\
+r^{-4} &= (r^4)\1 = e \\
+	&\;\;\vdots
+\end{align*}
+} & {\begin{align*}
+s\1 &= s \\
+s^{-2} &= (s^2)=e \\
+(rs)\1 &= r\1s\1 =r^3s \\
+(rs)^{-2} &= (r^3s)^2 = e \\
+(r^2s)\1 &= r^2s \\
+(r^2s)^{-2} &= (r^2s)^2=e \\
+(r^3s)\1 &= rs \\
+(r^3s)^{-2} &= (rs)^2 = e
+\end{align*}
+}
+\end{tabular}
+\qed
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % %
+\end{document}
