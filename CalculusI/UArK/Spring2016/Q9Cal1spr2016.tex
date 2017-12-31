@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+\usepackage{graphicx,tikz}	
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usetikzlibrary{calc}
+\usepackage{array, multicol}
+\usepackage{amsmath}
+
+%\everymath{\displaystyle}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\addtolength{\headheight}{2.92\baselineskip}
+	\lhead{\bf Quiz 9: L'H\^opital's Rule and Antiderivatives \\
+		\S 4.7, 4.9 
+		}
+	\rhead{\bf MATH 2554 (Calculus I) \\
+		%\vspace{0.5pc}
+		due Tues 19 Apr 2016}
+	\rfoot{Quiz 9 p.\thepage\ (of \pageref{LastPage})}
+	}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\title{%\flushleft\vspace{-1.5pc}\Large
+	%\bf Quiz 1: The Idea of Limits ($\textstyle\oint$2.1-2.2)
+	}
+\author{}
+\date{}
+
+\rfoot{Quiz 9 p.\thepage\ (of \pageref{LastPage})}
+
+% % % % %
+\begin{document}
+\maketitle
+
+\vspace{-7pc}
+\noindent{\bf Directions:} This quiz is due on Tuesday, 19 April, 2016 at the beginning of your drill.  You may use your brain, notes, book, or other humans to complete your work.  \textbf{Your solutions must be on a separate sheet of paper, in order, stapled, de-fringed, and legible with your name on the top right corner of the first page.}  If you fail to meet any of these requirements, you will receive a zero.  Each question is worth one point, and will be graded as correct or not correct (all or nothing).
+
+\noindent\hrulefill
+
+\begin{enumerate}
+% % %
+\item {\bf (1 pt ea)} Compute the following limits:
+\begin{enumerate}
+	\item $\lim_{\theta\to 0}(\csc{\theta}-\cot{\theta}$)
+	\item $\lim_{u\to 1}\frac{u^{10}-1}{12u-12}$
+\end{enumerate}
+
+
+% % %
+\item The compound interest formula is
+$A(t)=A_0\left(1+\frac{r}{n}\right)^{nt}$, where 
+\begin{align*}
+A_0 &= \text{ the initial dollar amount, called the \textbf{principal},} \\
+r &= \text{ the annual, or \textbf{nominal}, interest rate (expressed as a decimal),} \\
+n &= \text{ the number of times interest is compounded per year, and} \\t &= \text{ years.}
+\end{align*}
+\begin{enumerate}
+	\item In practice, interest is typically compounded yearly ($n=1$), half-yearly ($n=2$), quarterly ($n=4$), monthly ($n=12$), weekly ($n=52$), or daily ($n=365$).  In theory, $n$ can become arbitrarily large.  
+	
+	{\bf (1 pt)} How does the compound interest forumla change when $n\to\infty$?
+	\vspace{0.5pc}
+	
+	\item Any annual interest rate $r$ with compound frequency $n$ can be expressed as a continuously compounded interest rate $r_0=n\ln{\left(1+\frac{r}{n}\right)}$.  
+	
+	{\bf (1 pt)} Which credit card contract is better for the credit card company: $12\%$ annual interest rate compounded monthly, or $13\%$ annual interest rate compounded yearly?
+\end{enumerate}
+
+% % %
+\item {\bf (1 pt)} Sometimes L'H\^opital's Rule just won't work.  Try it with the following limit:
+\[
+\lim_{x\to\infty}\frac{x}{\sqrt{x^2+1}}
+\]
+What should the limit be (and why)?
+
+% % %
+\item {\bf (1 pt)} Exponential functions will always grow faster than power functions.  To see why, find $\displaystyle\lim_{x\to\infty}\frac{b^x}{x^n}$, assuming $b>0$.  
+
+\emph{Hint: Since $b$ and $n$ are not given, compute the limit for a few small cases first, e.g., $n=2,3,4$, and then find the pattern.}
+
+% % %
+\item Here you will derive the position function $s(t)$ for an object tossed into the air.  Recall that the velocity function is $v(t)=s'(t)$ and the acceleration function is $a(t)=s''(t)$.  Assume ``up" is the positive direction.  Acceleration is due to gravity, $g$ (e.g., -9.8 m/s$^{\text{2}}$ or -16 ft/s$^{\text{2}}$).  The initial velocity of the object is written $v(0)=v_0$ and the height from which the object is tossed is $s(0)=h$.  
+\begin{enumerate}
+	\item {\bf (1 pt)} To get the position function, solve the initial value problem: Find $s(t)$, given $s''(t)=g$, $s'(0)=v_0$, and $s(0)=h$. 
+	\item {\bf (1 pt)} If we include air resistance, the formula gets more complicated.  The velocity function in this case is
+	\[
+	v(t)=\frac{-mg}{\beta}+\left(\frac{mg}{\beta}+v_0\right)e^{\frac{-\beta}{m}t},
+	\]
+	where $m$ is the mass of the object and $\beta$ is a constant called the {\bf drag coefficient}.  Using $s(t)=\int v(t)\ dt$ and $s(0)=h$, rewrite the position function with air resistance.
+\end{enumerate}
+
+% % %
+\item The constant of integration $C$ matters.  Let $f(x)=2x$.
+\begin{enumerate}
+	\item {\bf (1 pt)} Evaluate $\int f(x)\ dx$.
+	\item {\bf (1 pt)} Let $F$ denote your answer to (a).  Solve each of the initial value problems
+		\begin{itemize}
+		\item $F(0)=8$
+		\item $F(1)=1$
+		\end{itemize}
+	and draw the graphs for both on the same axes.	
+\end{enumerate}
+
+% % % % %
+\end{enumerate}
+\end{document}

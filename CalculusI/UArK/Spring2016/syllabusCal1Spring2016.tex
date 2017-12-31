@@ -1,0 +1,249 @@
+\documentclass[margin,line,pifont,palatino,courier]{res}
+
+\usepackage{pifont}
+\usepackage[latin1] { inputenc}
+\usepackage{dtklogos}
+\usepackage{supertabular}
+\usepackage{url}
+
+\textheight=9.0in
+%\itemsep=0in
+%\parsep=0in
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\cfoot{}
+\lfoot{}
+\rfoot{{\footnotesize Cal I Spring 2016 Syllabus, p. \thepage}}
+
+\newenvironment{list1}{
+  \begin{list}{\ding{113}}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
+      \setlength{\leftmargin}{0.17in}}}{\end{list}}
+\newenvironment{list2}{
+  \begin{list}{$\bullet$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
+      \setlength{\leftmargin}{0.2in}}}{\end{list}}
+
+\begin{document}
+
+\name{Math 2554 -- Calculus I 
+\newline
+{\small Last updated: \today} \hspace{0.1\textwidth} {\LARGE SYLLABUS} \hspace{0.185\textwidth} Spring 2016 \vspace{0.05in}}
+
+\begin{resume}
+
+\section{\sc Instructor}
+
+\vspace{.05in}
+\begin{tabular}{@{}p{2.6in}p{4in}}
+Dr. Ashley K. Wheeler & Office: Science-Engineering (SCEN) 356 \\
+Visiting Assistant Professor & Email: \verb+ashleykw@uark.edu+ \\
+Department of Mathematical Sciences & 
+\end{tabular}
+
+%\vspace{-.1in}
+%%%
+\section{\sc Office Hours}
+MW 9:30-11:30a, F 9:30-10:30a, OR BY APPOINTMENT
+
+%\vspace{-.1in}
+%%%
+\section{\sc Course Location \\ and Time} \textbf{\underline{Lecture:}} \\
+MATH 2554C-004 (5619): SCEN 101, MWF 8:35-9:25a \\
+MATH 2554C-005 (6457): JBHT 144, MWF 2-2:50p \\
+I teach two sections of Cal I this semester; you are welcome to attend whichever you like but seating is reserved for those enrolled in that section.
+
+\textbf{\underline{Drill:}}  \\
+Drill sections vary; see your drill instructor for location and time.  {\bf You are not allowed to attend alternate drill sections without permission from your drill instructor.  (S)he reserves the right to say no.}
+
+%\vspace{-.1in}
+%%%
+\section{\sc Webpages}
+\begin{list1}
+\item \verb+comp.uark.edu/~ashleykw/Cal1Spring2016/cal1spr16.html+ 
+\item MyLabsPlus:  \verb+uark.bb.mylabsplus.com+ 
+\end{list1}
+
+%\vspace{-.1in}
+%%%
+\section{\sc Required Materials}
+\begin{list1}
+\item MYLABSPLUS (MLP) Student Access Kit 
+\item Turning Technologies response card (clicker)
+\end{list1}
+
+%\vspace{-.1in}
+%%%
+\section{\sc Textbook} \emph{Calculus: Early Transcendentals, Second Edition}, William Briggs, Lyle Cochran, Bernard Gillett, 2015, Pearson. \\
+An electronic copy is included in the MLP kit.  The hard version of the book {\bf is not required}.   
+
+%\vspace{-.1in}
+%%%
+\section{\sc Software} The \emph{MYLABSPLUS (MLP) Student Access Kit} {\bf is required} for this class. If you took Cal I at UArk within the past year or so, you shouldn't need to purchase the kit. To log in to MLP, 
+\begin{list1} 
+\item Go to \verb+http://uark.bb.mylabsplus.com+. 
+\item Find and click the "Forgot your password" link (If you've used MLP before and remember your password, you can skip this step).
+\item Enter the first part of your uark email address in the box labeled "User ID:" (e.g., if you were mathstudent@uark.edu, you would enter "mathstudent").  
+\item Check your email for a message with the subject "Password Reset Information" from PasswordReset@ResetCredentials.com, and follow the directions in the email.
+\item \textbf{\underline{Troubleshooting:}} 
+	\begin{list2}
+	\item If your login fails, check that you typed in the correct URL. 
+	\item If you are able to open your course but you are not able to access your assignments, please try again.  
+	\item After trying a few times, if you still receive some type of an error message,
+		\begin{list2}
+		\item contact the MLP Technical Support line at 888-883-1299 (available 24/7), or 
+		\item click on the Support Tab and then click on the email address. 
+		\end{list2}
+	If you contact the company then make sure they give you a case number and keep that number in case it is needed for verification. 
+	\item Be sure your browser will support the MLP software.  Most importantly, {\bf RUN THE BROWSER CHECK} once you get started. On-campus assistance is available in the Mathematics Resource and Teaching Center (MRTC), located on the third floor of Champions Hall.  The MRTC webpage is \url{http://fulbright.uark.edu/departments/math/mrtc/index.php}. 
+	\item From time to time, you may receive messages that your session has timed out. To resolve this issue, either 
+		\begin{list2}
+		\item delete the cookies from your computer or 
+		\item try logging in with a different browser (e.g., Chrome, Firefox, Safari, etc.).
+		\end{list2}
+	\end{list2}	
+\end{list1}
+
+%\vspace{-0.1in}
+%%%
+\section{\sc Calculators} Sliderules are permitted, but not required.  If you prefer to use a calculator, then we recommend the TI-30X IIS.  Calculators are not required and in fact, the following are not allowed during any tests, exams, or quizzes:
+\begin{list2} 
+\item programmable graphing calculators of any kind
+\item HP300s 
+\item Casio fx115m 
+\item any calculator with a differentiation/integration button 
+\end{list2} 
+\vspace{-0.1in}
+If you have a graphing calculator, you may use it for in-class investigations and on HW.
+
+%\vspace{-.1in}
+%%%
+\section{\sc Decorum} Cell phones, palm pilots, Blackberries, iPods, etc. must remain silent during classtime.  Keep them \textbf{discreet} unless you are using such a device for notetaking.  No earphones or headsets allowed.
+
+\vspace{-0.1in}
+I will do my best to start on time and not lecture past the end of classtime.  In return, if for whatever reason you end up late to class or if you need to leave during lecture, for example, to use the restroom, please do so as discreetly as possible.  Rolling in late and/or packing up early is \textbf{not cool}, as the noise distracts and sabotages your classmates' learning investment in the course.  
+
+%\vspace{-.1in}
+%%%
+\section{\sc Grading} There will be 850 points available as follows:
+
+\vspace{-.2in}
+\begin{center}
+\begin{supertabular}{@{}p{0.6\textwidth} l}
+	{\bf Homework \& Attendance} & 100 points \\
+	This score is given by your MLP homework average.  Here is how attendance factors in: for every 7 {\it unexcused} absences (drill or lecture), your homework/attendance score drops 10 points (i.e., a letter grade).  Attendance is required for both lecture and drill. \\
+	& \\[-0.1in]	
+	{\bf Quizzes \& Drill Exercises} & 100 points \\[-0.1in]
+%	\hspace{5pt} Take the average of your top 12 quizzes/drill exercises, out of $\sim$15. & \\
+ & \\
+	{\bf In-Class Exams} & 75 points $\times 4$ \\[-0.1in]
+ & \\
+	{\bf Mid-Term (departmental)} & 150 points \\[-0.1in] 
+ & \\
+	{\bf Final (departmental \& comprehensive)} & 200 points \\
+ & \\
+\end{supertabular}
+\end{center}
+
+%\vspace{-.2in}
+%Letter grades will typically follow a 90-80-70-60 scale, although your instructor reserves the right to revise downward if necessary.  For example, a 90\% or higher will always guarantee an A, but there is a possibility an 89 or 88 might end up as an A.
+
+%\vspace{-.4in}
+%%%
+\section{\sc Homework} Book problems assigned are not for a grade -- be prepared for this to be a true exercise in self-motivation and discipline.  It is a fact that those who do these problems do better in the course.  You are welcome to email me or come to office hours if you would like informal feedback on your work.%  Regardless, you will find -- the hard way or the easy way -- that spending a {\bf minimum of 2 hours per class period} on the written homework is way more sensible than you may think right now.     
+
+The {\bf graded} homework is assigned weekly and done entirely through MLP.  The general trend will be that the computer homework for the week becomes live on Monday morning and closes Sunday evening at midnight.  After that deadline the computer homework will not be available.  Beware, MLP has a "tendency" to crash on Sunday evenings.  If this happens and you miss the deadline you \textbf{won't} be excused.  
+
+%\vspace{-.1in}
+%%%
+\section{\sc Attendance}% and \\ Class Participation} 
+Lecture AND drill attendance are part of your grade.  Attendance will be taken in lecture using the clicker.  You are required to purchase a Turning Technologies response card (the clicker), unless you have previously purchased one for another class.  Clickers are sold at the University bookstore, {\bf behind the counter}.  Bring your clicker to class every day.  Instructions on how to use it will come in class -- \textbf{do not worry about registering it on Blackboard.}
+
+\vspace{-0.1in}
+Your homework score will drop 10 points for every 7 unexcused absences, from either lecture or drill.  %Work that is contingent upon being in class that is collected (e.g., in class activities, unannounced quizzes) {\bf cannot be made up}.  
+
+%\vspace{-.1in}
+%%%
+\section{\sc Quizzes and \\ Drill Exercises} There will be weekly quizzes/drill exercises.  The questions should very closely reflect the book problems.  Drill exercises cannot be made up.  Quizzes are generally take-home.  The grading on quizzes is all-or-nothing, meaning that even if your answer is "technically" correct, a small mistake or notation error will cost you credit for the problem.  %Most quizzes will be announced in advance and conducted in drill.  Unannounced, or ``pop" quizzes can occur during drill or lecture.  {\bf There are no make-ups for pop quizzes.} However, in your final grade, I will take the average percent of your top 12 quizzes, out of $\sim$15.   
+
+%\vspace{-.1in}
+%%%
+\section{\sc Exams} Your section will have {\bf four 50-minute exams} throughout this semester, written by your instructor, {\bf plus two longer, course-wide exams}.  Dates for the 50-minute exams are TBA (keep an eye on the schedule, posted on my webpage).  The course-wide exams are written by the course team.  Locations for the course-wide exams are TBA.  
+
+\vspace{-0.05in}
+{\bf
+\begin{tabular}{llll}
+TUESDAY, 8 MARCH & MIDTERM EXAM & 6-7:30p & 150 pts \\
+MONDAY, 9 MAY & FINAL EXAM & 6-8p & 200 pts \\
+\end{tabular} 
+}
+
+\vspace{-.1in}
+These exams are scheduled before the semester begins, so {\bf ELIMINATE ANY CONFLICTS NOW.} Students who are entitled to accommodation by ADA must notify their instructor, who must then notify the coordinator at least one full week in advance. Students who have a legitimate University-related conflict ($=$ same time as another University exam) with the midterm or final exam must also identify themselves at least a week in advance. Last minute requests for make-up exams may not be granted, for administrative reasons (e.g., deadlines for entering grades). 
+
+%\vspace{-.1in}
+%%%
+\section{\sc Accommodations} Under University policy and federal and state law, students with documented disabilities are entitled to reasonable accommodations to ensure they receive an equal opportunity to perform in class.  If any member of the class has such a disability and needs special academic accommodations, please report to the Center for Educational Access (CEA).  Reasonable accommodations may be arranged after CEA has verified your disability.  Do not hesitate to contact me if any assistance is needed in the process.
+ 
+%\vspace{-.1in}
+%%%
+\section{\sc Academic Inegrity} 
+\begin{quote}
+As a core part of its mission, the University of Arkansas provides students with the opportunity to further their educational goals through programs of study and research in an environment that promotes freedom of inquiry and academic responsibility. Accomplishing this mission is only possible when intellectual honesty and individual integrity prevail.
+\end{quote}
+
+\vspace{-0.1in}
+University of Arkansas students are fully responsible for knowing and abiding by the University's Academic Integrity Policy.  See \url{http://provost.uark.edu/}. Students with questions about how these policies apply to a particular course or assignment should immediately contact their instructor.
+
+%\vspace{-.1in}
+%%%
+%\section{\sc Testing Lab \\ Academic Policy \\ (SCEN 203)} The use of cell phones and any personal media devices (including iPods, PDAs, personal calculators, etc.) in any of the testing labs is strictly prohibited. Turn off all these devices BEFORE entering the Testing Lab and store them with your other belongings. Do not take out or turn on these devices until you have left the Testing Lab. No belongings, including purses or backpacks, may be brought into the lab. There is space allotted for your belongings on the shelves in the Testing Lab or in the lockers outside of SCEN 203. A violation of this policy could result in a non-replaceable zero on the quiz/exam being taken. In addition, you might be required to report to the Office of Community Standards and Student Ethics (OCSSE). 
+%
+%{\bf The only items allowed at the testing machine are a pen/pencil and your University ID. Calculators and scratch paper are provided by the Testing Lab operator. }
+
+%\newpage
+%\vspace{-.1in}
+%%%
+\section{\sc Tutoring} There are free student tutors in the Enhanced Learning Center (Gregson Hall), Mullins Library, ENGR, Reid, Futrall, Maple Hill, and MRTC (CHPN 326). Visit their websites for the latest hours.  \textbf{New resource: Calculus Corner on the 4th floor of Champions Hall.}
+
+%\vspace{-.1in}
+%%%
+\section{\sc Inclement Weather Policy} {\bf Class meets unless the University is closed.}  Otherwise, on-campus students are expected to be present.  Off-campus students will only be excused on days the Fayetteville Public Schools are closed due to weather.  If attendance is severely affected by weather, deadlines and exam dates may be adjusted.  Please do not call the Department of Mathematical Sciences with weather-related inquiries.  You may email me for information.
+
+%\vspace{-.1in}
+%%%
+\section{\sc Emergency Procedures} Severe Weather (Tornado Warning):
+\begin{list2}
+\item Follow the directions of the instructor or emergency personnel.
+\item Seek shelter in the basement or interior room or hallway on the lowest floor, putting as many walls as possible between you and the outside.
+\item If you are in a multi-story building, and you cannot get to the lowest floor, pick a hallway in the center of the building.
+\item Stay in the center of the room, away from exterior walls, windows, and doors.
+\end{list2}
+
+Violence / Active Shooter (CADD):
+
+\vspace{-.25in}
+\begin{center}
+\begin{tabular}{@{}lp{0.8\textwidth}}
+{\bf \underline CALL} & 9-1-1 \\
+{\bf \underline AVOID} & If possible, self-evacuate to a safe area outside the building.  Follow directions of police officers. \\
+{\bf \underline DENY} & Barricade the door with desk, chairs, bookcases or any items.  Move to a place inside the room where you are not visible.  Turn off the lights and remain quiet.  Remain there until told by police it's safe. \\
+{\bf \underline DEFEND} & Use chairs, desks, cell phones or whatever is immediately available to distract and/or defend yourself and others from attack. \\
+\end{tabular}
+\end{center}
+
+\vspace{-.2in}
+More instructions for emergencies such as severe weather, active shooter, or fire can be found at \verb+emergency.uark.edu+.   
+
+%\vspace{-.1in}
+%%%
+\section{\sc Disclaimer} {\bf THIS SYLLABUS IS SUBJECT TO CHANGE. You will be notified in email, on MLP, and/or in class of changes. Failure to check your email and/or failure to read the announcements in MLP and/or failure to attend class will not constitute a reason to be allowed to make up any assignments, tests, or changes to the course.}
+
+\end{resume}
+\end{document}
