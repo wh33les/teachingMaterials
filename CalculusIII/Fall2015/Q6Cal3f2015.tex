@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{comment}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\addtolength{\topmargin}{-0.25in}
+\usepackage{graphicx}	
+\usepackage{array, multicol}
+\usepackage{amsmath,amsfonts}
+
+\everymath{\displaystyle}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\addtolength{\headheight}{2.92\baselineskip}
+	\lhead{\bf MATH 2574 (Calculus III) \\
+		Fall 2015 \\
+		}
+	\rhead{{Name:} \underline{\hspace{40ex}} \\
+		\vspace{0.5pc}
+		Thurs 8 Oct 2015}
+	\rfoot{Quiz 6 p.\thepage\ (of \pageref{LastPage})}
+	}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\title{\flushleft\vspace{-2.5pc}\Large
+	\bf Quiz 6: Directional Derivatives ($\textstyle\oint$12.4-12.6)}
+\author{}
+\date{}
+
+\rfoot{Quiz 6 p.\thepage\ (of \pageref{LastPage})}
+
+% % % % %
+\begin{document}
+\maketitle
+
+\vspace{-4pc}
+\noindent{\bf Directions:} You have 30 minutes to complete this quiz.  You may collaborate.  
+
+%\vspace{1pc}
+\begin{enumerate}[1.]
+\item The level curves of the surface $z=x^2+y^2$ are circles in the $xy$-plane centered at the origin.  
+	\begin{enumerate}%[(a)]
+	\item {\bf (1 pt)} In the $xy$-plane, draw and label the three level curves corresponding to $z_0=1,\sqrt{2},\text{ and }4$.  
+	\vspace{10pc}
+	\item {\bf (2 pts)} On the same picture, draw the gradient vector at the point $(1,1)$.
+	\item {\bf (2 pts)} Write down the gradient vector: $\langle \frac{\partial z}{\partial x},\frac{\partial z}{\partial y}\rangle=$
+	\vspace{1pc}
+	\end{enumerate}
+
+\item {\bf (2 pts)} Compute the directional derivative of $h(x,y)$, in the direction of the vector $\mathbf v$, at the point $(\ln 2,\ln 3)$, where 
+\[
+\mathbf v=\langle 1,1\rangle \quad\text{and}\quad h(x,y)=e^{-x-y}.
+\]
+{\it Hint: Make sure your answer has the correct magnitude!}
+
+\newpage
+\item Suppose our Sun is centered at the origin in $\mathbb R^3$ and some other star is a distance $r$ away, at the coordinates $(x,y,z)$.  The {\bf gravitational potential} between the two stars (or any two objects) is the function
+\[
+V(r)=\frac{-GMm}{r},
+\]
+where $G$ is the gravitational constant, and in this case $m$ denotes the mass of the Sun and $M$ denotes the mass of the other star.
+	\begin{enumerate}
+	\item {\bf (1 pt)} Write down $V$ as a function of $x,y,\text{ and }z$.
+	\vspace{3pc}
+	\item {\bf (2 pts)} The gravitational force between the two stars is the vector-valued function 
+	\[
+	\mathbf F=-\nabla V(x,y,z).
+	\]
+	Write down the magnitude $|\mathbf F|$ as a function of $r$.
+	\end{enumerate}
+\end{enumerate}
+% % % % %
+\end{document}

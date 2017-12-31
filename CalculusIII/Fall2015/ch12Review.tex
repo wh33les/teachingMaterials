@@ -1,0 +1,96 @@
+\documentclass[12pt]{beamer}
+\usetheme{Warsaw}
+\usecolortheme{beaver,lily}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{frametitle continuation}[from second][(cont.)]
+
+\setbeamerfont{section in toc}{size=\fontsize{10}{11}\selectfont}
+\setbeamerfont{subsection in toc}{size=\fontsize{8}{9}\selectfont}
+\setbeamerfont{subsubsection in toc}{size=\fontsize{6}{7}\selectfont}
+\setbeamercolor{section number projected}{bg=red!50!black,fg=white}
+\setbeamercolor{subsection in toc}{fg=red!50!black}
+\setbeamercolor{subsubsection in toc}{fg=black}
+\setbeamercolor{titlelike}{fg=red!50!black}
+\setbeamertemplate{subsection in toc}{
+	\inserttocsubsection
+	
+	} % don't get rid of the above line!
+\setbeamertemplate{subsubsection in toc}{
+	\hspace{1.5pc}
+	\textbullet\ \inserttocsubsubsection
+	
+	}
+	
+\usepackage{subfiles}
+\usepackage{multicol}
+\usepackage{url,hyperref}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+%\usetkzobj{all}
+\usepackage{comment}
+\usepackage{enumerate}
+
+% % %	
+\begin{comment}
+\AtBeginSubsection{
+	\begin{frame}{}\footnotesize
+	\begin{multicols}{2}
+	\tableofcontents[currentsubsection,hideothersubsections]
+	\end{multicols}
+	\end{frame}
+	}
+\end{comment}	
+% % %
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{que}{Question}
+\newtheorem{ex}{Example}
+\newtheorem{exe}{Exercise}
+\newtheorem{dfn}{Definition}
+
+\everymath{\displaystyle}
+
+% % % % % % % % % %
+\title[Cal III Fall 2015]{Calculus III (Math 2574)}
+\subtitle{Fall 2015}
+\author[Wheeler]{\footnotesize Dr. Ashley K. Wheeler}
+\institute{University of Arkansas}
+\date{\footnotesize{\it last updated:} \today}
+
+% % %
+\begin{document}
+
+%\frame{\titlepage}
+
+% % %
+%\begin{frame}[allowframebreaks=1.00]{Table of Contents}
+%\begin{multicols}{2}
+%\tableofcontents
+%\end{multicols}
+%\end{frame}
+
+% % %
+%\subsection{Fri 9 Oct}
+\begin{frame}[allowframebreaks]{Chapter 12 (Exam 2) Review}\footnotesize
+\begin{itemize}
+\item $\sim$7 questions
+\item Get comfortable with ``gnarly" computations.  The best way is to show work while practicing.  See Exam 1 solutions for other shortcuts in work.
+\item No calculators.  
+\item Equations of plane, intersection of planes.  Make sure you know relevant formulas (e.g., cross product).
+\item Recall how to parametrize lines and curves.
+\item What does the gradient vector represent?  Know the relationship between the gradient vector and the tangent plane.  
+\framebreak
+\item Linear approximation formula and how to use it.
+\item Chain Rule for functions of more than one variable.  Partial derivatives, when to use $\partial$ versus when to use $d$.  
+\item Make sure your notation is correct.
+\item Limits for functions of two variables.
+\item Equation of a tangent plane.
+\item Recognize graphs and/or contour plots.  You won't need to draw any graphs.
+\item Critical points, local maxima/minima, saddle points, Extreme Value Theorem.
+\end{itemize}
+\end{frame}
+
+\end{document}
