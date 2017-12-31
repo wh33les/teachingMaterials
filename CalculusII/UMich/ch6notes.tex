@@ -1,0 +1,94 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{pstricks, pst-node, pst-plot}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bv}{\mathbf}
+\newcommand{\lv}{\langle}
+\newcommand{\rv}{\rangle}
+
+\begin{document}
+\flushleft
+\begin{multicols}{2}
+
+
+\begin{large}\textbf{Math 116: Notes on Chapter 6 \\ 
+Last Updated: \today
+%Tue 11 Sep 2012
+}\end{large}
+
+%\textbf{Name:  }\underline{\hspace{35ex}}
+
+\vspace{.5in}
+
+\end{multicols}
+
+\pagestyle{empty}
+
+
+\flushleft
+
+%You have 15 minutes to complete this quiz.  Eyes on your own paper and good luck!
+
+\begin{enumerate}
+\item $\oint 6.1$ \#7: Estimate $f(x)$ for $x=2,4,6$, using the given values of $f'(x)$ and the fact that $f(0)=50$. \\
+\begin{center}
+\begin{tabular}{c|c|c|c|c}
+\hline
+$x$ & 0 & 2 & 4 & 6 \\ [0.5ex]
+\hline 
+$f'(x)$ & 17 & 15 & 10 & 2 \\ [0.5ex]
+\hline
+\end{tabular}
+\end{center} 
+\vspace{1pc}
+{\bf Solution:} Use the Fundamental Theorem of Calculus to get each of the values $f(2),f(4),f(6)$.
+\begin{align*}
+\int_0^2f'(x)dx &= f(2)-f(0) \\
+\int_0^2f'(x)dx +f(0) &= f(2)
+\end{align*}
+We don't actually know the value of the integral, but with the information given we can estimate using one rectangle.  In computing a Riemann sum, $n=1$, $\Delta t=2$, $t_0=0$, and $t_1=2$.  The lefthand sum is
+\begin{align*}
+\sum_{i=0}^{n-1}f'(t_i)\cdot\Delta t &=\sum_{i=0}^0f'(t_i)\cdot 2 \\
+&= f'(t_0)\cdot 2 \\
+&= f'(0)\cdot 2 \\
+&= 34.
+\end{align*}
+The righthand sum is
+\begin{align*}
+\sum_{i=1}^{n}f'(t_i)\cdot\Delta t &=\sum_{i=1}^1f'(t_i)\cdot 2 \\
+&= f'(t_1)\cdot 2 \\
+&= f'(2)\cdot 2 \\
+&= 30.
+\end{align*}
+Averaging the two, we get an estimate $\int_0^2f'(x)dx\approx 32$.  Going back to the FTOC formula, we can use the fact that $f(0)=50$ to get 
+\[f(2)\approx 32+50=82.\]
+To compute the other values, it does not matter which bounds $a,b$ we choose when we apply the FTOC.
+\[f(4)=\int_2^4f'(x)dx+f(2)\]
+We use Riemann sums again over one rectangle, so $n=1$, $\Delta t=2$, $t_0=2$, and $t_1=4$.  For the lefthand sum we get $f'(2)\cdot 2=30$ and for the righthand sum we get $f'(4)\cdot 2=20$.  Taking the average, we get $25\approx\int_2^4f'(x)dx$.  Then we get the estimate
+\[f(4)\approx 25+82=107.\]
+Finally, computing $f(6)$ in the same way, we get
+\[f(6)\approx 119.\]
+
+\item Definite Integrals vs. Indefinite Integrals. \\
+In Chapter 5 we learned about the definite integral $\int_a^bf(x)dx$ and used techniques like Riemann sums and the FTOC to compute it.  In practice, we almost never know a formula for an antiderivative $F$ of $f$.  Chapter 5 is full of examples where this happens and all we can compute are the specific values $F(a)$ and $F(b)$.
+
+In Chapter 6 we learn that if we know a formula for an antiderivative $F$ then any vertical shift by a number $C$ will also give an antiderivative.  We express this by introducing a {\it different} symbol, the indefinite integral:
+\[\int f(x)dx=F(x)+C\]
+The indefinite integral is not a number; notice how there are no bounds $a$ and $b$ and we don't have anything to compute.  Rather, the indefinite integral is a generalized function of $x$.  We say generalized because for every number we use for $C$ we get a different function.  Writing the antiderivative in this form shows that we are talking about them all.  The indefinite integral gives another technique for computing definite integrals.  
+
+To summarize, the symbol 
+\[\int_a^bf(x)dx\]
+is a value, usually a number (in some cases we'll have problems where we get a function of another variable but the point is there should be no $x$s in the answer).  Here is where you plug in things for $a$ and $b$ and compute $F(b)-F(a)$.  On the other hand, the symbol
+\[\int f(x)dx\]
+is just an expression for the family of functions $F(x)+C$.  It is not a number and there is nothing to compute.
+
+\end{enumerate}
+
+\end{document}
+
+

@@ -1,0 +1,283 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{pstricks, pst-node, pst-plot}
+
+\ifx\pdfoutput\undefined
+% we are running LaTeX, not pdflatex
+\usepackage{graphicx}
+\else
+% we are running pdflatex, so convert .eps files to .pdf
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\fi
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bv}{\mathbf}
+\newcommand{\lv}{\langle}
+\newcommand{\rv}{\rangle}
+
+\begin{document}
+\flushleft
+\begin{multicols}{2}
+
+
+\begin{large}\textbf{Math 116: Extra Credit on Differential Equations ($\oint 11.6$) \\ 
+\begin{flushright} due: Tue 30 Oct 2012 \end{flushright}
+}\end{large}
+
+%\textbf{Name:  }\underline{\hspace{35ex}}
+
+\vspace{.5in}
+
+\end{multicols}
+
+\pagestyle{empty}
+
+
+\flushleft
+
+\begin{enumerate}
+\item \#1: A bank account that earns $10\%$ interest compounded continuously has an initial balance of zero.  Money is deposited into the account at a constant rate of \$1000 per year.
+\begin{enumerate}
+\item Write a differential equation that describes the rate of change of the balance $B=f(t)$.
+\item Solve the differential equation to find the balance as a function of time.
+\end{enumerate}
+
+{\bf Solution:} (a) Since interest is compounded continuously, at any instantaneous moment the change in balance will be an additional 10\% of that moment's balance, or $0.1B$.  Then add the \$1000 per year to get the differential equation
+\[\frac{dB}{dt}=0.1B+1000.\]
+(b) The differential equation is separable; 
+\begin{align*}
+\frac{dB}{dt} &=0.1B+1000 \\
+\frac{dB}{0.1B+1000} &= dt \\
+10\int\frac{1}{u} &= \int dt \\
+\text{(by setting $u=0.1B+1000$)} & \\
+10\ln|0.1B+1000| &= t+\text{Constant} \\
+\ln|0.1B+1000| &= \frac{t}{10}+\text{Constant} \\
+&\text{ (the $\frac{1}{10}$ gets absorbed in the Constant)}\\
+0.1B+1000 &=(\text{Constant})\cdot e^{\frac{t}{10}} \\
+&\text{(the $e^{\text{Constant}}$ and the $\pm$ all are absorbed into one Constant)} \\
+0.1B &=(\text{Constant})\cdot e^{\frac{t}{10}}-1000 \\
+B &= (\text{Constant})\cdot e^{\frac{t}{10}}-10000.
+\end{align*}
+(Note:  In this problem we don't have to worry about the equilibrium solution $B=-10000$ because the initial value is zero.)  We can find the value of the Constant now because we are told the initial balance is zero.  That means
+\begin{align*}
+0 &= (\text{Constant})\cdot e^{\frac{0}{10}}-10000 \\
+10000 &= \text{Constant}
+\end{align*}
+and so the balance is
+\[B(t)=10000e^{\frac{t}{10}}-10000\quad\text{dollars,}\]
+where $t$ is measured in years. 
+
+\item \#2: A deposit is made to a bank account paying 8\% interest compounded continuously.  Payments totaling \$2000 per year are made from this account.
+\begin{enumerate}
+\item Write a differential equation for the balance, $B$, in the account after $t$ years.
+\item Write the solution to the differential equation.
+\item How much is in the account after 5 years if the initial deposit is (i) \$20,000?   (ii) \$30,000?
+\end{enumerate}
+
+{\bf Solution:} (a) The differential equation is similar to the one in Problem 1, except payments are made from the account, so we subtract 2000.
+\[\frac{dB}{dt}=0.08B-2000\]
+(b) Solving as in Problem 1, we get the general solution
+\[B=(\text{Constant})\cdot e^{0.08t}+25000\]
+(unless $B=-25000$, which is the equilibrium solution).
+
+(c) (i) An initial balance of \$20,000 means $B(0)=20000$.  We use this to find the Constant in Part (b):
+\begin{align*}
+20000 &=(\text{Constant})\cdot e^{0.08(0)}+25000 \\
+-5000 &= \text{Constant}
+\end{align*}
+Now to find the balance after 5 years, we plug in $t=5$:
+\begin{align*}
+B(5) &= -5000e^{0.08(5)}+25000 \\
+&\approx \$\,17,540.88
+\end{align*}
+(ii) This time $B(0)=30000$.  Solving for the Constant we get
+\begin{align*}
+30000 &=(\text{Constant})\cdot e^{0.08(0)}+25000 \\
+5000 &= \text{Constant}.
+\end{align*}
+Then, as in (i), we plug $t=5$ into the formula $B(t)$, with Constant = 5000.
+\begin{align*}
+B(5) &= 5000e^{0.08(5)}+25000 \\
+&\approx \$\,32,459.12
+\end{align*}
+
+\item \#3: At time $t=0$, a bottle of juice at $90^{\circ}$F is stood in a mountain stream whose temperature is $50^{\circ}$F.  After 5 minutes, its temperature is $80^{\circ}$F.  Let $H(t)$ denote the temperature of the juice at time $t$, in minutes.
+\begin{enumerate}
+\item Write a differential equation for $H(t)$ using Newton's Law of Cooling.
+\item Solve the differential equation.
+\item When will the temperature of the juice have dropped to $60^{\circ}$F?
+\end{enumerate}
+
+{\bf Solution:} (a) From p. 573, Newton's Law of Cooling says an object's temperature changes in proportion to the difference between its temperature and that of its surroundings.  Here, the bottle of juice is the object and has temperature $H^{\circ}$, and the surroundings refer to the mountain stream, whose temperature is $50^{\circ}$.  The differential equation is
+\[\frac{dH}{dt}=A(H-50),\]
+where we let $A$ denote the constant of proportionality. \\    
+(b) First find the general solution using the separable differential equation
+\begin{align*}
+\frac{dH}{dt} &=A(H-50) \\
+\int\frac{dH}{H-50} &= \int Adt \\
+\ln|H-50| &=At+\text{Constant} \\
+H &=(\text{Constant})\cdot e^{At}+50.
+\end{align*}
+The equilibrium solution $H=50$ corresponds to the case where the juice starts at $50^{\circ}$ instead of $90^{\circ}$.  (This makes sense because then it would be the same temperature as the stream, and should not change.)  
+
+Notice there are two constants in the general solution, which suggests we will need enough information to write two equations in order to solve for them.  We know the juice starts at $90^{\circ}$, meaning $H(0)=90$.  Plugging this in we get  
+\begin{align*}
+90 &= (\text{Constant})\cdot e^{A\cdot 0}+50 \\
+40 &= \text{Constant}.
+\end{align*}
+We're also told the temperature is $80^{\circ}$ after 5 minutes, meaning $H(5)=80$.  Using this information, we get 
+\begin{align*}
+80 &= 40e^{A\cdot 5}+50 \\
+\frac{30}{40} &= e^{5A} \\
+\ln\left(\frac{3}{4}\right) &= 5A \\
+\frac{1}{5}\ln\left(\frac{3}{4}\right) &= A. 
+\end{align*}
+Therefore the solution is
+\begin{align*}
+H(t) &= 40e^{\left(\frac{1}{5}\ln\frac{3}{4}\right)t}+50 \\
+&= 40\left(e^{\ln\frac{3}{4}}\right)^{\frac{t}{5}}+50 \\
+&= 40\left(\frac{3}{4}\right)^{\frac{t}{5}}+50.
+\end{align*}
+(c) Solve for $t$ when $H=60$.  In this case it is easier to use the form of the equation containing the Euler constant $e$:
+\begin{align*}
+60 &=40\left(e^{\ln\frac{3}{4}}\right)^{\frac{t}{5}}+50 \\
+\frac{10}{40} &= \left(e^{\ln\frac{3}{4}}\right)^{\frac{t}{5}} \\
+\left(\frac{1}{4}\right)^5 &=\left(e^{\ln\frac{3}{4}}\right)^t \\
+\frac{1}{4^5} &= \left(e^{t\ln\frac{3}{4}}\right) \\
+\ln\left(\frac{1}{4^5}\right) &= t\ln\frac{3}{4} \\
+t &= \frac{\ln\left(\frac{1}{4^5}\right)}{\ln\frac{3}{4}} \\
+&\approx 24.094\quad\text{minutes.}
+\end{align*}
+
+\item \#4: The velocity, $v$, of a dust particle of mass $m$ and acceleration $a$ satisfies the equation
+\[ma=m\frac{dv}{dt}=mg-kv,\quad\text{where $g,k$ are constant.}\]
+By differentiating this equation, find a differential equation satisfied by $a$.  (Your answer may contain $m,g,k,$ but not $v$.)  Solve for $a$, given that $a(0)=g$.
+
+{\bf Solution:} First, differentiate using implicit differentiation:
+\begin{align*}
+\frac{d}{dt}(ma) &= \frac{d}{dt}(mg-kv) \\
+m\frac{d}{dt}a &= \frac{d}{dt}(mg)-\frac{d}{dt}(kv) \\
+&= 0-k\frac{d}{dt}v \\
+m\frac{da}{dt} &= -k\frac{dv}{dt}
+\end{align*}
+We can replace $\frac{dv}{dt}$ with the expression that was given, so 
+\begin{align*}
+m\frac{da}{dt} &= -k\left(\frac{mg-kv}{m}\right) \\
+\frac{da}{dt} &= \frac{k}{m^2}(kv-mg).
+\end{align*} 
+We are not done, because we still have $v$ in the expression.  Again, use the given expression $ma=mg-kv$ to get 
+\[v=\frac{ma-mg}{-k}=\frac{m}{k}(g-a).\]
+Then
+\begin{align*}
+\frac{da}{dt} &= \frac{k}{m^2}\left(k\left(\frac{m}{k}(g-a)\right)-mg\right) \\
+&= \frac{k}{m^2}\left((mg-ma)-mg\right) \\
+&= -\frac{k}{m}a.
+\end{align*}
+The general solution is given by:
+\begin{align*}
+\frac{da}{dt} &= -\frac{k}{m}a \\
+\int\frac{da}{a} &= -\int\frac{k}{m}dt \\
+\ln{a} &= -\frac{k}{m}t+\text{Constant} \\
+a &= \text{Constant}\cdot e^{-\frac{k}{m}t}
+\end{align*}
+Apply the initial condition $a(0)=g$
+\begin{align*}
+g &= \text{Constant}\cdot e^{-\frac{k}{m}\cdot 0} \\
+&= \text{Constant}
+\end{align*}
+to get the solution:
+\[a(t)=ge^{-\frac{k}{m}t}\]
+
+\item \#7: A bank account earns 5\% annual interest compounded continuously.  Continuous payments are made out of the account at a rate of \$12,000 per year for 20 years.
+\begin{enumerate}
+\item Write a differential equation describing the balance $B=f(t)$, where $t$ is in years.
+\item Solve the differential equation given an initial balance of $B_0$.
+\item What should the initial balance be such that the account has zero balance after precisely 20 years?
+\end{enumerate}
+
+{\bf Solution:} (a) This problem is similar to earlier ones, except we only have information for the first 20 years:
+\[\frac{dB}{dt}=0.05B-12000\quad\text{ for }0\leq t\leq20\] 
+(b) Solving as before,
+\[B=(\text{Constant})\cdot e^{0.05t}+240000\quad\text{ for }0\leq t\leq20\]
+and we use the initial condition $B(0)=B_0$ to get
+\begin{align*}
+B_0 &= \text{Constant}+240000 \\
+B_0-240000 &=\text{Constant}.
+\end{align*}
+The solution is
+\[B(t)=(B_0-240000)e^{0.05t}+240000\quad\text{ for }0\leq t\leq20.\]
+(c) We must solve for $B_0$, given $B(20)=0$:
+\begin{align*}
+0 &= (B_0-240000)e^{0.05(20)}+240000 \\
+\frac{-240000}{e^{0.05(20)}}+240000 &= B_0 \\
+B_0 &\approx \$151,708.93.
+\end{align*}
+
+\item \#8: In some chemical reactions, the rate at which the amount of a substance changes with time is proportional to the amount present.  For example, this is the case as $\delta$-glucono-lactone changes into gluconic acid.
+\begin{enumerate}
+\item Write a differential equation satisfied by $y$, the quantity of $\delta$-glucono-lactone present at time $t$.
+\item If 100 grams of $\delta$-glucono-lactone is reduced to 54.9 grams in one hour, how many grams will remain after 10 hours?
+\end{enumerate}
+
+{\bf Solution:} (a) The amount of $\delta$-glucono-lactone is given by $y$ grams, so we get
+\[\frac{dy}{dt}=Ay,\]
+where $A$ denotes the constant of proportionality. \\  
+(b) We can set $t=0$ hours as the time at which there are 100 grams.  Then the information given means $y(0)=100$ and $y(1)=54.9$.  Solving as in previous problems, the general solution to the differential equation is $y=(\text{Constant})\cdot e^{At}$.
+
+The initial condition $y(0)=100$ gives us Constant = 100.  Then, using $y(1)=54.9$ and solving for $A$ we get $A=\ln{0.549}\approx -0.600$.  So to find out how much $\delta$-glucono-lactone remains after 10 hours, we plug $t=10$ into the solution $y(t)=100e^{t\ln(0.549)}$:
+\begin{align*}
+y(10) &= 100e^{10\ln(0.549)} \\
+&= 100e^{\ln(0.549^{10})} \\
+&= 100(0.549^{10}) \\
+&\approx 0.249 \text{ grams.}
+\end{align*}
+
+\item \#9: When the electromotive force (emf) is removed from a circuit containing inductance and resistance but no capacitors, the rate of decrease of current is proportional to the current.  If the initial current is 30 amps but decays to 11 amps after 0.01 seconds, find an expression for the current as a function of time.
+
+{\bf Solution:} Let $I$ denote current and $t$ denote time.  The statement ``the rate of decrease of current is proportional to the current" translates to 
+\[\frac{dI}{dt}=-\alpha I,\]
+where $\alpha$ denotes the constant of proportionality.  Solve to get $I=(\text{Constant})\cdot e^{-\alpha t}$.
+
+The first initial condition is given by the statement ``the initial current is 30 amps", which means $I(0)=30$.  We can plug this into the general solution to get Constant = 30.  The other initial condition is given by ``decays to 11 amps after 0.01 seconds", which translates to $I(0.01)=11$.  We can use this to solve for $\alpha$:
+\begin{align*}
+11 &= 30e^{-\alpha\cdot0.01} \\
+\ln\frac{11}{30} &= -0.01\alpha \\
+-100\ln\frac{11}{30}=\alpha
+\end{align*}
+Then the expression for current as a function of time is
+\begin{align*}
+I(t) &= 30e^{-100\ln\left(\frac{11}{30}\right)t} \\
+&= 30e^{\ln\left(\left(\frac{11}{30}\right)^{-100t}\right)} \\
+&= 30\left(\frac{11}{30}\right)^{-100t}.
+\end{align*}
+
+\item \#11: The rate (per foot) at which light is absorbed as it passes through water is proportional to the intensity, or brightness, at that point.
+\begin{enumerate}
+\item Find the intensity as a function of the distance the light has traveled through the water.
+\item If 50\% of the light is absorbed in 10 feet, how much is absorbed in 20 feet?  25 feet?
+\end{enumerate}
+
+{\bf Solution:} (a) Let $y$ denote the intensity of the light and $x$ denote the distance the light has traveled through the water.  The information given provides a differential equation satisfied by $y$,
+\[-\frac{dy}{dx}=\alpha y.\]
+The reason there is a minus sign is because absorption of light takes away from its intensity.  The solution is 
+\[y=(\text{Constant})\cdot e^{-\alpha x}.\]
+(b) Let $y_0$ denote the initial intensity.  Then plugging in $y(0)=y_0$ gives Constant = $y_0$.  If 50\% of the light is absorbed in 10 feet then equivalently, $y(10)=0.5y_0$.  Use this information to solve for $\alpha$; the $y_0$ cancels out so its value is independent of our calculations and we get $\alpha=-\frac{\ln{0.5}}{10}$.  Then the amount of light absorbed in 20 feet is the difference between the initial intensity, $y_0$, and the intensity after 20 feet, $y(20)$:
+\begin{align*}
+y_0-y(20) &= y_0-y_0e^{-\left(\frac{-\ln{0.5}}{10}\right)\cdot 20} \\
+&= y_0-y_0\left(e^{\ln{0.5}}\right)^{\frac{20}{10}} \\
+&= y_0-y_00.5^2 \\
+&=(1-0.25)y_0. 
+\end{align*}
+Thus the amount absorbed is $(1-0.25)y_0=0.75y_0$, or 75\%.  Similarly, the amount of light absorbed in 25 feet is
+\[y_0-y(25)=(1-0.5^{2.5})y_0\]
+so $(1-0.5^{2.5})y_0\approx 0.823y_0$, or 82.3\%.
+
+\end{enumerate}
+\end{document}
+
+
