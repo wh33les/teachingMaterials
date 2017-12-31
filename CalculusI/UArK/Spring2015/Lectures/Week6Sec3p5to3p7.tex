@@ -1,0 +1,458 @@
+\documentclass[14pt]{beamer}
+\usetheme{Warsaw}
+\usecolortheme{beaver}
+\usefonttheme{professionalfonts}
+
+\input{../../preamble}
+\usepackage{amscd,amsmath,amssymb,amsthm,graphicx}
+\usepackage[mathscr]{eucal}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage[normalem]{ulem}
+
+% % % % % % % % % %
+\title[Cal I S2015]{MATH 2554 (Calculus I)}
+\subtitle{}
+\author[Wheeler]{Dr. Ashley K. Wheeler}
+\institute{University of Arkansas}
+\date{\today}
+\logo{}
+
+% % %
+\begin{document}
+\maketitle
+
+% % %
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+% % % % % % % % % % Mon 16 Feb 2015
+
+% % %
+\begin{frame}
+\section[Week 6]{Week 6: 16-20 February}
+\frametitle{Monday 16 February (Week 6)}
+\begin{itemize}
+\item SNOW DAY (no class)
+\item Read $\oint 3.5$.  We begin $\oint 3.6$ on Wednesday.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\subsection[3.5 Derivatives as Rates of Change]{$\oint$ 3.5 Derivatives as Rates of Change}
+\frametitle{$\oint$ 3.5 Derivatives as Rates of Change}
+\small
+{\bf Position and Velocity}
+Suppose an object moves along a straight line and its location at time $t$ is given by the position function $s=f(t).$  
+
+\bigskip 
+
+The {\bf displacement} of the object between $t=a$ and $t=a+\Delta t$ is 
+$$\Delta s = f(a+\Delta t)-f(a).$$
+
+\bigskip
+
+Here $\Delta t$ represents how much time has elapsed.
+\end{frame}
+
+% % %
+\begin{frame}
+
+We now define average velocity as 
+$$\frac{\Delta s}{\Delta t}=\frac{f(a+\Delta t)-f(a)}{\Delta t}.$$
+
+\bigskip
+
+Recall that the limit of the average velocities as the time interval approaches 0 was the instantaneous velocity (which we denote here by $v$).  Therefore, the instantaneous velocity at $a$ is 
+$$v(a)=\lim_{\Delta t \to 0} \frac{f(a+\Delta t)-f(a)}{\Delta t} = f^{\prime}(a).$$
+\end{frame}
+
+% % %
+\begin{frame}
+
+In mathematics, speed and velocity are related but not the same:
+
+\bigskip
+
+If the {\it velocity} of an object at any time $t$ is given by $v(t)$, then the {\it speed} of the object at any time $t$ is given by 
+$$|v(t)|=|f^{\prime}(t)|.$$
+\end{frame}
+
+% % %
+\begin{frame}
+\small
+By definition, acceleration (denoted by $a$) is the instantaneous rate of change of the velocity of an object at time $t$.
+
+\bigskip
+
+Therefore,
+$$a(t)=v^{\prime}(t)$$
+and since velocity was the derivative of the position function $s=f(t)$, then 
+$$a(t)=v^{\prime}(t)=f^{\prime\prime}(t).$$
+
+\bigskip
+
+Summary:  Given the position function $s=f(t)$, the velocity at time $t$ is the first derivative, the speed at time $t$ is the absolute value of the first derivative, and the acceleration at time $t$ is the second derivative.
+\end{frame}
+
+% % %
+\begin{frame}
+
+Question:  Given the position function $s=f(t)$ of an object launched into the air, how would you know:
+
+\begin{itemize}
+
+\item[1.] The highest point the object reaches?
+
+\item[2.] How long it takes to hit the ground?
+
+\item[3.] The speed at which the object hits the ground?
+
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Growth Models}
+Suppose $p=f(t)$ is a function of the growth of some quantity of interest.  The average growth rate of $p$ between times $t=a$ and a later time $t=a+\Delta t$ is the change in $p$ divided by the elapsed time $\Delta t$:
+$$\frac{\Delta p}{\Delta t}=\frac{f(a+\Delta t)-f(a)}{\Delta t}.$$
+\end{frame}
+
+% % %
+\begin{frame}
+
+As $\Delta t$ approaches 0, the average growth rate approaches the derivative $\dfrac{dp}{dt}$, which is the instantaneous growth rate (or just simply the growth rate).  Therefore,
+$$\frac{dp}{dt}=\lim_{\Delta t \to 0} \frac{f(a+\Delta t)-f(a)}{\Delta t} = \lim_{\Delta t \to 0} \frac{\Delta p}{\Delta t}.$$
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Exercise}
+The population of the state of Georgia (in thousands) from 1995 ($t=0$) to 2005 ($t=10$) is modeled by the polynomial 
+$$p(t)=-0.27t^2+101t+7055.$$
+
+\begin{itemize}
+
+\item[1.] What was the average growth rate from 1995 to 2005?
+\item[2.] What was the growth rate for Georgia in 1997?
+\item[3.] What can you say about the population growth rate in Georgia between 1995 and 2005?
+
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Average and Marginal Cost}
+Suppose a company produces a large amount of a particular quantity.  Associated with manufacturing the quantity is a {\bf cost function} $C(x)$ that gives the cost of manufacturing $x$ items.  This cost may include a {\bf fixed cost} to get started as well as a {\bf unit cost} (or {\bf variable cost}) in producing one item.
+\end{frame}
+
+% % %
+\begin{frame}
+
+If a company produces $x$ items at a cost of $C(x)$, then the average cost is $\dfrac{C(x)}{x}.$
+
+\bigskip
+
+This average cost indicates the cost of items already produced.  Having produced $x$ items, the cost of producing another $\Delta x$ items is 
+$C(x+\Delta x)-C(x)$.  So the average cost of producing these extra $\Delta x$ items is 
+$$\frac{\Delta C}{\Delta x}=\frac{C(x+\Delta x)-C(x)}{\Delta x}.$$
+\end{frame}
+
+% % %
+\begin{frame}
+If we let $\Delta x$ approach 0, we have
+$$\lim_{\Delta x \to 0}\frac{\Delta C}{\Delta x}=C^{\prime}(x)$$
+which is called the {\bf marginal cost}.  
+
+\bigskip 
+
+The marginal cost is the approximate cost to produce one additional item after producing $x$ items.
+
+\bigskip
+
+{\bf Note:}  In reality, we can't let $\Delta x$ approach 0 because $\Delta x$ represents whole numbers of items.
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{Exercise}
+If the cost of producing $x$ items is given by 
+$$C(x)=-0.04x^2+100x+800$$
+for $0 \le x \le 1000$, find the average cost and marginal cost functions.  Also, determine the average and marginal cost when $x=500.$
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{HW from Section 3.5}
+Do problems 9--12, 17--18, 22--23, 27--37 odd (pp.\ 171--175 in textbook).
+\end{frame}
+
+% % % % % % % % % % Wed 18 Feb 2015
+
+% % %
+\begin{frame}
+\frametitle{Wednesday 18 February (Week 6)}
+\begin{itemize}
+\item Quiz 5 due tomorrow in drill.
+\item Exam 2 Friday 27 Feb (next week!)
+\item Midterm the following Tues.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\subsection[3.6 The Chain Rule]{$\oint$ 3.6 The Chain Rule}
+\frametitle{$\oint$ 3.6 The Chain Rule}
+\small
+Suppose that Yvonne ($y$) can run twice as fast as Uma ($u$). Therefore $$\dfrac{dy}{du}=2.$$  Suppose that Uma can run four times as fast as Xavier ($x$).  So 
+$$\dfrac{du}{dx}=4.$$
+
+\bigskip
+
+How much faster can Yvonne run than Xavier?
+
+\bigskip
+
+In this case, we would take both our rates and multiply them together:
+$$\frac{dy}{du} \cdot \frac{du}{dx}=2 \cdot 4 = 8.$$
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Version 1 of the Chain Rule}
+If $g$ is differentiable at $x$, and $y=f(u)$ is differentiable at $u=g(x)$, then the composite function $y=f(g(x))$ is differentiable at $x$, and its derivative can be expressed as 
+$$\frac{dy}{dx}=\frac{dy}{du} \cdot \frac{du}{dx}$$
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Guidelines for Using the Chain Rule}
+\small
+Assume the differentiable function $y=f(g(x))$ is given.
+\begin{itemize}
+\item[1.] Identify the outer function $f$, the inner function $g$, and let $u=g(x).$
+\item[2.] Replace $g(x)$ by $u$ to express $y$ in terms of $u$:
+$$y=f(g(x)) \implies y=f(u)$$
+\item[3.]  Calculate the product $\dfrac{dy}{du} \cdot \dfrac{du}{dx}$
+\item[4.] Replace $u$ by $g(x)$ in $\dfrac{dy}{du}$ to obtain $\dfrac{dy}{dx}.$
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\footnotesize
+{\bf Example:} Use Version 1 of the Chain Rule to calculate $\dfrac{dy}{dx}$ for $y=(5x^2 +11x)^{20}$.
+
+\begin{itemize}
+\item inner function: $u=5x^2+11x$ 
+\item outer function: $y=u^{20}$
+\end{itemize}
+
+\vspace{1pc}
+We have $y = f(g(x)) = (5x^2 +11x)^{20}$.  Differentiate:
+\begin{align*} 
+\dfrac{dy}{dx}= \dfrac{dy}{du}\cdot\dfrac{du}{dx} &= 20u^{19} \cdot (10x+11) \\
+ &=20(5x^2 +11x)^{19} \cdot (10x+11)
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+Use the first version of the Chain Rule to calculate $\dfrac{dy}{dx}$ for $$y=\left( \dfrac{3x}{4x+2} \right)^5.$$
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Version 2 of the Chain Rule}
+\small
+Notice if $y=f(u)$ and $u=g(x)$, then $y=f(u)=f(g(x))$, so we can also write:
+\begin{align*}
+\dfrac{dy}{dx} &= \dfrac{dy}{du} \cdot \dfrac{du}{dx} \\[0.75pc]
+ &= f^{\prime}(u) \cdot g^{\prime}(x) \\[0.75pc]
+ &= f^{\prime}(g(x)) \cdot g^{\prime}(x).
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}
+\footnotesize
+Use Version 2 of the Chain Rule to calculate $\dfrac{dy}{dx}$ for $y=(7x^4+2x+5)^9.$
+\begin{itemize}
+\item inner function: $g(x)=7x^4+2x+5$ 
+\item outer function: $f(u)=u^9$
+\end{itemize}
+Then
+\begin{align*}
+f^{\prime}(u) &= 9u^8 \implies f^{\prime}(g(x))=9(7x^4+2x+5)^8 \\
+g^{\prime}(x) &=28x^3+2.
+\end{align*}
+
+Putting it together,
+$$\frac{dy}{dx}=f^{\prime}(g(x)) \cdot g^{\prime}(x) = 9(7x^4+2x+5)^8 \cdot (28x^3+2)$$
+\end{frame}
+
+% % % 
+\begin{frame}
+\frametitle{Chain Rule for Powers}
+\small
+If $g$ is differentiable for all $x$ in the domain and $n$ is an integer, then
+$$\frac{d}{dx} \bigg[\left(g(x)\right)^n \bigg]=n(g(x))^{n-1} \cdot g^{\prime}(x).$$
+
+\vspace{1pc}
+Example:
+\begin{align*}
+\frac{d}{dx} \bigg[ (1-e^x)^4 \bigg] &= 4(1-e^x)^3 \cdot (-e^x) \\
+ &= -4e^x (1-e^x)^3
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}[t]
+\frametitle{Composition of 3 or more functions}
+\footnotesize
+Compute $\dfrac{d}{dx} \bigg[ \sqrt{(3x-4)^2 + 3x} \bigg]$.
+\begin{alignat*}{2}
+\dfrac{d}{dx} \bigg[ \sqrt{(3x-4)^2 + 3x} \bigg] &= \dfrac{1}{2} \big( (3x-4)^2 + 3x \big)^{-\frac{1}{2}} \cdot \dfrac{d}{dx} \big[ (3x-4)^2 + 3x \big] \\
+&= \dfrac{1}{2 \sqrt{ \big( (3x-4)^2 + 3x \big)}} \cdot \bigg[ 2(3x-4) \dfrac{d}{dx}(3x-4)  + 3 \bigg] \\
+&= \dfrac{1}{2 \sqrt{ \big( (3x-4)^2 + 3x \big)}} \cdot \big[ 2(3x-4) \cdot 3 + 3 \big] \\
+&= \dfrac{18x-21}{2 \sqrt{ \big( (3x-4)^2 + 3x \big)}} 
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{HW from Section 3.6}
+Do problems 7--29 odd, 30, 33--43 odd, 49 (pp.\ 180--181 in textbook)
+\end{frame}
+
+% % % % % % % % % % Fri 20 Feb 2015
+
+% % %
+\begin{frame}
+\frametitle{Friday 20 February (Week 6)}
+\begin{itemize}
+\item Exam 2 Friday 27 Feb (next week!)
+\item Midterm the following Tues.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\subsection[3.7 Implicit Differentiation]{$\oint$ 3.7 Implicit Differentiation}
+\frametitle{$\oint$ 3.7 Implicit Differentiation}
+\small
+Up to now, we have calculated derivatives of functions of the form $y=f(x)$, where $y$ is defined {\bf explicitly} in terms of $x$.
+
+\bigskip
+
+In this section, we examine relationships between variables that are {\bf implicit} in nature, meaning that $y$ either is not defined explicitly in terms of $x$ or cannot be easily manipulated to solve for $y$ in terms of $x$.
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Examples of functions implicitly defined}
+$$x^2 + y^2 = 9$$
+
+\bigskip
+
+$$x+y^3-xy=4$$
+
+\bigskip
+
+$$\cos(x-y)+\sin y = \sqrt{2}$$
+\end{frame}
+
+% % %
+\begin{frame}
+
+The goal of {\bf implicit differentiation} is to find a single expression for the derivative directly from an equation of the form $F(x,y)=0$ without first solving for $y$.
+\end{frame}
+
+% % %
+\begin{frame}
+
+Calculate $\dfrac{dy}{dx}$ directly from the equation for the circle 
+$$x^2 + y^2 = 9.$$
+
+\bigskip
+
+{\bf Solution:}  To note that $x$ is our independent variable and that we are differentiating with respect to $x$, we replace $y$ with $y(x)$:
+$$x^2 + (y(x))^2 = 9.$$
+\end{frame}
+
+% % %
+\begin{frame}
+\small
+Now differentiate each term with respect to $x$:
+$$\frac{d}{dx} (x^2) + \frac{d}{dx} ((y(x))^2) = \frac{d}{dx}(9).$$
+
+\bigskip
+
+By the Chain Rule, $\dfrac{d}{dx}((y(x))^2)=2y(x) y^{\prime}(x)$, or $\dfrac{d}{dx}(y^2)=2y \dfrac{dy}{dx}.$
+
+\bigskip
+
+So
+$$2x+2y \dfrac{dy}{dx}=0 \implies \dfrac{dy}{dx}=\dfrac{-2x}{2y}=-\dfrac{x}{y}.$$
+\end{frame}
+
+% % %
+\begin{frame}
+\small
+Now $\dfrac{dy}{dx}=-\dfrac{x}{y}$, so we can find slopes of tangent lines at various points along the circle.
+
+\bigskip
+
+The slope of the tangent line at (0,3) is 
+\[\left. \dfrac{dy}{dx} \right|_{(x,y)=(0,3)} = -\dfrac{0}{3}=0.\]
+
+\bigskip
+
+The slope of the tangent line at $(1,2\sqrt{2})$ is
+\[\left. \dfrac{dy}{dx} \right|_{(x,y)=(1,2\sqrt{2})} = -\dfrac{1}{2\sqrt{2}}.\]
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{Example}
+Find $\dfrac{dy}{dx}$ for $xy+y^3=1.$
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{Finding tangent lines}
+Find an equation of the line tangent to the curve $x^4-x^2 y+y^4=1$ at the point $(-1,1).$
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{Higher Order Derivatives}
+Find $\dfrac{d^2 y}{dx^2}$ if $xy+y^3=1.$
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Power Rule for Rational Exponents}
+Implicit differentiation also allows us to extend the power rule to rational exponents:
+
+\bigskip
+
+Assume $p$ and $q$ are integers with $q \ne 0$.  Then 
+$$\frac{d}{dx} (x^{p/q})=\frac{p}{q} x^{p/q-1}$$
+provided $x \ge 0$ when $q$ is even.
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{HW from Section 3.7}
+
+Do problems 5--21 odd, 27--45 odd (pp.\ 188--189 in textbook)
+\end{frame}
+
+\begin{comment}
+\end{comment}
+
+\end{document}

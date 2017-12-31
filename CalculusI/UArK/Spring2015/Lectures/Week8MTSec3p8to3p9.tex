@@ -1,0 +1,654 @@
+\documentclass[14pt]{beamer}
+\usetheme{Warsaw}
+\usecolortheme{beaver}
+\usefonttheme{professionalfonts}
+
+\input{../../preamble}
+\usepackage{amscd,amsmath,amssymb,amsthm,graphicx}
+\usepackage[mathscr]{eucal}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage[normalem]{ulem}
+
+% % % % % % % % % %
+\title[Cal I S2015]{MATH 2554 (Calculus I)}
+\subtitle{}
+\author[Wheeler]{Dr. Ashley K. Wheeler}
+\institute{University of Arkansas}
+\date{\today}
+\logo{}
+
+% % %
+\begin{document}
+\maketitle
+
+% % %
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+% % % % % % % % % % Mon 2 Mar 2015
+
+% % %
+\begin{frame}
+\section[Week 8]{Week 8: 2-6 March}
+\frametitle{Monday 2 March (Week 8)}
+\footnotesize
+\begin{itemize}
+\item computer HWs: Don't wait for Sunday or else you'll get server crashes.
+\item Exam \#2 returned in drill
+\item MIDTERM Tues 3 March
+	\begin{itemize}
+	\footnotesize
+	\item NO notecard
+	\item cumulative -- see the Midterm Study Guide for content 
+	\item 6-7:30p
+	\item location: SCEN 403
+	\item 5:30p drills that day: go to an earlier drill.
+	\item Chemistry conflict: SCEN 404 at \alert{5PM}.  Email me if I haven't replied to you yet about the conflict, and be sure to stay in contact with your Chemistry prof.  If you've scheduled for the exam in CEA's office then you may also take it in SCEN 404 at 5p, unless you have reduced distractions.  
+	\end{itemize}
+\item Quiz \#7 on Thurs 5 Mar -- covers $\oint 3.8-3.9$	
+\end{itemize}
+\end{frame}
+
+% % %
+\subsection{Midterm Review}
+% % %
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 2.3$ Techniques for Computing Limits}
+\footnotesize
+{\bf Be able to do questions similar to 1-48, p.73}
+\begin{itemize}
+\footnotesize
+\item Know and be able to compute limits using analytical methods (e.g., limit laws, additional techniques)
+\item Be able to evaluate one-sided and two-sided limits of functions
+\item Know the Squeeze Thm and be able to use this theorem to determine limits
+\end{itemize}
+{\bf Note: Material from sections 2.1 and 2.2 are foundational to the chapter.  The material may not be explicitly tested, but the topics in these sections are foundational to later sections.}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\small
+(problems from past midterm)
+
+\vspace{1pc}
+\begin{exe} Evaluate the following limits:
+\begin{itemize}
+\item $\displaystyle\lim_{x\to 3}\frac{x^2-x-6}{x^2-9}$
+
+\vspace{1pc}
+\item $\displaystyle\lim_{\theta\to 0}\frac{\sec\theta\tan\theta}{\theta}$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 2.4$ Infinite Limits}
+\small
+{\bf Be able to do questions similar to 17-30, p. 83}
+
+\begin{itemize}
+\item Be able to use a graph, a table, or analytical methods to determine infinite limits
+\item Be able to use analytical methods to evaluate one-sided limits
+\item Know the definition of a vertical asymptote and be able to determine whether a function has vertical asymptotes
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 2.5$ Limits at Infinity}
+\small
+{\bf Be able to do questions similar to 9-30 and 38-46, p. 92}
+\begin{itemize}
+\item Be able to find limits at infinity and horizontal asymptotes 
+\item Know how to compute the limits at infinity of rational functions and algebraic functions
+\item Be able to list horizontal and/or vertical asymptotes of a function
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 2.6$ Continuity}
+\small
+{\bf Be able to do questions similar to 9-44, p. 103-104}
+\begin{itemize}
+\item Know the definition of continuity and be able to apply the continuity checklist
+\item Be able to determine the continuity of a function (including those with roots) on an interval
+\item Be able to apply the Intermediate Value Thm to a function
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\small
+(problem from past midterm)
+
+\begin{exe}
+Determine the value of $k$ so the function is continuous on $0\leq x\leq 2$.
+\[f(x)=\begin{cases}x^2+k & 0\leq x\leq 1 \\
+	-2kx+4 & 1<x\leq 2\end{cases}
+	\]
+\end{exe}	
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 3.1$ Introducing the Derivative}
+\small
+{\bf Be able to do questions similar to 11-32, p. 132}
+
+\begin{itemize}
+\item Know the definition of a derivative and be able to use this definition to calculate the derivative of a given function.
+\item Be able to determine the equation of a line tangent to the graph of a function at a given point
+\item Know the 3 conditions for when a function is not differentiable at a point, and why these three conditions make a function not differentiable at the given point
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 3.2$ Rules for Differentiation}
+\small
+{\bf Be able to do questions similar to 7-41, p. 142-143}
+
+\begin{itemize}
+\item Be able to use the various rules for differentiation (e.g., constant rule, power rule, constant multiple rule, sum and difference rule) to calculate the derivative of a function
+\item Know the derivative of $e^x$
+\item Be able to find slopes and/or equations of tangent lines
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\begin{exe}
+Given that $y=3x+2$ is tangent to $f(x)$ at $x=1$ and that $y=-5x+6$ is tangent to $g(x)$ at $x=1$, write the equation of the tangent line to $h(x)=f(x)g(x)$ at $x=1$.
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 3.3$ The Product and Quotient Rules}
+\small
+{\bf Be able to do questions similar to 7-42 and 47-52, p. 152-153}
+
+\begin{itemize}
+\item Be able to use te product and/or quotient rules to calculate the derivative of a given function
+\item Be able to use the product and/or quotient rules to find tangent lines and/or slopes at a given point
+\item Know the derivate of $e^{kx}$
+\item Be able to combine derivative rules to calculate a derivative of a function
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 3.4$ Derivatives of Trigonometric Functions}
+\footnotesize
+{\bf Be able to do questions similar to 1-55, p. 161-162}
+
+\begin{itemize}
+\item Know the two special trigonometric limits
+\[\lim_{x\to 0}\frac{\sin x}{x}=1\qquad\text{and}\qquad\lim_{x\to 0}\frac{\cos x-1}{x}=0\]
+and be able to use them to solve other similar limits
+\item Know the derivatives of $\sin x$, $\cos x$, $\tan x$, $\cot x$, $\sec x$, $\csc x$, and be able to use the quotient rule to derive the derivatives of $\tan x$, $\cot x$, $\sec x$, and $\csc x$
+\item Be able to calculate derivatives (including higher order) involving trig functions using the rules for differentiation
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\begin{exe}
+Calculate the derivative of the following functions:
+\begin{itemize}
+\item $f(x)=(1+\sec x)\sin^3x$
+
+\vspace{1pc}
+\item $g(x)=\displaystyle\frac{\sin x+\cot x}{\cos x}$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 3.5$ Derivatives as Rates of Change}
+\small
+{\bf Be able to do questions similar to 11-18, p. 171-172}
+
+\begin{itemize}
+\item Be able to use the derivative to answer questions about rates of change involving: 
+	\begin{itemize}
+	\item Position and velocity;
+	\item Speed and acceleration;
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 3.6$ The Chain Rule}
+\small
+{\bf Be able to do questions similar to 7-43, p. 180-181}
+
+\begin{itemize}
+\item Be able to use both versions of the Chain Rule to find the derivative of a composition function
+\item Know and be able to use the Chain Rule for Powers:
+\[\dfrac{d}{dx}\left(f(x)\right)^n=n\left(f(x)\right)^{n-1}f'(x)\]
+\item Be able to use the Chain Rule more than once in a calculation involving more than two composition functions 
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small $\oint 3.7$ Implicit Differentiation}
+\small
+{\bf Be able to do questions similar to 5-26 and 33-46, p. 189}
+
+\begin{itemize}
+\item Be able to use implicit differentiation to calculate $\dfrac{dy}{dx}.$
+\item Be able to use the derivative found from implicit differentiation to find the slope at a given point and/or a line tangent to the curve at the given point.
+\item Be able to calculate higher-order derivatives of implicitly defined functions.
+\item Be able to calculate $\dfrac{dy}{dx}$ when working with functions containing rational functions
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\begin{exe} Use implicit differentiation to calculate $\dfrac{dz}{dw}$ for
+\[e^{2w}=\sin(wz)\]
+\end{exe}
+
+\begin{exe} If $\sin x=\sin y$, then 
+\begin{itemize}
+\item $\dfrac{dy}{dx}=$ ? 
+
+\vspace{1pc}
+\item $\dfrac{d^2y}{dx^2}=$ ? 
+\end{itemize}
+\end{exe}
+
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Running out of Time on the Exam}
+\footnotesize
+\begin{itemize}
+\item Do practice problems completely, from beginning to end (as if it were a quiz).  You might think you understand something but when it's time to write down the details things are not so clear.  
+\item Find a buddy who understands concepts a little better than you and work on problems for 2-3 hours.  Then find a buddy who is struggling and work with them 2-3 hours.  Explaining to someone else tests how deeply you really know the material.  This strategy also helps reduce stress because it doesn't require you to devote a full day or night of studying, just 2-3 hours at a time of productive work.
+\item Don't count on cookie cutter problems.  If you are doing a practice problem where you've memorized all the steps, make sure you understand why each step is needed.  The exam problems may have a small variation from homeworks and quizzes.  If you're not prepared, it'll come as a ``twist" on the exam...
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Running out of Time on the Exam, cont.}
+\footnotesize
+\begin{itemize}
+\item If you encounter an unfamiliar type of problem on the exam, relax, because it's most likely not a trick.  The solutions will always rely on the information from the required reading/assignments.  Take your time and do each baby step carefully.  
+\item During the exam, do the problems you are most confident with first!  Different people will find different problems easier.
+\item During the exam, budget your time.  Count the problems and divide by 50 minutes.  The easier questions will take less time so doing them first leaves extra time for the harder ones.  When studying, aim for 10 problems per hour (i.e., 6 minutes per problem).
+\item The exam is not a race.  If you finish early take advantage of the time to check your work.  You don't want to leave feeling smug about how quickly you finished only to find out next week you lost a letter grade's worth of points from silly mistakes.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Other Study Tips}
+\footnotesize
+\begin{itemize}
+\item Brush up on algebra, especially radicals, logs, common denominators, etc.  Many times knowing the right algebra will simplify the problem!
+\item When in doubt, show steps.  See the document camera notes to get an idea of what's expected.
+\item You will be punished for wrong notation.  The slides for $\oint 3.1$ show different notations for the derivative.  Make sure whichever one you use in your work, that you are using it correctly.
+\item Read the question!  
+\item Do the book problems.
+\item Look at the pictures in the book and the interactive applets on MLP.
+\end{itemize}
+\end{frame}
+
+% % % % % % % % % % Fri 6 Mar 2015
+
+\begin{frame}
+\frametitle{Friday 6 March (Week 8)}
+\small
+\begin{itemize}
+\item Wednsday was a snow day.  We will cover $\oint 3.8$ today and try to start $\oint 3.9$.  Next week we start $\oint 3.10$, which is one of the harder sections of the course.  Please stay ahead on the reading so you don't get lost in lecture.
+\item MIDTERM is still being graded -- stand by
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\subsection[3.8 Derivatives of Logarithmic and Exponential Functions]{$\oint$ 3.8 Derivatives of Logarithmic and Exponential Functions}
+\frametitle{$\oint$ 3.8 Derivatives of Logarithmic and Exponential Functions}
+\small
+The natural exponential function $f(x)=e^x$ has an inverse function, namely $f^{-1}(x)=\ln x$.  This relationship has the following properties:
+\begin{itemize}
+\item[1.] $e^{\ln x}=x $ for $x>0$ and $\ln(e^x)=x$ for all $x$.
+\item[2.] $y=\ln x \quad\Longleftrightarrow\quad x=e^y$
+\item[3.] For real numbers $x$ and $b>0$, 
+\[b^x=e^{\ln (b^x)}=e^{x \ln b}.\]
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Derivative of $y=\ln x$}
+\footnotesize
+Using 2. from the last slide, plus implicit differentiation, we can find $\displaystyle\dfrac{d}{dx}\left(\ln x\right)$.  Write $y=\ln x$.  We wish to find $\dfrac{dy}{dx}$.  From 2.,
+\begin{align*}
+\dfrac{d}{dx}\big(x=e^y\big) \Rightarrow \dfrac{d}{dx}x &= \dfrac{d}{dx}(e^y) \\[0.5pc]
+1 &= e^y\left(\dfrac{dy}{dx}\right) \\[0.5pc]
+\dfrac{dy}{dx} &= \frac{1}{e^y}=\frac{1}{x} 
+\end{align*}
+So $\dfrac{d}{dx}(\ln x)=\dfrac{1}{x}.$
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Derivative of $y=\ln |x|$}
+\footnotesize
+Remember, you can only take $\ln{}$ of a positive number.
+\begin{itemize}
+\item For $x>0$, $\ln |x| = \ln x$, so 
+\[\dfrac{d}{dx} (\ln |x|)=\dfrac{1}{x}.\]
+\item For $x<0$, $\ln |x| = \ln(-x)$, so 
+\[\dfrac{d}{dx} (\ln |x|)= \dfrac{d}{dx} (\ln(-x)) = \dfrac{1}{-x} \cdot (-1) = \dfrac{1}{x}.\]
+\end{itemize}
+In other words, the absolute values do not change the derivative:
+\[\dfrac{d}{dx}(\ln x)=\dfrac{d}{dx}(\ln |x|)=\dfrac{1}{x}.\]
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{exe} Find the derivative of each of the following functions:
+
+\begin{itemize}
+\item $f(x)=\ln(15x)$
+
+\vspace{0.75pc}
+\item $g(x)=x \ln x$
+
+\vspace{0.75pc}
+\item $h(x)=\ln(\sin x)$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Derivative of $y=b^x$}
+What about other logs?  Say $b>0$.  Since $b^x=e^{\ln b^x}=e^{x \ln b}$ (by 3. on the earlier slide), 
+\begin{align*}
+\frac{d}{dx}(b^x) &= \frac{d}{dx}(e^{x \ln b}) \\[0.75pc]
+ &=e^{x \ln b} \cdot \ln b \\[0.75pc]
+ &= b^x \ln b.
+\end{align*}
+So for $b>0$, $\dfrac{d}{dx}(b^x)=b^x \ln b$.
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\begin{exe} Find the derivative of each of the following functions:
+\begin{itemize}
+\item $f(x)=14^x$
+
+\vspace{0.75pc}
+\item $g(x)=45(3^{2x})$
+\end{itemize}
+\end{exe}
+
+\begin{exe} Determine the slope of the tangent line to the graph $f(x)=4^x$ at $x=0$. \end{exe}
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{Story Problem Example}
+\small
+\begin{exe} The energy (in Joules) released by an earthquake of magnitude $M$ is given by the equation
+\[E=25000 \cdot 10^{1.5 M}.\]
+
+\vspace{-1pc}
+\begin{itemize}
+\item[1.] How much energy is released in a magnitude 3.0 earthquake?
+\item[2.] What size earthquake releases 8 million Joules of energy?
+\item[3.] What is $\dfrac{dE}{dM}$ and what does it tell you?
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small Derivatives of General Logarithmic Functions}
+\footnotesize
+The relationship $y=\ln x \Longleftrightarrow x=e^y$ also applies to logarithms of other bases:
+\[y=\log_b x \quad\Longleftrightarrow\quad x=b^y.\]
+Now taking $\dfrac{d}{dx}\left(x=b^y\right)$ we obtain
+\begin{align*}
+1 &= b^y\ln b\left(\frac{dy}{dx}\right) \\
+\frac{dy}{dx} &= \frac{1}{b^y \ln b} \\[0.5pc]
+ &=\frac{1}{x \ln b}
+\end{align*}
+\bigskip
+So $\dfrac{d}{dx}(\log_b x)=\dfrac{1}{x \ln b}.$
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Neat Trick: Logarithmic Differentiation}
+\begin{ex}  Compute the derivative of $f(x)=\dfrac{x^2(x-1)^3}{(3+5x)^4}$. \end{ex}
+
+We can use logarithmic differentiation: first takee the natural log of both sides and then use properties of logarithms.
+\end{frame}
+
+% % %
+\begin{frame}
+\small
+\begin{alignat*}{2}
+\ln(f(x)) &= \ln \left( \dfrac{x^2(x-1)^3}{(3+5x)^4} \right) \\[0.5pc]
+&= \ln{(x^2)} + \ln{(x-1)^3}-\ln{(3+5x)^4} \\[0.5pc]
+&= 2\ln x + 3\ln(x-1)-4\ln(3+5x)
+\end{alignat*}
+\alert{Now} we take $\dfrac{d}{dx}$ on both sides:
+\begin{alignat*}{2}
+\dfrac{1}{f(x)}\left(\dfrac{df}{dx}\right) &= 2\left(\frac{1}{x}\right) + 3\left(\frac{1}{x-1}\right) - 4\left(\frac{1}{3+5x}\right)(5) \\[1pc]
+\dfrac{f^{\prime}(x)}{f(x)} &= \dfrac{2}{x} + \dfrac{3}{x-1} - \dfrac{20}{3+5x}
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+Finally, solve for $f^{\prime}(x)$:
+\begin{alignat*}{2}
+f^{\prime}(x) &= \alert{f(x)} \left[ \dfrac{2}{x} + \dfrac{3}{x-1} - \dfrac{20}{3+5x} \right] \\[1pc]
+&= \alert{\frac{x^2 (x-1)^3}{(3+5x)^4}} \left[ \dfrac{2}{x} + \dfrac{3}{x-1} - \dfrac{20}{3+5x} \right]
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{HW from Section 3.8}
+Do problems 9--27 odd, 31--37 odd, 41--47 odd (pp.\ 199--200 in textbook)
+\end{frame}
+
+
+
+\begin{frame}
+
+\begin{center}
+\large{{\bf 3.9 Derivatives of Inverse Trigonometric Functions}}
+\end{center}
+
+\bigskip
+
+\hrulefill
+
+\bigskip
+
+Recall that if $y=f(x)$, then $f^{-1}(x)$ is the value of $y$ such that $x=f(y)$.
+
+\bigskip
+
+Example:  If $f(x)=3x+2$, then $f^{-1}(x)=\dfrac{x-2}{3}.$
+
+\bigskip
+
+{\bf NOTE:}  $f^{-1}(x)$ is not the same as $\dfrac{1}{f(x)}$.  $(f(x))^{-1}=\dfrac{1}{f(x)}$
+
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Derivative of Inverse Sine}
+
+$y=\sin^{-1}x \Longleftrightarrow x=\sin y$.  So the derivative of $y=\sin^{-1}x$ can be found by applying $\dfrac{d}{dx}$ to both sides of $x=\sin y$ and then finding 
+$\dfrac{dy}{dx}$:
+
+\begin{alignat*}{2}
+x &= \sin y \\
+\frac{d}{dx}(x) &= \frac{d}{dx}(\sin y) \\
+1 &= (\cos y) \frac{dy}{dx} \\
+\frac{dy}{dx} &= \frac{1}{\cos y}
+\end{alignat*}
+
+\end{frame}
+
+\begin{frame}
+
+Since $\sin^2 y + \cos^2 y = 1$, then $\cos y= \pm \sqrt{1-\sin^2 y}=\pm\sqrt{1-x^2}.$
+
+\bigskip
+
+Because $-\dfrac{\pi}{2} \le y \le \dfrac{\pi}{2}$ (this is the range of $y=\sin^{-1}x$), we have that $\cos y \ge 0 \implies \cos y = \sqrt{1-x^2}$.
+
+\bigskip
+
+Therefore,
+$$\frac{dy}{dx}=\frac{1}{\cos y}=\frac{1}{\sqrt{1-x^2}} \implies \frac{d}{dx}(\sin^{-1}x)=\frac{1}{\sqrt{1-x^2}}.$$ 
+
+\end{frame}
+
+\begin{frame}[t]
+
+Compute the following:
+
+\begin{itemize}
+
+\item[1.] $\dfrac{d}{dx} \left[ \sin^{-1}(4x^2-3) \right]$
+\vspace{1in}
+\item[2.] $\dfrac{d}{dx} \left[ \cos(\sin^{-1}x) \right]$
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Derivative of Inverse Tangent}
+
+We use a similar method as with inverse sine:
+\begin{alignat*}{2}
+y &= \tan^{-1}x \\
+x &= \tan y \\
+\frac{d}{dx}(x) &= \frac{d}{dx} (\tan y) \\
+1 &= (\sec^2 y) \frac{dy}{dx} \\
+\frac{dy}{dx} &= \frac{1}{\sec^2 y}
+\end{alignat*}
+
+\bigskip
+
+Since $\sec^2 y=1+\tan^2 y$, we have $\sec^2 y=1+x^2.$  So 
+$$\frac{d}{dx}(\tan^{-1} x)=\frac{1}{1+x^2}.$$
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Derivative of Inverse Secant}
+
+We use a similar method as with inverse sine:
+\begin{alignat*}{2}
+y &= \sec^{-1}x \\
+x &= \sec y \\
+\frac{d}{dx}(x) &= \frac{d}{dx} (\sec y) \\
+1 &= \sec y \tan y \frac{dy}{dx} \\
+\frac{dy}{dx} &= \frac{1}{\sec y \tan y}
+\end{alignat*}
+
+\end{frame}
+
+\begin{frame}
+
+Since $\sec^2 y=1+\tan^2 y$, then $\tan y=\pm\sqrt{\sec^2 y-1}=\pm\sqrt{x^2-1}.$  
+
+\bigskip
+
+If $x \ge 1$, then $0\le y<\dfrac{\pi}{2}$ and so $\tan y >0.$  
+
+\bigskip
+  
+If $x \le -1$, then $\dfrac{\pi}{2} < y \le \pi$ and so  $\tan y <0$.  So 
+$$\frac{d}{dx}(\sec^{-1} x)=\frac{1}{|x|\sqrt{x^2-1}}.$$
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{All other inverse trig derivatives}
+
+Using the facts that $\cos^{-1}x+\sin^{-1}x=\dfrac{\pi}{2}, \cot^{-1}x+\tan^{-1}x=\dfrac{\pi}{2},$ and $\csc^{-1}x+\sec^{-1}x=\dfrac{\pi}{2},$ we can differentiate these identities to obtain all inverse trig derivatives:
+
+\begin{align*}
+&\frac{d}{dx}(\sin^{-1}x)=\frac{1}{\sqrt{1-x^2}}&\quad &\frac{d}{dx}(\cos^{-1}x)=-\frac{1}{\sqrt{1-x^2}}\quad (-1<x<1) \\
+&\frac{d}{dx}(\tan^{-1}x)=\frac{1}{1+x^2}&\quad &\frac{d}{dx}(\cot^{-1}x)=-\frac{1}{1+x^2}\quad (-\infty<x<\infty) \\
+&\frac{d}{dx}(\sec^{-1}x)=\frac{1}{|x|\sqrt{x^2-1}}&\quad &\frac{d}{dx}(\csc^{-1}x)=-\frac{1}{|x|\sqrt{x^2-1}}\quad (|x|>1)
+\end{align*}
+
+\end{frame}
+
+\begin{frame}[t]
+
+Compute the derivatives of $f(x)=\tan^{-1}(1/x)$ and $g(x)=\sin \left[\sec^{-1}(2x) \right]$.
+
+\end{frame}
+
+\begin{frame}[t]
+
+\frametitle{Derivatives of Inverse Functions in General}
+
+Let $f$ be differentiable and have an inverse on an interval $I$.  Let $x_0$ be a point in $I$ at which $f^{\prime}(x_0)\ne0$.
+
+\bigskip
+
+Then $f^{-1}$ is differentiable at $y_0=f(x_0)$ and 
+$$\left(f^{-1}\right)^{\prime}(y_0)=\frac{1}{f^{\prime}(x_0)}$$
+where $y_0=f(x_0).$
+
+\bigskip
+
+Example:  Let $f(x)=\dfrac{1}{4}x^3+x-1$.  Find $\left(f^{-1}\right)^{\prime}(3)$.
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{HW from Section 3.9}
+
+Do problems 7--27 odd, 31--39 odd.
+
+\end{frame}
+\begin{comment}
+\end{comment}
+
+\end{document}

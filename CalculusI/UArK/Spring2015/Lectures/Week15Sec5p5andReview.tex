@@ -1,0 +1,282 @@
+\documentclass[14pt]{beamer}
+\usetheme{Warsaw}
+\usecolortheme{beaver}
+\usefonttheme{professionalfonts}
+
+\input{../../preamble}
+\usepackage{amscd,amsmath,amssymb,amsthm,graphicx}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage[normalem]{ulem}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\dlim}{\displaystyle\lim}
+\newcommand{\dsum}{\displaystyle\sum}
+
+% % % % % % % % % %
+\title[Cal I S2015]{MATH 2554 (Calculus I)}
+\subtitle{}
+\author[Wheeler]{Dr. Ashley K. Wheeler}
+\institute{University of Arkansas}
+\date{\today}
+\logo{}
+
+% % %
+\begin{document}
+\maketitle
+
+% % %
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+% % % % % % % % % % Mon 27 Apr 2015
+
+% % %
+\begin{frame}
+\section[Week 15]{Week 15: 27-30 April}
+\frametitle{Monday 27 April (Week 15)}
+\footnotesize
+\begin{itemize}
+\item Computer HW this week: $\oint 5.5$
+\item Quiz \#15 tomorrow (Tues) in drill -- take-home due Thurs
+\item FINAL! Monday 4 May 6-8p OZAR 026.  Study the Coordinator's Review Questions.
+\item dead day review SCEN 101 3-5p bring the Coordinator's Review Questions.
+\item Thurs 30 April -- don't skip drill
+\item your top 10 quizzes go into your final grade
+\item BONUS REVIEW see website and MLP -- worth up to 2\% of final grade
+\end{itemize}
+\end{frame}
+
+% % %
+\subsection[$\oint 5.5$ Substitution Rule]{$\oint 5.5$ Substitution Rule}
+
+% % %
+\begin{frame}{$\oint 5.5$ Substitution Rule}
+\footnotesize
+{\bf Idea:}  Suppose we have $F(g(x))$, where $F$ is an antiderivative of $f$.  Then
+\begin{align*}
+\frac{d}{dx} \bigg[F(g(x)) \bigg] &= F^{\prime}(g(x)) \cdot g^{\prime}(x) = f(g(x)) \cdot g^{\prime}(x) \\
+\text{ and }\dint f(g(x)) \cdot g^{\prime}(x)\ dx &= F(g(x))+C
+\end{align*}
+
+\vspace{1pc}
+If we let $u=g(x)$, then $du=g^{\prime}(x)\ dx$.  The integral becomes
+\[\dint f(g(x)) \cdot g^{\prime}(x)\ dx = \dint f(u)\ du.\]
+\end{frame}
+
+% % %
+\begin{frame}{\small Substitution Rule for Indefinite Integrals}
+\small
+Let $u=g(x)$, where $g^{\prime}$ is continuous on an interval, and let $f$ be continuous on the corresponding range of $g$.  On that interval,
+\[\dint f(g(x)) g^{\prime}(x)\ dx = \dint f(u)\ du.\]
+
+\vspace{1pc}
+\alert{$u$-Substitution is the Chain Rule, backwards.}
+\end{frame}
+
+% % %
+\begin{frame}{}
+\small
+\begin{ex} Evaluate $\dint 8x \cos(4x^2 + 3)\ dx.$ \end{ex}
+
+\vspace{1pc}
+{\bf Solution:} Look for a function whose derivative also appears.
+\begin{align*}
+u(x) &=4x^2+3 \\
+\text{ and }u'(x) &= \dfrac{du}{dx} = 8x \\[0.5pc]
+\implies du &= 8x\ dx.
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}{}
+\footnotesize
+Now rewrite the integral and evaluate.  Replace $u$ at the end with its expression in terms of $x$. 
+\begin{alignat*}{2}
+\dint 8x \cos(4x^2 + 3)\ dx &= \dint \cos(\underbrace{4x^2 + 3}_{u})\underbrace{8x\ dx}_{du} \\
+&= \dint \cos u\ du \\[0.25pc]
+&= \sin u + C \\[0.5pc]
+&= \sin(4x^2 + 3) + C
+\end{alignat*}
+
+We can even check our answer.  By the Chain Rule,
+\[\dfrac{d}{dx}\left(\sin{(4x^2+3)}+C\right)=8x\cos{(4x^2+3)}.\]
+\end{frame}
+
+% % %
+\begin{frame}{\small Procedure for Substitution Rule (Change of Variables)}
+\small
+\begin{itemize}
+\item[1.] Given an indefinite integral involving a composite function $f(g(x))$, identify an inner function $u=g(x)$ such that a constant multiple of $g^{\prime}(x)$ appears in the integrand.
+\item[2.] Substitute $u=g(x)$ and $du=g^{\prime}(x)\ dx$ in the integral.
+\item[3.] Evaluate the new indefinite integral with respect to $u$.
+\item[4.] Write the result in terms of $x$ using $u=g(x)$.
+\end{itemize}
+
+\vspace{1pc}
+{\it Warning:  Not all integrals yield to the Substitution Rule.}
+\end{frame}
+
+% % % % % % % % % % Wed 29 Apr 2015
+
+% % %
+\begin{frame}
+\frametitle{Wednesday 29 April (Week 15)}
+\small
+\begin{itemize}
+\item Computer HW this week: $\oint 5.5$
+\item Quiz \#15 due Thurs
+\item FINAL! Monday 4 May 6-8p OZAR 026. 
+	\begin{itemize}\footnotesize
+	\item 2 hours, 20 questions.
+	\item Study the Coordinator's Review Questions.
+	\item Study the slides and your class notes BEFORE visiting outside resources.
+	\item CEA: Email me if you wish to take the exam in SCEN 407.   Exam starts at 4p.  Reduced distractions in SCEN are not guaranteed.   
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\small
+\begin{itemize}	
+\item Dead Day review SCEN 101 3-5p bring your answers to the Coordinator's Review Questions for feedback
+\item Thurs 30 April -- don't skip drill
+\item your top 10 quizzes go into your final grade
+\item BONUS REVIEW see website -- worth up to 2\% of final grade.  Bring to the Final Exam to turn in.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}%[t]{Exercise}
+\small
+\begin{exe} Evaluate the following integrals.  Check your work by differentiating each of your answers.
+\begin{itemize}
+\item $\dint \sin^{10} x \cos x \ dx$
+\item $-\dint \dfrac{\csc x \cot x}{1+\csc x}\ dx$
+\item $\dint \dfrac{1}{(10x-3)^2}\ dx$
+\item $\dint (3x^2 + 8x + 5)^8 (3x+4)\ dx$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}{\small Variations on Substitution Rule}
+\footnotesize
+There are times when the $u$-substitution is not obvious or that more work must be done.
+\begin{ex} Evaluate $\dint \dfrac{x^2}{(x+1)^4}\ dx.$ \end{ex}
+
+{\bf Solution:}  Let $u=x+1$.  Then $\alert{x=u-1}$ and $du=dx$.  Hence,
+\begin{alignat*}{2}
+\dint \dfrac{\alert{x}^2}{(x+1)^4}\ dx &= \dint \dfrac{(\alert{u-1})^2}{u^4}\ du \\
+&= \dint \dfrac{u^2-2u+1}{u^4}\ du 
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+\footnotesize
+\begin{alignat*}{2}
+&= \dint \left(u^{-2}-2u^{-3}+u^{-4} \right) \ du \\
+&= \dfrac{-1}{u} + \dfrac{1}{u^2} + \dfrac{-1}{3u^3} + C \\
+&= \dfrac{-1}{x+1} + \dfrac{1}{(x+1)^2} - \dfrac{1}{3(x+1)^3} + C
+\end{alignat*}
+
+\begin{exe}Check it. \end{exe}
+
+This type of strategy works, usually, on problems where you can write $u$ as a linear function of $x$.
+\end{frame}
+
+% % %
+\begin{frame}{\small Substitution Rule for Definite Integrals}
+\footnotesize
+We can use the Substitution Rule for Definite Integrals in two different ways:
+\begin{itemize}
+\item[1.] Use the Substitution Rule to find an antiderivative $F$, and then use the Fundamental Theorem of Calculus to evaluate $F(b)-F(a)$.
+\item[2.] Alternatively, once you have changed variables from $x$ to $u$, you may also change the limits of integration and complete the integration with respect to $u$.  Specifically, if $u=g(x)$, the lower limit $x=a$ is replaced by $u=g(a)$ and the upper limit $x=b$ is replaced by $u=g(b)$.
+\end{itemize}
+
+\vspace{1pc}
+\alert{The second option is typically more efficient and should be used whenever possible.}
+\end{frame}
+
+% % %
+\begin{frame}{}
+\footnotesize
+\begin{ex} Evaluate $\dint_0^4 \dfrac{x}{\sqrt{9+x^2}}\ dx.$ \end{ex}
+
+{\bf Solution:} Let $u=9+x^2$.  Then $du=2x\ dx$.  Because we have changed the variable of integration from $x$ to $u$, the limits of integration must also be expressed in terms of $u$.  Recall, $u$ is a function of $x$ (the $g(x)$ in the Chain Rule). For this example,
+\begin{alignat*}{2}
+x=0\ &\implies\ u(0) = 9+0^2 = 9 \\
+x=4\ &\implies\ u(4) = 9+4^2 = 25 
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+\small
+We had $u=9+x^2$ and $du=2x\ dx \implies \frac{1}{2}du=x\ dx$. So:
+
+\begin{align*}
+\dint_0^4 \dfrac{x}{\sqrt{9+x^2}}\ dx &= \frac{1}{2}\dint_{9}^{25} \dfrac{du}{\sqrt{u}} \\[0.5pc]
+ &= \dfrac{1}{2} \left. \left(\frac{u^{\frac{1}{2}}}{\frac{1}{2}} \right) \right\vert_{9}^{25} \\[0.5pc]
+ &= \sqrt{25}-\sqrt{9} \\[0.5pc]
+ &= 5-3=2.
+\end{align*}
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\small
+\begin{exe} Evaluate $\dint_0^2 \dfrac{2x}{(x^2+1)^2}\ dx.$ \end{exe}
+\end{frame}
+
+% % %
+\begin{frame}{HW from Section 5.5}
+Do problems 9--39 odd, 53--63 odd (pp.\ 363--364 in textbook)
+\end{frame}
+
+% % %
+\subsection[Advice for the FINAL]{Advice for the FINAL}
+
+% % %
+\begin{frame}{Advice for the FINAL}
+\footnotesize
+\begin{itemize}
+\item Review your notes and the slides first, particularly problems we did in class, then review Quizzes, before visiting outside resources.
+\item Review the Midterm for an idea of questions the coordinator likes to ask and how they are graded.
+\item $+C$s, $dx$s, $\lim$, units, etc. should be included in your answers {\it or else}.  Don't try to round answers unless it is for a story problem, in which case, you should say ``approximately".
+\item ``Definition of Derivative" = the definition with limits
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\footnotesize
+\begin{itemize}
+\item Practice limits and l'H\^{o}pital's Rule so you know which is the quickest technique.
+\item ``Mean Value Theorem for Derivatives" = MVT from $\oint$4.6.
+\item $\arctan=\tan^{-1}$, etc.
+\item Use the Continuity Checklist for questions about continuity.
+\item Use limits for questions about vertical asyptotes and end behavior.
+\item Know the difference between 1st and 2nd Derivative Tests.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}{\small Easter Egg-xercises}
+\small
+\begin{exe} \begin{itemize}
+\item Find the 101st derivative of $y=\cos{7x}$ at $x=0$.
+\item For what values of the constants $a$ and $b$ is $(-1,2)$ a point of inflection on the curve $y=ax^3+bx^2-8x+2$?
+\end{itemize}\end{exe}
+\end{frame}
+
+\begin{comment}
+\end{comment}
+
+\end{document}

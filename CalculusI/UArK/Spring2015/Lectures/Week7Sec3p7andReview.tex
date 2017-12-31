@@ -1,0 +1,403 @@
+\documentclass[14pt]{beamer}
+\usetheme{Warsaw}
+\usecolortheme{beaver}
+\usefonttheme{professionalfonts}
+
+\input{../../preamble}
+\usepackage{amscd,amsmath,amssymb,amsthm,graphicx}
+\usepackage[mathscr]{eucal}
+\usepackage{paralist}
+\usepackage{tabto}
+\usepackage[normalem]{ulem}
+
+% % % % % % % % % %
+\title[Cal I S2015]{MATH 2554 (Calculus I)}
+\subtitle{}
+\author[Wheeler]{Dr. Ashley K. Wheeler}
+\institute{University of Arkansas}
+\date{\today}
+\logo{}
+
+% % %
+\begin{document}
+\maketitle
+
+% % %
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+% % % % % % % % % % Mon 16 Feb 2015
+
+% % %
+\begin{frame}
+\section[Week 7]{Week 7: 23-27 February}
+\frametitle{Monday 23 February (Week 7)}
+\footnotesize
+\begin{itemize}
+\item reminder on computer HWs: You don't want to wait until Sunday or else you'll get server crashes.
+\item Exam \#2 this Friday, 27 Feb
+	\begin{itemize}
+	\footnotesize
+	\item covers $\oint 3.2-3.7$
+	\item one $3\times 5$ inch notecard, one-sided only, allowed
+	\end{itemize}
+\item Quiz \#7 on Thurs 5 Mar -- covers $\oint 3.8-3.9$
+\item MIDTERM Tues 3 March (next week)!
+	\begin{itemize}
+	\footnotesize
+	\item no notecard
+	\item cumulative -- includes everything this semester thusfar, but not $\oint 3.8$
+	\item 6-7:30p
+	\item location: SCEN 403
+	\item 5:30p drills that day: go to an earlier drill.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\small
+\begin{itemize}
+\item Wed 25 Feb: review for Exam \#2
+\item Mon 2 Mar: review for Midterm
+\item Look for a midterm study guide to be posted on the webpage and/or MLP
+\item Today we cover $\oint 3.8$ but it's not tested until Exam \#3 (so not on Exam \#2 nor the Midterm). 
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{recall: Implicit Differentiation}
+\begin{exe} Find $\dfrac{dy}{dx}$ for each of the following:
+
+\begin{itemize}
+\item $x^2 + y^2 = 9$
+
+\vspace{0.5pc}
+\item $x+y^3-xy=4$
+
+\vspace{0.5pc}
+\item $\cos(x-y)+\sin y = \sqrt{2}$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\subsection[3.8 Derivatives of Logarithmic and Exponential Functions]{$\oint$ 3.8 Derivatives of Logarithmic and Exponential Functions}
+\frametitle{$\oint$ 3.8 Derivatives of Logarithmic and Exponential Functions}
+\small
+The natural exponential function $f(x)=e^x$ has an inverse function, namely $f^{-1}(x)=\ln x$.  This relationship has the following properties:
+\begin{itemize}
+\item[1.] $e^{\ln x}=x $ for $x>0$ and $\ln(e^x)=x$ for all $x$.
+\item[2.] $y=\ln x \quad\Longleftrightarrow\quad x=e^y$
+\item[3.] For real numbers $x$ and $b>0$, 
+\[b^x=e^{\ln (b^x)}=e^{x \ln b}.\]
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Derivative of $y=\ln x$}
+\footnotesize
+Using 2. from the last slide, plus implicit differentiation, we can find $\displaystyle\dfrac{d}{dx}\left(\ln x\right)$.  Write $y=\ln x$.  We wish to find $\dfrac{dy}{dx}$.  From 2.,
+\begin{align*}
+\dfrac{d}{dx}\big(x=e^y\big) \Rightarrow \dfrac{d}{dx}x &= \dfrac{d}{dx}(e^y) \\[0.5pc]
+1 &= e^y\left(\dfrac{dy}{dx}\right) \\[0.5pc]
+\dfrac{dy}{dx} &= \frac{1}{e^y}=\frac{1}{x} 
+\end{align*}
+So $\dfrac{d}{dx}(\ln x)=\dfrac{1}{x}.$
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Derivative of $y=\ln |x|$}
+\footnotesize
+Remember, you can only take $\ln{}$ of a positive number.
+\begin{itemize}
+\item For $x>0$, $\ln |x| = \ln x$, so 
+\[\dfrac{d}{dx} (\ln |x|)=\dfrac{1}{x}.\]
+\item For $x<0$, $\ln |x| = \ln(-x)$, so 
+\[\dfrac{d}{dx} (\ln |x|)= \dfrac{d}{dx} (\ln(-x)) = \dfrac{1}{-x} \cdot (-1) = \dfrac{1}{x}.\]
+\end{itemize}
+In other words, the absolute values do not change the derivative:
+\[\dfrac{d}{dx}(\ln x)=\dfrac{d}{dx}(\ln |x|)=\dfrac{1}{x}.\]
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{}
+\begin{exe} Find the derivative of each of the following functions:
+
+\begin{itemize}
+\item $f(x)=\ln(15x)$
+
+\vspace{0.75pc}
+\item $g(x)=x \ln x$
+
+\vspace{0.75pc}
+\item $h(x)=\ln(\sin x)$
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Derivative of $y=b^x$}
+What about other logs?  Say $b>0$.  Since $b^x=e^{\ln b^x}=e^{x \ln b}$ (by 3. on the earlier slide), 
+\begin{align*}
+\frac{d}{dx}(b^x) &= \frac{d}{dx}(e^{x \ln b}) \\[0.75pc]
+ &=e^{x \ln b} \cdot \ln b \\[0.75pc]
+ &= b^x \ln b.
+\end{align*}
+So for $b>0$, $\dfrac{d}{dx}(b^x)=b^x \ln b$.
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\begin{exe} Find the derivative of each of the following functions:
+\begin{itemize}
+\item $f(x)=14^x$
+
+\vspace{0.75pc}
+\item $g(x)=45(3^{2x})$
+\end{itemize}
+\end{exe}
+
+\begin{exe} Determine the slope of the tangent line to the graph $f(x)=4^x$ at $x=0$. \end{exe}
+\end{frame}
+
+% % %
+\begin{frame}%[t]
+\frametitle{Story Problem Example}
+\small
+\begin{exe} The energy (in Joules) released by an earthquake of magnitude $M$ is given by the equation
+\[E=25000 \cdot 10^{1.5 M}.\]
+
+\vspace{-1pc}
+\begin{itemize}
+\item[1.] How much energy is released in a magnitude 3.0 earthquake?
+\item[2.] What size earthquake releases 8 million Joules of energy?
+\item[3.] What is $\dfrac{dE}{dM}$ and what does it tell you?
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{\small Derivatives of General Logarithmic Functions}
+\footnotesize
+The relationship $y=\ln x \Longleftrightarrow x=e^y$ also applies to logarithms of other bases:
+\[y=\log_b x \quad\Longleftrightarrow\quad x=b^y.\]
+Now taking $\dfrac{d}{dx}\left(x=b^y\right)$ we obtain
+\begin{align*}
+1 &= b^y\ln b\left(\frac{dy}{dx}\right) \\
+\frac{dy}{dx} &= \frac{1}{b^y \ln b} \\[0.5pc]
+ &=\frac{1}{x \ln b}
+\end{align*}
+\bigskip
+So $\dfrac{d}{dx}(\log_b x)=\dfrac{1}{x \ln b}.$
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Neat Trick: Logarithmic Differentiation}
+\begin{ex}  Compute the derivative of $f(x)=\dfrac{x^2(x-1)^3}{(3+5x)^4}$. \end{ex}
+
+We can use logarithmic differentiation: first takee the natural log of both sides and then use properties of logarithms.
+\end{frame}
+
+% % %
+\begin{frame}
+\small
+\begin{alignat*}{2}
+\ln(f(x)) &= \ln \left( \dfrac{x^2(x-1)^3}{(3+5x)^4} \right) \\[0.5pc]
+&= \ln{(x^2)} + \ln{(x-1)^3}-\ln{(3+5x)^4} \\[0.5pc]
+&= 2\ln x + 3\ln(x-1)-4\ln(3+5x)
+\end{alignat*}
+\alert{Now} we take $\dfrac{d}{dx}$ on both sides:
+\begin{alignat*}{2}
+\dfrac{1}{f(x)}\left(\dfrac{df}{dx}\right) &= 2\left(\frac{1}{x}\right) + 3\left(\frac{1}{x-1}\right) - 4\left(\frac{1}{3+5x}\right)(5) \\[1pc]
+\dfrac{f^{\prime}(x)}{f(x)} &= \dfrac{2}{x} + \dfrac{3}{x-1} - \dfrac{20}{3+5x}
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+Finally, solve for $f^{\prime}(x)$:
+\begin{alignat*}{2}
+f^{\prime}(x) &= \alert{f(x)} \left[ \dfrac{2}{x} + \dfrac{3}{x-1} - \dfrac{20}{3+5x} \right] \\[1pc]
+&= \alert{\frac{x^2 (x-1)^3}{(3+5x)^4}} \left[ \dfrac{2}{x} + \dfrac{3}{x-1} - \dfrac{20}{3+5x} \right]
+\end{alignat*}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{HW from Section 3.8}
+Do problems 9--27 odd, 31--37 odd, 41--47 odd (pp.\ 199--200 in textbook)
+\end{frame}
+
+% % % % % % % % % % Wed 25 Feb 2015
+
+% % %
+\begin{frame}
+\frametitle{Wednesday 25 February (Week 7)}
+\small
+\begin{itemize}
+\item Fri 27 Feb: Exam \#2
+\item Mon 2 Mar: review for Midterm
+\item Midterm study guide posted on the webpage and MLP
+\item Midterm conflict with chemistry and biology: Please email me ASAP if it applies to you.  Be prepared to have both tests that day.
+\end{itemize}
+\end{frame}
+
+% % %
+\subsection{Exam \#2 Review}
+% % %
+
+% % %
+\begin{frame}
+\frametitle{3.2 Rules for Differentiation}
+\small
+\begin{itemize}
+\item Be able to use the various rules for differentiation (e.g., Constant Rule, Power Rule, Constant Multiple Rule, Sum and Difference Rule) to calculate the derivative of a function.
+\item Know the derivative of $e^x$.
+\item Be able to find slopes and/or equations of tangent lines.
+\item Be able to calculate higher-order derivatives of functions.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{3.3 The Product and Quotient Rules}
+\small
+\begin{itemize}
+\item Be able to use the Product and/or Quotient Rules to calculate the derivative of a given function.
+\item Be able to use the Product and/or Quotient Rules to find tangent lines and/or slopes at a given point.
+\item Know the derivative of $e^{kx}$.
+\item Be able to combine derivative rules to calculate the derivative of a function.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\small
+Note: Functions are not always given by a formula.  When faced with a problem where you don't know where to start, go through the rules first.
+\begin{exe} Suppose you have the following information about the functions $f$ and $g$:
+\[f(1)=6\quad f'(1)=2\quad g(1)=2\quad g'(1)=3\]
+\begin{itemize}
+\item Let $F=2f+3g$.  What is $F(1)$?  What is $F'(1)$?
+\item Let $G=fg$.  What is $G(1)$?  What is $G'(1)$?
+\end{itemize}
+\end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{3.4 Derivatives of Trigonometric Functions}
+\footnotesize
+\begin{itemize}
+\item Know the two special trigonometric limits
+$$\lim_{x \to 0} \frac{\sin x}{x}=1 \quad\quad\quad \lim_{x \to 0} \frac{\cos x -1}{x}=0$$
+and be able to use them to solve other similar limits.
+\item Know and be able to use the trig identities given in class.
+\item Know the derivatives of $\sin x$, $\cos x$, $\tan x$, $\cot x$, $\sec x$, and $\csc x$, and be able to use the Quotient Rule to derive the formulas for the respective derivatives of
+$\tan x$, $\cot x$, $\sec x$, and $\csc x$.
+\item Be able to calculate derivatives (including higher order) involving trig functions using the rules of differentiation.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{}
+\begin{exe} Evaluate $\displaystyle\lim_{x\to -3}\frac{\sin{(x+3)}}{x^2+8x+15}$. \end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{3.5 Derivatives as Rates of Change}
+\footnotesize
+\begin{itemize}
+\item Be able to use the derivative to answer questions about rates of change involving:
+	\begin{itemize}
+	\footnotesize
+	\item Position and velocity
+	\item Speed and acceleration
+	\item Growth rates
+	\item Business applications
+	\end{itemize}
+\item Be able to use a position function to answer questions involving velocity, speed, acceleration, height/distance at a particular time $t$, maximum height, and time at which a given height/distance is achieved.
+\item Be able to use growth models to answer questions involving growth rate and average growth rate, and cost functions to answer questions involving average and marginal costs.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{3.6 The Chain Rule}
+\footnotesize
+\begin{itemize}
+\item Be able to use the Chain Rule to find the derivative of a composite function.
+\item Know and be able to use the Chain Rule for Powers: $$\dfrac{d}{dx} \big[ (g(x))^n \big] = n(g(x))^{n-1} g^{\prime}(x)$$
+\item Be able to use the Chain Rule more than once in a calculation involving more than two composed functions.
+\end{itemize}
+\begin{exe} Suppose $f(9)=10$ and $g(x)=f(x^2)$.  What is $g'(3)$? \end{exe}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{3.7 Implicit Differentiation}
+\small
+\begin{itemize}
+\item Be able to use implicit differentiation to calculate $\dfrac{dy}{dx}.$
+\item Be able to use the derivative found from implicit differentiation to find the slope at a given point and/or a line tangent to the curve at the given point.
+\item Be able to calculate higher-order derivatives of implicitly defined functions.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Running out of Time on the Exam}
+\footnotesize
+\begin{itemize}
+\item Do practice problems completely, from beginning to end (as if it were a quiz).  You might think you understand something but when it's time to write down the details things are not so clear.  
+\item Find a buddy who understands concepts a little better than you and work on problems for 2-3 hours.  Then find a buddy who is struggling and work with them 2-3 hours.  Explaining to someone else tests how deeply you really know the material.  This strategy also helps reduce stress because it doesn't require you to devote a full day or night of studying, just 2-3 hours at a time of productive work.
+\item Don't count on cookie cutter problems.  If you are doing a practice problem where you've memorized all the steps, make sure you understand why each step is needed.  The exam problems may have a small variation from homeworks and quizzes.  If you're not prepared, it'll come as a ``twist" on the exam...
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Running out of Time on the Exam, cont.}
+\footnotesize
+\begin{itemize}
+\item If you encounter an unfamiliar type of problem on the exam, relax, because it's most likely not a trick.  The solutions will always rely on the information from the required reading/assignments.  Take your time and do each baby step carefully.  
+\item During the exam, do the problems you are most confident with first!  Different people will find different problems easier.
+\item During the exam, budget your time.  Count the problems and divide by 50 minutes.  The easier questions will take less time so doing them first leaves extra time for the harder ones.  When studying, aim for 10 problems per hour (i.e., 6 minutes per problem).
+\item The exam is not a race.  If you finish early take advantage of the time to check your work.  You don't want to leave feeling smug about how quickly you finished only to find out next week you lost a letter grade's worth of points from silly mistakes.
+\end{itemize}
+\end{frame}
+
+% % %
+\begin{frame}
+\frametitle{Other Study Tips}
+\footnotesize
+\begin{itemize}
+\item Brush up on algebra, especially radicals, logs, common denominators, etc.  Many times knowing the right algebra will simplify the problem!
+\item When in doubt, show steps.  See the document camera notes to get an idea of what's expected.
+\item You will be punished for wrong notation.  The slides for $\oint 3.1$ show different notations for the derivative.  Make sure whichever one you use in your work, that you are using it correctly.
+\item Read the question!  
+\item Do the book problems.
+\item Look at the pictures in the book and the interactive applets on MLP.
+\end{itemize}
+\end{frame}
+
+\begin{comment}
+\end{comment}
+
+\end{document}
